@@ -4,7 +4,11 @@ body {
 
 h3 {
   font-family: 'Recoleta',serif;
-  font-size: 6vw;
+  font-size: 7rem;
+}
+
+:root {
+  font-size: 16px;
 }
 
 /* layout */
@@ -32,7 +36,7 @@ h3 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 1vw;
+  padding: 1em;
 }
 
 #header #nav {
@@ -42,18 +46,18 @@ h3 {
 }
 
 #header #nav ul li {
-  padding: 1vw;
+  padding: 1rem;
   display: inline-block;
 }
 
 #header #nav ul li a {
   color: #241E60;
-  font-size: 1vw;
+  font-size: 1rem;
 }
 
 #header h1 {
   text-align: center;
-  font-size: 2vw;
+  font-size: 2.3rem;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 0px;
           flex: 1 1 0;
@@ -66,26 +70,30 @@ h3 {
   text-align: right;
 }
 
+#header .icon a {
+  padding: 0 0.2rem;
+}
+
 #header .icon a img {
-  margin: 1vw 0 0 1vw;
-  width: 1vw;
+  margin: 1rem 0;
+  width: 1.8rem;
 }
 
 /* main */
 #main {
   overflow: hidden;
-  height: 80vh;
+  height: 50em;
   z-index: 1000;
 }
 
 #main .main-left {
   float: left;
   font-family: 'Recoleta',serif;
-  margin: 20vh 0 0 8vw;
+  margin: 15rem 0 0 5rem;
 }
 
 #main .main-left h2 {
-  font-size: 5.8vw;
+  font-size: 6vw;
   color: #09C9C3;
   line-height: .9;
 }
@@ -95,11 +103,16 @@ h3 {
 }
 
 #main .main-left p {
-  margin-top: 3vh;
+  margin-top: 2rem;
   font-size: 2vw;
-  color: #241E60;
-  font-family: 'Josefin Sans', sans-serif;
+  color: #09C9C3;
+  font-family: 'MaplestoryOTFBold';
   font-weight: 400;
+  -webkit-text-stroke: 1px #555;
+}
+
+#main .main-left p em {
+  color: #E16162;
 }
 
 #main .main-right {
@@ -111,7 +124,7 @@ h3 {
 #main .main-right .heart {
   position: absolute;
   right: 36%;
-  top: 25%;
+  top: 21%;
 }
 
 #main .main-right .heart .heart-img img {
@@ -130,13 +143,13 @@ h3 {
 #main .main-right .monkey {
   position: absolute;
   right: 24%;
-  top: 45%;
+  top: 42%;
 }
 
 #main .main-right .monkey .monkey-img img {
   width: 18vw;
-  -webkit-transform: rotate(5deg);
-          transform: rotate(5deg);
+  -webkit-transform: rotate(10deg);
+          transform: rotate(10deg);
 }
 
 #main .main-right .monkey .monkey-img svg {
@@ -153,7 +166,7 @@ h3 {
 }
 
 #main .main-right .chick .chick-img img {
-  width: 20vw;
+  width: 19vw;
   -webkit-transform: rotate(-10deg);
           transform: rotate(-10deg);
 }
@@ -409,7 +422,7 @@ h3 {
 }
 
 #content03 .cont03-cont .cont-standard .standard .cont-right .img-box img {
-  width: 32vw;
+  width: 100%;
   display: block;
   position: absolute;
   left: 50%;
@@ -437,6 +450,11 @@ h3 {
 #content03 .cont03-cont .cont-standard .tab-menu ul li {
   -ms-flex-preferred-size: 20%;
       flex-basis: 20%;
+  height: 50px;
+  position: -webkit-sticky;
+  position: sticky;
+  left: 0;
+  top: 0;
 }
 
 #content03 .cont03-cont .cont-standard .tab-menu ul li a {

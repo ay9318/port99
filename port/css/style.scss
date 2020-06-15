@@ -1,5 +1,6 @@
 body {background-color: #F1EFE6;}
-h3 {font-family: 'Recoleta',serif; font-size: 6vw;}
+h3 {font-family: 'Recoleta',serif; font-size: 7rem;}
+:root {font-size: 16px;}
 
 /* layout */
 #wrap {height: 5000px;}
@@ -12,29 +13,30 @@ h3 {font-family: 'Recoleta',serif; font-size: 6vw;}
     color: #241E60;
     display: flex;
     justify-content: space-between;
-    padding: 1vw;
+    padding: 1em;
     #nav {
         flex: 1 1 0;
         ul {
             li { 
-                padding: 1vw;
+                padding: 1rem;
                 display: inline-block;
-                a {color: #241E60; font-size: 1vw;}
+                a {color: #241E60; font-size: 1rem;}
             }
         }
     }
     h1 {
         text-align: center;
-        font-size: 2vw;
+        font-size: 2.3rem;
         flex: 1 1 0;
     }
     .icon {
         flex: 1 1 0;
         text-align: right;
         a {
+            padding: 0 0.2rem;
             img {
-                margin: 1vw 0 0 1vw;                
-                width: 1vw;
+                margin: 1rem 0;                
+                width: 1.8rem;
             }
         }       
     }
@@ -42,24 +44,28 @@ h3 {font-family: 'Recoleta',serif; font-size: 6vw;}
 /* main */
 #main {
     overflow: hidden;
-    height: 80vh;
+    height: 50em;
     z-index: 1000;
     .main-left {
         float: left;
         font-family: 'Recoleta',serif;
-        margin: 20vh 0 0 8vw;
+        margin: 15rem 0 0 5rem;
         h2 {
-            font-size: 5.8vw;
+            font-size: 6vw;
             color: #09C9C3;
             line-height: .9;
             span {color: #E16162;}
         }
         p {
-            margin-top: 3vh;
+            margin-top: 2rem;
             font-size: 2vw;
-            color: #241E60;
-            font-family: 'Josefin Sans', sans-serif;
+            color: #09C9C3;
+            font-family: 'MaplestoryOTFBold';
             font-weight: 400;
+            -webkit-text-stroke: 1px #555;
+            em {
+                color: #E16162;
+            }
         }
     }
     .main-right {
@@ -67,7 +73,7 @@ h3 {font-family: 'Recoleta',serif; font-size: 6vw;}
         width: 50%;
         height: 100%;
         .heart {
-            position: absolute; right: 36%; top: 25%;
+            position: absolute; right: 36%; top: 21%;
             .heart-img {             
                 img {
                     width: 10vw;
@@ -80,11 +86,11 @@ h3 {font-family: 'Recoleta',serif; font-size: 6vw;}
             }
         }
         .monkey {
-            position: absolute; right: 24%; top: 45%;
+            position: absolute; right: 24%; top: 42%;
             .monkey-img {             
                 img {
                     width: 18vw;
-                    transform: rotate(5deg);
+                    transform: rotate(10deg);
                 }
                 svg { 
                     z-index: -1; 
@@ -96,7 +102,7 @@ h3 {font-family: 'Recoleta',serif; font-size: 6vw;}
             position: absolute; right: 12%; top: 10%;
             .chick-img {
                 img {
-                    width: 20vw;
+                    width: 19vw;
                     transform: rotate(-10deg);
                 }
                 svg { 
@@ -272,7 +278,7 @@ h3 {font-family: 'Recoleta',serif; font-size: 6vw;}
                     .img-box {
                         position: relative; right: 30px; top: 200px;                           
                         img {
-                            width: 32vw; display: block;
+                            width: 100%; display: block;
                             position: absolute; left: 50%; top: 50%;
                             transform: translate(-50%, -50%);
                         }
@@ -280,17 +286,19 @@ h3 {font-family: 'Recoleta',serif; font-size: 6vw;}
                 }
             }            
             .tab-menu {        
-                margin-top: 6vw;                      
+                margin-top: 6vw;          
                 ul {
                     overflow: auto;
                     background: #fff;
-                    position: relative;
+                    position: relative;                    
                     display: flex;                   
                     border: 0.2vw solid #000;
                     width: 100%;
                     height: 31vh;
-                    li {                           
+                    li {
                         flex-basis: 20%;
+                        height: 50px;
+                        position: sticky; left: 0; top: 0;
                         a { 
                             width: 100%;                           
                             font-size: 1vw;
