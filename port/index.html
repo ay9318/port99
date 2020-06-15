@@ -14,11 +14,19 @@
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/prism.css">
 
+    <!-- favicon -->
+    <link rel="icon" href="icon/ducky128x128.png">
+
     <!-- webfont -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Josefin+Sans&display=swap" rel="stylesheet">
+
 </head>
-<body>
+<body>    
     <div id="wrap">
+        <!-- <div class="cursor">
+            <img src="img/svg/cursor.svg" alt="커서" class="c-cursor" >
+            <img src="img/svg/click-cursor2.svg" alt="클릭커서" class="c-click" >
+        </div> -->
         <div id="home">
             <header id="header">
                 <nav id="nav">
@@ -29,12 +37,15 @@
                     </ul>
                 </nav>
                 <!-- //nav -->
-
                 <h1>Portfolio</h1>
                 <div class="icon">
                     <a href="https://codepen.io/ay9318" target="_blank"><img src="img/svg/codepen.svg" alt="코드펜"></a>
                     <a href="https://ay9318.github.io/port/" target="_blank"><img src="img/svg/home.svg" alt="사이트홈"></a>
-                </div>                
+                </div>
+                <div class="sub-icon">
+                    <span class="line01"></span>
+                    <span class="line02"></span>
+                </div>    
             </header>
             <!-- //header -->
 
@@ -66,15 +77,15 @@
                     </div>
                     <!-- //monkey -->
 
-                    <div class="chick">
-                        <div class="chick-img">
-                            <img src="img/svg/bird.svg" alt="chick">
+                    <div class="duck">
+                        <div class="duck-img">
+                            <img src="img/svg/duck.svg" alt="duck">
                             <svg width="80" height="628" viewBox="0 0 80 628" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M21.4582 3.13159C-26.2776 250.194 136.537 436.035 33.7187 624.45" stroke="#333333" stroke-width="3" stroke-linecap="round"/>
                             </svg>
                         </div>                          
                     </div>
-                    <!-- //chick -->                        
+                    <!-- //duck -->                        
                 </div>
                 <!-- //main-right -->
             </section>
@@ -98,7 +109,7 @@
                     <p><em>머</em>물러 있지 않고</p>
                     <p class="indent">나아갈 수 있도록 <em>노</em>력하는 사람</p>
                     <div class="text">
-                        정말 우연하게도 웹 반응형 UI/UX 웹 퍼블리셔 과정을 배우게 되었는데 고등학교에서 배웠던 과정이 생각나면서 재미있게 수강하였습니다. <br>처음에는 따라잡을 수 있었지만 점점 깊이 알수록 스스로 공부를 더 하지 않으면 따라잡을 수 없었습니다.  웹 퍼블리셔, 웹 개발자, 프론트엔드 등 모두 노력없이는 더 나아가기 힘들다는것을 알기에 머물러 있지 않고 나아갈 수 있도록 노력하는 사람이 되겠습니다.
+                        정말 우연하게도 웹 반응형 UI/UX 웹 퍼블리셔 과정을 배우게 되었는데 고등학교에서 배웠던 과정이 생각나면서 재미있게 수강하였습니다. 처음에는 따라잡을 수 있었지만 점점 깊이 알수록 스스로 공부를 더 하지 않으면 따라잡을 수 없었습니다.  웹 퍼블리셔, 웹 개발자, 프론트엔드 등 모두 노력없이는 더 나아가기 힘들다는것을 알기에 머물러 있지 않고 나아갈 수 있도록 노력하는 사람이 되겠습니다.
                     </div>
                 </div>
                 <div class="cont02-photo">
@@ -298,8 +309,14 @@ $(document).ready(function(){
 
     <script src="js/jquery.min_1.12.4.js"></script>
     <script src="js/jquery-ui.min.js"></script>
-    <script src="js/prism.js"></script>
+    <script src="js/gsap.min.js"></script>
+    <script src="js/prism.js"></script>    
     <script>
+        //서브메뉴 클릭
+        $(".sub-icon").click(function(){
+            $(this).toggleClass("on");
+        });
+
         //컨텐츠3 탭메뉴
         let tabMenu = $(".tab-menu");
 

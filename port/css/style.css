@@ -17,13 +17,22 @@ h3 {
 }
 
 #main {
-  width: 1600px;
+  max-width: 1600px;
   margin: 0 auto;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
+}
+
+/* cursor */
+.cursor img {
+  width: 2vw;
+}
+
+.cursor .c-click {
+  display: none;
 }
 
 /* header */
@@ -79,6 +88,68 @@ h3 {
   width: 1.8rem;
 }
 
+#header .sub-icon {
+  cursor: pointer;
+  display: none;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #241E60;
+}
+
+#header .sub-icon .line01 {
+  width: 20px;
+  height: 2px;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: #fff;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+#header .sub-icon .line02 {
+  width: 20px;
+  height: 2px;
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: #fff;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+#header .sub-icon.on {
+  position: relative;
+}
+
+#header .sub-icon.on .line01 {
+  width: 20px;
+  height: 2px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+  background: #fff;
+}
+
+#header .sub-icon.on .line02 {
+  width: 20px;
+  height: 2px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+          transform: translate(-50%, -50%) rotate(-45deg);
+  background: #fff;
+}
+
 /* main */
 #main {
   overflow: hidden;
@@ -105,20 +176,20 @@ h3 {
 #main .main-left p {
   margin-top: 2rem;
   font-size: 2vw;
-  color: #09C9C3;
+  color: #fff;
   font-family: 'MaplestoryOTFBold';
   font-weight: 400;
-  -webkit-text-stroke: 1px #555;
+  -webkit-text-stroke: 1px #09C9C3;
 }
 
 #main .main-left p em {
-  color: #E16162;
+  -webkit-text-stroke: 1px #E16162;
 }
 
 #main .main-right {
   float: right;
   width: 50%;
-  height: 100%;
+  height: 50%;
 }
 
 #main .main-right .heart {
@@ -159,19 +230,19 @@ h3 {
   top: 70%;
 }
 
-#main .main-right .chick {
+#main .main-right .duck {
   position: absolute;
   right: 12%;
   top: 10%;
 }
 
-#main .main-right .chick .chick-img img {
+#main .main-right .duck .duck-img img {
   width: 19vw;
   -webkit-transform: rotate(-10deg);
           transform: rotate(-10deg);
 }
 
-#main .main-right .chick .chick-img svg {
+#main .main-right .duck .duck-img svg {
   z-index: -1;
   position: absolute;
   left: 40%;
@@ -248,96 +319,95 @@ h3 {
 /* content02 */
 #content02 {
   overflow: hidden;
-  padding: 15vw 0;
+  padding: 12em 0;
   background: #fff;
 }
 
 #content02 .cont02-text {
   float: left;
-  width: 65%;
+  width: 70%;
   color: #241E60;
 }
 
 #content02 .cont02-text p {
-  padding-left: 2vw;
   line-height: 1;
   font-size: 2.8vw;
   font-family: 'yg-jalnan';
 }
 
 #content02 .cont02-text p em {
-  font-size: 3.8vw;
+  font-size: 3.5vw;
 }
 
 #content02 .cont02-text .indent {
-  text-indent: 2vw;
+  text-indent: 2.5rem;
 }
 
 #content02 .cont02-text .text {
-  margin: 2vw;
+  margin-top: 2em;
   line-height: 1.6;
   font-family: 'S-CoreDream-4Regular';
-  width: 87%;
+  width: 83%;
   font-size: 1.3vw;
 }
 
 #content02 .cont02-photo {
   position: relative;
   float: right;
-  width: 35%;
+  width: 30%;
 }
 
 #content02 .cont02-photo .like img {
   z-index: 1;
   position: absolute;
-  left: 1vw;
-  top: -5vw;
+  left: 0;
+  top: -5rem;
   width: 30%;
   -webkit-transform: rotate(10deg);
           transform: rotate(10deg);
 }
 
 #content02 .cont02-photo .line1 {
-  width: .5vw;
-  height: 2.5vw;
+  width: .5rem;
+  height: 2rem;
   background: #241E60;
-  border-radius: 80vw;
+  border-radius: 20rem;
   position: absolute;
-  left: 1vw;
-  top: -7vw;
-  -webkit-transform: rotate(-30deg);
-          transform: rotate(-30deg);
+  left: 1rem;
+  top: -7rem;
+  -webkit-transform: rotate(-25deg);
+          transform: rotate(-25deg);
 }
 
 #content02 .cont02-photo .line2 {
-  width: .5vw;
-  height: 2.5vw;
+  width: .5rem;
+  height: 2rem;
   background: #241E60;
-  border-radius: 80vw;
+  border-radius: 20rem;
   position: absolute;
-  left: 0;
-  top: -6vw;
-  -webkit-transform: rotate(-50deg);
-          transform: rotate(-50deg);
+  left: -0.2rem;
+  top: -6.2rem;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 #content02 .cont02-photo .line3 {
-  width: .5vw;
-  height: 2.5vw;
+  width: .5rem;
+  height: 2rem;
   background: #241E60;
-  border-radius: 80vw;
+  border-radius: 20rem;
   position: absolute;
-  left: -.7vw;
-  top: -4.6vw;
-  -webkit-transform: rotate(-75deg);
-          transform: rotate(-75deg);
+  left: -1rem;
+  top: -5rem;
+  -webkit-transform: rotate(-60deg);
+          transform: rotate(-60deg);
 }
 
 #content02 .cont02-photo img {
   position: absolute;
   right: 15%;
-  top: -2vw;
-  width: 18vw;
+  top: -2rem;
+  width: 20rem;
   -webkit-transform: rotate(5deg);
           transform: rotate(5deg);
 }
@@ -563,5 +633,52 @@ h3 {
   padding-left: 5%;
   -webkit-box-sizing: unset;
           box-sizing: unset;
+}
+
+@media (max-width: 960px) {
+  #header .icon, #nav {
+    display: none;
+  }
+  #header h1 {
+    text-align: left;
+  }
+  #header .sub-icon {
+    display: block;
+  }
+  .main-left {
+    position: absolute;
+    left: 45%;
+    top: 0%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .heart .heart-img {
+    position: absolute;
+    left: -240px;
+    top: 220px;
+  }
+  .monkey .monkey-img {
+    position: absolute;
+    left: -290px;
+    top: 130px;
+  }
+  .duck .duck-img {
+    position: absolute;
+    left: -320px;
+    top: 230px;
+  }
+  .cont02-photo {
+    z-index: 0;
+    opacity: 0.5;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  .cont02-photo img {
+    width: 500px;
+  }
+  .cont02-photo .like, .line1, .line2, .line3 {
+    display: none;
+  }
 }
 /*# sourceMappingURL=style.css.map */
