@@ -1,0 +1,11 @@
+.container {max-width: 1000px; margin: 0 auto;}
+.row {position: relative; margin: 0 20px;}
+
+#header .container {border-bottom: 1px solid #ccc;}
+
+.banner {}
+.banner .banner-title {font-family: SF Pro Text;}
+.banner .banner-title .bt-stit {font-size: 12px; line-height: 20px; color: #E06482; font-weight: bold;}
+.banner .banner-title .bt-tit {font-size: 20px; line-height: 30px; font-weight: bold;}
+.banner .banner-title .bt-desc {font-size: 24px; line-height: 20px; color: #858587; font-weight: bold;}
+.banner img {width: 100%;}

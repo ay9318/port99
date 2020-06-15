@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Layout09</title>
+    
+    <link rel="stylesheet" href="../site-webstandard/css/reset.css">
+    
+    <style>
+        *{margin: 0;padding: 0;}
+        #wrap {}
+        #header {height: 100px; background-color: #999;}
+        #banner {height: 300px; background-color: #888;}
+        #content1 {background-color: #777;}
+        #content1 .conteiner {overflow: hidden;}
+        #content1 .conteiner .box {float: left; width: 230px; height: 230px; background-color: yellow; margin: 10px;}
+        
+        #content2 {height: 200px; background-color: #666;}
+        #content3 {height: 300px; background-color: #555;}
+        #content3 .conteiner {position: relative;}
+        /* notice */
+        #content3 .conteiner .notice {position: relative; float: left; width: 490px; height: 180px; margin-top: 100px; background-color: #fff;}
+        #content3 .conteiner .notice h4 {font-weight: bold; color: cornflowerblue;  font-size: 17px; padding: 10px;}
+        #content3 .conteiner .notice li {overflow: hidden; background: url(../site-webstandard/img/dot.gif) no-repeat 10px 10px; padding-left: 18px; font-size: 15px}
+        #content3 .conteiner .notice li a {float: left; width: 70%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+        #content3 .conteiner .notice a.more {position: absolute; right: 10px; top: 10px; width: 17px; height: 17px; background: url(../site-webstandard/img/icon.png) -150px -90px;}
+        
+        /* notice2 */
+        #content3 .conteiner .notice2 {position: relative; float: right; margin-top: 100px; width: 490px; height: 180px; background-color: #fff;}
+        #content3 .conteiner .notice2 .box {margin: 15px; border: 1px solid #ccc;}
+        #content3 .conteiner .notice2 h4 {border-bottom: 1px solid #ccc; padding: 10px;font-size: 17px;}
+        #content3 .conteiner .notice2 h4 em {color: crimson}
+        #content3 .conteiner .notice2 ul {padding: 15px;}
+        #content3 .conteiner .notice2 li {overflow: hidden; background: url(../site-webstandard/img/dot.gif) no-repeat 0 8px; font-size: 15px; padding-left: 8px;}
+        #content3 .conteiner .notice2 li a {float: left; width: 70%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+        #content3 .conteiner .notice2 ul li span {float: right; padding-left: 0px;}
+        #content3 .conteiner .notice2 a.more2 {position: absolute; right: 25px; top: 25px;}
+        
+        #footer {height: 150px; background-color: #444;}
+        
+        .conteiner {width: 1000px; height: inherit; margin: 0 auto; background-color: rgba(255,255,255,0.3);}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="conteiner"></div>
+        </div>
+        <div id="banner">
+            <div class="conteiner"></div>
+        </div>
+        <div id="content1">
+            <div class="conteiner">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+        </div>
+        <div id="content2">
+            <div class="conteiner"></div>
+        </div>
+        <div id="content3">
+            <div class="conteiner">
+                <div class="notice">
+                    <h4>웹 퍼블리셔 면접 질문</h4>
+                    <ul>
+                        <li><a href="#">아아아아아아아아아아아아아아아아아아아아아아아아아아</a></li>
+                        <li><a href="#">메메메메메메메메메메메메메메메메메메메메메메메메메메</a></li>
+                        <li><a href="#">리리리리리리리리리리리리리리리리리리리리리리리리리리</a></li>
+                        <li><a href="#">카카카카카카카카카카카카카카카카카카카카카카카카카카</a></li>
+                        <li><a href="#">노노노노노노노노노노노노노노노노노노노노노노노노노노</a></li>
+                    </ul>
+                    <a href="#" class="more ir_pm" title="더보기">더보기</a>
+                </div>
+                <div class="notice2">
+                    <div class="box">
+                        <h4>최신 <em>공지사항</em></h4>
+                        <ul>
+                            <li><a href="#">JPG, PNG, GIF의 차이점은 무엇인가요?</a><span>2020.03.27</span></li>
+                            <li><a href="#">UI 디자인과 UX 디자인의 차이점을 설명하세요.</a><span>2020.03.27</span></li>
+                            <li><a href="#">인터렉션 디자인의 핵심은 무엇이라고 생각하나요?</a><span>2020.03.27</span></li>
+                        </ul>
+                        <a href="#" class="more2">더보기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="conteiner"></div>
+        </div>
+    </div>
+</body>
+</html>

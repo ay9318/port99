@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery</title>
+    <style>
+        .choice a {
+            border: 1px solid #5f6368;
+            display: inline-block;
+            margin: 10px; padding: 7px 20px; 
+            border-radius: 5px;
+            text-decoration: none; color: #000;
+        }
+        .choice a:hover {text-decoration: underline;}
+        .on {background-color: #bbdefb; border: 1px dashed #303f9f;}
+    </style>
+</head>
+<body>    
+    <div class="choice">
+        <a href="#" class="reset">Reset</a>
+        <a href="#" class="btn1">.children()</a>
+        <a href="#" class="btn2">.find()</a>
+        <a href="#" class="btn3">.next()</a>
+        <a href="#" class="btn4">.nextAll()</a>
+        <a href="#" class="btn5">.parent()</a>
+        <a href="#" class="btn6">.parents()</a>
+        <a href="#" class="btn7">.parentsUntil()</a>
+        <a href="#" class="btn8">.prev()</a>
+        <a href="#" class="btn9">.prevAll()</a>
+    </div>
+    <div class="choice">
+        <a href="#" class="sbtn1">.eq(1)</a>
+        <a href="#" class="sbtn2">.filter()</a>
+        <a href="#" class="sbtn3">.first()</a>
+        <a href="#" class="sbtn4">.last()</a>
+        <a href="#" class="sbtn5">.has()</a>
+        <a href="#" class="sbtn6">.not()</a>
+        <a href="#" class="sbtn7">.slice()</a>
+    </div>
+    <div class="list">
+        <ul>
+            <li class="list1">첫번째 리스트1입니다.</li>
+            <li class="list2">첫번째 리스트2입니다.</li>
+            <li class="list3">첫번째 리스트3입니다.
+                <ul>
+                    <li>첫번째 리스트3-1입니다.</li>
+                    <li>첫번째 리스트3-2입니다.</li>
+                    <li>첫번째 리스트3-3입니다.
+                        <ul>
+                            <li>첫번째 리스트3-3-1입니다.</li>
+                            <li class="select">첫번째 리스트3-3-2입니다.</li>
+                            <li>첫번째 리스트3-3-3입니다.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="slist">
+            <li class="list1">두번째 리스트1입니다.</li>
+            <li class="list2">두번째 리스트2입니다.</li>
+            <li class="list3">두번째 리스트3입니다.</li>
+            <li class="list4">두번째 리스트4입니다.</li>
+            <li class="list5">두번째 리스트5입니다.</li>
+            <li class="list6">두번째 리스트6입니다.</li>
+        </ul>
+    </div>
+
+    <script src="../jquery.min_1.12.4.js"></script>
+    <script>
+        //트리구조 탐색
+        
+        //reset을 클릭하면 모든 태그에 on클래스를 제거
+        $(".reset").click(function(){
+            $("*").removeClass("on");
+        });
+        //children 버튼을 클릭하면 on클래스를 추가  - ul에 on적용
+        $(".btn1").click(function(){
+            $(".list li").children().addClass("on");
+        });
+        //find 버튼을 클릭하면 on클래스를 추가 - li에 on적용
+        $(".btn2").click(function(){
+            $(".list li").find("li").addClass("on");
+        });
+        //.next()
+        $(".btn3").click(function(){
+            $(".list li li:first").next().addClass("on");
+        });        
+        //.nextAll()
+        $(".btn4").click(function(){
+            $(".list li:first").nextAll().addClass("on");
+        });
+        //.parent()
+        $(".btn5").click(function(){
+            $(".list2").parent().addClass("on");
+        });
+        //.parents()
+        $(".btn6").click(function(){
+            $(".list2").parents().addClass("on");
+        });
+        //.parentsUntill()
+        $(".btn7").click(function(){
+            $(".list2").parentsUntil(".list").addClass("on");
+        });
+        //.prev()
+        $(".btn8").click(function(){
+            $(".list3").prev().addClass("on");
+        });
+        //.prevAll()
+        $(".btn9").click(function(){
+            $(".list3").prevAll().addClass("on");
+        });
+
+        //필터링
+        
+        //.eq(1)   - -1도 가능(제일 마지막에 on적용)
+        $(".sbtn1").click(function(){
+            $(".list li").eq(1).addClass("on");
+        });
+        //.filter() - 자식 포함 짝수 선택
+        $(".sbtn2").click(function(){
+            //$(".list li").filter(":even").addClass("on")
+            $(".list li").filter(".select").addClass("on");
+        });
+        //.first()
+        $(".sbtn3").click(function(){
+            //$(".list li").first().addClass("on")   //메소드로 first를 씀
+            $(".list li:first").addClass("on");     //선택자로 first를 씀
+        });
+        //.last()
+        $(".sbtn4").click(function(){
+            //$(".list li").last().addClass("on")   //메소드로 last를 씀
+            $(".list li:last").addClass("on");     //선택자로 last를 씀
+        });
+        //.has()
+        $(".sbtn5").click(function(){
+            //$(".list li").has("ul").addClass("on");
+            $(".list li").has(".select").addClass("on");
+        });
+        //.not()
+        $(".sbtn6").click(function(){
+            $(".list li").not(".select").addClass("on");
+        });
+        //.slice() 
+        $(".sbtn7").click(function(){
+            //$(".slist li").slice(2).addClass("on");
+            //$(".slist li").slice(2,4).addClass("on"); - 2번부터 4번 전까지 (2,3번 on)
+            //$(".slist li").slice(-2).addClass("on");  - 맨 아래에서 두개 on
+            $(".slist li").slice(-4,-1).addClass("on");  // 맨 아래에서 1번부터 4번전까지 (1~3번 on)
+        });
+    </script>
+</body>
+</html>

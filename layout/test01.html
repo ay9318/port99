@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text01</title>
+
+    <style>
+    
+    .ir_pm {display: block; overflow: hidden; font-size: 0; line-height: 0; text-indent: -9999px;}
+        * {margin: 0; padding: 0;}
+        #header {width: 100%; height: 300px; background: url(img/header_bg.jpg);}
+        #header .header-menu {text-align: right; padding: 20px;}
+        #header .header-menu a {color: #fff; padding: 8px; font-family: 'Abel', sans-serif; text-transform: capitalize; text-decoration: none;}
+        #header .header-menu a:hover {color: #ccc; transition: color 0.3s}
+        #header .header-tit {text-align: center; margin-top: 40px;}
+        #header .header-tit h1 {font-size: 30px; color: #fff; text-transform: uppercase; background-color: #4aa8d4; display: inline-block; padding: 5px 20px;}
+        #header .header-tit a {font-size: 15px; color: #fff; text-decoration: none; background-color: #2698cb; padding: 7px; display: inline-block;}
+        #header .header-icon {text-align: center;}
+        #header .header-icon a {display: inline-block; margin-top: 40px; width: 60px; height: 60px; background: url(img/icon.png);}
+        #header .header-icon a.icon1 {background-position: 0 0;}
+        #header .header-icon a.icon2 {background-position: 0 -60px;}
+        #header .header-icon a.icon3 {background-position: 0 -120px;}
+        #header .header-icon a.icon4 {background-position: 0 -180px;}
+        #header .header-icon a.icon1:hover {background-position: -60px 0;}
+        #header .header-icon a.icon2:hover {background-position: -60px -60px;}
+        #header .header-icon a.icon3:hover {background-position: -60px -120px;}
+        #header .header-icon a.icon4:hover {background-position: -60px -180px;}
+        /*  헤더 */
+        #content {width: 1200px; margin: 0 auto;}
+        #sec01 {display: none;}
+        #sec01 .sec01-header {width: 100%; height: 100px; background-color: #badefb;}
+        #sec01 .sec01-nav {width: 100%; height: 200px; background-color: #8ecbf9;}
+        #sec02 {overflow: hidden;}
+        #sec02 .sec02-aside {width: 33.33333333%; height: 400px; background-color: #61b6f6; float: left;}
+        #sec02 .sec02-art01 {width: 66.66666666%; height: 200px; background-color: #3da7f5; float: left;}
+        #sec02 .sec02-art02 {width: 66.66666666%; height: 200px; background-color: #1799f3; float: left;}
+        #sec03 {overflow: hidden;}
+        #sec03 .sec03-art01 {width: 33.3333333%; height: 300px; background-color: #168be5; float: left;}
+        #sec03 .sec03-art02 {width: 33.33333333%; height: 300px; background-color: #127ad2; float: left;}
+        #sec03 .sec03-art03 {width: 33.333333%; height: 300px; background-color: #0f69c0; float: left;}
+        #sec04 {overflow: hidden; width: 90%; padding: 5%; background-color: #3da7f5;}
+        #sec04 > article {width: 21%; margin: 2%; height: 200px; background-color: #127ad2; float: left; border-radius: 15px;}
+        #footer {width: 100%; height: 100px; background-color: #61b6f6;}
+
+        @media (max-width: 1220px) {
+            #header {display: none;}
+            #content {width: 100%;}
+            #sec01 {display: block;}
+            #sec03 .sec03-art01 {width: 50%;}
+            #sec03 .sec03-art02 {width: 50%;}
+            #sec03 .sec03-art03 {display: none;}
+            #sec04 > article {width: 29.3333333%;}
+            #sec04 .sec04-art04 {display: none;}
+        }
+
+        @media (max-width: 780px) {
+            #sec03 .sec03-art01 {width: 100%; height: 200px;}
+            #sec03 .sec03-art02 {width: 100%; height: 200px;}
+        }
+
+        @media (max-width: 480px) {
+            #sec02 .sec02-aside {width: 100%; height: 150px}
+            #sec02 .sec02-art01 {width: 100%; height: 200px}
+            #sec02 .sec02-art02 {width: 100%; height: 200px}
+            #sec04 > article {width: 96%; height: 100px;}
+        }
+    </style>
+ 
+</head>
+<body>
+    <div id="wrap">
+            <header id="header">
+                <div class="header-menu">
+                    <a href="#">designer</a>
+                    <a href="#">publisher</a>
+                    <a href="#">youtube</a>
+                </div>
+                <div class="header-tit">
+                    <h1>professional designer &amp; publisher</h1><br>
+                    <a href="http://www.ay9318.dothome.co.kr">ay9318.dothome.co.kr</a>
+                </div>
+                <div class="header-icon">
+                    <a href="#" class="icon1"><span class="ir_pm">icon1</span></a>
+                    <a href="#" class="icon2"><span class="ir_pm">icon2</span></a>
+                    <a href="#" class="icon3"><span class="ir_pm">icon3</span></a>
+                    <a href="#" class="icon4"><span class="ir_pm">icon4</span></a>
+                </div>
+            </header>
+            <div id="content">
+                <section id="sec01">
+                    <div class="sec01-header"></div>
+                    <div class="sec01-nav"></div>
+                </section>
+                <section id="sec02">
+                    <aside class="sec02-aside"></aside>
+                    <article class="sec02-art01"></article>
+                    <article class="sec02-art02"></article>
+                </section>
+                <section id="sec03">
+                    <article class="sec03-art01"></article>
+                    <article class="sec03-art02"></article>
+                    <article class="sec03-art03"></article>
+                </section>
+                <section id="sec04">
+                    <article class="sec04-art01"></article>
+                    <article class="sec04-art02"></article>
+                    <article class="sec04-art03"></article>
+                    <article class="sec04-art04"></article>
+                </section>
+                <footer id="footer"></footer>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

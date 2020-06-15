@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text02</title>
+
+    <style>
+    .ir_pm {display: block; overflow: hidden; font-size: 0; line-height: 0; text-indent: -9999px;}
+        * {margin: 0; padding: 0;}
+        #header {width: 100%; background: url(img/header_bg.jpg) repeat-x center top;}
+        #header .container {width: 1200px; margin: 0 auto;}
+        .header {height: 300px;}
+        .header .header-menu {text-align: right;}
+        .header .header-menu a {color: #fff; font-family: 'Abel', sans-serif; text-decoration: none; padding: 8px 0 6px 10px; display: inline-block; transition: color 0.3s;}
+        .header .header-menu a:hover {color: #ccc}
+        .header .header-tit {text-align: center; margin-top: 40px;}
+        .header .header-tit h1 {color: #fff; background-color: #4aa8d4; display: inline-block; padding: 5px 10px; font-size: 30px;}
+        .header .header-tit a {color: #fff; background-color: #2698cb; text-decoration: none; padding: 5px 15px; display: inline-block; margin-top: -5px; font-size: 15px;}
+        .header .header-icon {text-align: center; margin-top: 30px;}
+        .header .header-icon a {display: inline-block; width: 60px; height: 60px; background: url(img/icon.png);}
+        .header .header-icon a.icon1 {background-position: 0 0;}
+        .header .header-icon a.icon2 {background-position: 0 -60px;}
+        .header .header-icon a.icon3 {background-position: 0 -120px;}
+        .header .header-icon a.icon4 {background-position: 0 -180px;}
+        .header .header-icon a.icon1:hover {background-position: -60px 0;}
+        .header .header-icon a.icon2:hover {background-position: -60px -60px;}
+        .header .header-icon a.icon3:hover {background-position: -60px -120px;}
+        .header .header-icon a.icon4:hover {background-position: -60px -180px;}
+        .content {width: 1200px; margin: 0 auto; background-color: #e3f2fd;}
+        #section1 {display: none;}
+        #section1 .sec1-box01 {width: 100%; height: 100px; background-color: #badefb;}
+        #section1 .sec1-box02 {width: 100%; height: 200px; background-color: #8ecbf9;}
+        #section2 {overflow: hidden;}
+        #section2 .sec2-box01 {width: 33.333333%; height: 500px; background-color: #61b6f6; float: left;}
+        #section2 .sec2-box02 {width: 66.666666%; height: 250px; background-color: #3da7f5; float: left;}
+        #section2 .sec2-box03 {width: 66.666666%; height: 250px; background-color: #1799f3; float: left;}
+        #section3 {overflow: hidden;}
+        #section3 .sec3-box01 {width: 33.33333%; height: 300px; background-color: #168be5; float: left;}
+        #section3 .sec3-box02 {width: 33.333333%; height: 300px; background-color: #127ad2; float: left;}
+        #section3 .sec3-box03 {width: 33.333333%; height: 300px; background-color: #0f69c0; float: left;}
+        #section4 {overflow: hidden; width: 90%; background-color: #3da7f5; padding: 5%;}
+        #section4 > div {width: 21%; height: 250px; margin: 2%; background-color: #127ad2; float: left; border-radius: 15px;}
+        #footer {width: 100%; height: 100px; background-color: #61b6f6;}
+
+        @media (max-width: 1220px) {
+            #header {display: none;}
+            #header .container {width: 100%;}
+            #section1 {display: block;}
+            .content {width: 100%}
+            #section3 .sec3-box01 {width: 50%;}
+            #section3 .sec3-box02 {width: 50%;}
+            #section3 .sec3-box03 {display: none;}
+            #section4 > div {width: 29.333333%;}
+            #section4 .sec4-box04 {display: none;}
+        }
+
+        @media (max-width: 780px) {
+            #section3 .sec3-box01 {width: 100%; height: 200px;} 
+            #section3 .sec3-box02 {width: 100%; height: 200px;}
+        }
+
+        @media (max-width: 480px) {
+            #section2 .sec2-box01 {width: 100%; height: 200px;}
+            #section2 .sec2-box02 {width: 100%; height: 200px;}
+            #section2 .sec2-box03 {width: 100%; height: 200px;}
+            #section4 > div {width: 96%; height: 100px;}
+        }
+    </style>
+
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div class="container">
+                <div class="header">
+                    <div class="header-menu">
+                        <a href="#">Designer</a>  
+                        <a href="#">Publisher</a>  
+                        <a href="#">Youtube</a>  
+                    </div>
+                    <div class="header-tit">
+                        <h1>PROFESSIONAL DESIGNER & PUBLISHER</h1><br>
+                        <a href="http://www.ay9318.dothome.co.kr">ay9318.dothome.co.kr</a>
+                    </div>
+                    <div class="header-icon">
+                        <a href="#" class="icon1"><span class="ir_pm">icon1</span></a>
+                        <a href="#" class="icon2"><span class="ir_pm">icon2</span></a>
+                        <a href="#" class="icon3"><span class="ir_pm">icon3</span></a>
+                        <a href="#" class="icon4"><span class="ir_pm">icon4</span></a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="content">
+            <section id="section1">
+                <div class="sec1-box01"></div>
+                <div class="sec1-box02"></div>
+            </section>
+            <section id="section2">
+                <div class="sec2-box01"></div>
+                <div class="sec2-box02"></div>
+                <div class="sec2-box03"></div>
+            </section>
+            <section id="section3">
+                <div class="sec3-box01"></div>
+                <div class="sec3-box02"></div>
+                <div class="sec3-box03"></div>
+            </section>
+            <section id="section4">
+                <div class="sec4-box01"></div>
+                <div class="sec4-box02"></div>
+                <div class="sec4-box03"></div>
+                <div class="sec4-box04"></div>
+            </section>
+            <footer id="footer"></footer>
+        </div>
+    </div>
+</body>
+</html>

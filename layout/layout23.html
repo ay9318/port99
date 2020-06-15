@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Responsive Layout03</title>
+    <style>
+        * {margin: 0; padding: 0;}
+        #wrap {background-color: #e1f5fe ;}
+        .container {width: 1000px; margin: 0 auto;}
+        header {width: 100%; height: 100px; background-color: #7ed4fa;}
+        aside {width: 20%; height: 900px; background-color: #49c4f7; float: left;}
+        .article1 {width: 80%; height: 300px; background-color: #1cb7f6; float: left;}
+        .article2 {width: 80%; height: 300px; background-color: #00abf4; float: left;}
+        .article3 {width: 80%; height: 300px; background-color: #009de5; float: left;}
+        footer {width: 100%; height: 100px; background-color: #008ad1; clear: both;}
+        
+        @media (max-width: 1220px) {
+            .container {width: 100%;}
+            .article1 {height: 450px;}
+            .article2 {height: 450px;}
+            .article3 {width: 100%;}
+        }   
+        @media (max-width: 768px) {
+            header {height: 200px;}
+            aside {width: 100%; height: 200px;}
+            .article1 {width: 50%;}
+            .article2 {width: 50%;}
+            .article3 {width: 100%; height: 200px;}
+        }   
+        @media (max-width: 480px) {
+            header {height: 200px;}
+            aside {width: 100%; height: 400px;}
+            .article1 {width: 100%; height: 400px;}
+            .article2 {width: 100%; height: 400px;}
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="container">
+            <header></header>
+            <aside></aside>
+            <article class="article1"></article>
+            <article class="article2"></article>
+            <article class="article3"></article>
+            <footer></footer>
+        </div>
+    </div>
+</body>
+</html>
