@@ -2,17 +2,18 @@ body {
   background-color: #F1EFE6;
 }
 
+h3 {
+  font-family: 'Recoleta',serif;
+  font-size: 6vw;
+}
+
 /* layout */
 #wrap {
   height: 5000px;
 }
 
 #main {
-<<<<<<< HEAD
   width: 1600px;
-=======
-  width: 100%;
->>>>>>> parent of fa42139... 2020.06.15
   margin: 0 auto;
 }
 
@@ -31,11 +32,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-<<<<<<< HEAD
   padding: 1vw;
-=======
-  padding: 0.5vw;
->>>>>>> parent of fa42139... 2020.06.15
 }
 
 #header #nav {
@@ -62,32 +59,16 @@ body {
           flex: 1 1 0;
 }
 
-<<<<<<< HEAD
 #header .icon {
-=======
-#header .link {
->>>>>>> parent of fa42139... 2020.06.15
   -webkit-box-flex: 1;
       -ms-flex: 1 1 0px;
           flex: 1 1 0;
   text-align: right;
-<<<<<<< HEAD
 }
 
 #header .icon a img {
   margin: 1vw 0 0 1vw;
   width: 1vw;
-=======
-  margin: 1vw 0;
-}
-
-#header .link .site {
-  padding-right: 1vw;
-}
-
-#header .link .site img {
-  width: 1.3vw;
->>>>>>> parent of fa42139... 2020.06.15
 }
 
 /* main */
@@ -272,16 +253,11 @@ body {
 }
 
 #content02 .cont02-text p em {
-  font-style: normal;
   font-size: 3.8vw;
 }
 
 #content02 .cont02-text .indent {
-<<<<<<< HEAD
   text-indent: 2vw;
-=======
-  text-indent: 50px;
->>>>>>> parent of fa42139... 2020.06.15
 }
 
 #content02 .cont02-text .text {
@@ -353,7 +329,6 @@ body {
           transform: rotate(5deg);
 }
 
-<<<<<<< HEAD
 /* content03 */
 #content03 {
   background: #ADD8D7;
@@ -493,9 +468,6 @@ body {
   color: #fff;
 }
 
-=======
-/*  content03 */
->>>>>>> parent of fa42139... 2020.06.15
 /* gift */
 #gift {
   z-index: 9999;

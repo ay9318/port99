@@ -1,14 +1,10 @@
 body {background-color: #F1EFE6;}
+h3 {font-family: 'Recoleta',serif; font-size: 6vw;}
 
 /* layout */
 #wrap {height: 5000px;}
-<<<<<<< HEAD
 #main {width: 1600px; margin: 0 auto;}
 .container {max-width: 1200px; margin: 0 auto;}
-=======
-#main {width: 100%; margin: 0 auto;}
-.container {max-width: 1400px; margin: 0 auto;}
->>>>>>> parent of fa42139... 2020.06.15
 
 /* header */
 #header {
@@ -16,11 +12,7 @@ body {background-color: #F1EFE6;}
     color: #241E60;
     display: flex;
     justify-content: space-between;
-<<<<<<< HEAD
     padding: 1vw;
-=======
-    padding: 0.5vw;
->>>>>>> parent of fa42139... 2020.06.15
     #nav {
         flex: 1 1 0;
         ul {
@@ -36,7 +28,6 @@ body {background-color: #F1EFE6;}
         font-size: 2vw;
         flex: 1 1 0;
     }
-<<<<<<< HEAD
     .icon {
         flex: 1 1 0;
         text-align: right;
@@ -47,17 +38,6 @@ body {background-color: #F1EFE6;}
             }
         }       
     }
-=======
-    .link {
-        flex: 1 1 0;
-        text-align: right;
-        margin: 1vw 0;
-        .site {
-            padding-right: 1vw;      
-            img {width: 1.3vw;}
-        }
-    }    
->>>>>>> parent of fa42139... 2020.06.15
 }
 /* main */
 #main {
@@ -178,6 +158,7 @@ body {background-color: #F1EFE6;}
         }
     }
 }
+
 /* content02 */
 #content02 {
     overflow: hidden;
@@ -186,30 +167,22 @@ body {background-color: #F1EFE6;}
     .cont02-text {
         float: left;
         width: 65%;
-<<<<<<< HEAD
         color: #241E60;        
-=======
-        color: #241E60;       
->>>>>>> parent of fa42139... 2020.06.15
         p {
             padding-left: 2vw;
             line-height: 1;
             font-size: 2.8vw;
             font-family: 'yg-jalnan';
-            em {font-style: normal; font-size: 3.8vw;}
+            em {font-size: 3.8vw;}
         }
-<<<<<<< HEAD
         .indent {text-indent: 2vw;}
-=======
-        .indent {text-indent: 50px;}
->>>>>>> parent of fa42139... 2020.06.15
         .text {
             margin: 2vw;
             line-height: 1.6;
             font-family: 'S-CoreDream-4Regular';
             width: 87%;
             font-size: 1.3vw;
-        }
+        }        
     }
     .cont02-photo {
         position: relative;
@@ -251,7 +224,6 @@ body {background-color: #F1EFE6;}
     }
 }
 
-<<<<<<< HEAD
 /* content03 */
 #content03 {
     background: #ADD8D7;
@@ -344,35 +316,10 @@ body {background-color: #F1EFE6;}
                         }
                     }
                 }                
-=======
-/*  content03 */
-#content03 {
-    .cont03-title {
-        h3 {}
-        img {}
-    }
-    .cont03-cont {
-        .cont01 {
-            .cont-left {
-                .cont-left-text {
-                    h4 {}
-                    p {}
-                }
-                .cont-left-btn {
-                    span {}
-                }               
-            }
-            .cont-right {
-                
->>>>>>> parent of fa42139... 2020.06.15
             }
         }
     }
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> parent of fa42139... 2020.06.15
 
 /* gift */
 #gift {
