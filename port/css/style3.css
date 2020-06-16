@@ -188,7 +188,7 @@ h3 {
 }
 
 #main .main-right .heart .heart-img img {
-  width: 10vw;
+  width: 12rem;
   -webkit-transform: rotate(-10deg);
           transform: rotate(-10deg);
 }
@@ -207,7 +207,7 @@ h3 {
 }
 
 #main .main-right .monkey .monkey-img img {
-  width: 18vw;
+  width: 18rem;
   -webkit-transform: rotate(10deg);
           transform: rotate(10deg);
 }
@@ -226,7 +226,7 @@ h3 {
 }
 
 #main .main-right .duck .duck-img img {
-  width: 19vw;
+  width: 20em;
   -webkit-transform: rotate(-10deg);
           transform: rotate(-10deg);
 }
@@ -307,32 +307,36 @@ h3 {
 
 /* content02 */
 #content02 {
-  overflow: hidden;
   padding: 12em 0;
   background: #fff;
 }
 
-#content02 .cont02-text {
-  float: left;
-  width: 70%;
-  color: #241E60;
+#content02 .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-#content02 .cont02-text p {
+#content02 .container .cont02-text {
+  color: #241E60;
+  width: 65%;
+}
+
+#content02 .container .cont02-text p {
   line-height: 1;
   font-size: 2.8vw;
   font-family: 'yg-jalnan';
 }
 
-#content02 .cont02-text p em {
+#content02 .container .cont02-text p em {
   font-size: 3.5vw;
 }
 
-#content02 .cont02-text .indent {
+#content02 .container .cont02-text .indent {
   text-indent: 2.5rem;
 }
 
-#content02 .cont02-text .text {
+#content02 .container .cont02-text .text {
   margin-top: 2em;
   line-height: 1.6;
   font-family: 'S-CoreDream-4Regular';
@@ -340,13 +344,12 @@ h3 {
   font-size: 1.3vw;
 }
 
-#content02 .cont02-photo {
+#content02 .container .cont02-photo {
   position: relative;
-  float: right;
   width: 30%;
 }
 
-#content02 .cont02-photo img {
+#content02 .container .cont02-photo img {
   position: absolute;
   right: 1rem;
   top: -2rem;
@@ -355,17 +358,21 @@ h3 {
           transform: rotate(5deg);
 }
 
-#content02 .cont02-photo .like img {
+#content02 .container .cont02-photo .like {
+  position: relative;
+}
+
+#content02 .container .cont02-photo .like img {
   z-index: 1;
   position: absolute;
   left: 0;
   top: -5rem;
-  width: 30%;
+  width: 8rem;
   -webkit-transform: rotate(10deg);
           transform: rotate(10deg);
 }
 
-#content02 .cont02-photo .line1 {
+#content02 .container .cont02-photo .like .line1 {
   width: .5rem;
   height: 2rem;
   background: #241E60;
@@ -377,7 +384,7 @@ h3 {
           transform: rotate(-25deg);
 }
 
-#content02 .cont02-photo .line2 {
+#content02 .container .cont02-photo .like .line2 {
   width: .5rem;
   height: 2rem;
   background: #241E60;
@@ -389,7 +396,7 @@ h3 {
           transform: rotate(-45deg);
 }
 
-#content02 .cont02-photo .line3 {
+#content02 .container .cont02-photo .like .line3 {
   width: .5rem;
   height: 2rem;
   background: #241E60;
@@ -614,6 +621,9 @@ h3 {
   #main .main-left h2 {
     font-size: 6.5rem;
   }
+  #content02 .container .cont02-photo img {
+    margin-right: 2rem;
+  }
 }
 
 @media (max-width: 1360px) {
@@ -625,6 +635,19 @@ h3 {
 @media (max-width: 1260px) {
   #main .main-left h2 {
     font-size: 5.5rem;
+  }
+  #content02 .container .cont02-text {
+    text-align: center;
+  }
+  #content02 .container .cont02-text .text {
+    margin: 0 auto;
+    padding-top: 2rem;
+  }
+  #content02 .container .cont02-photo img {
+    margin-right: 3rem;
+  }
+  #content02 .container .cont02-photo .like img {
+    width: 7rem;
   }
 }
 
@@ -672,7 +695,7 @@ h3 {
   }
   #main .main-right .heart-img {
     position: absolute;
-    left: -30rem;
+    left: -40rem;
     top: 13rem;
   }
   #main .main-right .monkey-img {
@@ -685,25 +708,32 @@ h3 {
     left: -25rem;
     top: 15rem;
   }
-  /*     #content02 .cont02-text {width: 100%;}
-    #content03 .cont03-title h3 {text-align: center;}
-    #content03 .cont03-cont {text-align: center;}
-    #content03 .cont03-cont .standard .cont-left {width: 100%;}
-    #content03 .cont03-cont .standard .cont-right {width: 100%;} */
+  #content02 .container .cont02-photo .like img {
+    width: 5.5rem;
+  }
 }
 
 @media (max-width: 860px) {
-  #main .main-right .heart-img {
+  #main .main-right .heart-img img {
+    width: 10rem;
     left: -27rem;
     top: 13rem;
   }
-  #main .main-right .monkey-img {
+  #main .main-right .monkey-img img {
     left: -27rem;
     top: 15rem;
   }
-  #main .main-right .duck-img {
-    left: -23rem;
-    top: 15rem;
+  #main .main-right .duck-img img {
+    width: 5rem;
+  }
+  #content02 .container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+  #content02 .container .cont02-photo {
+    width: 100%;
   }
 }
 
@@ -719,6 +749,98 @@ h3 {
   #main .main-right .duck-img {
     left: -20rem;
     top: 15rem;
+  }
+}
+
+@media (max-width: 660px) {
+  #main {
+    height: 600px;
+  }
+  #main .main-right .heart-img {
+    left: -20rem;
+    top: 13rem;
+  }
+  #main .main-right .monkey-img {
+    left: -19rem;
+    top: 12rem;
+  }
+  #main .main-right .duck-img {
+    left: -16rem;
+    top: 15rem;
+  }
+}
+
+@media (max-width: 530px) {
+  #main {
+    height: 500px;
+  }
+  #main .main-left h2 {
+    font-size: 3.5rem;
+  }
+  #main .main-left p {
+    font-size: 1.3rem;
+  }
+  #main .main-right .heart-img {
+    left: -17rem;
+    top: 13em;
+  }
+  #main .main-right .monkey-img {
+    left: -16rem;
+    top: 12rem;
+  }
+  #main .main-right .duck-img {
+    left: -13rem;
+    top: 13rem;
+  }
+}
+
+@media (max-width: 460px) {
+  #main {
+    height: 400px;
+  }
+  #main .main-left h2 {
+    font-size: 3rem;
+  }
+  #main .main-left p {
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+  #main .main-right .heart-img {
+    left: -15rem;
+    top: 11rem;
+  }
+  #main .main-right .monkey-img {
+    left: -14rem;
+    top: 10rem;
+  }
+  #main .main-right .duck-img {
+    left: -11rem;
+    top: 11rem;
+  }
+}
+
+@media (max-width: 380px) {
+  #main {
+    height: 300px;
+  }
+  #main .main-left h2 {
+    font-size: 2.2rem;
+  }
+  #main .main-left p {
+    font-size: 0.8rem;
+    margin-top: 0.7rem;
+  }
+  #main .main-right .heart-img {
+    left: -11rem;
+    top: 9em;
+  }
+  #main .main-right .monkey-img {
+    left: -11rem;
+    top: 9rem;
+  }
+  #main .main-right .duck-img {
+    left: -9rem;
+    top: 9rem;
   }
 }
 /*# sourceMappingURL=style3.css.map */

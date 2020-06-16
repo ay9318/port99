@@ -111,7 +111,7 @@ h3 {font-family: 'Recoleta',serif; font-size: 7rem;}
             position: absolute; right: 36%; top: 21%;
             .heart-img {             
                 img {
-                    width: 10vw;
+                    width: 12rem;
                     transform: rotate(-10deg);
                 }
                 svg { 
@@ -124,7 +124,7 @@ h3 {font-family: 'Recoleta',serif; font-size: 7rem;}
             position: absolute; right: 24%; top: 42%;
             .monkey-img {             
                 img {
-                    width: 18vw;
+                    width: 18rem;
                     transform: rotate(10deg);
                 }
                 svg { 
@@ -137,7 +137,7 @@ h3 {font-family: 'Recoleta',serif; font-size: 7rem;}
             position: absolute; right: 12%; top: 10%;
             .duck-img {
                 img {
-                    width: 19vw;
+                    width: 20em;
                     transform: rotate(-10deg);
                 }
                 svg { 
@@ -202,66 +202,67 @@ h3 {font-family: 'Recoleta',serif; font-size: 7rem;}
 
 /* content02 */
 #content02 {
-    overflow: hidden;
     padding: 12em 0;
     background: #fff;
-    .cont02-text {
-        float: left;
-        width: 70%;
-        color: #241E60;        
-        p {
-            line-height: 1;
-            font-size: 2.8vw;
-            font-family: 'yg-jalnan';
-            em {font-size: 3.5vw}
-        }
-        .indent {text-indent: 2.5rem;}
-        .text {
-            margin-top: 2em;
-            line-height: 1.6;
-            font-family: 'S-CoreDream-4Regular';
-            width: 83%;
-            font-size: 1.3vw;
-        }        
-    }
-    .cont02-photo {
-        position: relative;
-        float: right;
-        width: 30%;
-        img {
-            position: absolute; right: 1rem; top: -2rem;
-            width: 20vw; transform: rotate(5deg);
-        }
-        .like {
-            img {
-                z-index: 1;
-                position: absolute; left: 0; top: -5rem;
-                width: 30%;
-                transform: rotate(10deg);
+    .container {
+        display: flex;
+        .cont02-text {
+            color: #241E60; 
+            width: 65%;      
+            p {
+                line-height: 1;
+                font-size: 2.8vw;
+                font-family: 'yg-jalnan';
+                em {font-size: 3.5vw}
             }
+            .indent {text-indent: 2.5rem;}
+            .text {
+                margin-top: 2em;
+                line-height: 1.6;
+                font-family: 'S-CoreDream-4Regular';
+                width: 83%;
+                font-size: 1.3vw;
+            }        
         }
-        .line1 {
-            width: .5rem; height: 2rem; 
-            background: #241E60; 
-            border-radius: 20rem;
-            position: absolute; left: 1rem; top: -7rem;
-            transform: rotate(-25deg);
-        }
-        .line2 {
-            width: .5rem; height: 2rem; 
-            background: #241E60; 
-            border-radius: 20rem;
-            position: absolute; left: -0.2rem; top: -6.2rem;
-            transform: rotate(-45deg);
-        }
-        .line3 {
-            width: .5rem; height: 2rem; 
-            background: #241E60; 
-            border-radius: 20rem;
-            position: absolute; left: -1rem; top: -5rem;
-            transform: rotate(-60deg);
-        }        
-    }   
+        .cont02-photo {
+            position: relative;
+            width: 30%;
+            img {
+                position: absolute; right: 1rem; top: -2rem;
+                width: 20vw; transform: rotate(5deg);
+            }
+            .like {
+                position: relative;
+                img {
+                    z-index: 1;
+                    position: absolute; left: 0; top: -5rem;
+                    width: 8rem;
+                    transform: rotate(10deg);                
+                }
+                .line1 {
+                    width: .5rem; height: 2rem; 
+                    background: #241E60; 
+                    border-radius: 20rem;
+                    position: absolute; left: 1rem; top: -7rem;
+                    transform: rotate(-25deg);
+                }
+                .line2 {
+                    width: .5rem; height: 2rem; 
+                    background: #241E60; 
+                    border-radius: 20rem;
+                    position: absolute; left: -0.2rem; top: -6.2rem;
+                    transform: rotate(-45deg);
+                }
+                .line3 {
+                    width: .5rem; height: 2rem; 
+                    background: #241E60; 
+                    border-radius: 20rem;
+                    position: absolute; left: -1rem; top: -5rem;
+                    transform: rotate(-60deg);
+                }
+            }               
+        } 
+    }      
 }
 
 /* content03 */
@@ -422,12 +423,17 @@ h3 {font-family: 'Recoleta',serif; font-size: 7rem;}
 /*  미디어 쿼리 */
 @media (max-width:1460px) {
     #main .main-left h2 {font-size: 6.5rem;}
+    #content02 .container .cont02-photo img {margin-right: 2rem;}
 }
 @media (max-width:1360px) {
     #main .main-left h2 {font-size: 6rem;}
 }
 @media (max-width:1260px) {
     #main .main-left h2 {font-size: 5.5rem;}
+    #content02 .container .cont02-text {text-align: center;}
+    #content02 .container .cont02-text .text {margin: 0 auto; padding-top: 2rem;}
+    #content02 .container .cont02-photo img {margin-right: 3rem;}
+    #content02 .container .cont02-photo .like img {width: 7rem;}
 }
 @media (max-width:1160px) {
     #main .main-left h2 {font-size: 5rem;}
@@ -448,23 +454,50 @@ h3 {font-family: 'Recoleta',serif; font-size: 7rem;}
     #main .main-left h2 {font-size: 4.2rem;}
     #main .main-left p {font-size: 1.8rem;}
     #main .main-right {position: relative;} 
-    #main .main-right .heart-img {position: absolute; left: -30rem; top: 13rem;} 
+    #main .main-right .heart-img {position: absolute; left: -40rem; top: 13rem;} 
     #main .main-right .monkey-img {position: absolute; left: -30rem; top: 15rem;} 
     #main .main-right .duck-img {position: absolute; left: -25rem; top: 15rem;}
-/*     #content02 .cont02-text {width: 100%;}
-    #content03 .cont03-title h3 {text-align: center;}
-    #content03 .cont03-cont {text-align: center;}
-    #content03 .cont03-cont .standard .cont-left {width: 100%;}
-    #content03 .cont03-cont .standard .cont-right {width: 100%;} */
+    #content02 .container .cont02-photo .like img {width: 5.5rem;}
 }   
 @media (max-width:860px) {
-    #main .main-right .heart-img {left: -27rem; top: 13rem;} 
-    #main .main-right .monkey-img {left: -27rem; top: 15rem;} 
-    #main .main-right .duck-img {left: -23rem; top: 15rem;}
+    #main .main-right .heart-img img {width: 10rem; left: -27rem; top: 13rem;} 
+    #main .main-right .monkey-img img {left: -27rem; top: 15rem;} 
+    #main .main-right .duck-img img {width: 5rem;}
+    #content02 .container {flex-direction: row-reverse;}
+    #content02 .container .cont02-photo {width: 100%;}
 }
 @media (max-width:760px) {
     #main .main-right .heart-img {left: -25rem; top: 13rem;} 
-    #main .main-right .heart-img {} 
     #main .main-right .monkey-img {left: -25rem; top: 15rem;} 
     #main .main-right .duck-img {left: -20rem; top: 15rem;}
+}
+@media (max-width:660px) {
+    #main {height: 600px;}
+    #main .main-right .heart-img {left: -20rem; top: 13rem;} 
+    #main .main-right .monkey-img {left: -19rem; top: 12rem;} 
+    #main .main-right .duck-img {left: -16rem; top: 15rem;}
+}
+@media (max-width:530px) {
+    #main {height: 500px;}
+    #main .main-left h2 {font-size: 3.5rem;}
+    #main .main-left p {font-size: 1.3rem;}
+    #main .main-right .heart-img {left: -17rem; top: 13em;} 
+    #main .main-right .monkey-img {left: -16rem; top: 12rem;} 
+    #main .main-right .duck-img {left: -13rem; top: 13rem;}
+}
+@media (max-width:460px) {
+    #main {height: 400px;}
+    #main .main-left h2 {font-size: 3rem;}
+    #main .main-left p {font-size: 1rem; margin-top: 1rem;}
+    #main .main-right .heart-img {left: -15rem; top: 11rem;} 
+    #main .main-right .monkey-img {left: -14rem; top: 10rem;} 
+    #main .main-right .duck-img {left: -11rem; top: 11rem;}
+}
+@media (max-width:380px) {
+    #main {height: 300px;}
+    #main .main-left h2 {font-size: 2.2rem;}
+    #main .main-left p {font-size: 0.8rem; margin-top: 0.7rem;}
+    #main .main-right .heart-img {left: -11rem; top:9em;} 
+    #main .main-right .monkey-img {left: -11rem; top: 9rem} 
+    #main .main-right .duck-img {left: -9rem; top: 9rem;}
 }
