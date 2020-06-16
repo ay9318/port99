@@ -436,7 +436,7 @@ font-size: 18px;}
     .colum.col1 .menu li a {color: #fff; text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);}
     .colum.col1 .menu li a:hover {box-shadow: none; background: rgba(36, 130, 174, 0.9);}
     .colum.col1 .menu li:nth-child(3n) {border-right: 0;}
-    .colum.col2 {background: #Fff;}  
+    .colum.col2 {background: #fff;}  
     .lightbox {grid-template-columns: repeat(2,1fr);}
     .lightbox a:nth-child(5n) {display: none;}
     #cont-right .colum {width: 50%;}

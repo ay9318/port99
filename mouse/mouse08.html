@@ -89,15 +89,15 @@
         .close {cursor: pointer;}
 
         /* textWrap */
-        .textWrap {padding-top: 20vh;}
+        .textWrap {padding-top: 15vh;}
         .textWrap .line {width: 100vw; display: flex;}
         .textWrap .line .left {width: 50vw; color: yellowgreen; transform: skew(0deg, -15deg); overflow: hidden;}
         .textWrap .line .left .spanWrap {width: 100vw; text-align: center;}
         .textWrap .line .left .spanWrap span {font-size: 5vw;}
         .textWrap .line .right {width: 50vw; transform: skew(0deg, 15deg); overflow: hidden;}
         .textWrap .line .right .spanWrap {width: 100vw; text-align: center; transform: translate(-50vw);}
-        .textWrap .line .right .spanWrap span {font-size: 5vw;}
-        
+        .textWrap .line .right .spanWrap span {font-size: 5vw;}        
+        .textWrap span {display: inline-block;} 
     </style>
 </head>
 <body>
@@ -113,8 +113,8 @@
             <li><a href="mouse04.html">Mouse04</a></li>
             <li><a href="mouse05.html">Mouse05</a></li>
             <li><a href="mouse06.html">Mouse06</a></li>
-            <li class="active"><a href="mouse07.html">Mouse07</a></li>
-            <li><a href="mouse08.html">Mouse08</a></li>
+            <li><a href="mouse07.html">Mouse07</a></li>
+            <li class="active"><a href="mouse08.html">Mouse08</a></li>
         </ul>
     </div>
     <div class="info3">
@@ -180,17 +180,32 @@
     <script src="../Parallax/js/gsap.min.js"></script>
     <script src="js/prism.js"></script>
     <script>
-        const spanSlow = document.querySelector(".spanSlow")
-        const spanFast = document.querySelector(".spanFast")
+        /* const spanSlow = document.querySelectorAll(".spanSlow");
+        const spanFast = document.querySelectorAll(".spanFast");
 
         window.addEventListener("mousemove", mouseMove);
 
         function mouseMove(e) {
-            let speedSlow = e.pageX;
+            let position = e.pageX / (window.innerWidth/100);      
 
             spanSlow.forEach((span) => {
-                span.style.transform = `translate(${speedSlow}px)`;
+                span.style.transform = `translate(${position}px)`;
             });
+            spanFast.forEach((span) => {
+                span.style.transform = `translate(${-position}px)`;
+            });
+        } */
+
+        let spanSlow = $(".spanSlow");
+        let spanFast = $(".spanFast");
+
+        $(window).on("mousemove",mouseMove);
+
+        function mouseMove(e) {
+            let position = (e.pageX - ($(window).width()/2))*0.1;     
+
+            spanSlow.css({"transform":"translate("+position+"px)"});
+            spanFast.css({"transform":"translate("+position+"px)"});            
         }
     </script>
 </body>

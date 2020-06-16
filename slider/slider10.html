@@ -420,10 +420,7 @@
                     split = "<span aria-hidden='true'>" + split + "</span>";
                 $(this).find(".stext > h2").html(split).attr("aria-lable", txt);
             })
-            
-        //01. 각 이미지 absolute
-        // 첫번째 이미지는 left: 0 , 두번째 left 100%, 세번째 200% . . . . .
-        // 첫번째 이미지는 left: currentIndex , 두번째 left: currentIndex(1) * 100%, 세번째 left: currentIndex(2) * 200% . . . . .
+
         //이미지 슬라이드
         slide.each(function(index, element){
             //console.log(element)
@@ -437,7 +434,7 @@
         
         //이미지 움직이기
         function gotoSlide(num){
-            slideImg.animate({left : -100 * num +"%"}, duration, easing)   //duration과 easing을 변수로 사용
+            slideImg.animate({left : -100 * num +"%"}, duration, easing);   //duration과 easing을 변수로 사용
             currentIndex = num;
             updateDot();
         };
@@ -493,7 +490,7 @@
         });
 
         //커서 이동
-        $(document).mousemove(function(e){
+        $(window).mousemove(function(e){
             gsap.to(cursor, 0.3, {left: e.pageX-5, top: e.pageY-5})
             gsap.to(follower, 0.8, {left: e.pageX-15, top: e.pageY-15})
         });
