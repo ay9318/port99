@@ -110,20 +110,67 @@ body {background: #F1EFE6;}
     position: absolute; left: 50%; top: 50%;
     transform: translate(-50%, -50%);
     }
-#content01 .cont1 p {position: relative; font-size: 2.7rem; word-spacing: 2px; line-height: 1.8;}
-#content01 .cont1 p strong {color: #fff;}
-#content01 .cont1 p::before {
+#content01 .cont1 .cont1-text {position: relative; font-size: 2.7rem; line-height: 1.8;}
+#content01 .cont1 .cont1-text strong {color: #fff;}
+#content01 .cont1 .cont1-text strong:first-child {position: relative;}
+#content01 .cont1 .cont1-text strong:first-child::before {
+    content: '';
+    width: 8rem; height: 0.4rem;
+    background: #E16162;
+    border-radius: 50rem;
+    position: absolute; left: .2rem; bottom: -1rem;
+}
+#content01 .cont1 .cont1-text strong:nth-child(8) {position: relative;}
+#content01 .cont1 .cont1-text strong:nth-child(8)::before {
+    content: '';
+    width: 37.5rem; height: 0.4rem;
+    background: #E16162;
+    border-radius: 50rem;
+    position: absolute; left: 0; bottom: -1rem;
+}
+#content01 .cont1 .cont1-text::before {
     content: '"';
     color: #fff;
     position: absolute; left: -5rem; top: -2rem;
     font-size: 5rem;
 }
-#content01 .cont1 p::after {
+#content01 .cont1 .cont1-text::after {
     content: '"';
     color: #fff;
     position: absolute; right: -3rem; bottom: -1rem;
     font-size: 5rem;
 }
+
+/* content02 */
+#content02 {position: relative; background: #fff; height: calc(100vh + 100px);}
+#content02 .cont2 {
+    width: 70%;
+    display: flex; align-items: center;
+    justify-content: center;
+    position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+}
+#content02 .cont2 .cont2-left {}
+#content02 .cont2 .cont2-left p {
+    font-family: 'yg-jalnan';
+    font-size: 3.4rem;
+    line-height: 1.2;
+    color: #241E60;
+}
+#content02 .cont2 .cont2-left p.indent {text-indent: 3rem;}
+#content02 .cont2 .cont2-left p em {font-size: 4rem;}
+#content02 .cont2 .cont2-left .cont2-text {
+    width: 90%;
+    margin-top: 2rem;
+    font-family: 'S-CoreDream-4Regular';
+    font-size: 1.3rem;
+    line-height: 2rem;
+    letter-spacing: -0.08rem;
+    color: #241E60;
+}
+#content02 .cont2 .cont2-right {position: relative; width: 30%;}
+#content02 .cont2 .cont2-right .like {width: 7rem; position: absolute; left: -50px; top: -30px;}
+#content02 .cont2 .cont2-right .photo {width: 18rem;}
 
 /* gift */
 .gift {
@@ -177,26 +224,37 @@ body {background: #F1EFE6;}
     .main .main-left {width: 50%;}
     .main .main-left h2 {font-size: 4rem;}
     .main .img-wrap {width: 50%;}
-    #content01 .cont1 p {font-size: 2.2rem;}
+    #content01 .cont1 .cont1-text {font-size: 2.2rem;}
+    #content01 .cont1 .cont1-text strong:first-child::before {width: 6.5rem;}
+    #content01 .cont1 .cont1-text strong:nth-child(8)::before {width: 30.5rem;}
 }
 @media (max-width: 1110px) {
-    .main {flex-wrap: wrap;}
-    .main .main-left {width: 100%; text-align: center; margin-top: 8rem;}
+    .main {flex-wrap: wrap; height: calc(100vh - 100px);}
+    .main .main-left {width: 100%; text-align: center; margin-top: 4rem;}
     .main .img-wrap {width: 100%;}
     .main .img-wrap .heart {left: 30%; top: 2%;}
     .main .img-wrap .monkey {left: 40%; top: 20%;}
     .main .img-wrap .duck {left: 53%; top: 0%;}
+    #content02 .cont2 .cont2-right .photo {width: 15rem;}
 }
 @media (max-width: 960px) {
     .header {padding: 0 .5rem;}
     .header h1 {text-align: left;}
     .header .icon, #nav {display: none;}
     .header .sub-icon {display: block;}
+    #content01 .cont1 .cont1-text {font-size: 1.8rem;}
+    #content01 .cont1 .cont1-text strong:first-child::before {width: 5.2rem;}
+    #content01 .cont1 .cont1-text strong:nth-child(8)::before {width: 25rem;}
+    #content02 .cont2 {flex-wrap: wrap-reverse;}
+    #content02 .cont2 .cont2-left p {text-align: center; font-size: 2.5rem;}
+    #content02 .cont2 .cont2-left p.indent {text-indent: 0;}
+    #content02 .cont2 .cont2-left p em {font-size: 3.2rem;}
+    #content02 .cont2 .cont2-left .cont2-text {width: 100%;}
+    #content02 .cont2 .cont2-right {text-align: center; margin-bottom: 2rem;}
     .gift .gift-left .bar {padding: .8rem 28vw;}
     .gift .gift-right .box {padding: 1vw 2vw; margin-top: 2rem;}
     .gift .gift-right .box p {font-size: 1rem;}
     .gift .gift-right .box p img{width: 1rem;}
-    #content01 .cont1 p {font-size: 1.8rem;}
 }
 @media (max-width: 720px) {
     .main .img-wrap .heart {width: 8rem; left: 30%; top: 5%;}
@@ -205,10 +263,18 @@ body {background: #F1EFE6;}
     .main .img-wrap .monkey svg {left: 40%; top: 1%;}
     .main .img-wrap .duck {width: 10rem; left: 53%; top: 2%;}
     .main .img-wrap .duck svg {left: 45%; top: 20%;}
+    #content01 .cont1 .cont1-text {font-size: 1.5rem;}
+    #content01 .cont1 .cont1-text::before {font-size: 3rem; left: -2rem;}
+    #content01 .cont1 .cont1-text::after {font-size: 3rem; right: -1rem;}
+    #content01 .cont1 .cont1-text strong:first-child::before {width: 4.5rem; height: 0.3rem; left: 0; bottom: -.7rem;}
+    #content01 .cont1 .cont1-text strong:nth-child(8)::before {width: 21rem; height: 0.3rem; bottom: -.7rem;}
     .gift {display: none;}
 }
 @media (max-width: 380px) {
-    .header h1 {font-size: 1.8rem;}
+    .header h1 {font-size: 1.2rem;}
+    .header .sub-icon {width: 30px; height: 30px;}
+    .header .sub-icon .line01 {width: 15px;}
+    .header .sub-icon .line02 {width: 15px;}
     .main {height: 400px;}
     .main .main-left {margin-top: 2rem;}
     .main .main-left h2 {font-size: 2.5rem;}
@@ -216,5 +282,17 @@ body {background: #F1EFE6;}
     .main .img-wrap .heart {width: 5rem; left: 20%;}
     .main .img-wrap .monkey {width: 7rem; left: 30%; top: 15%;}
     .main .img-wrap .duck {width: 6rem; overflow: visible;}
-    .main .img-wrap .duck svg {left: 30%; top: 8%;}  
+    .main .img-wrap .duck svg {left: 30%; top: 8%;}
+    #content01 {height: 400px;}
+    #content01 .cont1 .cont1-text {font-size: .8rem;}
+    #content01 .cont1 .cont1-text::before {font-size: 1.5em; left: -1rem; top: -.5rem;}
+    #content01 .cont1 .cont1-text::after {font-size: 1.1rem; right: -.5rem; bottom: -.1rem;}
+    #content01 .cont1 .cont1-text strong:first-child::before {width: 2.5rem; height: 0.2rem; left: 0; bottom: -.1rem;}
+    #content01 .cont1 .cont1-text strong:nth-child(8)::before {width: 11.3rem; height: 0.2rem; bottom: -.1rem;}
+    #content02 .cont2 .cont2-left p {font-size: 2rem;}
+    #content02 .cont2 .cont2-left p em {font-size: 2.6rem;}
+    #content02 .cont2 .cont2-left .cont2-text {font-size: 1rem; line-height: 1.4;} 
+    #content02 .cont2 .cont2-right {width: 100%; margin: 0 auto; padding-top: 5rem;}
+    #content02 .cont2 .cont2-right .like {width: 5rem; left: -1rem; top: 3rem;}
+    #content02 .cont2 .cont2-right .photo {width: 12rem; margin-bottom: 2rem;}
 }
