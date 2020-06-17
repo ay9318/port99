@@ -246,7 +246,6 @@
         }
 
         /* slide-btn */
-        .slide-btn {}
         .slide-btn a {position: absolute; top: 0; z-index: 2000;}
         .slide-btn a.prev {left: 0; width: 5.2vw; height: 100vh; background: #fff;}
         .slide-btn a.next {right: 0; width: 5.2vw; height: 100vh; background: #fff;}
@@ -486,8 +485,8 @@
         
         //커서 이동
         $(window).mousemove(function(e){
-            gsap.to(cursor, 0.3, {left: e.pageX-5, top: e.pageY-5})
-            gsap.to(follower, 0.8, {left: e.pageX-15, top: e.pageY-15})
+            gsap.to(cursor, 0.3, {left: e.pageX-5, top: e.pageY-5});
+            gsap.to(follower, 0.8, {left: e.pageX-15, top: e.pageY-15});
         });
 
         //마우스 오버효과

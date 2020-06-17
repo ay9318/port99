@@ -239,7 +239,6 @@ pre[class*="language-"].line-numbers > code {
       background-color: gray;
       }
       ::-webkit-scrollbar-thumb {
-      border-radius: 8px;
       background-color: black;
       }
       ::-webkit-scrollbar-corner {
