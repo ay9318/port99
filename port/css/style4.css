@@ -97,21 +97,33 @@ body {background: #F1EFE6;}
 .img-wrap .duck svg {position: absolute; left: 45%; top: 200px;}
 
 /* cont1 */
-.cont1 {
+#content01 {
+    position: relative;
     font-family: 'yg-jalnan';
     background: #F2C1BF;
     color: #E16162;
+    height: calc(100vh + 100px);
+    text-align: left;
 }
-.cont1 .cont1-text {background: #000; width: 80%;}
-.cont1 .cont1-text p {position: relative; text-align: center;}
-.cont1 .cont1-text p::before {
+#content01 .cont1 {
+    white-space: nowrap;
+    position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    }
+#content01 .cont1 p {position: relative; font-size: 2.7rem; word-spacing: 2px; line-height: 1.8;}
+#content01 .cont1 p strong {color: #fff;}
+#content01 .cont1 p::before {
     content: '"';
-    position: absolute;
-    left: 0; top: 0;
     color: #fff;
+    position: absolute; left: -5rem; top: -2rem;
+    font-size: 5rem;
 }
-.cont1 .cont1-text p::after {}
-.cont1 .cont1-text p strong {}
+#content01 .cont1 p::after {
+    content: '"';
+    color: #fff;
+    position: absolute; right: -3rem; bottom: -1rem;
+    font-size: 5rem;
+}
 
 /* gift */
 .gift {
@@ -165,6 +177,7 @@ body {background: #F1EFE6;}
     .main .main-left {width: 50%;}
     .main .main-left h2 {font-size: 4rem;}
     .main .img-wrap {width: 50%;}
+    #content01 .cont1 p {font-size: 2.2rem;}
 }
 @media (max-width: 1110px) {
     .main {flex-wrap: wrap;}
@@ -183,6 +196,7 @@ body {background: #F1EFE6;}
     .gift .gift-right .box {padding: 1vw 2vw; margin-top: 2rem;}
     .gift .gift-right .box p {font-size: 1rem;}
     .gift .gift-right .box p img{width: 1rem;}
+    #content01 .cont1 p {font-size: 1.8rem;}
 }
 @media (max-width: 720px) {
     .main .img-wrap .heart {width: 8rem; left: 30%; top: 5%;}
