@@ -423,7 +423,11 @@ h3 {font-family: 'Recoleta',serif; font-size: 7rem;}
 /*  미디어 쿼리 */
 @media (max-width:1460px) {
     #main .main-left h2 {font-size: 6.5rem;}
+    #main .main-right .heart-img img {} 
+    #main .main-right .monkey-img img {} 
+    #main .main-right .duck-img img {width: 1rem;}
     #content02 .container .cont02-photo img {margin-right: 2rem;}
+    
 }
 @media (max-width:1360px) {
     #main .main-left h2 {font-size: 6rem;}

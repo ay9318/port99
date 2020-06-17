@@ -1,0 +1,206 @@
+body {background: #F1EFE6;}
+:root {
+    font-size: 16px;
+}
+
+/* layout */
+.container {max-width: 1200px; margin: 0 auto;}
+
+/* header */
+.header {display: flex;}
+#nav {flex: 1 1 0; font-family: 'Josefin Sans', sans-serif;}
+#nav ul {display: flex; margin-left: 2rem;}
+#nav ul li a {display: inline-block; padding: 1.8rem 0.7rem; color: #241E60;}
+.header h1 {
+    flex: 1 1 0; text-align: center; 
+    padding: 1rem 0 1.2rem; 
+    font-family: 'DM Serif Text', serif; color: #241E60;
+    font-size: 2.3rem;
+}
+.header .icon {flex: 1 1 0; text-align: right;}
+.header .icon a {
+    margin: 1rem .5rem 0 0;
+    display: inline-block;
+    width: 40px; height: 40px;
+    background: #241E60;
+    border-radius: 50%;
+}
+.header .icon a:last-of-type {margin-right: 1rem;}
+.header .icon a img {width: 100%;}
+.header .sub-icon {
+    display: none;
+    cursor: pointer;
+    margin: 1rem .5rem 0 0;
+    position: relative;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: #241E60;
+}
+.header .sub-icon .line01 {
+    width: 20px; height: 2px;
+    position: absolute; left: 50%; top: 40%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    transition: all 0.3s ease;
+}
+.header .sub-icon .line02 {
+    width: 20px; height: 2px;
+    position: absolute; left: 50%; top: 60%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    transition: all 0.3s ease;
+}
+.header .sub-icon.on {
+    position: relative;
+}
+.header .sub-icon.on .line01 {
+    width: 20px; height: 2px;
+    position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: #fff;
+}
+.header .sub-icon.on .line02 {
+    width: 20px; height: 2px;
+    position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    background: #fff;
+}       
+
+/* main */
+.row {padding: 0 20px;}
+.main {height: calc(100vh - 190px); display: flex; align-items: center;}
+.main .main-left {width: 60%;}
+.main .main-left h2 {font-size: 6rem; font-family: 'Recoleta'; line-height: .9; color: #09C9C3;}
+.main .main-left h2 span {color: #E16162;}
+.main .main-left p {
+    font-family: 'Josefin Sans', sans-serif; color: #241e60; 
+    font-size: 1.8rem; margin-top: 1.5rem;
+}
+.img-wrap {width: 40%; height: 100%; position: relative;}
+.img-wrap .heart {  
+    position: absolute; left: -20px; top: 20%;
+    width: 180px; height: 700px; overflow: hidden;
+}
+.img-wrap .heart img {width: 100%; position: relative; z-index: 10;}
+.img-wrap .heart svg {position: absolute; left: 58%; top: 130px;}
+.img-wrap .monkey {
+    position: absolute; left: 18%; top: 40%;
+    width: 250px; height: 700px; overflow: hidden;
+}
+.img-wrap .monkey img {width: 100%; position: relative; z-index: 10;}
+.img-wrap .monkey svg {position: absolute; left: 45%; top: 200px;}
+.img-wrap .duck {
+    position: absolute; left: 40%; top: 10%;
+    width: 250px; height: 700px; overflow: hidden;
+}
+.img-wrap .duck img {width: 100%; position: relative; z-index: 10;}
+.img-wrap .duck svg {position: absolute; left: 45%; top: 200px;}
+
+/* cont1 */
+.cont1 {
+    font-family: 'yg-jalnan';
+    background: #F2C1BF;
+    color: #E16162;
+}
+.cont1 .cont1-text {background: #000; width: 80%;}
+.cont1 .cont1-text p {position: relative; text-align: center;}
+.cont1 .cont1-text p::before {
+    content: '"';
+    position: absolute;
+    left: 0; top: 0;
+    color: #fff;
+}
+.cont1 .cont1-text p::after {}
+.cont1 .cont1-text p strong {}
+
+/* gift */
+.gift {
+    position: fixed; left: 0; bottom: 0; 
+    width: 100%;
+    border-top: 4px solid #241E60;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 8vw;
+    background: #F1EFE6;
+    z-index: 1000;
+}
+.gift .gift-left {margin-right: 1rem;}
+.gift .gift-left p {
+    display: none; font-family: 'S-CoreDream-5Medium', serif; 
+    font-size: 1.2rem; margin-bottom: 0.5rem;
+}
+.gift .gift-left p.on {display: block;}
+.gift .gift-left .bar {
+    position: relative;
+    border: 4px solid #241e60; 
+    padding: .8rem 30vw; 
+    border-radius: 90px;
+    z-index: 1;
+}
+.gift .gift-left .bar::before {
+    content: '';
+    width: 10%; height: 100%;
+    background: #09C9C3;
+    position: absolute; left: 0; top: 0;
+    border-radius: 80px;
+}
+.gift .gift-right .box {
+    background: #F9BC60; 
+    padding: .8vw 2vw; 
+    border: 4px solid #241e60; 
+    border-radius: 80px;
+}
+.gift .gift-right .box p {
+    font-family: 'Josefin Sans', serif;
+    text-align: center;
+    color: #241E60; 
+    font-size: 1.5rem; 
+    font-weight: bold;
+}
+.gift .gift-right .box p img{width: 1.5rem;}
+
+/* 미디어 쿼리 */
+@media (max-width: 1220px) {
+    .container {width: 100%;}
+    .main .main-left {width: 50%;}
+    .main .main-left h2 {font-size: 4rem;}
+    .main .img-wrap {width: 50%;}
+}
+@media (max-width: 1110px) {
+    .main {flex-wrap: wrap;}
+    .main .main-left {width: 100%; text-align: center; margin-top: 8rem;}
+    .main .img-wrap {width: 100%;}
+    .main .img-wrap .heart {left: 30%; top: 2%;}
+    .main .img-wrap .monkey {left: 40%; top: 20%;}
+    .main .img-wrap .duck {left: 53%; top: 0%;}
+}
+@media (max-width: 960px) {
+    .header {padding: 0 .5rem;}
+    .header h1 {text-align: left;}
+    .header .icon, #nav {display: none;}
+    .header .sub-icon {display: block;}
+    .gift .gift-left .bar {padding: .8rem 28vw;}
+    .gift .gift-right .box {padding: 1vw 2vw; margin-top: 2rem;}
+    .gift .gift-right .box p {font-size: 1rem;}
+    .gift .gift-right .box p img{width: 1rem;}
+}
+@media (max-width: 720px) {
+    .main .img-wrap .heart {width: 8rem; left: 30%; top: 5%;}
+    .main .img-wrap .heart svg {left: 30%; top: 2%;}
+    .main .img-wrap .monkey {width: 10rem; left: 40%; top: 12%;}
+    .main .img-wrap .monkey svg {left: 40%; top: 1%;}
+    .main .img-wrap .duck {width: 10rem; left: 53%; top: 2%;}
+    .main .img-wrap .duck svg {left: 45%; top: 20%;}
+    .gift {display: none;}
+}
+@media (max-width: 380px) {
+    .header h1 {font-size: 1.8rem;}
+    .main {height: 400px;}
+    .main .main-left {margin-top: 2rem;}
+    .main .main-left h2 {font-size: 2.5rem;}
+    .main .main-left p {font-size: 1rem;}
+    .main .img-wrap .heart {width: 5rem; left: 20%;}
+    .main .img-wrap .monkey {width: 7rem; left: 30%; top: 15%;}
+    .main .img-wrap .duck {width: 6rem; overflow: visible;}
+    .main .img-wrap .duck svg {left: 30%; top: 8%;}  
+}

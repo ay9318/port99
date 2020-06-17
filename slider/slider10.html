@@ -394,6 +394,7 @@
     </section>
     <script src="js/jquery.min_1.12.4.js"></script>
     <script src="js/jquery-ui.min.js"></script>
+    <script src="js/gsap.min.js"></script>
     <script>
         //닷 버튼 생성
         $(".slide-wrap").append("<div class='slide-dot'></div>")
@@ -480,15 +481,9 @@
         };
         startTimer();
 
-        const cursor = $(".cursor");
-        const follower = $(".cursor-follower");
-
-        //출력용
-        $(document).mousemove(function(e){ //마우스가 움직였을 때 이벤트 함수
-            $(".pageX").text(e.pageX);  //이벤트 pageX 값을 화면에 출력
-            $(".pageY").text(e.pageY); //이벤트 pageY 값을 화면에 출력
-        });
-
+        let cursor = $(".cursor");
+        let follower = $(".cursor-follower");
+        
         //커서 이동
         $(window).mousemove(function(e){
             gsap.to(cursor, 0.3, {left: e.pageX-5, top: e.pageY-5})

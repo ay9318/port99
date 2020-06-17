@@ -11,10 +11,14 @@
             font-weight: normal; 
             font-style: normal; 
         }
-
         * {margin: 0; padding: 0;}
-
-        .title {width: 100%; text-align: center; margin-top: 1%; font-size: 50px; font-family: 'GmarketSansMedium';}
+        body {background: rgba(233, 197, 35, 0.623); font-family: 'GmarketSansMedium';}
+        .title {
+            width: 100%; text-align: center; 
+            margin-top: 30px; font-size: 50px; 
+            color: #333;
+            font-weight: bold;
+        }
         main {            
             display: flex;
             flex-wrap: wrap;
@@ -22,11 +26,9 @@
             justify-content: center;
             width: 100%;
             max-width: 900px;
-            margin: 3% auto;
-            background: #6D5017;
-            padding: 5%;
+            margin: 5% auto;
         }
-        main .card {
+        .card {
             position: relative;
             width: 120px; height: 150px;
             margin: 1%; perspective: 1000px;
@@ -34,9 +36,9 @@
         .card > div {
             transform-style: preserve-3d;
         }
-        main .card .front {
+        .card .front {
             position: relative;
-            z-index: 10;
+            z-index: 100;
             width: 100%; height: 100%;
             background: url(img/front.jpg);
             background-size: cover;            
@@ -44,22 +46,39 @@
             transition: transform 1s;
             backface-visibility: hidden;
         }
-        main .card .back {
+        .card .back {
             width: 100%; height: 100%;
             position: absolute; left: 0; top: 0;
             transform: rotateY(-180deg);
             transition: transform 1s;
             backface-visibility: hidden;
         }
-        main .card:hover .front {
+
+        /* 카드를 클릭했을 때 */
+        /* main .card:hover .front {
             transform: rotateY(-180deg);
             transition: transform 1s;
         }
         main .card:hover .back {
             transform: rotateY(0deg);
             transition: transform 1s;
+        } */
+        .card.is-selected .front {
+            transform: rotateY(180deg);
+            transition: transform 0.6s;
         }
-
+        .card.is-selected .back {
+            transform: rotateY(0deg);
+            transition: transform 0.6s;
+        }
+        [data-matched="true"] .front {
+            transform: rotateY(180deg);
+            transition: transform 0.6s;
+        }
+        [data-matched="true"] .back {
+            transform: rotateY(0deg);
+            transition: transform 0.6s;
+        }
         [data-type="img1"] .back {
             background: url(img/img01.jpg);
             background-size: cover;
@@ -95,11 +114,64 @@
         [data-type="img9"] .back {
             background: url(img/img09.jpg);
             background-size: cover;
-        }           
+        }      
+
+        /* info */ 
+        .info {
+            width: 100%;
+            min-width: 950px;
+            position: relative;
+        }
+        .btn-sound {
+            position: absolute;
+            right: 800px;
+            top: 14px;
+            width: 24px;
+            height: 24px;
+            background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/225363/icon-sound-on.svg);
+            background-color: transparent;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            border: none;
+            outline: none;
+        }
+        .btn-sound:active {transform: translateY(1px);}
+        .btn-sound::before {
+            content: '';
+            position: absolute;
+            top: 9px;
+            left: -2px;
+            width: 120%;
+            height: 2px;
+            background-color: #ff0000;
+            transform: rotate(-35deg);
+        }
+        .btn-sound.is-playing::before {display: none;}
+        .score {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .score .turns span.last-turn {color: #ff0000;}
+        .score > div {
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
-    <div class="title">Anjoy! play the game.</div>
+    <div class="title">카드 맞추기 게임</div>
+    <div class="info">
+        <button class="btn-sound"></button>
+        <audio id="theme-song" src="music/BGM.mp3" loop="loop"></audio>
+        <div class="score">
+            <div class="turns">기회 : <span>2</span></div>
+            <div class="attempts">시도 : <span>0</span></div>
+            <div class="wins">우승 : <span>0</span></div>
+        </div>
+    </div>
     <main>
         <div class="card" data-type="img1" data-matched="false">
             <div class="front"></div>
@@ -174,5 +246,85 @@
             <div class="back"></div>
         </div>        
     </main>
+
+    <script src="js/jquery.min_1.12.4.js"></script>
+    <script>
+        const $board = $('main'),
+                $card = $('.card'),
+                $btnSound = $('.btn-sound'),
+                $themeSongEl = $("#theme-song")[0],
+                $turns = $('.turns span');
+
+                selectedClass = 'is-selected',     //카드를 선택했을때
+                dataMatch = 'data-matched',
+                dataType = 'data-type',
+                playSoundClass = 'is-playing',
+                timeoutLength = 900,
+                turnsCount = 2,  //기회 횟수 2
+                lastTurnClass = 'last-turn'
+
+        let sound = ['music/match.mp3','music/no-match.mp3','music/success.mp3'],
+            soundMatch = new Audio(sound[0]),
+            soundNoMatch = new Audio(sound[1]),
+            soundSuccess = new Audio(sound[2]),
+            card1, card2;
+        
+        //음악 아이콘을 클릭했을 때 음악이 나오고 또 클릭했을때 정지
+        $btnSound.on('click',function(){
+            $(this).toggleClass(playSoundClass);
+            if ($(this).hasClass(playSoundClass)) {
+                $themeSongEl.play();
+            } else {
+                $themeSongEl.pause();
+            }
+        });
+
+        //카드를 클릭하면 클릭한 카드한테 is-selected를 추가
+        $card.click(function() {
+            if ($(this).attr(dataMatch) == 'false') {
+                $(this).addClass(selectedClass);
+            };
+
+            let selectedCards = $('.'+selectedClass); //선택된 카드를 클래스로 변경
+
+            //만약에 두개의 카드가 똑같다면
+            if (selectedCards.length == 2) {
+                card1 = selectedCards.eq(0).attr(dataType);
+                card2 = selectedCards.eq(1).attr(dataType);
+
+                //카드1과 카드2가 같다면
+                if (card1 == card2) {
+                    if ($btnSound.hasClass(playSoundClass)) {
+                        soundMatch.play()
+                    }
+                    selectedCards.attr(dataMatch, true).removeClass(selectedClass);
+                } else {       //맞지 않다면
+                    if ($btnSound.hasClass(playSoundClass)) {
+                        soundNoMatch.play()
+                    }                
+                    setTimeout(function() { 
+                        selectedCards.removeClass(selectedClass);
+                        turnsCount--;  //실패할때마다 카운트 수를 줄임
+                        $turns.html(turnsCount);
+                    }, timeoutLength);
+
+                    //기회 카운트가 없을때(주의)
+                    if(turnsCount === 1) {
+                        setTimeout(function(){
+                            $turns.addClass(lastTurnClass);
+                        }, timeoutLength)                        
+                    }
+                    //기회가 아예 없을때(시도+1, 카운트 ->2)
+                    if(turnsCount <= 0) {
+                        setTimeout(function(){
+                            turnsCount = 2;  //기회를 2번 복구
+                            $turns.removeClass(lastTurnClass).html(turnsCount);
+                            $card.attr(dataMatch, false);
+                        }, timeoutLength);                       
+                    }
+                }
+            }           
+        });
+    </script>
 </body>
 </html>
