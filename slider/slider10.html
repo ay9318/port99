@@ -13,9 +13,7 @@
         a {text-decoration: none; color: #fff;}
         img {width: 100%; vertical-align: top;}
         li {list-style: none;}
-        body {
-            /* cursor: none; */
-        }
+        body {cursor: none;}
         #nav {
             display: flex;
             position: fixed; left: 0; top: 0; 
@@ -87,7 +85,7 @@
             border-radius: 50%;
             background-color: #000;
             z-index: 10000;
-            transform: scaleX(1);
+            transform: scaleX(.8);
             user-select: none;
             pointer-events: none;
             transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out;
@@ -100,6 +98,7 @@
             position: absolute;
             width: 30px; height: 30px;
             background: rgba(0, 0, 0, 0.3);
+            border: 1px solid #888;
             z-index: 10000;
             border-radius: 50%;
             user-select: none;
@@ -435,6 +434,7 @@
         function gotoSlide(num){
             slideImg.animate({left : -100 * num +"%"}, duration, easing);   //duration과 easing을 변수로 사용
             currentIndex = num;
+            $(".cursor-follower").css({background : slideBg[num]})
             updateDot();
         };
 
