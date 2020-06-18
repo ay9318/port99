@@ -2,8 +2,11 @@
 .row {position: relative; margin: 0 20px;}
 
 #header .container {border-bottom: 1px solid #ccc;}
+#header .header-data {}
+#header .header-title {font-family: "SF ProDisplay";}
 
-.banner {}
+
+.banner {border-bottom: 1px solid #ccc;}
 .banner .banner-title {font-family: SF Pro Text;}
 .banner .banner-title .bt-stit {font-size: 12px; line-height: 20px; color: #E06482; font-weight: bold;}
 .banner .banner-title .bt-tit {font-size: 20px; line-height: 30px; font-weight: bold;}

@@ -187,7 +187,7 @@
 
         function mouseMove(e) {
             let position = e.pageX / (window.innerWidth/100);      
-
+            console.log(position)
             spanSlow.forEach((span) => {
                 span.style.transform = `translate(${position}px)`;
             });
@@ -205,7 +205,7 @@
             let position = (e.pageX - ($(window).width()/2))*0.1;     
 
             spanSlow.css({"transform":"translate("+position+"px)"});
-            spanFast.css({"transform":"translate("+position+"px)"});            
+            spanFast.css({"transform":"translate("+-position+"px)"});            
         }
     </script>
 </body>
