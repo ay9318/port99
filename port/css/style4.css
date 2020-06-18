@@ -136,11 +136,11 @@ body {background: #F1EFE6;}
 /* content02 */
 #content02 {position: relative; background: #fff; height: calc(100vh + 100px);}
 #content02 .cont2 {
-    width: 70%;
+    background: #000;
+    width: 100%;
     display: flex; align-items: center;
     justify-content: center;
-    position: absolute; left: 50%; top: 50%;
-    transform: translate(-50%, -50%);
+   
 }
 #content02 .cont2 .cont2-left {}
 #content02 .cont2 .cont2-left p {
