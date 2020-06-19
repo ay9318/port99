@@ -288,6 +288,7 @@
 
             gsap.to(".cursor", {duration: .2, left: e.pageX - 10, top: e.pageY - 10});
         });
+        
         moveImg.addEventListener("mouseleave", function(){
             this.style.setProperty("--x", 0)
             this.style.setProperty("--y", 0)
