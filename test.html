@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {margin: 0; padding: 0;}
+        .clearfix::before, .clearfix::after {content: ''; display: block; clear: both;}
+
+        .slider-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .slider-img {
+            position: relative;
+            width: 1000px; height: 600px;
+            box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .slider-img .sliders {
+            position: relative; left: 0; top: 0;
+        }
+
+        #banner {}
+        #banner .slide-wrap {}
+        #banner .slide-wrap .slideList {position: relative; width: 1000px; height: 378px; overflow: hidden;}
+        #banner .slide-wrap .slideList .slideImg {position: relative; left: 0; top: 0;}
+        #banner .slide-wrap .slideList .slideImg img {width: 100%;}
+        #banner .slide-wrap .slideList .slideImg p {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0, 0, 0, 0.5); padding: 10px 20px; color: #fff;}
+    </style>
+</head>
+<body>
+    <section id="banner">
+        <div class="slide-wrap">
+            <div class="slideList">
+                <div class="slideImg"><img src="test/coding1/images/banner.jpg" alt="이미지1"><p>이미지1입니다.</p></div>
+                <div class="slideImg"><img src="test/coding1/images/banner.jpg" alt="이미지2"><p>이미지2입니다.</p></div>
+                <div class="slideImg"><img src="test/coding1/images/banner.jpg" alt="이미지3"><p>이미지3입니다.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <script src="slider/js/jquery.min_1.12.4.js"></script>
+    <script>
+        let currentIndex = 0;                   //현재 보이는 첫번째 이미지
+        let slideCount = slideImg.length;       //이미지 개수
+
+        function showNext () {
+            let nextIndex = (currentIndex + 1) % slideCount
+
+            $(".slideImg").eq(currentIndex).fadeOut(500)
+            $(".slideImg").eq(nextIndex).fadeIn(500)
+            currentIndex = nextIndex 
+        }
+        setInterval(showNext, 4000);
+    </script>
+</body>
+</html>
