@@ -334,6 +334,8 @@ h3 {font-family: 'Recoleta',serif; font-size: 7rem;}
     #content01 .cont1 .cont1-text::after {font-size: 3rem; right: -1rem;}
     .gift {display: none;}
 }
+
+
 @media (max-width: 380px) {
     .header h1 {font-size: 1.2rem;}
     .header .sub-icon {width: 30px; height: 30px;}
@@ -380,7 +382,7 @@ h3 {font-family: 'Recoleta',serif; font-size: 7rem;}
     #content03 .cont03-cont .standard .cont-right img {width: 80%; margin-bottom: 1.5rem;}
     #content03 .cont03-cont .standard .tab-menu {width: 100%; margin: 0 auto; border: 2px solid;}
     #content03 .cont03-cont .standard .tab-menu .tab-btn ul {display: flex;}
-    #content03 .cont03-cont .standard .tab-menu .tab-btn ul li {
+    #content03 .cont03-cont .standard .tab-menu .tab-btn ul li {padding: .5rem;
         border-right: 2px solid; border-bottom: 2px solid;}
     #content03 .cont03-cont .standard .tab-menu .tab-btn ul li a {font-size: .8rem;}
     #content03 .cont03-cont .standard .tab-menu .tab-btn ul li:last-child {border-right: 0px; border-bottom: 2px solid;}

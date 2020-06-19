@@ -287,12 +287,6 @@
             this.style.setProperty("--y", e.clientY - ((rect.height/2) + rect.top));
 
             gsap.to(".cursor",{duration: .2, left: e.pageX-7, top: e.pageY-7});
-
-            x = e.clientX - ($(".move-image").width()/2 + $(".move-image").position().left);
-            y = e.clientY - ($(".move-image").height()/2 + $(".move-image").position().top);
-
-            $(".mouseX").text(x);
-            $(".mouseY").text(y);
         });
 
         moveImg.addEventListener("mouseleave", function(e){
