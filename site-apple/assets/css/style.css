@@ -2,8 +2,8 @@
 .row {position: relative; margin: 0 20px;}
 
 #header .container {border-bottom: 1px solid #ccc;}
-#header .header-data {}
-#header .header-title {font-family: "SF ProDisplay";}
+#header .header-data {font-family: SF Pro Text; font-weight: 600; font-size: 12px; color: #959597;}
+#header .header-title {font-size: 30px; font-family: "SF Pro Display"; font-weight: 600; letter-spacing: -1px;}
 
 
 .banner {border-bottom: 1px solid #ccc;}

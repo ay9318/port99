@@ -259,19 +259,19 @@
             $(".clientY").text(e.clientY); //이벤트 clientY값을 화면에 출력
         });
 
-        // $(".move-image").mousemove(function(e){
-        //     gsap.to(".cursor",{duration: .2, left: e.pageX-7, top: e.pageY-7});
+        /* $(".move-image").mousemove(function(e){
+            gsap.to(".cursor",{duration: .2, left: e.pageX-7, top: e.pageY-7});
 
             //좌표값 중앙을 0으로 초기화
-            //  x = e.clientX - ($(".move-image").width()/2 + $(".move-image").position().left);
-            //  y = e.clientY - ($(".move-image").height()/2 + $(".move-image").position().top);
+             x = e.clientX - ($(".move-image").width()/2 + $(".move-image").position().left);
+             y = e.clientY - ($(".move-image").height()/2 + $(".move-image").position().top);
 
-            //  $(".mouseX").text(x);
-            //  $(".mouseY").text(y);
+             $(".mouseX").text(x);
+             $(".mouseY").text(y);
 
             //이미지 움직이기
-            /* $(".img").attr({"style":"transform: translate("+x/30+"px,"+y/30+"px)"}); */
-        // });
+            $(".img").attr({"style":"transform: translate("+x/30+"px,"+y/30+"px)"});
+        }); */
 
         //좌표보기
         $(".info4 .view2").click(function(){
@@ -283,21 +283,14 @@
         moveImg.addEventListener("mousemove", function(e){
             const rect = this.getBoundingClientRect();
             console.log(rect)
-            this.style.setProperty("--x", e.clientX - ((rect.width/2) + rect.left));
-            this.style.setProperty("--y", e.clientY - ((rect.height/2) + rect.top));
+            this.style.setProperty("--x", e.clientX - ( (rect.width/2) + rect.left));
+            this.style.setProperty("--y", e.clientY - ( (rect.height/2) + rect.top));
 
-            gsap.to(".cursor",{duration: .2, left: e.pageX-7, top: e.pageY-7});
-
-            x = e.clientX - ($(".move-image").width()/2 + $(".move-image").position().left);
-            y = e.clientY - ($(".move-image").height()/2 + $(".move-image").position().top);
-
-            $(".mouseX").text(x);
-            $(".mouseY").text(y);
+            gsap.to(".cursor", {duration: .2, left: e.pageX - 10, top: e.pageY - 10});
         });
-
-        moveImg.addEventListener("mouseleave", function(e){
-            this.style.setProperty("--x", 0);
-            this.style.setProperty("--y", 0);
+        moveImg.addEventListener("mouseleave", function(){
+            this.style.setProperty("--x", 0)
+            this.style.setProperty("--y", 0)
         });
     </script>
 </body>
