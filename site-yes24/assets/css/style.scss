@@ -323,13 +323,12 @@ body {font-family : 'NanumBarunGothic', '맑은 고딕', 'Malgun Gothic', sans-s
                 float: left;
                 margin-top: 10px;
                 position: absolute;
-                top: 8px;
+                top: 8px; left: 120px;   
                 ul {
                     margin-left: 50px;
                     li {                        
                         padding-left: 18px;
                         display: inline;
-
                         a {
                             font-size: 18px;
                             color: #fff;
@@ -1022,16 +1021,16 @@ body {font-family : 'NanumBarunGothic', '맑은 고딕', 'Malgun Gothic', sans-s
     }
     .swiper-container {
         .swiper-wrapper {
-            .swiper-slide {                
+            .swiper-slide {               
                 img { 
-                    display: block;
-                    width: 840px;
-                    height: 440px;
+                    display: block;  
+                    margin: 0 20px;
+                    width: 700px;
                 }
             }
         }
-        .swiper-button-next {}
-        .swiper-button-prev {}
+        .swiper-button-next {position: absolute; left: 70%; top: 50%;}
+        .swiper-button-prev {position: absolute; left: 30%; top: 50%;}
     }
 }
 
