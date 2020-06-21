@@ -53,6 +53,10 @@ overflow: auto;
 pre[class*="language-"] {
    background: #fff;
 }
+/* :not(pre) > code[class*="language.on-"],
+pre[class*="language.on-"] {
+   background: #000;
+} */
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
