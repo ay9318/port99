@@ -1,14 +1,77 @@
 .container {max-width: 1000px; margin: 0 auto;}
-.row {position: relative; margin: 0 20px;}
+.row {position: relative; margin: 10px 10px;}
+:root {font-size: 16px;}
+body {font-family: "SF Pro Display"}
 
-#header .container {border-bottom: 1px solid #ccc;}
-#header .header-data {font-family: SF Pro Text; font-weight: 600; font-size: 12px; color: #959597;}
-#header .header-title {font-size: 30px; font-family: "SF Pro Display"; font-weight: 600; letter-spacing: -1px;}
+/* header */
+#header {margin-top: 60px; overflow: hidden;}
+#header .container {padding-bottom: 15px; border-bottom: 1px solid #ccc;}
+#header .header-data {font-weight: 600; font-size: 1rem; color: #959597; display: block;}
+#header .header-title {font-size: 2.2rem; font-weight: bold; letter-spacing: -2px; display: inline;}
+#header .header-id {
+    float: right;
+    width: 50px; height: 50px; 
+    background: linear-gradient(256.39deg, #DCDCDC 33.65%, rgba(255, 255, 255, 0) 91.92%), #EBEBEB;
+    border-radius: 50%;
+}
+#header .header-id span {
+    font-size: 30px;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 1.8;
+    display: block;    
+}
 
+/* banner */
+.banner {padding-bottom: 30px; border-bottom: 1px solid #ccc;}
+.banner .banner-title .bt-stit {font-size: 1.1rem; line-height: 20px; color: #E06482;}
+.banner .banner-title .bt-tit {font-size: 1.8rem; line-height: 1; font-weight: 600;}
+.banner .banner-title .bt-desc {font-size: 3rem; line-height: 60px; color: #858587; font-weight: 300;}
 
-.banner {border-bottom: 1px solid #ccc;}
-.banner .banner-title {font-family: SF Pro Text;}
-.banner .banner-title .bt-stit {font-size: 12px; line-height: 20px; color: #E06482; font-weight: bold;}
-.banner .banner-title .bt-tit {font-size: 20px; line-height: 30px; font-weight: bold;}
-.banner .banner-title .bt-desc {font-size: 24px; line-height: 20px; color: #858587; font-weight: bold;}
-.banner img {width: 100%;}
+/* recentMusic */
+#recentMusic {overflow: hidden;}
+#recentMusic .container {border-bottom: 1px solid #ccc;}
+#recentMusic .rm-title {
+    float: left;
+    font-weight: bold;
+    font-size: 1.8rem;
+    line-height: 60px;
+}
+#recentMusic .rm-more {float: right; font-size: 1.5rem; line-height: 3; color: #E06482;}
+#recentMusic .music-wrap {clear:both; display: flex; overflow: hidden;}
+#recentMusic .music-wrap .rm-box {margin: 0 30px 20px 0; width: 500px; height: 100%;}
+#recentMusic .music-wrap .rm-box:last-of-type {margin-right: 0;}
+#recentMusic .music-wrap .rm-box p {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+#recentMusic .music-wrap .rm-box span {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    color: #888;
+}
+
+/* nextProgram */
+#nextProgram {}
+#nextProgram .np-title {
+    font-weight: bold;
+    line-height: 60px;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+#nextProgram .np-box {display: flex; margin-bottom: 2rem;}
+#nextProgram .np-box .left {width: 40%; margin-bottom: 10px;}
+#nextProgram .np-box .left img {border-radius: 20px;}
+#nextProgram .np-box .right {width: 60%; margin: 10rem 0 0 1.5rem; border-bottom: 2px solid #ccc;}
+#nextProgram .np-box .right .time {
+    font-weight: 600; font-size: 2rem; color: #E06482;
+}
+#nextProgram .np-box .right .tt {font-weight: bold; font-size: 3.2rem; line-height: 1.5;}
+#nextProgram .np-box .right span {font-weight: 400; color: #A7A7A9; font-size: 2rem; display: block; width: 96%; line-height: 1;}
+
+/* 미디어 쿼리 */
+@media (max-width: 620px) and (min-width: 320px) {
+    :root {font-size: 10px;}
+}
