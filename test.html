@@ -47,7 +47,7 @@
     <script src="slider/js/jquery.min_1.12.4.js"></script>
     <script>
         let currentIndex = 0;                   //현재 보이는 첫번째 이미지
-        let slideCount = slideImg.length;       //이미지 개수
+        let slideCount = $(".slideImg").length;       //이미지 개수
 
         function showNext () {
             let nextIndex = (currentIndex + 1) % slideCount
