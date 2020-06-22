@@ -399,6 +399,7 @@ body {
   margin-top: 10px;
   position: absolute;
   top: 8px;
+  left: 120px;
 }
 
 #main #header .nav .center-nav ul {
@@ -1220,8 +1221,20 @@ body {
 
 #con8 .swiper-container .swiper-wrapper .swiper-slide img {
   display: block;
-  width: 840px;
-  height: 440px;
+  margin: 0 20px;
+  width: 700px;
+}
+
+#con8 .swiper-container .swiper-button-next {
+  position: absolute;
+  left: 70%;
+  top: 50%;
+}
+
+#con8 .swiper-container .swiper-button-prev {
+  position: absolute;
+  left: 30%;
+  top: 50%;
 }
 
 /* con9 */
