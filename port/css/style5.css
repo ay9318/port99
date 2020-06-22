@@ -1,9 +1,7 @@
 body {background: #F1EFE6;}
 h3 {font-family: 'Recoleta',serif; font-size: 7rem;}
 h4 {font-family: 'yg-jalnan'; font-size: 3rem; color: #333;}
-:root {
-    font-size: 16px;
-}
+:root {font-size: 16px;}
 
 /* layout */
 .container {max-width: 1200px; margin: 0 auto;}
@@ -345,9 +343,9 @@ h4 {font-family: 'yg-jalnan'; font-size: 3rem; color: #333;}
 
 /* 미디어 쿼리 */
 @media (max-width: 1220px) {
+    :root {font-size: 12px;}
     .container {width: 100%;}
     .main .main-left, .img-wrap {width: 50%;}
-    .main .main-left h2 {font-size: 4rem;}
     #content01 .cont1 {width: 70%; white-space: normal;}
     #content01 .cont1 .cont1-text br {display: none;}
 }
