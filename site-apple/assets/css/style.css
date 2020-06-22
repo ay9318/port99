@@ -1,5 +1,5 @@
 .container {max-width: 1000px; margin: 0 auto;}
-.row {position: relative; margin: 10px 10px;}
+.row {position: relative; margin: 10px 15px;}
 :root {font-size: 16px;}
 body {font-family: "SF Pro Display"}
 
@@ -37,7 +37,7 @@ body {font-family: "SF Pro Display"}
     font-size: 1.8rem;
     line-height: 60px;
 }
-#recentMusic .rm-more {float: right; font-size: 1.5rem; line-height: 3; color: #E06482;}
+#recentMusic .rm-more {float: right; font-size: 1.4rem; line-height: 3; color: #E06482; font-weight: bold;}
 #recentMusic .music-wrap {clear:both; display: flex; overflow: hidden;}
 #recentMusic .music-wrap .rm-box {margin: 0 30px 20px 0; width: 500px; height: 100%;}
 #recentMusic .music-wrap .rm-box:last-of-type {margin-right: 0;}
@@ -54,7 +54,6 @@ body {font-family: "SF Pro Display"}
 }
 
 /* nextProgram */
-#nextProgram {}
 #nextProgram .np-title {
     font-weight: bold;
     line-height: 60px;
@@ -64,14 +63,45 @@ body {font-family: "SF Pro Display"}
 #nextProgram .np-box {display: flex; margin-bottom: 2rem;}
 #nextProgram .np-box .left {width: 40%; margin-bottom: 10px;}
 #nextProgram .np-box .left img {border-radius: 20px;}
-#nextProgram .np-box .right {width: 60%; margin: 10rem 0 0 1.5rem; border-bottom: 2px solid #ccc;}
+#nextProgram .np-box .right {width: 60%; margin: 10rem 0 0 1.5rem; border-bottom: 1px solid #ccc;}
 #nextProgram .np-box .right .time {
     font-weight: 600; font-size: 2rem; color: #E06482;
 }
 #nextProgram .np-box .right .tt {font-weight: bold; font-size: 3.2rem; line-height: 1.5;}
 #nextProgram .np-box .right span {font-weight: 400; color: #A7A7A9; font-size: 2rem; display: block; width: 96%; line-height: 1;}
 
+/* artist */
+#artist .row {background: #F3F2F8; overflow: hidden; padding: 0 2rem; margin: 0 auto;}
+#artist .art-title {
+    float: left;
+    font-weight: bold;
+    line-height: 60px;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+#artist .art-more {
+    float: right; font-size: 1.4rem; 
+    line-height: 2.8; color: #E06482; 
+    font-weight: bold;
+}
+#artist .artist-wrap {clear: both; display: flex; justify-content: space-between;}
+#artist .artist-wrap .circle {}
+#artist .artist-wrap .circle img {width: 18rem; height: 18rem; border-radius: 50%;}
+#artist .artist-wrap .circle p {text-align: center; font-size: 2rem; margin: 2rem;}
+
+/* playList */
+#playList {background: #ccc;}
+#playList .row {background: #555;}
+#playList .pl-left {background: #999;}
+#playList .pl-left img {width: 100px;}
+#playList .pl-left span {}
+#playList .pl-right img {background: #888; width: 50px;}
+
 /* 미디어 쿼리 */
 @media (max-width: 620px) and (min-width: 320px) {
     :root {font-size: 10px;}
+    #nextProgram .np-box .right {margin: 1rem 0 0 1.5rem;}
+    #nextProgram .np-box .right .time {font-size: 1.5rem;}
+    #nextProgram .np-box .right .tt {font-size: 2.2rem;}
+    #nextProgram .np-box .right span {font-size: 1.5rem;}
 }

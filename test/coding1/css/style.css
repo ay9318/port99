@@ -13,22 +13,14 @@ li {list-style: none;}
 #header h1 a {}
 #header h1 a img {width: 100px;}
 
-#header nav {}
-#header nav ul {margin-top: 40px;}
-#header nav ul li {display: inline-block ; position: relative;}
-#header nav ul li a {display: block; padding-left: 40px; font-weight: bold;}
+#header nav {position: relative; width: 100%; float: right; margin-top: 30px;}
+#header nav ul {padding-left: 30%;}
+#header nav ul li {position: relative;float: left; width: 20%; text-align: center;}
+#header nav ul li a {display: block; padding: 3px; font-size: 20px;}
+#header nav ul li a:hover {background: rgba(0, 0, 0, 0.5);}
 
-#header nav ul li .sub-nav {
-    background: rgba(0, 0, 0, 0.4);
-    color: #fff;
-    padding: 2px;
-    text-align: center;
-    z-index: 10;
-    position: absolute; left: 25px; top: 18px;
-    display: flex;
-    display: none;
-}
-#header nav ul li .sub-nav li {width: 100px;}
+#header nav ul li .sub-nav {padding-left: 0; position: absolute; left: 0; top: 44px; background: #555; height: 200px; z-index: 10}
+#header nav ul li .sub-nav li {width: 100%;  background: #ccc;}
 
 /* banner */
 #banner {width: 1200px; overflow: hidden;}
