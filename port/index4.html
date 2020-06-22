@@ -102,8 +102,10 @@
                             </div>
                         </div>
                         <div class="cont2-right">
-                            <img src="img/svg-likes.svg" class="like" alt="아이콘1">
-                            <img src="img/photo01.jpg" class="photo" alt="사진1">
+                            <div class="img-box">
+                                <img src="img/svg-likes.svg" class="like" alt="아이콘1">
+                                <img src="img/photo01.jpg" class="photo" alt="사진1">
+                            </div>                            
                         </div>                                                
                     </div>
                     <!-- //cont2 -->
@@ -139,9 +141,10 @@
                                     <img src="img/standard.jpg" alt="웹표준 사이트">
                                 </div>                
                             </div>
-                            <!-- //cont-right -->                                                   
+                            <!-- //cont-right --> 
                             <div class="tab-menu">
-                                <button class="dark">Dark Mode</button>                                
+                                <input type="button" value="다크 모드" class="dark">
+                                <div class="button"></div>                                                         
                                 <div class="tab-btn">
                                     <ul>
                                         <li class="active"><a href="#">IR 효과</a></li>
@@ -360,7 +363,7 @@ $(document).ready(function(){
             $(this).toggleClass("on");
         });
 
-        //컨텐츠3 탭메뉴
+        //컨텐츠3 탭메뉴 
         let tabBtn = $(".tab-btn > ul > li");
         let tabCont = $(".tab-cont > div");
 
@@ -374,11 +377,16 @@ $(document).ready(function(){
             target.addClass("active");
             tabCont.css("display","none");
             tabCont.eq(index).css("display","block");
-        });
+        }); 
 
         //다크 모드
+<<<<<<< HEAD
         $(".cont03-cont .left .dark").click(function(){
             $("pre").toggleClass("on");
+=======
+        $("input.dark").click(function(){
+            $(".language-js").toggleClass("on");
+>>>>>>> 9afe5b0402b09e10d161075896cac0382df194ae
         });
     </script>
 </body>

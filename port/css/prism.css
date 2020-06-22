@@ -53,6 +53,7 @@ overflow: auto;
 pre[class*="language-"] {
    background: #fff;
 }
+<<<<<<< HEAD
 
 pre.on[class*="language-"] {
 padding: 1em;
@@ -63,6 +64,8 @@ overflow: auto;
 pre[class*="language-"] {
    background: #000;
 }
+=======
+>>>>>>> 9afe5b0402b09e10d161075896cac0382df194ae
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
@@ -77,10 +80,6 @@ pre[class*="language-"] {
 .token.doctype,
 .token.cdata {
    color: #999;
-}
-
-.token.punctuation {
-   color: #ccc;
 }
 
 .token.tag,
@@ -172,34 +171,66 @@ pre[class*="language-"].line-numbers > code {
    user-select: none;
 }
 
-   .line-numbers-rows > span {
-      display: block;
-      counter-increment: linenumber;
+.line-numbers-rows > span {
+   display: block;
+   counter-increment: linenumber;
+}
+
+.line-numbers-rows > span:before {
+   content: counter(linenumber);
+   color: #999;
+   display: block;
+   padding-right: 0.8em;
+   text-align: right;
+}
+
+::-webkit-scrollbar {
+   width: 10px;  /* 세로축 스크롤바 길이 */
+   height: 20px;  /* 가로축 스크롤바 길이 */
+   }
+   ::-webkit-scrollbar-track {
+   background-color: lightblue;
+   }
+   ::-webkit-scrollbar-track-piece {
+   background-color: #ccc;
+   }
+   ::-webkit-scrollbar-thumb {
+   background-color: #888;
+   }
+   ::-webkit-scrollbar-corner {
+   background-color: #fff; /* 우측 하단의 코너 부분 */
+   }
+   ::-webkit-resizer {
+   background-color: green;
    }
 
-   .line-numbers-rows > span:before {
-      content: counter(linenumber);
-      color: #999;
-      display: block;
-      padding-right: 0.8em;
-      text-align: right;
+   /* pre.on */
+   code.on[class*="language-"],
+   pre.on[class*="language-"] {
+      background: #000;
+      color: #bdbdbe;
    }
-   ::-webkit-scrollbar {
-      width: 10px;  /* 세로축 스크롤바 길이 */
-      height: 20px;  /* 가로축 스크롤바 길이 */
-      }
-      ::-webkit-scrollbar-track {
-      background-color: lightblue;
-      }
-      ::-webkit-scrollbar-track-piece {
-      background-color: #ccc;
-      }
-      ::-webkit-scrollbar-thumb {
-      background-color: #888;
-      }
-      ::-webkit-scrollbar-corner {
-      background-color: #fff; /* 우측 하단의 코너 부분 */
-      }
-      ::-webkit-resizer {
-      background-color: green;
-      }
+   pre.on
+   .token.comment,
+   .token.block-comment,
+   .token.prolog,
+   .token.doctype,
+   .token.cdata {
+      color: #638939;
+   }
+   pre.on
+   .token.boolean,
+   .token.number {
+      color: #CE7841;
+   }
+   pre.on
+   .token.selector,
+   .token.important,
+   .token.atrule,
+   .token.keyword,
+   .token.builtin {
+      color: rgb(131, 193, 238);
+   }
+
+
+   
