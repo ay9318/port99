@@ -633,9 +633,15 @@
 }
 
 /*fbanner*/
+#fbanner {
+  height: 100%;
+}
+
 #fbanner .swiper-container {
+  width: 100%;
+  height: 100%;
   background: #f2f1de;
-  padding: 60px 0;
+  padding: 60px 0 100px 0;
 }
 
 #fbanner .swiper-container .swiper-wrapper .swiper-slide {

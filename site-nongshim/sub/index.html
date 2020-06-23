@@ -21,10 +21,9 @@
     <meta name="twitter:description" content="농심은 창립 이후 50여 년 동안 한국의 식문화를 이끌어온 식품전문기업입니다.">
 
     <!-- style -->
-    <link rel="stylesheet" href="../sub/css/reset.css">
-    <link rel="stylesheet" href="../sub/css/style.css">
-    <link rel="stylesheet" href="../sub/css/swiper.css">
-    <link rel="stylesheet" href="../sub/css/swiper.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/swiper.css">
 
     <!-- 파비콘 -->
     <link rel="shortcut icon" href="http://www.nongshim.com/resources2/images/favicon.ico" type="image/x-icon">
@@ -170,7 +169,7 @@
             <div class="swiper-container">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <p>공식정보</p>
+                        <p>공시정보</p>
                         <img src="img/fbanner1.jpg" alt="공시정보">
                     </div>
                     <div class="swiper-slide">
@@ -234,17 +233,15 @@
     </div>  
 
     <!-- script -->
-    <script src="../sub/js/jquery.min.js"></script>
-    <script src="../sub/js/swiper.min.js"></script>
-    <script src="../sub/js/custom.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/swiper.min.js"></script>
     <script>
         var swiper = new Swiper('.swiper-container', {
             scrollbar: {
                 el: '.swiper-scrollbar',
             },
-            loop: true,
-            slidesPerView: '3',
-            centeredSlides: true,
+            slidesPerView:3,
+            spaceBetween:0,
         });
 
         //히든 메뉴

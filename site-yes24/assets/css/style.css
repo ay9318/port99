@@ -922,9 +922,9 @@ body {
 }
 
 #con4 .event .swiper-container {
-  width: 33.333333%;
-  height: 100%;
   float: left;
+  width: 33.333333%;
+  height: 100%; 
 }
 
 #con4 .event .box {
