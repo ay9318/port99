@@ -373,6 +373,7 @@ $(document).ready(function(){
 
         tabCont.hide().eq(0).show();
         tabBtn.click(function(e){
+            
             e.preventDefault();
             let target = $(this);
             let index = target.index()
@@ -381,6 +382,7 @@ $(document).ready(function(){
             target.addClass("active");
             tabCont.css("display","none");
             tabCont.eq(index).css("display","block");
+            
         }); 
 
         //다크 모드

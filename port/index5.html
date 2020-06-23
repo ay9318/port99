@@ -7,7 +7,7 @@
 
     <!-- style -->
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style4.css">
+    <link rel="stylesheet" href="css/style5.css">
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/prism.css">
 
@@ -216,7 +216,7 @@
                                 <!-- //tab-btn -->
                                 <div class="tab-cont">
                                     <div>
-<pre class="line-numbers"><code class="language-js">/*  미디어 쿼리 */
+<pre class="line-numbers"><code class="language-js">/* 미디어 쿼리 */
 @media (max-width: 1220px) {
     .container {width: 100%;}
     .row {padding: 0 15px;}
@@ -288,20 +288,21 @@
 
         //컨텐츠3 탭메뉴 
         let tabBtn = $(".tab-btn > ul > li");
-        let tabCont = $(".tab-cont > div");
+        let tabCont = $(".tab-cont");
 
-        tabCont.hide().eq(0).show()
+        // tabCont.hide().eq(0).show();
+        tabCont.eq(0).find("div").eq(0).show();
+        console.log(tabCont.eq(0).find("div").eq(0));
+        // tabBtn.click(function(e){
+        //     e.preventDefault();
 
-        tabBtn.click(function(e){
-            e.preventDefault();
+        //     let target = $(this);
+        //     let index = target.index();
 
-            let target = $(this);
-            let index = target.index();
-
-            target.addClass("active").siblings("li").removeClass("active");
-            tabCont.css("display","none");
-            tabCont.eq(index).css("display","block");
-        });
+        //     target.addClass("active").siblings("li").removeClass("active");
+        //     tabCont.css("display","none");
+        //     tabCont.eq(index).css("display","block");
+        // });
 
         //다크 모드
         $("input.dark").click(function(){

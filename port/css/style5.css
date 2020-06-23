@@ -225,6 +225,7 @@ h4 {font-family: 'yg-jalnan'; font-size: 3rem; color: #333;}
     font-weight: bold;
     border-radius: 10px;
 }
+.tab-cont{display: none;}
 #content03 .cont03-cont .left .tab-menu .tab-btn ul {display: flex;}
 #content03 .cont03-cont .left .tab-menu .tab-btn ul li {
     width: 100%;
