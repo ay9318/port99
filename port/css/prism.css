@@ -6,17 +6,16 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
  * @author Rose Pritchard
  */
 
- .code-editor:before,
- .code-editor:after,
- .code-editor span.control:before,
- .code-editor span.after:after {
-     box-sizing: border-box;
-     content: '';
-     position: absolute;
-     z-index: 1;
-     transition: all .5s ease-in-out;
- }
- 
+.code-editor:before,
+.code-editor:after,
+.code-editor span.control:before,
+.code-editor span.after:after {
+   box-sizing: border-box;
+   content: '';
+   position: absolute;
+   z-index: 1;
+   transition: all .5s ease-in-out;
+}
 
 
 code[class*="language-"],
@@ -135,6 +134,7 @@ pre[class*="language-"].line-numbers {
    position: relative;
    padding-left: 3.8em;
    counter-reset: linenumber;
+   height: 494px;
 }
 
 pre[class*="language-"].line-numbers > code {
@@ -191,33 +191,30 @@ pre[class*="language-"].line-numbers > code {
    background-color: green;
    }
 
-   /* pre.on */
-   code.on[class*="language-"],
-   pre.on[class*="language-"] {
-      background: #000;
-      color: #bdbdbe;
-   }
-   pre.on
-   .token.comment,
-   .token.block-comment,
-   .token.prolog,
-   .token.doctype,
-   .token.cdata {
-      color: #638939;
-   }
-   pre.on
-   .token.boolean,
-   .token.number {
-      color: #CE7841;
-   }
-   pre.on
-   .token.selector,
-   .token.important,
-   .token.atrule,
-   .token.keyword,
-   .token.builtin {
-      color: rgb(131, 193, 238);
-   }
-
-
-   
+/* pre.on */
+code.on[class*="language-"],
+pre.on[class*="language-"] {
+   background: #000;
+   color: #bdbdbe;
+}
+pre.on
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+   color: #638939;
+}
+pre.on
+.token.boolean,
+.token.number {
+   color: #CE7841;
+}
+pre.on
+.token.selector,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin {
+   color: rgb(131, 193, 238);
+}
