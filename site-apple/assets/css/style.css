@@ -99,7 +99,6 @@ body {font-family: "SF Pro Display"}
 #playList .pl-right img.play {width: 50px;}
 
 /* menu */
-#menu {}
 #menu .icon {padding: 30px; display: flex; justify-content: space-between; align-items: center; flex-basis: 25%;}
 #menu .icon a img {width: 60px; display: block;}
 #menu .text {width: 100%; height: 100%; display: flex; justify-content: space-between;}
