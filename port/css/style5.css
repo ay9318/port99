@@ -3,6 +3,9 @@ h3 {font-family: 'Recoleta',serif; font-size: 7rem;}
 h4 {font-family: 'yg-jalnan'; font-size: 3rem; color: #333;}
 :root {font-size: 16px;}
 
+/* layout */
+#content05 {height: 1500px;}
+
 /* container */
 .container {max-width: 1200px; margin: 0 auto;}
 
@@ -143,11 +146,12 @@ h4 {font-family: 'yg-jalnan'; font-size: 3rem; color: #333;}
 
 /* content02 */
 #content02 {position: relative; background: #fff;}
+#content02 .row {padding: 0;}
 .cont2 {
     width: 100%;
     display: flex; align-items: center;
     justify-content: center;
-    padding: 10rem 0;   
+    padding: 15rem 0;   
 }
 .cont2 .cont2-left p {
     font-family: 'yg-jalnan';
@@ -158,17 +162,17 @@ h4 {font-family: 'yg-jalnan'; font-size: 3rem; color: #333;}
 .cont2 .cont2-left p.indent {text-indent: 3rem;}
 .cont2 .cont2-left p em {font-size: 4rem;}
 .cont2 .cont2-left .cont2-text {
-    width: 90%;
-    margin-top: 2rem;
+    width: 81%;
+    margin: 3rem;
     font-family: 'S-CoreDream-4Regular';
     font-size: 1.3rem;
-    line-height: 2rem;
+    line-height: 2.2rem;
     letter-spacing: -0.08rem;
     color: #241E60;
 }
 .cont2 .cont2-right .img-box {position: relative;}
 .cont2 .cont2-right .img-box .like {width: 7rem; position: absolute; left: -50px; top: -30px;}
-.cont2 .cont2-right .img-box .photo {width: 18rem; vertical-align: top;}
+.cont2 .cont2-right .img-box .photo {width: 20rem; vertical-align: top;}
 
 /* content03 */
 #content03 {background: #ADD8D6;}
@@ -327,7 +331,6 @@ label.toggle-item {
     transform: translate(8px, 14px);
     box-shadow: 16px 0 0 #222, 22px -4px 0 12px #e4ac04;
 }
-
 .dog-rollover label .ear {
     width: 18px;
     height: 20px;
@@ -402,7 +405,66 @@ label.toggle-item {
 #doggo:checked + label .mouth:before{transform: scale(0);}
 #doggo:checked + label .ear.right {transform: scaleX(-1) rotate(-35deg); transition-delay: .6s;}
 #doggo:checked + label .eyes {width: 8px; height: 8px; box-shadow: 18px 0 0 #222, 22px -4px 0 12px #e4ac04;}
-  
+
+/* content05 */
+.cont4 {padding: 20rem 0;}
+.cont4 h3 {color: #241E60; margin-bottom: 8rem;}
+.cont4 h3 img {width: 6rem; margin: 0 1rem -1rem}
+.cont4 .tabBar {background: #241E60; border-radius: 6rem; margin-bottom: 4rem;}
+.cont4 .tabBar ul {display: flex; justify-content: center; height: 4rem;}
+.cont4 .tabBar ul li {flex-basis: 25%;}
+.cont4 .tabBar ul li.show {background: #E16162; border-radius: 5rem; padding: 0 1rem;}
+.cont4 .tabBar ul li a {color: #fff; text-align: center; display: block; line-height: 4rem; font-size: 1.5rem;}
+.cont4 .contBox {display: grid; grid-template-columns: repeat(3,1fr); grid-gap: 1.65rem}
+.cont4 .contBox .box {position: relative; background: #999; width: 23rem; height: 27rem; border-radius: 1.5rem;}
+.cont4 .contBox .box:first-child {background: url(../img/parallax01.jpg) no-repeat center; background-size: cover;}
+.cont4 .contBox .box:first-child::before {
+    content: '';
+    width: 100%; height: 100%;
+    position: absolute;
+    background: rgba(77, 54, 91, 0.8);
+    border-radius: 1.5rem;
+}
+.cont4 .contBox .box:nth-child(2) {background: url(../img/parallax02.jpg) no-repeat center; background-size: cover;}
+.cont4 .contBox .box:nth-child(2)::before {
+    content: '';
+    width: 100%; height: 100%;
+    position: absolute;
+    background: rgba(64, 82, 146, 0.8);
+    border-radius: 1.5rem;
+}
+.cont4 .contBox .box:nth-child(3) {position: relative; background: url(../img/parallax03.jpg) no-repeat center; background-size: cover;}
+.cont4 .contBox .box:nth-child(3)::before {
+    content: '';
+    width: 100%; height: 100%;
+    position: absolute;
+    background: rgba(237, 235, 231, 0.8);
+    border-radius: 1.5rem;
+}
+.cont4 .contBox .box:nth-child(4) {position: relative; background: url(../img/parallax04.jpg) no-repeat center; background-size: cover;}
+.cont4 .contBox .box:nth-child(4)::before {
+    content: '';
+    width: 100%; height: 100%;
+    position: absolute;
+    background: rgba(190, 187, 180, 0.8);
+    border-radius: 1.5rem;
+}
+.cont4 .contBox .box:nth-child(5) {background: #ADD8D7;}
+.cont4 .contBox .box:nth-child(6) {background: #E16162;}
+.cont4 .contBox .box:nth-child(7) {position: relative; background: url(../img/parallax05.jpg) no-repeat center; background-size: cover;}
+.cont4 .contBox .box:nth-child(7)::before {
+    content: '';
+    width: 100%; height: 100%;
+    position: absolute;
+    background: rgba(227, 222, 215, 0.8);
+    border-radius: 1.5rem;
+}
+.cont4 .contBox .box:nth-child(8) {background: #F9BC60;}
+.cont4 .contBox .box:nth-child(9) {background: #241E60;}
+.cont4 .contBox .box .textBox {z-index: 5;}
+.cont4 .contBox .box .textBox .tit {display: block;}
+.cont4 .contBox .box .textBox .desc {}
+.cont4 .contBox .box .arrow {width: 4rem; position: absolute; left: 2rem; bottom: 2rem;}
 
 /* gift */
 .gift {
@@ -449,7 +511,6 @@ label.toggle-item {
     font-weight: bold;
 }
 .gift .gift-right .box p img{width: 1.5rem;}
-
 
 
 /* 미디어 쿼리 */
@@ -560,10 +621,10 @@ label.toggle-item {
     #content03 .cont03-title h3 {font-size: 3.8rem;}
     #content03 .cont03-title h3 img {width: 3rem;}
     .site-wrap {padding: 0;}
-    .site-wrap .site-right {margin-top: 5rem;}
-    .site-wrap .site-right .left h4 {font-size: 2rem;}
-    .site-wrap .site-right .left h4 img {width: 2rem; margin-bottom: 0;}
-    .site-wrap .site-right .left p {font-size: 1rem;}
+    .site-wrap .site-right {margin-top: 3rem;}
+    .site-wrap .site-right .left .si-tit {font-size: 2rem; padding: 1.8rem 0; margin-top: 0;}
+    .site-wrap .site-right .left .si-tit img {width: 2rem; margin-bottom: 0;}
+    .site-wrap .site-right .left .si-desc  {font-size: 1rem;}
     .site-wrap .site-right .left .si-btn a {
         font-size: .9rem;
         border: 2px solid;
@@ -571,9 +632,10 @@ label.toggle-item {
     }
     .site-wrap .site-right .right .si-img {border: 2px solid;}
     .site-wrap .site-left {margin-top: 3rem;}
-    .site-wrap .site-left .right h4 {font-size: 2rem;}
-    .site-wrap .site-left .right h4 img {width: 2rem;}
-    .site-wrap .site-left .right p {font-size: 1rem;}
+    .site-wrap .site-left .right {margin: 0;}
+    .site-wrap .site-left .right .si-tit {font-size: 2rem; padding: 1.8rem 0;white-space: nowrap;}
+    .site-wrap .site-left .right .si-tit img {width: 2rem;}
+    .site-wrap .site-left .right .si-desc {font-size: 1rem; margin: 0 auto;}
     .site-wrap .site-left .right .si-btn a {
         font-size: .9rem;
         border: 2px solid;
