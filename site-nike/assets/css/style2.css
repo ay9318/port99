@@ -49,6 +49,7 @@
     box-sizing: border-box;
 }
 #section .box .icon {
+    width: 1.4rem;
     position: absolute;
     top: 30%;
     margin-left: 1.8rem;
