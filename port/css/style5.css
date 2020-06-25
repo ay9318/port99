@@ -410,14 +410,14 @@ label.toggle-item {
 .cont5 {padding: 20rem 0;}
 .cont5 h3 {color: #241E60; margin-bottom: 8rem;}
 .cont5 h3 img {width: 6rem; margin: 0 1rem -1rem}
-.cont5 .tabBar {background: #241E60; border-radius: 6rem; margin-bottom: 4rem;}
+.cont5 .tabBar {background: #241E60; font-family: 'Josefin Sans', serif;  border-radius: 6rem; margin-bottom: 4rem;}
 .cont5 .tabBar ul {display: flex; justify-content: center; height: 4rem;}
 .cont5 .tabBar ul li {flex-basis: 25%;}
 .cont5 .tabBar ul li.show {background: #E16162; border-radius: 5rem; padding: 0 1rem;}
 .cont5 .tabBar ul li a {color: #fff; text-align: center; display: block; line-height: 4rem; font-size: 1.5rem;}
 .cont5 .contBox {display: grid; grid-template-columns: repeat(3,1fr); grid-gap: 1.65rem}
 .cont5 .contBox .box {position: relative; background: #999; width: 23rem; height: 27rem; border-radius: 1.5rem;}
-.cont5 .contBox .box:first-child {background: url(../img/parallax01.jpg) no-repeat center; background-size: cover;}
+.cont5 .contBox .box:first-child {background: url(../img/parallax01.jpg) no-repeat center; background-size: cover; color: #fff;}
 .cont5 .contBox .box:first-child::before {
     content: '';
     width: 100%; height: 100%;
@@ -425,7 +425,7 @@ label.toggle-item {
     background: rgba(77, 54, 91, 0.8);
     border-radius: 1.5rem;
 }
-.cont5 .contBox .box:nth-child(2) {background: url(../img/parallax02.jpg) no-repeat center; background-size: cover;}
+.cont5 .contBox .box:nth-child(2) {background: url(../img/parallax02.jpg) no-repeat center; background-size: cover; color: #fff;}
 .cont5 .contBox .box:nth-child(2)::before {
     content: '';
     width: 100%; height: 100%;
@@ -433,7 +433,7 @@ label.toggle-item {
     background: rgba(64, 82, 146, 0.8);
     border-radius: 1.5rem;
 }
-.cont5 .contBox .box:nth-child(3) {position: relative; background: url(../img/parallax03.jpg) no-repeat center; background-size: cover;}
+.cont5 .contBox .box:nth-child(3) {background: url(../img/parallax03.jpg) no-repeat center; background-size: cover;}
 .cont5 .contBox .box:nth-child(3)::before {
     content: '';
     width: 100%; height: 100%;
@@ -441,7 +441,7 @@ label.toggle-item {
     background: rgba(237, 235, 231, 0.8);
     border-radius: 1.5rem;
 }
-.cont5 .contBox .box:nth-child(4) {position: relative; background: url(../img/parallax04.jpg) no-repeat center; background-size: cover;}
+.cont5 .contBox .box:nth-child(4) {background: url(../img/parallax04.jpg) no-repeat center; background-size: cover;}
 .cont5 .contBox .box:nth-child(4)::before {
     content: '';
     width: 100%; height: 100%;
@@ -450,8 +450,8 @@ label.toggle-item {
     border-radius: 1.5rem;
 }
 .cont5 .contBox .box:nth-child(5) {background: #ADD8D7;}
-.cont5 .contBox .box:nth-child(6) {background: #E16162;}
-.cont5 .contBox .box:nth-child(7) {position: relative; background: url(../img/parallax05.jpg) no-repeat center; background-size: cover;}
+.cont5 .contBox .box:nth-child(6) {background: #E16162; color: #fff;}
+.cont5 .contBox .box:nth-child(7) {background: url(../img/parallax05.jpg) no-repeat center; background-size: cover;}
 .cont5 .contBox .box:nth-child(7)::before {
     content: '';
     width: 100%; height: 100%;
@@ -460,10 +460,10 @@ label.toggle-item {
     border-radius: 1.5rem;
 }
 .cont5 .contBox .box:nth-child(8) {background: #F9BC60;}
-.cont5 .contBox .box:nth-child(9) {background: #241E60;}
-.cont5 .contBox .box .textBox {z-index: 5;}
-.cont5 .contBox .box .textBox .tit {display: block;}
-.cont5 .contBox .box .textBox .desc {}
+.cont5 .contBox .box:nth-child(9) {background: #241E60; color: #fff;}
+.cont5 .contBox .box .textBox {position: relative; margin: 5rem 2rem 0;}
+.cont5 .contBox .box .textBox .tit {display: block; font-family: 'Josefin Sans', serif; font-size: 2rem; margin-bottom: 2rem;}
+.cont5 .contBox .box .textBox .desc {display: block; font-family: 'S-CoreDream-4Regular'; font-size: 1.3em; width: 80%; line-height: 1.5;}
 .cont5 .contBox .box .arrow {width: 4rem; position: absolute; left: 2rem; bottom: 2rem;}
 
 /* gift */
