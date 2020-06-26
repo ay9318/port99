@@ -91,7 +91,10 @@
         </div>
         <!-- //main --> 
         
-        <section id="content01">     
+        <section id="content01">
+            <div class="ocean">
+                <div class="wave"></div>
+            </div>    
             <div class="container">       
                 <div class="cont1">
                     <div class="cont1-text">
@@ -104,7 +107,10 @@
         </section>
         <!-- //content01 -->
 
-        <section id="content02">     
+        <section id="content02">
+            <div class="ocean">
+                <div class="wave2"></div>
+            </div>    
             <div class="container"> 
                 <div class="row">
                     <div class="cont2">
@@ -130,6 +136,9 @@
         <!-- //content02 -->
 
         <section id="content03">
+            <div class="ocean">
+                <div class="wave3"></div>
+            </div> 
             <div class="container">
                 <div class="row">
                     <div class="cont03-title">
@@ -998,6 +1007,9 @@ $(".footer-menu-btn .family-btn a").click(function(e){
         
 
         <section id="content05">
+            <div class="ocean">
+                <div class="wave5"></div>
+            </div> 
             <div class="container">
                 <div class="row">
                     <div class="cont5">
@@ -1007,7 +1019,7 @@ $(".footer-menu-btn .family-btn a").click(function(e){
                                 <li class="show">Parallax</li>
                                 <li>Slider</li>
                                 <li>Mouse</li>
-                                <a href="https://ay9318.github.io/port99/game/index.html" target="_blank"><li>Game</li></a>
+                                <li><a href="https://ay9318.github.io/port99/game/index.html" target="_blank">Game</a></li>
                             </ul>
                         </div>
                         <div class="contBox par">
@@ -1210,6 +1222,11 @@ $(".footer-menu-btn .family-btn a").click(function(e){
                             </div> -->
                         </div>
                         <!-- //contBox mo-->
+
+                        <div class="contBox ga">                            
+                            <img src="img/game.jpg" alt="게임">
+                            <span class="text">성공은 하셨나요? 오늘도 좋은 하루 되세요~♥</span>                           
+                        </div>                        
                     </div>                    
                 </div>
             </div>
@@ -1217,23 +1234,40 @@ $(".footer-menu-btn .family-btn a").click(function(e){
         <!-- //content05 -->
 
         <section id="content06">
+            <div class="ocean">
+                <div class="wave6"></div>
+            </div>
             <div class="container">
                 <div class="row">                    
                     <div class="cont6">
                         <h3>Animation</h3>
                         <div class="aniBox">
-                            <p>Border Radius Morphing</p>                            
-                            <div class="frame">
-                                <!-- <iframe height="500" style="width: 600px;" scrolling="no" title="Border-radius Morphing" src="https://codepen.io/ay9318/embed/MWwNrav?height=498&theme-id=light&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-                                    See the Pen <a href='https://codepen.io/ay9318/pen/MWwNrav'>Border-radius Morphing</a> by HWANGAYOUNG
+                            <p>Gsap Animation<span class="view"></span></p>   
+                            <div class="iframe">
+                                <iframe height="432" style="width: 100%;" scrolling="no" title="Gsap Animation1" src="https://codepen.io/ay9318/embed/GRpzdmK?height=432&theme-id=dark&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+                                    See the Pen <a href='https://codepen.io/ay9318/pen/GRpzdmK'>Gsap Animation1</a> by HWANGAYOUNG
                                     (<a href='https://codepen.io/ay9318'>@ay9318</a>) on <a href='https://codepen.io'>CodePen</a>.
-                                </iframe> -->                            
+                                </iframe>
+                                <div class="frame-right">
+                                    <p class="cont6-desc">span으로 글자를 분할하여 각각에게 애니메이션을 주고, 웹 접근성을 위하여
+                                        aria태그를 사용하였습니다.
+                                    </p>
+                                    <a href="https://codepen.io/ay9318/pen/GRpzdmK">Go Codepen</a>
+                                </div>                                               
                             </div>
-                            <span></span>                        
                         </div>                        
-                        <p>SVG Text Animation</p>
-                        <p>Wave Circle Animation</p>
-                        <p>Character Animation</p>
+                        <div class="aniBox">
+                            <p>SVG Text Animation<span class="view"></span></p>                           
+                                                  
+                        </div>                        
+                        <div class="aniBox">
+                            <p>Wave Circle Animation<span class="view"></span></p>                           
+                                                   
+                        </div>                        
+                        <div class="aniBox">
+                            <p>Character Animation<span class="view"></span></p>                                                       
+                                              
+                        </div> 
                     </div>
                 </div>
             </div>                        
@@ -1304,8 +1338,7 @@ $(".footer-menu-btn .family-btn a").click(function(e){
 
         cont.hide().eq(0).show();
 
-        tabBar.click(function(e){
-            e.preventDefault();
+        tabBar.click(function(){
             let target = $(this);
             let index = target.index();
             
@@ -1313,8 +1346,7 @@ $(".footer-menu-btn .family-btn a").click(function(e){
             target.addClass("show");
             cont.css("display","none");
             cont.eq(index).css({"display":"block","display":"grid"});
-        });
-      
+        });      
     </script>
 </body>
 </html>
