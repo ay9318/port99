@@ -650,10 +650,12 @@ label.toggle-item {
 }
 .cont7 .message {
     width: 1000px; height: 300px; border: 3px solid #241E60; 
-    border-radius: 8px; 
+    border-radius: 8px;
 }
+.cont7 .message::placeholder {}
 .cont7 form {position: relative;}
 .cont7 button {
+    cursor: pointer;
     position: absolute;
     right: 1rem; bottom: 1.1rem;
     width: 110px; height: 60px; 
@@ -663,6 +665,7 @@ label.toggle-item {
     font-weight: 600;
     background: #fff;
 }
+
 .cont7 form img {width: 5rem; position: absolute; right: 1rem; bottom: 4rem; z-index: 1;}
 
 /* gift */
