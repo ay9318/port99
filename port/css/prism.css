@@ -38,8 +38,7 @@ pre[class*="language-"] {
    -webkit-hyphens: none;
    -moz-hyphens: none;
    -ms-hyphens: none;
-   hyphens: none;
-
+   hyphens: none;      
 }
 
 /* Code blocks */
@@ -179,17 +178,17 @@ pre[class*="language-"].line-numbers > code {
    background-color: lightblue;
    }
    ::-webkit-scrollbar-track-piece {
-   background-color: #ccc;
+   background-color: #F2C1BF;
    }
    ::-webkit-scrollbar-thumb {
-   background-color: #888;
+   background-color: #FA8182;
    }
    ::-webkit-scrollbar-corner {
    background-color: #fff; /* 우측 하단의 코너 부분 */
    }
-   ::-webkit-resizer {
+/*    ::-webkit-resizer {
    background-color: green;
-   }
+   } */
 
 /* pre.on */
 code.on[class*="language-"],
