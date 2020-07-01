@@ -624,12 +624,13 @@ label.toggle-item {
 .cont6 .aniBox {font-family: 'Recoleta', serif;}
 .cont6 .aniBox p {font-size: 2.7rem; padding: 2rem 0;}
 .cont6 .aniBox .iframe {position: relative; border-bottom: 5px solid #E16162;}
-.cont6 .aniBox .iframe .plus {cursor: pointer; position: absolute; right: 0; top: -5.4rem;}
-.cont6 .aniBox .iframe .frame-box {display: flex; height: 500px;}
-.cont6 .aniBox .iframe .frame-box .frame-right {width: 90%; margin: 19.5rem 0 0 3rem;}
-.cont6 .aniBox .iframe .frame-right a {font-size: 1.8rem; text-transform: uppercase; display: block; color: #E16162;}
-.cont6 .aniBox .iframe .frame-right .cont6-desc {display: inline-block; font-size: 1.1rem; font-family: 'S-CoreDream-5Medium'; width: 85%;}
-.cont6 .aniBox .iframe.on .frame-box {height: 0px;}
+.cont6 .aniBox .iframe .plus {cursor: pointer; position: absolute; right: 0; top: -5.4rem; transition: transform .1s;}
+.cont6 .aniBox .iframe .plus.on {transform: rotate(135deg);}
+.cont6 .aniBox .iframe .frame-box {display: flex; height: 600px;}
+.cont6 .aniBox .iframe .frame-box .frame-right {width: 35%; margin: 23.5rem 0 0 2rem;}
+.cont6 .aniBox .iframe .frame-right .cont6-desc {display: inline-block; font-size: 1.1rem; font-family: 'S-CoreDream-5Medium'; width: 100%;}
+.cont6 .aniBox .iframe .frame-box.ani02 .frame-right {width: 33%; margin: 20rem 0 0 2rem;}
+.cont6 .aniBox .iframe .frame-box.ani03 .frame-right {width: 30%; margin: 16.5rem 0 0 2rem;}
 
 /* content07 */
 .cont7 {padding: 10rem 0;}
@@ -652,7 +653,6 @@ label.toggle-item {
     width: 1000px; height: 300px; border: 3px solid #241E60; 
     border-radius: 8px;
 }
-.cont7 .message::placeholder {}
 .cont7 form {position: relative;}
 .cont7 button {
     cursor: pointer;
