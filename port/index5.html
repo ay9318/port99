@@ -1405,7 +1405,59 @@ $(".footer-menu-btn .family-btn a").click(function(e){
             target.addClass("show");
             cont.css("display","none");
             cont.eq(index).css({"display":"block","display":"grid"});
-        });      
+        }); 
+        //스크립트 슬라이드 탭버튼
+        (function () {
+        const target = document.querySelector(".target");
+        const links = document.querySelectorAll(".tabBar > ul > li");
+
+        function mouseenterFunc() {
+            if (!this.parentNode.classList.contains("show")) {
+            for (let i = 0; i < links.length; i++) {
+                if (links[i].parentNode.classList.contains("show")) {
+                links[i].parentNode.classList.remove("show");
+                }
+                links[i].style.opacity = "0.25";
+            }
+
+            this.parentNode.classList.add("show");
+            this.style.opacity = "1";
+
+            const width = this.getBoundingClientRect().width;
+            const height = this.getBoundingClientRect().height;
+            const left = this.getBoundingClientRect().left + window.pageXOffset;
+            const top = this.getBoundingClientRect().top + window.pageYOffset;
+            const color = colors[Math.floor(Math.random() * colors.length)];
+
+            target.style.width = `${width}px`;
+            target.style.height = `${height}px`;
+            target.style.left = `${left}px`;
+            target.style.top = `${top}px`;
+            target.style.borderColor = color;
+            target.style.transform = "none";
+            }
+        }
+
+        for (let i = 0; i < links.length; i++) {
+            links[i].addEventListener("click", (e) => e.preventDefault());
+            links[i].addEventListener("click", mouseenterFunc);
+        }
+
+        function resizeFunc() {
+            const active = document.querySelector(".tabBar li.show");
+
+            if (active) {
+            const left = active.getBoundingClientRect().left + window.pageXOffset;
+            const top = active.getBoundingClientRect().top + window.pageYOffset;
+
+            target.style.left = `${left}px`;
+            target.style.top = `${top}px`;
+            }
+        }
+
+        window.addEventListener("resize", resizeFunc);
+        })();
+
         
         //애니메이션 view
         $(".aniBox .iframe .frame-box").hide();
@@ -1413,6 +1465,7 @@ $(".footer-menu-btn .family-btn a").click(function(e){
             $(this).toggleClass("on")
             $(this).next(".frame-box").slideToggle(400);
         });
+
     </script>
 </body>
 </html>
