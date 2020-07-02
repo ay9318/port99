@@ -833,7 +833,7 @@ var swiper = new Swiper('.swiper-container', {
                                     </div>
                                 </div>                                   
                                 <div class="right">
-                                    <h4 class="si-tit"><img src="img/svg-cinema.svg" alt="팝콘 아이콘">YES24 티켓 사이트</h4>
+                                    <h4 class="si-tit"><img src="img/svg-cinema.svg" alt="팝콘 아이콘">YES24 티켓</h4>
                                     <p  class="si-desc">
                                         YES24 티켓 사이트를 참고하여 제작하였습니다.<br>
                                         햄버거 메뉴와 배너 스와이프, 탭 메뉴, 패밀리 버튼까지
@@ -1016,7 +1016,6 @@ $(".footer-menu-btn .family-btn a").click(function(e){
                         <h3>Script <img src="img/svg-cherries.svg" alt="cherries"></h3>
                         <div class="tabBar">
                             <ul>
-                                <div class="slider"></div>
                                 <li class="show">Parallax</li>
                                 <li>Slider</li>
                                 <li>Mouse</li>
@@ -1218,7 +1217,7 @@ $(".footer-menu-btn .family-btn a").click(function(e){
                         <!-- //contBox mo-->
 
                         <div class="contBox ga">                            
-                            <iframe src="https://ay9318.github.io/port99/game/index.html" style="width: 1150px; height: 800px;" frameborder="no"></iframe>                           
+                            <iframe class="gamebox" src="../game/index.html" frameborder="no"></iframe>                           
                         </div>                        
                     </div>                    
                 </div>
@@ -1291,7 +1290,7 @@ $(".footer-menu-btn .family-btn a").click(function(e){
                                         (<a href='https://codepen.io/ay9318'>@ay9318</a>) on <a href='https://codepen.io'>CodePen</a>.
                                     </iframe>
                                     <div class="frame-right">
-                                        <p class="cont6-desc">animation steps 속성을 이용하여 1초의 시간을 걸쳐 16프레임을 반복하며 애니메이션이 완성된다.                                 
+                                        <p class="cont6-desc">animation steps 속성을 이용하여 1초의 시간을 걸쳐 16프레임을 반복하여 걸어가는 것처럼 보이는 애니메이션을 완성하였습니다.                                 
                                         </p>                                    
                                     </div> 
                                 </div>                                                                             
@@ -1352,7 +1351,7 @@ $(".footer-menu-btn .family-btn a").click(function(e){
     <script>
         //서브메뉴 클릭
         $(".sub-icon").click(function(){
-            $(this).removeClass("on");
+            $(this).toggleClass("on");
             $("#smenu").slideToggle(300);          
         });
 

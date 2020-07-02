@@ -2,6 +2,8 @@ body {background: #F1EFE6; overflow-x: hidden;}
 h3 {font-family: 'Recoleta',serif; font-size: 7rem;}
 h4 {font-family: 'yg-jalnan'; font-size: 3rem; color: #333;}
 :root {font-size: 16px;}
+.row {padding: 0 20px;}
+.container {max-width: 1200px; margin: 0 auto;}
 
 /* layout */
 #main {height: 800px;}
@@ -19,9 +21,6 @@ h4 {font-family: 'yg-jalnan'; font-size: 3rem; color: #333;}
 #content06 {position: relative; background: #F9BC60; color: #E16162;}
 #content07 {position: relative; background: #FA8182;}
 
-/* container */
-.container {max-width: 1200px; margin: 0 auto;}
-
 /* wave */
 .wave {
 background: url(../img/wave01.svg) repeat-x; 
@@ -29,7 +28,7 @@ position: absolute;
 top: -150px;
 width: 6400px;
 height: 198px;
-animation: wave 7s linear 0s infinite;
+animation: wave 6s linear 0s infinite;
 transform: translate3d(0, 0, 0);
 }
 .wave2 {
@@ -38,7 +37,7 @@ transform: translate3d(0, 0, 0);
     top: -150px;
     width: 6400px;
     height: 198px;
-    animation: wave 7s linear 0s infinite;
+    animation: wave 8s linear 0s infinite;
     transform: translate3d(0, 0, 0);
 }
 .wave3 {
@@ -56,7 +55,7 @@ transform: translate3d(0, 0, 0);
     top: -150px;
     width: 6400px;
     height: 198px;
-    animation: wave 7s linear 0s infinite;
+    animation: wave 6s linear 0s infinite;
     transform: translate3d(0, 0, 0);
 }
 .wave6 {
@@ -65,7 +64,7 @@ transform: translate3d(0, 0, 0);
     top: -150px;
     width: 6400px;
     height: 198px;
-    animation: wave 7s linear 0s infinite;
+    animation: wave 8s linear 0s infinite;
     transform: translate3d(0, 0, 0);
 }
 .wave7 {
@@ -160,7 +159,6 @@ transform: translate3d(0, 0, 0);
 }       
 
 /* main */
-.row {padding: 0 20px;}
 .main {height: calc(100vh - 180px); display: flex; align-items: center;}
 .main .main-left {width: 60%;}
 .main .main-left h2 {font-size: 6rem; font-family: 'Recoleta'; line-height: .9; color: #09C9C3;}
@@ -227,7 +225,6 @@ transform: translate3d(0, 0, 0);
 }
 
 /* content02 */
-#content02 .row {padding: 0;}
 .cont2 {
     width: 100%;
     display: flex; align-items: center;
@@ -236,7 +233,7 @@ transform: translate3d(0, 0, 0);
 }
 .cont2 .cont2-left p {
     font-family: 'yg-jalnan';
-    font-size: 3.4rem;
+    font-size: 3.2rem;
     line-height: 1.2;
     color: #241E60;
 }
@@ -272,8 +269,7 @@ transform: translate3d(0, 0, 0);
     font-family: 'yg-jalnan'; 
     font-size: 3rem; 
     line-height: 1; color: #000; 
-    padding-bottom: 3.6rem;
-    padding-top: .3rem;
+    padding-bottom: 4rem;
 }
 .site-wrap .site-right .si-tit img {width: 3.5rem; margin-left: 1.5rem;}
 .site-wrap .site-right .si-desc {
@@ -307,8 +303,7 @@ transform: translate3d(0, 0, 0);
     font-family: 'yg-jalnan'; 
     font-size: 3rem; 
     line-height: 1; color: #000; 
-    padding-bottom: 3.6rem;
-    padding-top: .3rem;
+    padding-bottom: 5rem;
 }
 .site-wrap .site-left .si-tit img {width: 3.5rem; margin-right: 1rem;}
 .site-wrap .site-left .si-desc {
@@ -616,6 +611,7 @@ label.toggle-item {
     border-radius: 1.5rem;
 }
 .cont5 .contBox.mo .box:nth-child(8) {background: #F9BC60;}
+.cont5 .contBox.ga .gamebox {width: 1160px; height: 800px;}
 
 /* content06 */
 .cont6 {padding: 20rem 0;}
@@ -629,7 +625,7 @@ label.toggle-item {
 .cont6 .aniBox .iframe .frame-box .frame-right {width: 35%; margin: 23.5rem 0 0 2rem;}
 .cont6 .aniBox .iframe .frame-box.ani02 .frame-right {margin: 22rem 0 0 2rem;}
 .cont6 .aniBox .iframe .frame-box.ani03 .frame-right {margin: 23.5rem 0 0 2rem;}
-.cont6 .aniBox .iframe .frame-box.ani04 .frame-right {margin: 25rem 0 0 2rem;}
+.cont6 .aniBox .iframe .frame-box.ani04 .frame-right {margin: 23rem 0 0 2rem;}
 .cont6 .aniBox .iframe .frame-right .cont6-desc {display: inline-block; font-size: 1.1rem; font-family: 'S-CoreDream-5Medium'; width: 100%;}
 
 /* content07 */
@@ -720,6 +716,8 @@ label.toggle-item {
     .main .main-left, .img-wrap {width: 50%;}
     #content01 .cont1 {width: 70%; white-space: normal;}
     #content01 .cont1 .cont1-text br {display: none;}
+    .cont7 input {width: 900px;}
+    .cont7 .message {width: 900px;}
 }
 @media (max-width: 1110px) {
     :root {font-size: 15px;}
@@ -750,14 +748,20 @@ label.toggle-item {
     .site-wrap .site-left .right {width: 100%; margin: 4% 0; text-align: center;}
     .site-wrap .site-left .right h4 img {width: 50px;}
     .site-wrap .site-left .right p {margin: 1% auto;}
-    .site-wrap .site-left .right .cont-btn {margin: 0 auto;}
-    .site-wrap .site-left .right .cont-btn a {
+    .site-wrap .site-left .right .si-btn {margin: 0 auto;}
+    .site-wrap .site-left .right .si-btn a {
         display: inline-block;
         margin: 2%;
         border: 3px solid;
     }
     .site-wrap .tab-wrap {display: none;}
     .cont5 .contBox {grid-template-columns: repeat(2,1fr);}
+    .cont6 .aniBox .iframe .frame-box.ani02 .frame-right {margin: 21rem 0 0 2rem;}
+    .cont6 .aniBox .iframe .frame-box.ani04 .frame-right {margin: 24rem 0 0 2rem;}
+    .cont7 input {width: 750px;}
+    .cont7 .message {width: 750px;}
+    .cont7 button {right: -5rem;}
+    .cont7 form img {right: -5rem;}
 }
 @media (max-width: 960px) {
     h3 {font-size: 6rem;}
@@ -766,20 +770,21 @@ label.toggle-item {
     .header h1 {text-align: left;}
     .header .icon, #nav {display: none;}
     .header .sub-icon {display: block;}
-    #smenu {display: block;}
     #content01 .cont1 .cont1-text {font-size: 2.1rem;}
     #content01 .cont1 .cont1-text::before {font-size: 2.5rem; left: -2rem;}
     #content01 .cont1 .cont1-text::after {font-size: 2.5rem; right: -2rem;}
     #content02 .cont2 {flex-wrap: wrap-reverse;}
     #content02 .cont2 .cont2-left p {text-align: center;}
     #content02 .cont2 .cont2-left p.indent {text-indent: 0;}
-    #content02 .cont2 .cont2-left .cont2-text {width: 100%;}
     #content02 .cont2 .cont2-right {width: 100%; display: flex; justify-content: center; margin-bottom: 2rem;}
     #content03 .cont03-title {margin-left: 3rem;}
+    .cont6 .aniBox .iframe .frame-box.ani03 .frame-right {margin: 26rem 0 0 2rem;}
     .gift .gift-left .bar {padding: .8rem 28vw;}
     .gift .gift-right .box {padding: 1vw 2vw; margin-top: 2rem;}
     .gift .gift-right .box p {font-size: 1rem;}
     .gift .gift-right .box p img{width: 1rem;}
+    .cont7 input {width: 500px;}
+    .cont7 .message {width: 500px;}
 }
 @media (max-width: 720px) {
     .main .img-wrap .heart {width: 8rem; left: 30%; top: 5%;}
@@ -788,14 +793,13 @@ label.toggle-item {
     .main .img-wrap .monkey svg {left: 40%; top: 1%;}
     .main .img-wrap .duck {width: 10rem; left: 53%; top: 2%;}
     .main .img-wrap .duck svg {left: 45%; top: 15%;}
-    #content01 {height: 600px;}
-    #content01 .cont1 .cont1-text::after {right: -4rem; bottom: -3rem;}
+    #content01 {height: 750px; padding-bottom:10rem;}
+    #content01 .cont1 .cont1-text::after {right: -2rem; bottom: 0rem;}
     #content01 .cont1 .cont1-text {font-size: 2rem;}
     .gift {display: none;}
 }
 @media (max-width: 640px) and (min-width: 320px) {
     h3 {font-size: 3.8rem;}
-    .row {padding: 0;}
     .header {padding: 0 1rem;}
     .header h1 {font-size: 1.2rem;}
     .header .sub-icon {width: 30px; height: 30px; margin-right: 0;}
@@ -804,7 +808,7 @@ label.toggle-item {
     #smenu .snav {top: 20%;}
     #smenu .sicon {top: 35%;}
     #smenu .snav ul li {padding: 0.8rem 0;}
-    .main {height: 450px;}
+    #main {height: 550px;}
     .main .main-left {margin-top: 2rem;}
     .main .main-left h2 {font-size: 2.5rem;}
     .main .main-left p {font-size: 1rem;}
@@ -817,10 +821,12 @@ label.toggle-item {
     #content01 .cont1 .cont1-text {font-size: .9rem; line-height: 1.8;}
     #content01 .cont1 .cont1-text::before {font-size: 1.5em; left: -1rem; top: -.5rem;}
     #content01 .cont1 .cont1-text::after {font-size: 1.5rem; right: 0rem; bottom: -.5rem;}
+    .cont1 .cont1-text strong:first-child::after {display: none;}
+    .cont1 .cont1-text strong:nth-child(8)::after {display: none;}
     #content02 .cont2 {padding: 10rem 0;}
     #content02 .cont2 .cont2-left p {font-size: 1.9rem; word-break: keep-all;}
     #content02 .cont2 .cont2-left p em {font-size: 2.5rem;}
-    #content02 .cont2 .cont2-left .cont2-text {font-size: 1rem; line-height: 1.4;} 
+    #content02 .cont2 .cont2-left .cont2-text {font-size: 1rem; line-height: 1.4; margin: 10% auto;} 
     #content02 .cont2 .cont2-right {width: 100%;}
     #content02 .cont2 .cont2-right .img-box .like {width: 5rem;}
     #content02 .cont2 .cont2-right .img-box .photo {width: 13rem;}
@@ -835,7 +841,7 @@ label.toggle-item {
     .site-wrap .site-right .left .si-btn a {
         font-size: .9rem;
         border: 2px solid;
-        padding: .8rem 1.5rem; 
+        padding: 1.2rem 2rem;
     }
     .site-wrap .site-right .right .si-img {border: 2px solid;}
     .site-wrap .site-left {margin-top: 3rem;}
@@ -846,24 +852,34 @@ label.toggle-item {
     .site-wrap .site-left .right .si-btn a {
         font-size: .9rem;
         border: 2px solid;
-        padding: .8rem 1.5rem; 
+        padding: 1.2rem 2rem;
     }
     .site-wrap .site-left .left .si-img {border: 2px solid;}
     .cont5 {padding: 5rem 0 13rem 0;}
     .cont5 h3 img {width: 4rem;}
     .cont5 .tabBar {margin-bottom: 2.5rem;}
     .cont5 .tabBar ul {height: 3rem;}
-    .cont5 .tabBar ul li {line-height: 3rem;}
+    .cont5 .tabBar ul li {line-height: 3rem; font-size: 1rem;}
     .cont5 .contBox {grid-template-columns: repeat(2,1fr);}
-    .cont5 .contBox .box {position: relative; width: 15rem; height: 21rem;}
-    .cont5 .contBox .box .textBox {margin: 2rem; width: 90%;}
-    .cont5 .contBox .box .textBox .tit {font-size: 1.5rem;}
-    .cont5 .contBox .box .textBox .desc {font-size: 1rem;}
+    .cont5 .contBox .box {position: relative; width: 10rem; height: 20rem;}
+    .cont5 .contBox .box .textBox {margin: 1.5rem; width: 90%;}
+    .cont5 .contBox .box .textBox .tit {font-size: 1.2rem;}
+    .cont5 .contBox .box .textBox .desc {font-size: 0.8rem; margin: 0;}
+    .cont5 .contBox .box .arrow {width: 2rem;}
+    .cont5 .contBox.ga .gamebox {width: 290px; height: 500px;}
     .cont6 h3 {font-size: 3.8rem;}
+    .cont6 .aniBox p {font-size: 1.7rem;}
+    .cont6 .aniBox .iframe .plus {width: 10%; top: -4.5rem;}
     .cont6 .aniBox .iframe .frame-box {flex-wrap: wrap; height: 700px;}
     .cont6 .aniBox .iframe .frame-box .frame-right {width: 100%; margin: 0 auto;}
     .cont6 .aniBox .iframe .frame-box .frame-right p {margin-bottom: 5rem;}
     .cont6 .aniBox .iframe .frame-box.ani02 .frame-right {width: 100%; margin: 0 auto;}
     .cont6 .aniBox .iframe .frame-box.ani03 .frame-right {width: 100%; margin: 0 auto;}
     .cont6 .aniBox .iframe .frame-box.ani04 .frame-right {width: 100%; margin: 0 auto;}
+    .cont7 {padding: 5rem 0 10rem;}
+    .cont7 h3 img {width: 50px;}
+    .cont7 input {width: 290px;}
+    .cont7 .message {width: 290px;}
+    .cont7 button {left: 0; bottom: -5rem;}
+    .cont7 form img {left: 3rem; bottom: -1.5rem;}
 }
