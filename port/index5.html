@@ -96,7 +96,7 @@
                 <div class="wave"></div>
             </div>    
             <div class="container">       
-                <div class="cont1">
+                <div class="cont1 cm">
                     <div class="cont1-text">
                         안녕하세요, 신입 웹 퍼블리셔 <strong>황아영</strong>입니다. <br>웹 퍼블리셔는 <strong>상상</strong>한것을 현실로 만드는<br> <strong>매력적인</strong> 일이라고 생각합니다.<br> 물론, 많은 노력이 따르는건 아주 잘 알고있습니다.<br> 하지만 <strong>한계를 뛰어넘었을때의 성취감</strong>은<br> 제가 이 길을 가고자하는 <strong>정답</strong>이라고 생각합니다.
                     </div>                                                 
@@ -141,10 +141,10 @@
             </div> 
             <div class="container">
                 <div class="row">
-                    <div class="cont03-title">
-                        <h3>My Portfolio<img src="img/svg-dubbleheart.svg" alt="icon"></h3>
-                    </div>
-                    <div class="cont03">
+                    <div class="cont03 cm">
+                        <div class="cont03-title">
+                            <h3>My Portfolio<img src="img/svg-dubbleheart.svg" alt="icon"></h3>
+                        </div>
                         <div class="site-wrap">
                             <div class="site-right">
                                 <div class="left">
@@ -575,7 +575,8 @@ font-size: 18px;}
                                         메인에 애니메이션을 넣어 동적인 효과를 주었습니다.
                                     </p>
                                     <div class="si-btn">
-                                        <a href="../site-nongshim/index.html" target="_blank"><span>사이트 보기</span></a>
+                                        <a href="../site-nongshim/index.html"
+                                        target="_blank"><span>사이트 보기</span></a>
                                         <a href="https://www.figma.com/proto/ouCCVWOtPFsV5pLe5vSqLK/%EA%B8%B0%EC%97%85%EC%82%AC%EC%9D%B4%ED%8A%B8_%EB%86%8D%EC%8B%AC?node-id=1%3A1152&viewport=613%2C1244%2C0.040814198553562164&scaling=scale-down" target="_blank"><span>피그마 보기</span></a>
                                     </div>
                                 </div>
@@ -1001,15 +1002,28 @@ $(".footer-menu-btn .family-btn a").click(function(e){
         </section>
         <!-- //content03 -->
 
-        <section id="content04">
-        </section>
+        <!-- <section id="content04">
+            <div class="container">
+                <div class="row">
+                    <h3>Mobile Site <img src="img/svg-box.svg" alt="박스아이콘"></h3>
+                </div>
+                <div class="cont4">
+                    <div class="mobile-wrap">
+                        <div class="mobile-box">
+                            <a href=""></a>
+                            <p>Apple Music</p>
+                        </div>
+                    </div>
+                </div>
+            </div>                                    
+        </section> -->
         <!-- //content04 -->
         
 
         <section id="content05">
             <div class="ocean">
                 <div class="wave5"></div>
-            </div> 
+            </div>         
             <div class="container">
                 <div class="row">
                     <div class="cont5">
@@ -1308,7 +1322,7 @@ $(".footer-menu-btn .family-btn a").click(function(e){
             </div>
             <div class="container">
                 <div class="row">                    
-                    <div class="cont7">
+                    <div class="cont7 cm">
                         <h3>Contact <img src="img/svg-heart_contact.svg" alt="하트아이콘"></h3>
                         <form method="POST" action="https://formspree.io/ay9318@naver.com">
                             <input type="text" name="username" placeholder="Your Name"/>
@@ -1347,66 +1361,7 @@ $(".footer-menu-btn .family-btn a").click(function(e){
     <script src="js/jquery.min_1.12.4.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/gsap.min.js"></script>
-    <script src="js/prism.js"></script>    
-    <script>
-        //서브메뉴 클릭
-        $(".sub-icon").click(function(){
-            $(this).toggleClass("on");
-            $("#smenu").slideToggle(300);          
-        });
-
-        //컨텐츠3 탭메뉴 
-        $(".cont03 > div").each(function(index){
-            $(this).find(".tab-wrap").attr("data-num",index);
-            $(this).find(".tab-wrap").addClass("num"+index)
-            
-            $(".tab-btn > ul > li").click(function(e){
-                e.preventDefault();
-                let target = $(this);
-                let num = target.parent().parent().parent().attr("data-num");
-                let index = target.index();
-                
-                $(".tab-wrap.num"+num+" .tab-btn > ul > li").removeClass("active");  
-                target.addClass("active");  
-                
-                $(".tab-wrap.num"+num+" .tab-cont > div").css("display","none");
-                $(".tab-wrap.num"+num+" .tab-cont > div").eq(index).css("display","block");  
-            });            
-        });
-        //다크 모드
-        $(".toggle-item").click(function(e){
-            e.preventDefault("a");            
-            let target = $(this);
-            let num = target.parent().parent().parent().parent().attr("data-num");
-
-            $(".tab-wrap.num"+num+" .tab-cont > div .language-js").toggleClass("on");
-            $(".tab-wrap.num"+num+" .tab-mode").toggleClass("on");
-        });
-
-        //스크립트 탭
-        let tabBar = $(".tabBar > ul > li");
-        let cont = $(".contBox");
-
-        cont.hide().eq(0).show();
-
-        tabBar.click(function(){
-            let target = $(this);
-            let index = target.index();
-            
-            tabBar.removeClass("show");
-            target.addClass("show");
-            cont.css("display","none");
-            cont.eq(index).css({"display":"block","display":"grid"});
-        }); 
-        //스크립트 슬라이드 탭버튼
-
-        //애니메이션 view
-        $(".aniBox .iframe .frame-box").hide();
-        $(".aniBox .iframe img").click(function() {
-            $(this).toggleClass("on")
-            $(this).next(".frame-box").slideToggle(400);
-        });
-
-    </script>
+    <script src="js/prism.js"></script>   
+    <script src="js/custom.js"></script>    
 </body>
 </html>

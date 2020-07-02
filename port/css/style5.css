@@ -1,5 +1,6 @@
 body {background: #F1EFE6; overflow-x: hidden;}
-h3 {font-family: 'Recoleta',serif; font-size: 7rem;}
+h3 {font-family: 'Recoleta',serif; font-size: 7rem; position: relative;}
+h3 img {position: absolute;}
 h4 {font-family: 'yg-jalnan'; font-size: 3rem; color: #333;}
 :root {font-size: 16px;}
 .row {padding: 0 20px;}
@@ -16,7 +17,7 @@ h4 {font-family: 'yg-jalnan'; font-size: 3rem; color: #333;}
     text-align: left;
 }
 #content02 {position: relative; background: #fff;}
-#content03 {position: relative; background: #ADD8D6; padding: 15rem 0;}
+#content03 {position: relative; background: #ADD8D6;}
 #content05 {position: relative;}
 #content06 {position: relative; background: #F9BC60; color: #E16162;}
 #content07 {position: relative; background: #FA8182;}
@@ -167,31 +168,47 @@ transform: translate3d(0, 0, 0);
     font-family: 'Josefin Sans', sans-serif; color: #241e60; 
     font-size: 1.8rem; margin-top: 1.5rem;
 }
-.img-wrap {width: 40%; height: 100%; position: relative;}
+.img-wrap {width: 40%; height: 100%; position: relative; --x: 0;
+    --y: 0;
+    --d: 50;}
 .img-wrap .heart {  
     position: absolute; left: -20px; top: 20%;
     width: 180px; height: 700px; overflow: hidden;
 }
-.img-wrap .heart img {width: 100%; position: relative; z-index: 10;}
-.img-wrap .heart svg {position: absolute; left: 58%; top: 130px;}
+.img-wrap .heart img {width: 100%; position: relative; z-index: 10; animation: balloon 3s infinite ease;}
+.img-wrap .heart svg {position: absolute; left: 58%; top: 130px; z-index: 9;}
 .img-wrap .monkey {
     position: absolute; left: 18%; top: 40%;
     width: 250px; height: 700px; overflow: hidden;
 }
-.img-wrap .monkey img {width: 100%; position: relative; z-index: 10;}
-.img-wrap .monkey svg {position: absolute; left: 45%; top: 200px;}
+.img-wrap .monkey img {width: 100%; position: relative; z-index: 10; animation: balloon 4s infinite ease;}
+.img-wrap .monkey svg {position: absolute; left: 45%; top: 200px; z-index: 9;}
 .img-wrap .duck {
     position: absolute; left: 40%; top: 10%;
     width: 250px; height: 700px; overflow: hidden;
+    
 }
-.img-wrap .duck img {width: 100%; position: relative; z-index: 10;}
-.img-wrap .duck svg {position: absolute; left: 45%; top: 200px;}
+.img-wrap .duck img {width: 100%; position: relative; z-index: 10; 
+    animation: balloon 3s infinite ease;}
+.img-wrap .duck svg {position: absolute; left: 45%; top: 200px; z-index: 9;}
 
+@keyframes balloon {
+    0% {transform: translateY(0);}
+    50% {transform: translateY(80px);}
+    100% {transform: translateY(0);}
+}
+
+@keyframes line {
+    0% {transform: translateX(0);}
+    50% {transform: translateX(80px);}
+    100% {transform: translateX(0);}
+}
 /* content01 */ 
 .cont1 {
     white-space: nowrap;
     position: absolute; left: 50%; top: 50%;
     transform: translate(-50%, -50%);
+    padding: 5rem 0;
 }
 .cont1 .cont1-text {position: relative; font-size: 2.7rem; line-height: 1.8;}
 .cont1 .cont1-text strong {position: relative; color: #fff;}
@@ -253,6 +270,7 @@ transform: translate3d(0, 0, 0);
 .cont2 .cont2-right .img-box .photo {width: 20rem; vertical-align: top;}
 
 /* content03 */
+.cont03 {padding: 5rem 0;}
 .cont03-title h3 {color: #241E60; margin-bottom: 5vw;}
 .cont03-title h3 img {width: 6rem; transform: rotate(25deg);}
 .site-wrap {padding: 10vh 0 30vh 0;}
@@ -629,7 +647,7 @@ label.toggle-item {
 .cont6 .aniBox .iframe .frame-right .cont6-desc {display: inline-block; font-size: 1.1rem; font-family: 'S-CoreDream-5Medium'; width: 100%;}
 
 /* content07 */
-.cont7 {padding: 10rem 0;}
+.cont7 {padding: 5rem 0 10rem;}
 .cont7 h3 {margin-bottom: 5rem; color: #241E60;}
 .cont7 h3 img {width: 80px; transform: rotate(20deg);}
 .cont7 input {
@@ -841,7 +859,7 @@ label.toggle-item {
     .site-wrap .site-right .left .si-btn a {
         font-size: .9rem;
         border: 2px solid;
-        padding: 1.2rem 2rem;
+        padding: 1.2rem 1.3rem;
     }
     .site-wrap .site-right .right .si-img {border: 2px solid;}
     .site-wrap .site-left {margin-top: 3rem;}
@@ -852,7 +870,7 @@ label.toggle-item {
     .site-wrap .site-left .right .si-btn a {
         font-size: .9rem;
         border: 2px solid;
-        padding: 1.2rem 2rem;
+        padding: 1.2rem 1.3rem;
     }
     .site-wrap .site-left .left .si-img {border: 2px solid;}
     .cont5 {padding: 5rem 0 13rem 0;}
@@ -860,16 +878,17 @@ label.toggle-item {
     .cont5 .tabBar {margin-bottom: 2.5rem;}
     .cont5 .tabBar ul {height: 3rem;}
     .cont5 .tabBar ul li {line-height: 3rem; font-size: 1rem;}
-    .cont5 .contBox {grid-template-columns: repeat(2,1fr);}
-    .cont5 .contBox .box {position: relative; width: 10rem; height: 20rem;}
+    .cont5 .contBox {grid-template-columns: repeat(1, 1fr);}
+    .cont5 .contBox .box {position: relative; width: 100%; height: 13rem;}
     .cont5 .contBox .box .textBox {margin: 1.5rem; width: 90%;}
     .cont5 .contBox .box .textBox .tit {font-size: 1.2rem;}
     .cont5 .contBox .box .textBox .desc {font-size: 0.8rem; margin: 0;}
     .cont5 .contBox .box .arrow {width: 2rem;}
     .cont5 .contBox.ga .gamebox {width: 290px; height: 500px;}
+    .cont6 {padding: 10rem 0 20rem;}
     .cont6 h3 {font-size: 3.8rem;}
-    .cont6 .aniBox p {font-size: 1.7rem;}
-    .cont6 .aniBox .iframe .plus {width: 10%; top: -4.5rem;}
+    .cont6 .aniBox p {font-size: 1.5rem; padding: 1.5rem 0;}
+    .cont6 .aniBox .iframe .plus {width: 9%; top: -3.8rem;}
     .cont6 .aniBox .iframe .frame-box {flex-wrap: wrap; height: 700px;}
     .cont6 .aniBox .iframe .frame-box .frame-right {width: 100%; margin: 0 auto;}
     .cont6 .aniBox .iframe .frame-box .frame-right p {margin-bottom: 5rem;}
