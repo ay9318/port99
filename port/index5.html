@@ -1016,6 +1016,7 @@ $(".footer-menu-btn .family-btn a").click(function(e){
                         <h3>Script <img src="img/svg-cherries.svg" alt="cherries"></h3>
                         <div class="tabBar">
                             <ul>
+                                <div class="slider"></div>
                                 <li class="show">Parallax</li>
                                 <li>Slider</li>
                                 <li>Mouse</li>
@@ -1213,13 +1214,6 @@ $(".footer-menu-btn .family-btn a").click(function(e){
                                 </div>
                                 <a href="https://ay9318.github.io/port99/mouse/mouse08.html" target="_blank"><img src="img/n-arrow.png" class="arrow" alt="화살표"></a>                                
                             </div>
-                            <!-- <div class="box">
-                                <div class="textBox">
-                                    <span class="tit">Mouse09</span>
-                                    <span class="desc">reveal 효과</span>                                    
-                                </div>
-                                <a href="https://ay9318.github.io/port99/Parallax/parallax09.html"><img src="img/w-arrow.png" class="arrow" alt="화살표"></a>
-                            </div> -->
                         </div>
                         <!-- //contBox mo-->
 
@@ -1263,7 +1257,7 @@ $(".footer-menu-btn .family-btn a").click(function(e){
                                     <iframe height="500px" style="width: 100%;" scrolling="no" title="SVG - Text Animation1" src="https://codepen.io/ay9318/embed/YzydVVV?height=265&theme-id=dark&default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
                                         See the Pen <a href='https://codepen.io/ay9318/pen/YzydVVV'>SVG - Text Animation1</a> by HWANGAYOUNG
                                         (<a href='https://codepen.io/ay9318'>@ay9318</a>) on <a href='https://codepen.io'>CodePen</a>.
-                                      </iframe>
+                                    </iframe>
                                     <div class="frame-right">
                                         <p class="cont6-desc">CSS만을 이용하여 애니메이션을 주었습니다. stroke-dasharray는 path를 점선으로 만들어주는데 stroke-dashoffset로 시작간격을 주어 텍스트 애니메이션을 완성하였습니다.
                                         </p>                                    
@@ -1272,16 +1266,16 @@ $(".footer-menu-btn .family-btn a").click(function(e){
                             </div>                    
                         </div>                        
                         <div class="aniBox">
-                            <p>Wave Circle Animation</p>                           
+                            <p>Square Animation</p>                           
                             <div class="iframe">
                                 <img src="img/plus.svg" class="plus" alt="더보기">
                                 <div class="frame-box ani03">
-                                    <iframe height="500px" style="width: 100%;" scrolling="no" title="Wave Circle" src="https://codepen.io/ay9318/embed/gOaPjvr?height=418&theme-id=dark&default-tab=html,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-                                        See the Pen <a href='https://codepen.io/ay9318/pen/gOaPjvr'>Wave Circle</a> by HWANGAYOUNG
+                                    <iframe height="500" style="width: 100%;" scrolling="no" title="Square Animation" src="https://codepen.io/ay9318/embed/bGVEjXo?height=441&theme-id=dark&default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+                                        See the Pen <a href='https://codepen.io/ay9318/pen/bGVEjXo'>Square Animation</a> by HWANGAYOUNG
                                         (<a href='https://codepen.io/ay9318'>@ay9318</a>) on <a href='https://codepen.io'>CodePen</a>.
-                                    </iframe>
+                                      </iframe>
                                     <div class="frame-right">
-                                        <p class="cont6-desc">animation-delay를 이용하여 각각의 circle에게 0.1초씩 지연효과를 주어 물결처럼 보이도록 표현하였습니다.
+                                        <p class="cont6-desc">가상요소로 박스에 그림자를 주고 애니메이션으로 border와 rotate를 주로 이용하여 로딩중인 화면처럼 표현하였습니다.
                                         </p>                                    
                                     </div> 
                                 </div>                                                                             
@@ -1292,13 +1286,12 @@ $(".footer-menu-btn .family-btn a").click(function(e){
                             <div class="iframe">
                                 <img src="img/plus.svg" class="plus" alt="더보기">
                                 <div class="frame-box ani04">
-                                    <iframe height="590" style="width: 100%;" scrolling="no" title="Animation Steps" src="https://codepen.io/ay9318/embed/NWGLPRB?height=597&theme-id=dark&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+                                    <iframe height="500" style="width: 100%;" scrolling="no" title="Animation Steps" src="https://codepen.io/ay9318/embed/NWGLPRB?height=504&theme-id=dark&default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
                                         See the Pen <a href='https://codepen.io/ay9318/pen/NWGLPRB'>Animation Steps</a> by HWANGAYOUNG
                                         (<a href='https://codepen.io/ay9318'>@ay9318</a>) on <a href='https://codepen.io'>CodePen</a>.
-                                      </iframe>
+                                    </iframe>
                                     <div class="frame-right">
-                                        <p class="cont6-desc">span으로 글자를 분할하여 각각에게 애니메이션을 주고, 웹 접근성을 위하여
-                                            aria태그를 사용하였습니다.
+                                        <p class="cont6-desc">animation steps 속성을 이용하여 1초의 시간을 걸쳐 16프레임을 반복하며 애니메이션이 완성된다.                                 
                                         </p>                                    
                                     </div> 
                                 </div>                                                                             
@@ -1359,7 +1352,7 @@ $(".footer-menu-btn .family-btn a").click(function(e){
     <script>
         //서브메뉴 클릭
         $(".sub-icon").click(function(){
-            $(this).toggleClass("on");
+            $(this).removeClass("on");
             $("#smenu").slideToggle(300);          
         });
 
@@ -1407,58 +1400,7 @@ $(".footer-menu-btn .family-btn a").click(function(e){
             cont.eq(index).css({"display":"block","display":"grid"});
         }); 
         //스크립트 슬라이드 탭버튼
-        (function () {
-        const target = document.querySelector(".target");
-        const links = document.querySelectorAll(".tabBar > ul > li");
 
-        function mouseenterFunc() {
-            if (!this.parentNode.classList.contains("show")) {
-            for (let i = 0; i < links.length; i++) {
-                if (links[i].parentNode.classList.contains("show")) {
-                links[i].parentNode.classList.remove("show");
-                }
-                links[i].style.opacity = "0.25";
-            }
-
-            this.parentNode.classList.add("show");
-            this.style.opacity = "1";
-
-            const width = this.getBoundingClientRect().width;
-            const height = this.getBoundingClientRect().height;
-            const left = this.getBoundingClientRect().left + window.pageXOffset;
-            const top = this.getBoundingClientRect().top + window.pageYOffset;
-            const color = colors[Math.floor(Math.random() * colors.length)];
-
-            target.style.width = `${width}px`;
-            target.style.height = `${height}px`;
-            target.style.left = `${left}px`;
-            target.style.top = `${top}px`;
-            target.style.borderColor = color;
-            target.style.transform = "none";
-            }
-        }
-
-        for (let i = 0; i < links.length; i++) {
-            links[i].addEventListener("click", (e) => e.preventDefault());
-            links[i].addEventListener("click", mouseenterFunc);
-        }
-
-        function resizeFunc() {
-            const active = document.querySelector(".tabBar li.show");
-
-            if (active) {
-            const left = active.getBoundingClientRect().left + window.pageXOffset;
-            const top = active.getBoundingClientRect().top + window.pageYOffset;
-
-            target.style.left = `${left}px`;
-            target.style.top = `${top}px`;
-            }
-        }
-
-        window.addEventListener("resize", resizeFunc);
-        })();
-
-        
         //애니메이션 view
         $(".aniBox .iframe .frame-box").hide();
         $(".aniBox .iframe img").click(function() {
