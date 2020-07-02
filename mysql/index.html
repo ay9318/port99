@@ -388,11 +388,13 @@
                         uname varchar(10) not null comment '고객명',<br>
                         upassword varchar(30) not null comment '고객 비밀번호',<br>
                         email varchar(30) not null comment '고객의 이메일 주소',<br>
+                        phone char(15) not null comment '고객의 번호',<br>
                         birthDay char(10) not null comment '고객의 생일',<br>
                         gender enum('m','w','x') default 'x' comment '고객 성별 m은 남성 w은 여성 x는 선택하지 않음',<br>
                         regTime datetime not null comment '회원가입 시간',<br>
                         primary key(myMemberID))<br>
                         charset=utf8 comment='고객 정보 테이블';<br>
+                        
 
                         ALTER TABLE myMember ADD phone varchar(13) not null comment '고객휴대폰번호' AFTER upassword;
                     </p>
