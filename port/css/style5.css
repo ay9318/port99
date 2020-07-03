@@ -29,6 +29,7 @@ position: absolute;
 top: -150px;
 width: 6400px;
 height: 198px;
+z-index: -1;
 animation: wave 6s linear 0s infinite;
 transform: translate3d(0, 0, 0);
 }
@@ -168,41 +169,49 @@ transform: translate3d(0, 0, 0);
     font-family: 'Josefin Sans', sans-serif; color: #241e60; 
     font-size: 1.8rem; margin-top: 1.5rem;
 }
-.img-wrap {width: 40%; height: 100%; position: relative; --x: 0;
-    --y: 0;
-    --d: 50;}
+.img-wrap {width: 40%; height: 100%; position: relative;}
 .img-wrap .heart {  
-    position: absolute; left: -20px; top: 20%;
-    width: 180px; height: 700px; overflow: hidden;
+    position: absolute; left: 0; top: 25%;
+    width: 170px; height: 600px;
 }
-.img-wrap .heart img {width: 100%; position: relative; z-index: 10; animation: balloon 3s infinite ease;}
-.img-wrap .heart svg {position: absolute; left: 58%; top: 130px; z-index: 9;}
+.img-wrap .heart img {
+    width: 80%; position: relative; z-index: 10;
+    animation: balloon 4s infinite;
+    opacity: .8;
+}
+.img-wrap .heart svg {position: absolute; left: 20%; top: 100px; z-index: 9; animation: line 4s infinite;}
 .img-wrap .monkey {
-    position: absolute; left: 18%; top: 40%;
-    width: 250px; height: 700px; overflow: hidden;
+    position: absolute; left: 15%; top: 35%;
+    width: 250px; height: 600px;    
 }
-.img-wrap .monkey img {width: 100%; position: relative; z-index: 10; animation: balloon 4s infinite ease;}
-.img-wrap .monkey svg {position: absolute; left: 45%; top: 200px; z-index: 9;}
+.img-wrap .monkey img {
+    width: 100%; position: relative; z-index: 10;    
+    animation: balloon 4.5s infinite;
+    opacity: .9;
+}
+.img-wrap .monkey svg {position: absolute; left: 37%; top: 235px; z-index: 9; animation: line 4.5s infinite;}
 .img-wrap .duck {
     position: absolute; left: 40%; top: 10%;
-    width: 250px; height: 700px; overflow: hidden;
-    
+    width: 250px; height: 600px;
+    transform: rotate(6deg);
 }
-.img-wrap .duck img {width: 100%; position: relative; z-index: 10; 
-    animation: balloon 3s infinite ease;}
-.img-wrap .duck svg {position: absolute; left: 45%; top: 200px; z-index: 9;}
-
+.img-wrap .duck img {   
+    width: 100%; position: relative; z-index: 10;
+    animation: balloon 5s infinite;
+    opacity: .8;
+}
+.img-wrap .duck svg {position: absolute; left: 48%; top: 225px; z-index: 9; animation: line 5s infinite;}
 @keyframes balloon {
     0% {transform: translateY(0);}
-    50% {transform: translateY(80px);}
+    50% {transform: translateY(30px);}
+    100% {transform: translateY(0);}
+}
+@keyframes line {
+    0% {transform: translateY(0);}
+    50% {transform: translateY(35px);}
     100% {transform: translateY(0);}
 }
 
-@keyframes line {
-    0% {transform: translateX(0);}
-    50% {transform: translateX(80px);}
-    100% {transform: translateX(0);}
-}
 /* content01 */ 
 .cont1 {
     white-space: nowrap;
@@ -272,7 +281,12 @@ transform: translate3d(0, 0, 0);
 /* content03 */
 .cont03 {padding: 5rem 0;}
 .cont03-title h3 {color: #241E60; margin-bottom: 5vw;}
-.cont03-title h3 img {width: 6rem; transform: rotate(25deg);}
+.cont03-title h3 img {width: 6rem; animation: pulse 1s infinite;}
+@keyframes pulse {
+    from {transform: scale3d(1, 1, 1) rotate(25deg);}  
+    50% {transform: scale3d(1.05, 1.05, 1.05) rotate(25deg);}  
+    to {transform: scale3d(1, 1, 1) rotate(25deg);}
+}
 .site-wrap {padding: 10vh 0 30vh 0;}
 /* site-right */
 .site-wrap .site-right {
@@ -500,9 +514,9 @@ label.toggle-item {
 .cont5 h3 img {width: 6rem; margin: 0 1rem -1rem}
 .cont5 .tabBar {background: #241E60; font-family: 'Josefin Sans', serif; border-radius: 6rem; margin-bottom: 4rem;}
 .cont5 .tabBar ul {display: flex; height: 4rem;}
-.cont5 .tabBar ul li {flex-basis: 25%; color: #fff; text-align: center; display: inline-block; line-height: 4rem; font-size: 1.5rem; cursor: pointer;}
+.cont5 .tabBar ul li {flex-basis: 33.333333%; color: #fff; text-align: center; display: inline-block; line-height: 4rem; font-size: 1.5rem; cursor: pointer;}
 .cont5 .tabBar ul li a {color: #fff; padding: 1.2rem 2rem;}
-.cont5 .tabBar ul li.show {background: #E16162; border-radius: 5rem; padding: 0 1rem;}
+.cont5 .tabBar ul .tab-bar {background: #E16162; border-radius: 5rem; width: 33.33333%;}
 .cont5 .contBox {display: grid; grid-template-columns: repeat(3,1fr); grid-gap: 1.65rem;}
 .cont5 .contBox .box {position: relative; width: 23rem; height: 29rem; border-radius: 1.5rem;}
 /* parallax */
@@ -629,7 +643,6 @@ label.toggle-item {
     border-radius: 1.5rem;
 }
 .cont5 .contBox.mo .box:nth-child(8) {background: #F9BC60;}
-.cont5 .contBox.ga .gamebox {width: 1160px; height: 800px;}
 
 /* content06 */
 .cont6 {padding: 20rem 0;}
@@ -649,7 +662,12 @@ label.toggle-item {
 /* content07 */
 .cont7 {padding: 5rem 0 10rem;}
 .cont7 h3 {margin-bottom: 5rem; color: #241E60;}
-.cont7 h3 img {width: 80px; transform: rotate(20deg);}
+.cont7 h3 img {width: 70px; animation: pulse2 1s infinite;}
+@keyframes pulse2 {
+    from {transform: scale3d(1, 1, 1) rotate(20deg);}  
+    50% {transform: scale3d(1.1, 1.1, 1.1) rotate(20deg);}  
+    to {transform: scale3d(1, 1, 1) rotate(20deg);}
+}
 .cont7 input {
     font-family: 'S-CoreDream-4Regular';
     width: 1000px; height: 50px; 
@@ -678,9 +696,19 @@ label.toggle-item {
     border: 3px solid #241E60;
     font-weight: 600;
     background: #fff;
+    animation: pulse3 1s infinite;
 }
-.cont7 form img {width: 5rem; position: absolute; right: 1rem; bottom: 4rem; z-index: 1;}
-
+@keyframes pulse3 {
+    from {transform: scale3d(1, 1, 1);}  
+    50% {transform: scale3d(1.1, 1.1, 1.1);}  
+    to {transform: scale3d(1, 1, 1);}
+}
+.cont7 form img {width: 5rem; position: absolute; right: 1rem; bottom: 4rem; z-index: 1; animation: moveleft 5s infinite;}
+@keyframes moveleft {
+    0% {transform: translateX(0px);}
+    50% {transform: translateX(-40px);}
+    10% {transform: translateX(0px);}
+}
 /* gift */
 .gift {
     position: fixed; left: 0; bottom: 0; 
@@ -830,10 +858,12 @@ label.toggle-item {
     .main .main-left {margin-top: 2rem;}
     .main .main-left h2 {font-size: 2.5rem;}
     .main .main-left p {font-size: 1rem;}
-    .main .img-wrap .heart {width: 5rem; left: 20%;}
-    .main .img-wrap .monkey {width: 7rem; left: 33%; top: 15%;}
-    .main .img-wrap .duck {width: 6rem; overflow: visible;}
-    .main .img-wrap .duck svg {left: 30%; top: 8%;}
+    .main .img-wrap .heart {width: 5rem; left: 24%; top: 3%;}
+    .main .img-wrap .heart svg {left: 0; top: 6%; height: 280px;}
+    .main .img-wrap .monkey {width: 7rem; left: 33%; top: 8%;}
+    .main .img-wrap .monkey svg {left: 19%; top: 14%; height: 200px;}
+    .main .img-wrap .duck {width: 6.5rem; left: 45%; top: 0%;}
+    .main .img-wrap .duck svg {left: 30%; top: 13%; height: 220px;}
     #content01 {height: 400px;}
     #content01 .cont1 {padding-bottom: 10rem;}
     #content01 .cont1 .cont1-text {font-size: .9rem; line-height: 1.8;}
@@ -884,7 +914,6 @@ label.toggle-item {
     .cont5 .contBox .box .textBox .tit {font-size: 1.2rem;}
     .cont5 .contBox .box .textBox .desc {font-size: 0.8rem; margin: 0;}
     .cont5 .contBox .box .arrow {width: 2rem;}
-    .cont5 .contBox.ga .gamebox {width: 290px; height: 500px;}
     .cont6 {padding: 10rem 0 20rem;}
     .cont6 h3 {font-size: 3.8rem;}
     .cont6 .aniBox p {font-size: 1.5rem; padding: 1.5rem 0;}
