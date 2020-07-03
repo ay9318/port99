@@ -163,11 +163,12 @@ transform: translate3d(0, 0, 0);
 /* main */
 .main {height: calc(100vh - 180px); display: flex; align-items: center;}
 .main .main-left {width: 60%;}
-.main .main-left h2 {font-size: 6rem; font-family: 'Recoleta'; line-height: .9; color: #09C9C3;}
+.main .main-left h2 {font-size: 6rem; font-family: 'Recoleta'; line-height: .9; color: #09C9C3; animation: balloon 4s infinite;}
 .main .main-left h2 span {color: #E16162;}
 .main .main-left p {
     font-family: 'Josefin Sans', sans-serif; color: #241e60; 
     font-size: 1.8rem; margin-top: 1.5rem;
+    animation: balloon 4s infinite;
 }
 .img-wrap {width: 40%; height: 100%; position: relative;}
 .img-wrap .heart {  
@@ -242,13 +243,27 @@ transform: translate3d(0, 0, 0);
     color: #fff;
     position: absolute; left: -5rem; top: -2rem;
     font-size: 5rem;
+    animation: flash 2s 1s infinite;
 }
 .cont1 .cont1-text::after {
     content: '"';
     color: #fff;
     position: absolute; right: -3rem; bottom: -1.8rem;
     font-size: 5rem;
+    animation: flash 2s 1s infinite;
 }
+@keyframes flash {
+    from,
+    50%,
+    to {
+      opacity: 1;
+    }
+  
+    25%,
+    75% {
+      opacity: 0;
+    }
+  }
 
 /* content02 */
 .cont2 {
@@ -274,8 +289,16 @@ transform: translate3d(0, 0, 0);
     letter-spacing: -0.08rem;
     color: #241E60;
 }
-.cont2 .cont2-right .img-box {position: relative;}
-.cont2 .cont2-right .img-box .like {width: 7rem; position: absolute; left: -50px; top: -30px;}
+.cont2 .cont2-right .img-box {
+    position: relative; 
+    transform: perspective(600px) rotateX(-10deg) rotateY(-10deg) scale(1);
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+.cont2 .cont2-right .img-box .like {
+    width: 7rem; position: absolute; 
+    left: -50px; top: -30px;
+}
 .cont2 .cont2-right .img-box .photo {width: 20rem; vertical-align: top;}
 
 /* content03 */

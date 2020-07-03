@@ -15,7 +15,6 @@ $(".snav ul li").click(function(){
     let offset = section.offset().top;
     $("html, body").animate({ scrollTop:offset }, 600);
 });
-
 //메인
 //풍선
 /* $(".img-wrap").mousemove(function(){
@@ -35,6 +34,7 @@ moveImg.addEventListener("mouseleave", function(){
     this.style.setProperty("--x", 0)
     this.style.setProperty("--y", 0)
 }); */
+
 //서브메뉴 클릭
 $(".sub-icon").click(function(){
     $(this).toggleClass("on");
@@ -44,6 +44,30 @@ $(".sub-icon").click(function(){
         $(".sub-icon").removeClass("on");
     });    
 });
+//포토 3d 마우스 이펙트
+let x = 0,
+    y = 0,
+    mouseX = 0,
+    mouseY = 0,
+    angleX = 0,
+    angleY = 0,
+    fmouseX = 0,
+    fmouseY = 0;
+
+$(window).mousemove(function(e){ 
+x = e.pageX; 
+y = e.pageY;  
+mouseX = Math.max(-100, Math.min(100, $(window).width()/2 - x));
+mouseY = Math.max(-100, Math.min(100, $(window).height()/2 - y));
+angleX = (12 * mouseX) / 100;
+angleY = (12 * mouseY) /100;
+fmouseX += (angleX - fmouseX) * 1/5;
+fmouseY += (angleY - fmouseY) * 1/5;
+animation();      
+
+function animation(){
+$(".img-box").css({"transform": "perspective(600px) rotateX("+fmouseX+"deg) rotateY("+fmouseY+"deg)"});
+}
 //사이트 소스 보기
 $(".cont03 > div").each(function(index){
     $(this).find(".tab-wrap").attr("data-num",index);
@@ -85,9 +109,7 @@ tabBar.click(function(){
     target.addClass("show");
     contBox.css("display","none");
     contBox.eq(index).css({"display":"block","display":"grid"});
-/* 
-    let tabWidth = $("li.show").width();
-    $("li.show").css("left",tabWidth); */
+
 });
 //애니메이션 슬라이드
 $(".aniBox .iframe .frame-box").hide();
