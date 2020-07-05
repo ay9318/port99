@@ -163,53 +163,56 @@ transform: translate3d(0, 0, 0);
 /* main */
 .main {height: calc(100vh - 180px); display: flex; align-items: center;}
 .main .main-left {width: 60%;}
-.main .main-left h2 {font-size: 6rem; font-family: 'Recoleta'; line-height: .9; color: #09C9C3; animation: balloon 4s infinite;}
+.main .main-left h2 {font-size: 6rem; font-family: 'Recoleta'; line-height: .9; color: #09C9C3;}
 .main .main-left h2 span {color: #E16162;}
 .main .main-left p {
     font-family: 'Josefin Sans', sans-serif; color: #241e60; 
     font-size: 1.8rem; margin-top: 1.5rem;
-    animation: balloon 4s infinite;
 }
-.img-wrap {width: 40%; height: 100%; position: relative;}
+.img-wrap {
+    width: 40%; height: 100%; 
+    position: relative; 
+    --x: 0;
+    --y: 0;
+    --d: 50;
+}
 .img-wrap .heart {  
-    position: absolute; left: 0; top: 25%;
-    width: 170px; height: 600px;
+    --d: 20;
+    position: absolute; left: -20px; top: 20%;
+    width: 180px; height: 700px; overflow: hidden;
+    transform: translate(calc(var(--x) / var(--d)*1px),calc(var(--y) / var(--d)*1px));
 }
 .img-wrap .heart img {
-    width: 80%; position: relative; z-index: 10;
-    animation: balloon 4s infinite;
-    opacity: .8;
+    width: 100%; position: relative; z-index: 10;
+    animation: balloon 3s infinite;
 }
-.img-wrap .heart svg {position: absolute; left: 20%; top: 100px; z-index: 9; animation: line 4s infinite;}
+.img-wrap .heart svg {position: absolute; left: 58%; top: 100px; z-index: 9; animation: balloon 2s infinite;}
 .img-wrap .monkey {
-    position: absolute; left: 15%; top: 35%;
-    width: 250px; height: 600px;    
+    --d: 20;
+    position: absolute; left: 18%; top: 40%;
+    width: 250px; height: 700px; overflow: hidden;
+    transform: translate(calc(var(--x) / var(--d)*1px),calc(var(--y) / var(--d)*1px));
 }
-.img-wrap .monkey img {
+.img-wrap .monkey img {   
     width: 100%; position: relative; z-index: 10;    
-    animation: balloon 4.5s infinite;
-    opacity: .9;
+    animation: balloon 4s infinite;
 }
-.img-wrap .monkey svg {position: absolute; left: 37%; top: 235px; z-index: 9; animation: line 4.5s infinite;}
+.img-wrap .monkey svg {position: absolute; left: 45%; top: 200px; z-index: 9; animation: balloon 2s infinite;}
 .img-wrap .duck {
+    --d: 20;
     position: absolute; left: 40%; top: 10%;
-    width: 250px; height: 600px;
-    transform: rotate(6deg);
+    width: 250px; height: 700px; overflow: hidden;
+    transform: translate(calc(var(--x) / var(--d)*1px),calc(var(--y) / var(--d)*1px)); 
 }
 .img-wrap .duck img {   
     width: 100%; position: relative; z-index: 10;
     animation: balloon 5s infinite;
-    opacity: .8;
 }
-.img-wrap .duck svg {position: absolute; left: 48%; top: 225px; z-index: 9; animation: line 5s infinite;}
+.img-wrap .duck svg {position: absolute; left: 45%; top: 100px; z-index: 9; animation: balloon 1s infinite;}
+
 @keyframes balloon {
     0% {transform: translateY(0);}
-    50% {transform: translateY(30px);}
-    100% {transform: translateY(0);}
-}
-@keyframes line {
-    0% {transform: translateY(0);}
-    50% {transform: translateY(35px);}
+    50% {transform: translateY(50px);}
     100% {transform: translateY(0);}
 }
 
@@ -243,27 +246,13 @@ transform: translate3d(0, 0, 0);
     color: #fff;
     position: absolute; left: -5rem; top: -2rem;
     font-size: 5rem;
-    animation: flash 2s 1s infinite;
 }
 .cont1 .cont1-text::after {
     content: '"';
     color: #fff;
     position: absolute; right: -3rem; bottom: -1.8rem;
     font-size: 5rem;
-    animation: flash 2s 1s infinite;
 }
-@keyframes flash {
-    from,
-    50%,
-    to {
-      opacity: 1;
-    }
-  
-    25%,
-    75% {
-      opacity: 0;
-    }
-  }
 
 /* content02 */
 .cont2 {
@@ -289,27 +278,14 @@ transform: translate3d(0, 0, 0);
     letter-spacing: -0.08rem;
     color: #241E60;
 }
-.cont2 .cont2-right .img-box {
-    position: relative; 
-    transform: perspective(600px) rotateX(-10deg) rotateY(-10deg) scale(1);
-    transform-style: preserve-3d;
-    will-change: transform;
-}
-.cont2 .cont2-right .img-box .like {
-    width: 7rem; position: absolute; 
-    left: -50px; top: -30px;
-}
+.cont2 .cont2-right .img-box {position: relative;}
+.cont2 .cont2-right .img-box .like {width: 7rem; position: absolute; left: -50px; top: -30px;}
 .cont2 .cont2-right .img-box .photo {width: 20rem; vertical-align: top;}
 
 /* content03 */
 .cont03 {padding: 5rem 0;}
 .cont03-title h3 {color: #241E60; margin-bottom: 5vw;}
-.cont03-title h3 img {width: 6rem; animation: pulse 1s infinite;}
-@keyframes pulse {
-    from {transform: scale3d(1, 1, 1) rotate(25deg);}  
-    50% {transform: scale3d(1.05, 1.05, 1.05) rotate(25deg);}  
-    to {transform: scale3d(1, 1, 1) rotate(25deg);}
-}
+.cont03-title h3 img {width: 6rem; transform: rotate(25deg);}
 .site-wrap {padding: 10vh 0 30vh 0;}
 /* site-right */
 .site-wrap .site-right {
@@ -537,9 +513,9 @@ label.toggle-item {
 .cont5 h3 img {width: 6rem; margin: 0 1rem -1rem}
 .cont5 .tabBar {background: #241E60; font-family: 'Josefin Sans', serif; border-radius: 6rem; margin-bottom: 4rem;}
 .cont5 .tabBar ul {display: flex; height: 4rem;}
-.cont5 .tabBar ul li {flex-basis: 33.333333%; color: #fff; text-align: center; display: inline-block; line-height: 4rem; font-size: 1.5rem; cursor: pointer;}
+.cont5 .tabBar ul li {flex-basis: 25%; color: #fff; text-align: center; display: inline-block; line-height: 4rem; font-size: 1.5rem; cursor: pointer;}
 .cont5 .tabBar ul li a {color: #fff; padding: 1.2rem 2rem;}
-.cont5 .tabBar ul .tab-bar {background: #E16162; border-radius: 5rem; width: 33.33333%;}
+.cont5 .tabBar ul li.show {background: #E16162; border-radius: 5rem; padding: 0 1rem;}
 .cont5 .contBox {display: grid; grid-template-columns: repeat(3,1fr); grid-gap: 1.65rem;}
 .cont5 .contBox .box {position: relative; width: 23rem; height: 29rem; border-radius: 1.5rem;}
 /* parallax */
@@ -666,6 +642,7 @@ label.toggle-item {
     border-radius: 1.5rem;
 }
 .cont5 .contBox.mo .box:nth-child(8) {background: #F9BC60;}
+.cont5 .contBox.ga .gamebox {width: 1160px; height: 800px;}
 
 /* content06 */
 .cont6 {padding: 20rem 0;}
@@ -685,12 +662,7 @@ label.toggle-item {
 /* content07 */
 .cont7 {padding: 5rem 0 10rem;}
 .cont7 h3 {margin-bottom: 5rem; color: #241E60;}
-.cont7 h3 img {width: 70px; animation: pulse2 1s infinite;}
-@keyframes pulse2 {
-    from {transform: scale3d(1, 1, 1) rotate(20deg);}  
-    50% {transform: scale3d(1.1, 1.1, 1.1) rotate(20deg);}  
-    to {transform: scale3d(1, 1, 1) rotate(20deg);}
-}
+.cont7 h3 img {width: 80px; transform: rotate(20deg);}
 .cont7 input {
     font-family: 'S-CoreDream-4Regular';
     width: 1000px; height: 50px; 
@@ -719,19 +691,9 @@ label.toggle-item {
     border: 3px solid #241E60;
     font-weight: 600;
     background: #fff;
-    animation: pulse3 1s infinite;
 }
-@keyframes pulse3 {
-    from {transform: scale3d(1, 1, 1);}  
-    50% {transform: scale3d(1.1, 1.1, 1.1);}  
-    to {transform: scale3d(1, 1, 1);}
-}
-.cont7 form img {width: 5rem; position: absolute; right: 1rem; bottom: 4rem; z-index: 1; animation: moveleft 5s infinite;}
-@keyframes moveleft {
-    0% {transform: translateX(0px);}
-    50% {transform: translateX(-40px);}
-    10% {transform: translateX(0px);}
-}
+.cont7 form img {width: 5rem; position: absolute; right: 1rem; bottom: 4rem; z-index: 1;}
+
 /* gift */
 .gift {
     position: fixed; left: 0; bottom: 0; 
@@ -881,12 +843,10 @@ label.toggle-item {
     .main .main-left {margin-top: 2rem;}
     .main .main-left h2 {font-size: 2.5rem;}
     .main .main-left p {font-size: 1rem;}
-    .main .img-wrap .heart {width: 5rem; left: 24%; top: 3%;}
-    .main .img-wrap .heart svg {left: 0; top: 6%; height: 280px;}
-    .main .img-wrap .monkey {width: 7rem; left: 33%; top: 8%;}
-    .main .img-wrap .monkey svg {left: 19%; top: 14%; height: 200px;}
-    .main .img-wrap .duck {width: 6.5rem; left: 45%; top: 0%;}
-    .main .img-wrap .duck svg {left: 30%; top: 13%; height: 220px;}
+    .main .img-wrap .heart {width: 5rem; left: 20%;}
+    .main .img-wrap .monkey {width: 7rem; left: 33%; top: 15%;}
+    .main .img-wrap .duck {width: 6rem; overflow: visible;}
+    .main .img-wrap .duck svg {left: 30%; top: 8%;}
     #content01 {height: 400px;}
     #content01 .cont1 {padding-bottom: 10rem;}
     #content01 .cont1 .cont1-text {font-size: .9rem; line-height: 1.8;}
@@ -937,6 +897,7 @@ label.toggle-item {
     .cont5 .contBox .box .textBox .tit {font-size: 1.2rem;}
     .cont5 .contBox .box .textBox .desc {font-size: 0.8rem; margin: 0;}
     .cont5 .contBox .box .arrow {width: 2rem;}
+    .cont5 .contBox.ga .gamebox {width: 290px; height: 500px;}
     .cont6 {padding: 10rem 0 20rem;}
     .cont6 h3 {font-size: 3.8rem;}
     .cont6 .aniBox p {font-size: 1.5rem; padding: 1.5rem 0;}

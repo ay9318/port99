@@ -15,26 +15,24 @@ $(".snav ul li").click(function(){
     let offset = section.offset().top;
     $("html, body").animate({ scrollTop:offset }, 600);
 });
-//메인
-//풍선
-/* $(".img-wrap").mousemove(function(){
-    const rect = $(this).getBoundingClientRect();
-    console.log(rect)
-}) */
-/* const moveImg = document.querySelector(".img-wrap");
 
-moveImg.addEventListener("mousemove", function(e){
-    const rect = this.getBoundingClientRect();
-    this.style.setProperty("--x", e.clientX - ( (rect.width) + rect.left));
-    this.style.setProperty("--y", e.clientY - ( (rect.height) + rect.top));
+//애니메이션
+$(document).ready(function() {
+    $(window).scroll(function(){
+        const scrollTop = $(window).scrollTop()+$(window).height()/2;
 
-    gsap.to(".cursor", {duration: .2, left: e.pageX - 10, top: e.pageY - 10});
+        $("section").each(function(){
+            if(scrollTop > $(this).offset().top) {
+                $(this).addClass("show");
+            }
+        });
+        $(".cont03 .site-wrap").each(function(){
+            if(scrollTop > $(this).offset().top) {
+                $(this).addClass("show");
+            }
+        });
+    });
 });
-moveImg.addEventListener("mouseleave", function(){
-    this.style.setProperty("--x", 0)
-    this.style.setProperty("--y", 0)
-}); */
-
 //서브메뉴 클릭
 $(".sub-icon").click(function(){
     $(this).toggleClass("on");
@@ -44,30 +42,7 @@ $(".sub-icon").click(function(){
         $(".sub-icon").removeClass("on");
     });    
 });
-//포토 3d 마우스 이펙트
-let x = 0,
-    y = 0,
-    mouseX = 0,
-    mouseY = 0,
-    angleX = 0,
-    angleY = 0,
-    fmouseX = 0,
-    fmouseY = 0;
 
-$(window).mousemove(function(e){ 
-x = e.pageX; 
-y = e.pageY;  
-mouseX = Math.max(-100, Math.min(100, $(window).width()/2 - x));
-mouseY = Math.max(-100, Math.min(100, $(window).height()/2 - y));
-angleX = (12 * mouseX) / 100;
-angleY = (12 * mouseY) /100;
-fmouseX += (angleX - fmouseX) * 1/5;
-fmouseY += (angleY - fmouseY) * 1/5;
-animation();      
-
-function animation(){
-$(".img-box").css({"transform": "perspective(600px) rotateX("+fmouseX+"deg) rotateY("+fmouseY+"deg)"});
-}
 //사이트 소스 보기
 $(".cont03 > div").each(function(index){
     $(this).find(".tab-wrap").attr("data-num",index);
@@ -86,6 +61,7 @@ $(".cont03 > div").each(function(index){
         $(".tab-wrap.num"+num+" .tab-cont > div").eq(index).css("display","block");  
     });            
 });
+
 //다크 모드
 $(".toggle-item").click(function(e){
     e.preventDefault("a");            
@@ -95,6 +71,7 @@ $(".toggle-item").click(function(e){
     $(".tab-wrap.num"+num+" .tab-cont > div .language-js").toggleClass("on");
     $(".tab-wrap.num"+num+" .tab-mode").toggleClass("on");
 });
+
 //탭 바
 let tabBar = $(".tabBar > ul > li");
 let contBox = $(".contBox");
@@ -111,6 +88,7 @@ tabBar.click(function(){
     contBox.eq(index).css({"display":"block","display":"grid"});
 
 });
+
 //애니메이션 슬라이드
 $(".aniBox .iframe .frame-box").hide();
 $(".aniBox .iframe img").click(function() {
