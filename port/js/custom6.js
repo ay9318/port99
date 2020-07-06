@@ -80,7 +80,7 @@ $(".cont03 > div").each(function(index){
         let target = $(this);
         let num = target.parent().parent().parent().attr("data-num");
         let index = target.index();
-        
+
         $(".tab-wrap.num"+num+" .tab-btn > ul > li").removeClass("active");  
         target.addClass("active");  
         
