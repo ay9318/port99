@@ -19,7 +19,7 @@ $(".snav ul li").click(function(){
 //애니메이션
 $(document).ready(function() {
     $(window).scroll(function(){
-        const scrollTop = $(window).scrollTop()+$(window).height()/2;
+        const scrollTop = $(window).scrollTop()+$(window).height()/3;
 
         $("section").each(function(){
             if(scrollTop > $(this).offset().top) {
@@ -31,9 +31,10 @@ $(document).ready(function() {
                 $(this).addClass("show");
             }
         });
+
         //복권
         let lotto = $(window).scrollTop();
-        $(".bargauge").width(lotto/11.6);
+        $(".bargauge").width(lotto/12);
 
         if(lotto >= 2000) {
             $(".gift-left p:first-child").removeClass("on");
@@ -50,7 +51,7 @@ $(document).ready(function() {
             $(".gift-left p:nth-child(3)").removeClass("on");
         };
 
-        if(lotto >= 12900) {
+        if(lotto >= 12300) {
             $(".gift-left p:nth-child(3)").removeClass("on");
             $(".gift-left p:nth-child(4)").addClass("on");
         } else {
@@ -100,7 +101,7 @@ $(".toggle-item").click(function(e){
 });
 
 //탭 바
-let tabBar = $(".tabBar > button");
+let tabBar = $(".tabBar > ul > li");
 let contBox = $(".contBox");
 
 contBox.hide().eq(0).show();
@@ -113,7 +114,6 @@ tabBar.click(function(){
     target.addClass("show");
     contBox.css("display","none");
     contBox.eq(index).css({"display":"block","display":"grid"});
-
 });
 
 //애니메이션 슬라이드
