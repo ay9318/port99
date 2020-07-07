@@ -1,3 +1,24 @@
+//커서
+$(".cursor img").hide();
+
+$("body").hover(function(){
+    $(".cursor .cur").show();
+}, function(){
+    $(".cursor .cur").hide();
+});
+
+$("a, button").hover(function(){
+    $(".cursor .pointer").show();
+    $(".cursor .cur").hide();
+},function(){
+    $(".cursor .pointer").hide();
+    $(".cursor .cur").show();
+});
+
+$(document).mousemove(function(e) {
+    $(".cursor").css({"left" : e.pageX+3,"top" : e.pageY-15});    
+});
+
 //패럴럭스
 $("#nav ul li").click(function(){
     let cont = $(".cm");
@@ -32,9 +53,9 @@ $(document).ready(function() {
             }
         });
 
-        //복권
+        //기프트 게이지
         let lotto = $(window).scrollTop();
-        $(".bargauge").width(lotto/12);
+        $(".bargauge").width(lotto/11);
 
         if(lotto >= 2000) {
             $(".gift-left p:first-child").removeClass("on");
@@ -51,7 +72,7 @@ $(document).ready(function() {
             $(".gift-left p:nth-child(3)").removeClass("on");
         };
 
-        if(lotto >= 12300) {
+        if(lotto >= 12500) {
             $(".gift-left p:nth-child(3)").removeClass("on");
             $(".gift-left p:nth-child(4)").addClass("on");
         } else {

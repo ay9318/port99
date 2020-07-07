@@ -1,3 +1,4 @@
+* {cursor: none;}
 body {background: #F1EFE6; overflow-x: hidden;}
 h3 {font-family: 'Recoleta',serif; font-size: 7rem; position: relative;}
 h3 img {position: absolute;}
@@ -5,6 +6,8 @@ h4 {font-family: 'yg-jalnan'; font-size: 3rem; color: #333;}
 :root {font-size: 16px;}
 .row {padding: 0 20px;}
 .container {max-width: 1200px; margin: 0 auto;}
+.cursor {position: absolute; left: 0; top: 0; z-index: 10000;}
+.cursor img {width: 4rem;}
 
 /* layout */
 #main {height: 800px;}
@@ -222,22 +225,28 @@ h4 {font-family: 'yg-jalnan'; font-size: 3rem; color: #333;}
 .cont1 .cont1-text strong {position: relative; color: #fff;}
 .cont1 .cont1-text strong:first-child::after {
     content: '';
-    width: 100%; height: 0.4rem;
+    width: 0%; height: 0.4rem;
     background: #E16162;
     position: absolute;
     left: 0; bottom: -1rem;
     border-radius: 8px;
+    animation: width 2s 1.9s forwards;
 }
 .cont1 .cont1-text strong:nth-child(8)::after {
     content: '';
-    width: 100%; height: 0.4rem;
+    width: 0%; height: 0.4rem;
     background: #E16162;
     position: absolute;
     left: 0; bottom: -1rem;
     border-radius: 8px;
+    animation: width 2s 1.9s forwards;
+}
+@keyframes width {
+    0% {width: 0;}
+    100% {width: 100%;}
 }
 .cont1 .cont1-text:hover strong:nth-child(1), 
-.cont1 .cont1-text:hover strong:nth-child(8) {color: #555; transition: all .5s;}
+.cont1 .cont1-text:hover strong:nth-child(8) {color: #fff; transition: all .5s;}
 .cont1 .cont1-text::before {
     content: '"';
     color: #fff;
@@ -404,6 +413,9 @@ h4 {font-family: 'yg-jalnan'; font-size: 3rem; color: #333;}
     border-radius: 7px;
     margin-right: 1rem;
 }
+.site-wrap .site-right .si-btn a:hover {
+    background: rgb(248, 204, 137);
+}
 .site-wrap .site-right .si-img {
     position: relative; 
     border: 3px solid #000; 
@@ -461,7 +473,10 @@ h4 {font-family: 'yg-jalnan'; font-size: 3rem; color: #333;}
     background: rgb(252, 207, 207);
     border-radius: 7px;
     margin-left: 1rem;
-} 
+}
+.site-wrap .site-left .si-btn a:hover {
+    background: rgb(248, 157, 157);
+}
 .site-wrap .site-left .si-img {
     position: relative; display: inline-block; 
     border: 3px solid #000; border-radius: 7px; 
@@ -851,6 +866,7 @@ label.toggle-item {
 .cont5 .aniBox p {font-size: 2.7rem; padding: 2rem 0;}
 .cont5 .aniBox .iframe {position: relative; border-bottom: 5px solid #E16162;}
 .cont5 .aniBox .iframe .plus {cursor: pointer; position: absolute; right: 0; top: -5.4rem; transition: transform .1s;}
+.cont5 .aniBox .iframe .plus:hover {cursor: none;}
 .cont5 .aniBox .iframe .plus.on {transform: rotate(135deg);}
 .cont5 .aniBox .iframe .frame-box {display: flex; height: 600px;}
 .cont5 .aniBox .iframe .frame-box .frame-right {width: 35%; margin: 23.5rem 0 0 2rem;}
