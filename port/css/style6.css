@@ -991,8 +991,9 @@ label.toggle-item {
     height: 22px;    
     border-radius: 90px;
 } 
-.gift .gift-right {width: 20%;}
+.gift .gift-right {position: relative; width: 20%;}
 .gift .gift-right .lottoBox {
+    position: relative;
     background: #F9BC60; 
     padding: 1vw 2vw; 
     border: 4px solid #241e60; 
@@ -1006,6 +1007,13 @@ label.toggle-item {
     font-weight: bold;
 }
 .gift .gift-right .lottoBox p img{width: 1.5rem;}
+#canvas {    
+    border-radius: 80px;
+    position: absolute; left: .1rem; top: .1rem;
+    border: 4px solid #241e60; 
+    display: none;
+};
+
 
 /* 미디어 쿼리 */
 @media (max-width: 1220px) {
