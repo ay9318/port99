@@ -545,10 +545,12 @@
             }
         });
         //modal
-        $(".info1 a").click(function(){
+        $(".info1 a").click(function(e){
+            e.preventDefault();
             $(".info1 .modal").addClass("show");
         });
-        $(".info1 .close").click(function(){
+        $(".info1 .close").click(function(e){
+            e.preventDefault();
             $(".info1 .modal").removeClass("show");
         });
     </script>

@@ -230,7 +230,7 @@ h4 {font-family: 'yg-jalnan'; font-size: 3rem; color: #333;}
     position: absolute;
     left: 0; bottom: -1rem;
     border-radius: 8px;
-    animation: width 2s 1.9s forwards;
+    animation: width 1.5s 1.9s forwards;
 }
 .cont1 .cont1-text strong:nth-child(8)::after {
     content: '';
@@ -239,14 +239,12 @@ h4 {font-family: 'yg-jalnan'; font-size: 3rem; color: #333;}
     position: absolute;
     left: 0; bottom: -1rem;
     border-radius: 8px;
-    animation: width 2s 1.9s forwards;
+    animation: width 2.3s 3s forwards;
 }
 @keyframes width {
     0% {width: 0;}
     100% {width: 100%;}
 }
-.cont1 .cont1-text:hover strong:nth-child(1), 
-.cont1 .cont1-text:hover strong:nth-child(8) {color: #fff; transition: all .5s;}
 .cont1 .cont1-text::before {
     content: '"';
     color: #fff;
@@ -859,9 +857,9 @@ label.toggle-item {
 }
 
 /* content05 */
-.cont5 {padding: 20rem 0; overflow: hidden;}
+.cont5 {padding: 20rem 0;}
 .cont5 h3 {margin-bottom: 5rem;}
-.cont5 h3 img {width: 5rem;}
+.cont5 h3 img {width: 4rem;}
 .cont5 .aniBox {font-family: 'Recoleta', serif;}
 .cont5 .aniBox p {font-size: 2.7rem; padding: 2rem 0;}
 .cont5 .aniBox .iframe {position: relative; border-bottom: 5px solid #E16162;}
@@ -1160,7 +1158,7 @@ label.toggle-item {
     .cont4 .contBox .hover-wrap .front .tit {font-size: 1.2rem;}
     .cont4 .contBox .hover-wrap .front .desc {font-size: 0.8rem;}
     .cont5 {padding: 10rem 0 20rem;}
-    .cont5 h3 {font-size: 3.8rem;}
+    .cont5 h3 {font-size: 3.7rem;}
     .cont5 h3 img {width: 3rem;}
     .cont5 .aniBox p {font-size: 1.5rem; padding: 1.5rem 0;}
     .cont5 .aniBox .iframe .plus {width: 9%; top: -3.8rem;}
