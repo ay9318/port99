@@ -230,7 +230,7 @@ h4 {font-family: 'yg-jalnan'; font-size: 3rem; color: #333;}
     position: absolute;
     left: 0; bottom: -1rem;
     border-radius: 8px;
-    animation: width 1.5s 1.9s forwards;
+    animation: width 1.5s 1.9s;
 }
 .cont1 .cont1-text strong:nth-child(8)::after {
     content: '';
@@ -239,11 +239,11 @@ h4 {font-family: 'yg-jalnan'; font-size: 3rem; color: #333;}
     position: absolute;
     left: 0; bottom: -1rem;
     border-radius: 8px;
-    animation: width 2.3s 3s forwards;
+    animation: width 2.3s 3s;
 }
 @keyframes width {
-    0% {width: 0;}
-    100% {width: 100%;}
+    0% {width: 100%;}
+    100% {width: 0%;}
 }
 .cont1 .cont1-text::before {
     content: '"';
