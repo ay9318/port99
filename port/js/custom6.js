@@ -62,21 +62,21 @@ $(document).ready(function() {
             $(".gift-left p:nth-child(2)").addClass("on");
         } else {
             $(".gift-left p:first-child").addClass("on");
-            $(".gift-left p:nth-child(2)").removeClass("on");
+            $(".gift-left p:nth-child(2)").removeClass("on");       
         };
 
         if(lotto >= 7500) {
             $(".gift-left p:nth-child(2)").removeClass("on");
             $(".gift-left p:nth-child(3)").addClass("on");
         } else {
-            $(".gift-left p:nth-child(3)").removeClass("on");
+            $(".gift-left p:nth-child(3)").removeClass("on"); 
         };
 
         if(lotto >= 12500) {
             $(".gift-left p:nth-child(3)").removeClass("on");
             $(".gift-left p:nth-child(4)").addClass("on");
             $(".lottoBox").css("display","none");
-            $(".giftcontainer").css("display","block");
+            $(".giftcontainer").css("display","block");            
         } else {
             $(".gift-left p:nth-child(4)").removeClass("on");
             $(".giftcontainer").css("display","none");
