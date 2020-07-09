@@ -1,14 +1,3 @@
-* {cursor: none;}
-body {background: #F1EFE6; overflow-x: hidden;}
-h3 {font-family: 'Recoleta',serif; font-size: 7rem; position: relative;}
-h3 img {position: absolute;}
-h4 {font-family: 'yg-jalnan'; font-size: 3rem; color: #333;}
-:root {font-size: 16px;}
-.row {padding: 0 20px;}
-.container {max-width: 1200px; margin: 0 auto;}
-.cursor {position: absolute; left: 0; top: 0; z-index: 10000;}
-.cursor img {width: 4rem;}
-
 /* layout */
 #main {height: 800px;}
 #content01 {
@@ -230,7 +219,7 @@ h4 {font-family: 'yg-jalnan'; font-size: 3rem; color: #333;}
     position: absolute;
     left: 0; bottom: -1rem;
     border-radius: 8px;
-    animation: width 1.5s 1.9s;
+    animation: width 1.5s 1.9s forwards;
 }
 .cont1 .cont1-text strong:nth-child(8)::after {
     content: '';
@@ -239,11 +228,11 @@ h4 {font-family: 'yg-jalnan'; font-size: 3rem; color: #333;}
     position: absolute;
     left: 0; bottom: -1rem;
     border-radius: 8px;
-    animation: width 2.3s 3s;
+    animation: width 2.3s 3s forwards;
 }
 @keyframes width {
-    0% {width: 100%;}
-    100% {width: 0%;}
+    0% {width: 0%;}
+    100% {width: 100%;}
 }
 .cont1 .cont1-text::before {
     content: '"';
@@ -958,7 +947,7 @@ label.toggle-item {
     z-index: 1000;
 }
 .gift .gift-left {
-    width: 70%;
+    width: 72%;
 }
 .gift .gift-left p {
     display: none; font-family: 'S-CoreDream-5Medium', serif; 
@@ -1006,14 +995,17 @@ label.toggle-item {
     font-size: 1.5rem; 
     font-weight: bold;
 }
-.gift .gift-right .lottoBox p img{width: 1.5rem;}
-#canvas {    
-    border-radius: 80px;
-    position: absolute; left: .1rem; top: .1rem;
-    border: 4px solid #241e60; 
+.gift .gift-right .lottoBox p img {width: 1.5rem;}
+.giftcontainer {
+    position: relative;
+    width: 315px;
+    height: 70px;
+    margin: 0 auto;
     display: none;
-};
-
+}
+.canvas {position: absolute; left: 0; top: 0;}
+.giftImg {visibility: hidden;}
+.giftImg img {width: 100%;}
 
 /* 미디어 쿼리 */
 @media (max-width: 1220px) {
@@ -1103,6 +1095,7 @@ label.toggle-item {
     .header .sub-icon {width: 30px; height: 30px; margin-right: 0;}
     .header .sub-icon .line01 {width: 15px;}
     .header .sub-icon .line02 {width: 15px;}
+    .ocean {display: none;}
     #smenu .snav {top: 20%;}
     #smenu .sicon {top: 35%;}
     #smenu .snav ul li {padding: 0.8rem 0;}
@@ -1116,8 +1109,7 @@ label.toggle-item {
     .main .img-wrap .monkey svg {left: 15%; top: 90px; height: 200px;}
     .main .img-wrap .duck {width: 6.5rem; left: 45%; top: 0%;}
     .main .img-wrap .duck svg {left: 30%; top: 13%; height: 200px;}
-    #content01 {height: 400px;}
-    #content01 .cont1 {padding-bottom: 15rem;}
+    #content01 {height: 300px;}
     #content01 .cont1 .cont1-text {font-size: .9rem; line-height: 1.8;}
     #content01 .cont1 .cont1-text::before {font-size: 1.5em; left: -1rem; top: -.5rem;}
     #content01 .cont1 .cont1-text::after {font-size: 1.5rem; right: 0rem; bottom: -.5rem;}
@@ -1131,7 +1123,7 @@ label.toggle-item {
     #content02 .cont2 .cont2-right {width: 100%;}
     #content02 .cont2 .cont2-right .img-box .like {width: 5rem;}
     #content02 .cont2 .cont2-right .img-box .photo {width: 13rem;}
-    #content03 {padding: 5rem 0 12rem 0;}
+    #content03 {padding: 5rem 0;}
     #content03 .cont03-title {margin-left: 0;}
     #content03 .cont03-title h3 img {width: 3rem;}
     .site-wrap {padding: 0;}
@@ -1165,7 +1157,7 @@ label.toggle-item {
     .cont4 .contBox .hover-wrap .effect img {height: 12rem;}
     .cont4 .contBox .hover-wrap .front .tit {font-size: 1.2rem;}
     .cont4 .contBox .hover-wrap .front .desc {font-size: 0.8rem;}
-    .cont5 {padding: 10rem 0 20rem;}
+    .cont5 {padding: 10rem 0;}
     .cont5 h3 {font-size: 3.7rem;}
     .cont5 h3 img {width: 3rem;}
     .cont5 .aniBox p {font-size: 1.5rem; padding: 1.5rem 0;}
