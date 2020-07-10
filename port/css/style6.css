@@ -1124,7 +1124,7 @@ label.toggle-item {
     #content02 .cont2 .cont2-left {flex-basis: 75%;}
     #content02 .cont2 .cont2-left p {font-size: 1.8rem;}
     #content02 .cont2 .cont2-left p em {font-size: 1.8rem;}
-    #content02 .cont2 .cont2-left .cont2-text {font-size: 1rem; line-height: 1.4; margin: 1rem auto; width: 100%;} 
+    #content02 .cont2 .cont2-left .cont2-text {text-align: justify; font-size: 1.1rem; line-height: 1.4; margin: 1rem auto; width: 100%;} 
     #content02 .cont2 .cont2-right {width: 100%; margin: 0;}
     #content02 .cont2 .cont2-right .img-box .like {width: 6rem;}
     #content02 .cont2 .cont2-right .img-box .photo {width: 15rem; margin-bottom: 2rem;}
@@ -1165,7 +1165,7 @@ label.toggle-item {
     .cont5 h3 img {width: 3rem;}
     .cont5 .aniBox p {font-size: 1.5rem; padding: 1.5rem 0;}
     .cont5 .aniBox .iframe {border-bottom: 3px solid;}
-    .cont5 .aniBox .iframe .plus {width: 9%; top: -3.8rem;}
+    .cont5 .aniBox .iframe .plus {width: 7%; top: -3.8rem;}
     .cont5 .aniBox .iframe .frame-box {flex-wrap: wrap; height: 700px;}
     .cont5 .aniBox .iframe .frame-box .frame-right {width: 100%; margin: 0 auto;}
     .cont5 .aniBox .iframe .frame-box .frame-right p {margin-bottom: 5rem;}
