@@ -1092,6 +1092,8 @@ label.toggle-item {
     .gift {display: none;}
 }
 @media (max-width: 640px) and (min-width: 320px) {
+    * {cursor: unset;}
+    .cursor {display: none;}
     h3 {font-size: 3.2rem;}
     .row {padding: 0;}
     .header {padding: 0 1rem;}

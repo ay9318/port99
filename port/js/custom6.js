@@ -65,21 +65,21 @@ $(document).ready(function() {
             $(".gift").css("background","#FFF4C5");
         } else {
             $(".gift-left p:first-child").addClass("on");
-            $(".gift-left p:nth-child(2)").removeClass("on");
+            $(".gift-left p:nth-child(2)").removeClass("on");       
         };
         if(scrollTop >= 7500) {
             $(".gift-left p:nth-child(2)").removeClass("on");
             $(".gift-left p:nth-child(3)").addClass("on");
             $(".gift").css("background","#FFF0AB");
         } else {
-            $(".gift-left p:nth-child(3)").removeClass("on");
+            $(".gift-left p:nth-child(3)").removeClass("on"); 
         };
         if(scrollTop >= 12500) {
             $(".gift-left p:nth-child(3)").removeClass("on");
             $(".gift-left p:nth-child(4)").addClass("on");
             $(".lottoBox").css("display","none");
             $(".giftcontainer").css("display","block");
-            $(".gift").css("background","#F1EFE6");
+            $(".gift").css("background","#F1EFE6");         
         } else {
             $(".gift-left p:nth-child(4)").removeClass("on");
             $(".giftcontainer").css("display","none");
