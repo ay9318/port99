@@ -491,9 +491,9 @@
 .site-wrap .site-right .left .si-tit  {opacity: 0; transform: translateY(60px); transition: all 0.75s 0.1s cubic-bezier(0, 0, 0, 1.05);}
 .site-wrap .site-right .left .si-desc {opacity: 0; transform: translateY(60px); transition: all 0.75s 0.4s cubic-bezier(0, 0, 0, 1.05);}
 .site-wrap .site-right .left .si-btn  {opacity: 0; transform: translateY(60px); transition: all 0.75s 0.6s cubic-bezier(0, 0, 0, 1.05);}
-.site-wrap .site-right .right         {opacity: 0; transform: translateX(60px); transition: all 0.75s 0.6s cubic-bezier(0, 0, 0, 1.05);}
+.site-wrap .site-right .right         {opacity: 0; transform: translateX(20px); transition: all 0.75s 0.6s cubic-bezier(0, 0, 0, 1.05);}
 .site-wrap .tab-wrap                  {opacity: 0; transform: translateY(60px); transition: all 0.75s 1.0s cubic-bezier(0, 0, 0, 1.05);}
-.site-wrap .site-left .left              {opacity: 0; transform: translateX(-60px); transition: all 0.6s .3s cubic-bezier(0, 0, 0, 1.05);}
+.site-wrap .site-left .left              {opacity: 0; transform: translateX(-20px); transition: all 0.6s .3s cubic-bezier(0, 0, 0, 1.05);}
 .site-wrap .site-left .si-tit             {opacity: 0; transform: translateY(60px); transition: all 0.6s 0.1s cubic-bezier(0, 0, 0, 1.05);}
 .site-wrap .site-left .right .si-desc {opacity: 0; transform: translateY(60px); transition: all 0.75s 0.4s cubic-bezier(0, 0, 0, 1.05);}
 .site-wrap .site-left .right .si-btn  {opacity: 0; transform: translateY(60px); transition: all 0.75s 0.6s cubic-bezier(0, 0, 0, 1.05);}
@@ -651,7 +651,7 @@ label.toggle-item {
 .tab-mode.on .dog-rollover label .ear {background: #f9bb00;}
 
 /* content04 */
-.cont4 {padding: 20rem 0;}
+.cont4 {padding: 20rem 0; overflow: hidden;}
 .cont4 h3 {color: #241E60; margin-bottom: 9rem;}
 .cont4 h3 img {width: 6rem; margin: 1rem;}
 .cont4 .tabBar {
@@ -673,7 +673,7 @@ label.toggle-item {
 /* 애니메이션 */
 .cont4 h3 {opacity: 0; transition: all 1s 0.5s; transform: translateY(60px);}
 .cont4 h3 img {opacity: 0; transition: all 1s 0.3s;}
-.cont4 .tabBar {opacity: 0; transition: all 1s 0.5s; transform: translateX(280px);}
+.cont4 .tabBar {opacity: 0; transition: all 1s 0.5s; transform: translateX(30px);}
 .cont4 .contBox {opacity: 0; transition: all 1.2s 0.8s;}
 
 #content04.show .cont4 h3 {opacity: 1;}
@@ -938,7 +938,7 @@ label.toggle-item {
 /* gift */
 .gift {
     position: fixed; left: 0; bottom: 0; 
-    width: 100%;
+    width: 100%;  height: 105px;
     border-top: 4px solid #241E60;
     display: flex;
     justify-content: space-between;
@@ -998,14 +998,14 @@ label.toggle-item {
 .gift .gift-right .lottoBox p img {width: 1.5rem;}
 .giftcontainer {
     position: relative;
-    width: 315px;
-    height: 70px;
+    width: 310px;
+    height: 68px;
     margin: 0 auto;
-    display: none;
+    z-index: -20;
 }
-.canvas {position: absolute; left: 0; top: 0;}
-.giftImg {visibility: hidden;}
-.giftImg img {width: 100%;}
+.giftcontainer .canvas {position: absolute; left: 0; top: 0;}
+.giftcontainer .giftImg {visibility: hidden;}
+.giftcontainer .giftImg img {width: 100%;}
 
 /* 미디어 쿼리 */
 @media (max-width: 1220px) {
@@ -1018,39 +1018,42 @@ label.toggle-item {
 }
 @media (max-width: 1110px) {
     :root {font-size: 15px;}
-    .container {width: 80%;}
+    .container {width: 90%;}
     .main {flex-wrap: wrap; height: calc(100vh - 100px);}
     .main .main-left {width: 100%; text-align: center; margin-top: 4rem;}
     .main .img-wrap {width: 100%;}
     .main .img-wrap .heart {left: 30%; top: 2%;}
     .main .img-wrap .monkey {left: 40%; top: 20%;}
     .main .img-wrap .duck {left: 53%; top: 0%;}
+    .cont1 .cont1-text strong:first-child::after {display: none;}
+    .cont1 .cont1-text strong:nth-child(8)::after {display: none;}
     #content02 .cont2 .cont2-left p {font-size: 2.3rem; margin-right: 0.5rem;}
     #content02 .cont2 .cont2-left p em {font-size: 2.9rem;}
     #content02 .cont2 .cont2-left p.indent span::after {display: none;}
     #content03 {text-align: center;}
     .site-wrap {padding: 10vh 0;}
     .site-wrap .site-right {flex-direction: column-reverse;}
-    .site-wrap .site-right .left {width: 100%;}
+    .site-wrap .site-right .left {width: 80%; margin: 0 auto; text-align: center;}
     .site-wrap .site-right .left .si-tit {margin-top: 2rem;}
     .site-wrap .site-right .right .si-img {border: 3px solid;}
     .site-wrap .site-right .right, .si-img img {width: 100%;}
-    .site-wrap .site-right .left .si-btn {padding-left: 1rem;}
+    .site-wrap .site-right .left .si-btn a {margin: 0;}
+    .site-wrap .site-right .left .si-btn a:first-child {margin-right: 1rem;}
     .site-wrap .site-left {flex-direction: column;}
-    .site-wrap .site-left .left .si-img {border: 3px solid; width: 100%; margin: 0 auto;}
+    .site-wrap .site-left .right {width: 80%; margin: 0 auto; text-align: center;}
+    .site-wrap .site-left .right .si-tit {margin-top: 2rem;}
+    .site-wrap .site-left .left .si-img {border: 3px solid;}
     .site-wrap .site-left .left, .si-img img {width: 100%;}    
-    .site-wrap .site-left .right {width: 100%; margin: 4% 0; text-align: center;}
     .site-wrap .site-left .right h4 img {width: 50px;}
-    .site-wrap .site-left .right p {margin: 1% auto;}
-    .site-wrap .site-left .right .si-btn {margin: 0 auto;}
+    .site-wrap .site-left .right .si-btn a {margin: 0;}
+    .site-wrap .site-left .right .si-btn a:first-child {margin-right: 1rem;}
     .site-wrap .tab-wrap {display: none;}
     .cont4 .contBox {grid-template-columns: repeat(2,1fr);}
     .cont5 .aniBox .iframe .frame-box.ani02 .frame-right {margin: 21rem 0 0 2rem;}
     .cont5 .aniBox .iframe .frame-box.ani04 .frame-right {margin: 24rem 0 0 2rem;}
     .cont6 input {width: 750px;}
     .cont6 .message {width: 750px;}
-    .cont6 button {right: -5rem;}
-    .cont6 form img {right: -5rem;}
+    .cont6 button {right: 2rem;}
 }
 @media (max-width: 960px) {
     h3 {font-size: 6rem;}
@@ -1089,7 +1092,8 @@ label.toggle-item {
     .gift {display: none;}
 }
 @media (max-width: 640px) and (min-width: 320px) {
-    h3 {font-size: 3.8rem;}
+    h3 {font-size: 3.2rem;}
+    .row {padding: 0;}
     .header {padding: 0 1rem;}
     .header h1 {font-size: 1.2rem;}
     .header .sub-icon {width: 30px; height: 30px; margin-right: 0;}
@@ -1109,45 +1113,42 @@ label.toggle-item {
     .main .img-wrap .monkey svg {left: 15%; top: 90px; height: 200px;}
     .main .img-wrap .duck {width: 6.5rem; left: 45%; top: 0%;}
     .main .img-wrap .duck svg {left: 30%; top: 13%; height: 200px;}
-    #content01 {height: 300px;}
-    #content01 .cont1 .cont1-text {font-size: .9rem; line-height: 1.8;}
-    #content01 .cont1 .cont1-text::before {font-size: 1.5em; left: -1rem; top: -.5rem;}
-    #content01 .cont1 .cont1-text::after {font-size: 1.5rem; right: 0rem; bottom: -.5rem;}
-    .cont1 .cont1-text strong:first-child::after {display: none;}
-    .cont1 .cont1-text strong:nth-child(8)::after {display: none;}
-    #content02 .row {padding: 0;}
+    #content01 {height: 400px;}
+    #content01 .cont1 .cont1-text {font-size: 1.1rem; line-height: 1.8;}
+    #content01 .cont1 .cont1-text::before {font-size: 2em; left: -1.8rem; top: -1.5rem;}
+    #content01 .cont1 .cont1-text::after {font-size: 2rem; right: -0.8rem; bottom: -.5rem;}
+    #content02 .container {width: 100%;}
     #content02 .cont2 {padding: 10rem 0;}
+    #content02 .cont2 .cont2-left {flex-basis: 75%;}
     #content02 .cont2 .cont2-left p {font-size: 1.8rem;}
-    #content02 .cont2 .cont2-left p em {font-size: 2.3rem;}
+    #content02 .cont2 .cont2-left p em {font-size: 1.8rem;}
     #content02 .cont2 .cont2-left .cont2-text {font-size: 1rem; line-height: 1.4; margin: 1rem auto; width: 100%;} 
-    #content02 .cont2 .cont2-right {width: 100%;}
-    #content02 .cont2 .cont2-right .img-box .like {width: 5rem;}
-    #content02 .cont2 .cont2-right .img-box .photo {width: 13rem;}
-    #content03 {padding: 5rem 0;}
+    #content02 .cont2 .cont2-right {width: 100%; margin: 0;}
+    #content02 .cont2 .cont2-right .img-box .like {width: 6rem;}
+    #content02 .cont2 .cont2-right .img-box .photo {width: 15rem; margin-bottom: 2rem;}
     #content03 .cont03-title {margin-left: 0;}
-    #content03 .cont03-title h3 img {width: 3rem;}
-    .site-wrap {padding: 0;}
-    .site-wrap .site-right {margin-top: 3rem;}
-    .site-wrap .site-right .left .si-tit {font-size: 2rem; padding: 1.8rem 0; margin-top: 0;}
-    .site-wrap .site-right .left .si-tit img {width: 2rem; margin-bottom: 0;}
-    .site-wrap .site-right .left .si-desc  {font-size: 1rem;}
+    #content03 .cont03-title h3 img {width: 3rem; right: 2rem; top: -1.6rem;}
+    .site-wrap {padding-bottom: 0;}
+    .site-wrap .site-right .left {width: 90%;}
+    .site-wrap .site-right .left .si-tit {font-size: 2rem; padding-bottom: 1rem;}
+    .site-wrap .site-right .left .si-tit img {width: 3rem;}
+    .site-wrap .site-right .left .si-desc {font-size: 1rem;}
     .site-wrap .site-right .left .si-btn a {
         font-size: .9rem;
         border: 2px solid;
-        padding: 1rem 1.3rem;
+        padding: 0.8rem;
     }
-    .site-wrap .site-right .right .si-img {border: 2px solid;}
-    .site-wrap .site-left {margin-top: 3rem;}
-    .site-wrap .site-left .right {margin: 0;}
-    .site-wrap .site-left .right .si-tit {font-size: 2rem; padding: 1.8rem 0;white-space: nowrap;}
-    .site-wrap .site-left .right .si-tit img {width: 2rem;}
-    .site-wrap .site-left .right .si-desc {font-size: 1rem; margin: 0 auto;}
+    .site-wrap .site-right .right .si-img {border: 2px solid; width: 90%; margin: 0 auto;}
+    .site-wrap .site-left .right {width: 90%;}
+    .site-wrap .site-left .right .si-tit {font-size: 2rem; padding-bottom: 2rem;}
+    .site-wrap .site-left .right .si-tit img {width: 3rem; vertical-align: unset;}
+    .site-wrap .site-left .right .si-desc  {font-size: 1rem; width: 100%;}  
     .site-wrap .site-left .right .si-btn a {
         font-size: .9rem;
         border: 2px solid;
-        padding: 1rem 1.3rem;
+        padding: 0.8rem;
     }
-    .site-wrap .site-left .left .si-img {border: 2px solid;}
+    .site-wrap .site-left .left .si-img {border: 2px solid; width: 90%; margin: 0 auto;}
     .cont4 {padding: 5rem 0 13rem 0;}
     .cont4 h3 img {width: 3rem;}
     .cont4 .tabBar {margin-bottom: 2.5rem;}
@@ -1161,6 +1162,7 @@ label.toggle-item {
     .cont5 h3 {font-size: 3.7rem;}
     .cont5 h3 img {width: 3rem;}
     .cont5 .aniBox p {font-size: 1.5rem; padding: 1.5rem 0;}
+    .cont5 .aniBox .iframe {border-bottom: 3px solid;}
     .cont5 .aniBox .iframe .plus {width: 9%; top: -3.8rem;}
     .cont5 .aniBox .iframe .frame-box {flex-wrap: wrap; height: 700px;}
     .cont5 .aniBox .iframe .frame-box .frame-right {width: 100%; margin: 0 auto;}
@@ -1169,9 +1171,9 @@ label.toggle-item {
     .cont5 .aniBox .iframe .frame-box.ani03 .frame-right {width: 100%; margin: 0 auto;}
     .cont5 .aniBox .iframe .frame-box.ani04 .frame-right {width: 100%; margin: 0 auto;}
     .cont6 {padding: 5rem 0 10rem;}
-    .cont6 h3 img {width: 50px;}
-    .cont6 input {width: 290px;}
-    .cont6 .message {width: 290px;}
-    .cont6 button {left: 0; bottom: -5rem;}
+    .cont6 h3 img {width: 3rem;}
+    .cont6 input {width: 100%; border: 3px solid #241E60;}
+    .cont6 .message {width: 100%; border: 3px solid #241E60;}
+    .cont6 button {left: 0; bottom: -5rem; border: 3px solid #241E60;}
     .cont6 form img {left: 3rem; bottom: -1.5rem;}
 }
