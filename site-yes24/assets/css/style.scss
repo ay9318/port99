@@ -1,6 +1,8 @@
 @font-face { font-family: 'NanumBarunGothic'; font-style: normal; font-weight: 400; src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot'); src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype'); } @font-face { font-family: 'NanumBarunGothic'; font-style: normal; font-weight: 700; src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot'); src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype') } @font-face { font-family: 'NanumBarunGothic'; font-style: normal; font-weight: 300; src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot'); src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype'); } .nanumbarungothic * { font-family: 'NanumBarunGothic', sans-serif; }
 
-body {font-family : 'NanumBarunGothic', '맑은 고딕', 'Malgun Gothic', sans-serif;}
+body {font-family : 'NanumBarunGothic', '맑은 고딕', 'Malgun Gothic', sans-serif; overflow-x: hidden;}
+/* container */ 
+.container {width: 1200px; margin: 0 auto;}
 
 /* side-menu */
 #side-menu {
@@ -200,11 +202,10 @@ body {font-family : 'NanumBarunGothic', '맑은 고딕', 'Malgun Gothic', sans-s
         p {
             color: #fff;
         }
-        div.box {
-            margin: 15px 0 30px 22px;
-            padding: 0;
-            width: 130px;
-            height: 140px;
+        p.box {
+            margin: 15px;
+            width: 8vw;
+            height: 9vw;
             background: #222;
             color: #999;
             text-align: center;
@@ -230,12 +231,6 @@ body {font-family : 'NanumBarunGothic', '맑은 고딕', 'Malgun Gothic', sans-s
             }
         }   
     }
-}
-
-/* container */ 
-.container {
-    width: 1200px;
-    margin: 0 auto;
 }
 
 /* main */ 
@@ -381,6 +376,7 @@ body {font-family : 'NanumBarunGothic', '맑은 고딕', 'Malgun Gothic', sans-s
                             border: 0;
                             border-bottom: 3px solid #fff;
                         }
+                        .text:focus {outline: 0;}
                         .hidden {
                             font-size:15px;
                             width: 340px;
@@ -426,8 +422,6 @@ body {font-family : 'NanumBarunGothic', '맑은 고딕', 'Malgun Gothic', sans-s
                         }
                     }
                 }
-                .swiper-button-next {}
-                .swiper-button-prev {}
                 .swiper-scrollbar-drag {
                     max-width: 70px;
                     height: 5px;
@@ -690,7 +684,6 @@ body {font-family : 'NanumBarunGothic', '맑은 고딕', 'Malgun Gothic', sans-s
                             margin: 20px;
                             width: 380px;
                             height: 350px;
-                            background: #ccc;
                             svg {
                                 width: 500px;
                                 height: 520px;
@@ -762,7 +755,7 @@ body {font-family : 'NanumBarunGothic', '맑은 고딕', 'Malgun Gothic', sans-s
 }
 
 #con4 {
-    margin: 200px 0 100px;
+    margin-top: 200px;
     .event {
         box-sizing: border-box;
         overflow: hidden;
@@ -770,11 +763,41 @@ body {font-family : 'NanumBarunGothic', '맑은 고딕', 'Malgun Gothic', sans-s
             width: 33.333333%;
             height: 100%;
             float: left;
-            .wiper-wrapper {
-                .swiper-slide {
-                    img {}
+            .swiper-wrapper {                
+                .swiper-slide{                    
+                    position: relative;
+                    &::before {
+                        content: '';
+                        position: absolute; left: 0; top: 0;
+                        width: 94.5%;
+                        height: 100%;
+                        background: rgba(0, 0, 0, 0.5);
+                    }
+                    em {
+                        position: relative;
+                        position: absolute; left: 50%; top: 35%;
+                        transform: translate(-50%, -35%);
+                        font-size: 20px;
+                        text-align: center;
+                        color: #6edbf2;
+                        &::before {
+                            content: '';
+                            width: 15px; height: 2px;
+                            position: absolute; left: 50%; bottom: -5px;
+                            transform: translateX(-50%);
+                            background: #6edbf2;
+                        }
+                    }
+                    p {
+                        position: absolute; left: 50%; top: 50%;
+                        transform: translate(-50%, -50%);
+                        color: #fff;
+                        font-size: 36px;
+                        line-height: 1.2;
+                        text-align: center;
+                        white-space: nowrap;
+                    }
                 }
-                .swiper-pagination.swiper-pagination-white {}
             }            
         }
         .box {
@@ -817,7 +840,6 @@ body {font-family : 'NanumBarunGothic', '맑은 고딕', 'Malgun Gothic', sans-s
         left: 20%; top: 50%;
         transform: translate(-20%, -50%);
         text-transform: uppercase;
-
         h4 {
             position: relative;
             color: #fff;
@@ -1015,22 +1037,19 @@ body {font-family : 'NanumBarunGothic', '맑은 고딕', 'Malgun Gothic', sans-s
     }
     .title {
         margin: 0 0 80px;
-        img {
-            width: 350px;
-        }
+        img {width: 350px;}
     }
     .swiper-container {
         .swiper-wrapper {
-            .swiper-slide {               
-                img { 
-                    display: block;  
-                    margin: 0 20px;
-                    width: 700px;
+            .swiper-slide {
+                margin: 0 120px;            
+                img {
+                    width: 800px;
                 }
             }
         }
-        .swiper-button-next {position: absolute; left: 70%; top: 50%;}
-        .swiper-button-prev {position: absolute; left: 30%; top: 50%;}
+        .swiper-button-next {position: absolute; right: 20%; top: 50%;}
+        .swiper-button-prev {position: absolute; left: 25%; top: 50%;}
     }
 }
 

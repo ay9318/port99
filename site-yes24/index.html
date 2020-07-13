@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/swiper.css">
-    <link rel="stylesheet" href="assets/css/swiper.min.css">
 
     <!-- favicon -->
     <link rel="icon" href="assets/icon/favicon.ico">
@@ -104,11 +103,11 @@
                 </ul>
             </div>
             <p>최근 본 상품</p>
-            <div class="box">
+            <p class="box">
                 최근 본 공연<br>
                 정보가<br>
                 없습니다.
-            </div>
+            </p>
             <div class="button">
                 <a href="#">MD#</a>
                 <a href="#">GLOBAL</a>
@@ -763,11 +762,10 @@
                              <!-- Swiper -->
                             <div class="swiper-container">
                                 <div class="swiper-wrapper">
-                                <div class="swiper-slide"><img src="assets/img/scont01.jpg" alt=""></div>
-                                <div class="swiper-slide"><img src="assets/img/scont02.jpg" alt=""></div>
-                                <div class="swiper-slide"><img src="assets/img/scont03.jpg" alt=""></div>
-                                <div class="swiper-slide"><img src="assets/img/scont04.jpg" alt=""></div>
-                                <div class="swiper-pagination swiper-pagination-white"></div>                                
+                                    <div class="swiper-slide"><img src="assets/img/scont01.jpg" alt="연극 가족사진"><em>엔젤티켓</em><p>연극<br>가족사진</p></div>
+                                    <div class="swiper-slide"><img src="assets/img/scont02.jpg" alt="뮤지컬 미아 파밀리아"><em>엔젤티켓</em><p>뮤지컬<br>미아 파밀리아</p></div>
+                                    <div class="swiper-slide"><img src="assets/img/scont03.jpg" alt="뮤지컬 유앤잇"><em>엔젤티켓</em><p>뮤지컬<br>유앤잇</p></div>
+                                    <div class="swiper-pagination swiper-pagination-white"></div>                                
                                 </div>                                
                             </div>
                             <div class="box">
@@ -1149,7 +1147,6 @@
         tabCont.eq(index).css({"display":"flex"});
     });
 
-
     //event swiper
     var swiper = new Swiper('.event .swiper-container', {
       spaceBetween: 30,
@@ -1160,12 +1157,10 @@
       },
     });
 
-
     //리뷰 스와이프
     var swiper = new Swiper('#con8 .swiper-container', {
         loop: true,
         slidesPerView: 3,
-        spaceBetween: 50,
         centeredSlides: true,
       navigation: {
         nextEl: '.swiper-button-next',
@@ -1180,8 +1175,6 @@
         $(".footer-menu-btn .family-btn").toggleClass("on")
         $(".footer-menu-btn .family").slideToggle();
     });
-    //스크롤바
-
   </script>
 </body>
 </html>
