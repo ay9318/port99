@@ -77,6 +77,7 @@
         .info4 .modal .close {
             position: absolute; right: 10px; top: 20px;
         }
+        .code-editor {height: auto;}
 
         /* contents */
         .contents {
@@ -105,7 +106,6 @@
         }
 
         /* move-image */
-        .move-image { }
         .move-image .mtext {font-size: 2vw; line-height: 1.7;}
         .move-image .mtext em {
             font-style: normal; font-size: 3vw;
@@ -151,7 +151,19 @@
                 <span class="control"></span>
                 <span class="control"></span>
                 <span class="control"></span>
-<pre class="line-numbers"><code class="language-js">
+<pre class="line-numbers"><code class="language-js">window.addEventListener("mousemove", function(e){
+    document.querySelectorAll(".word").forEach(elem => {
+        const {x, y} = e;
+        const rect = elem.getBoundingClientRect();
+        const mouseX = (x - rect.left - rect.width/2) / 20;
+        const mouseY = (y - rect.top - rect.height/2) / 20;
+
+        elem.style.textShadow = `${mouseX}px ${-mouseY}px 0px rgba(255, 255, 255, 0.3),
+                                         ${-mouseX}px ${mouseY}px 0px rgba(32, 178, 170, 1),
+                                         ${mouseY}px ${-mouseX}px 0px rgba(245, 96, 96, 0.9),
+                                         ${-mouseY}px ${mouseX}px 0px rgba(235, 201, 53, 0.8)`;  
+    })
+});
 </code></pre>    
             </div>
             <a class="close">닫기</a>
@@ -210,6 +222,14 @@
                                                  ${mouseY}px ${-mouseX}px 0px rgba(245, 96, 96, 0.9),
                                                  ${-mouseY}px ${mouseX}px 0px rgba(235, 201, 53, 0.8)`;  
             })
+        });
+
+        //modal
+        $(".info4 a").click(function(){
+            $(".info4 .modal").addClass("show");
+        });
+        $(".info4 .close").click(function(){
+            $(".info4 .modal").removeClass("show");
         });
     </script>
 </body>

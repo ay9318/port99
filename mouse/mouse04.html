@@ -174,7 +174,35 @@
                 <span class="control"></span>
                 <span class="control"></span>
                 <span class="control"></span>
-<pre class="line-numbers"><code class="language-js">
+<pre class="line-numbers"><code class="language-js">let x = 0,
+    y = 0,
+    mouseX = 0,
+    mouseY = 0,
+    angleX = 0,
+    angleY = 0,
+    fmouseX = 0,
+    fmouseY = 0;
+    
+$(window).mousemove(function(e){ 
+
+    x = e.pageX;  //마우스 X축 좌표값
+    y = e.pageY;  //마우스 Y축 좌표값
+
+    //마우스의 x축, y축 최소값 -100 최대값 100으로 설정
+    mouseX = Math.max(-100, Math.min(100, $(window).width()/2 - x));
+    mouseY = Math.max(-100, Math.min(100, $(window).height()/2 - y));
+
+    angleX = (12 * mouseX) / 100;
+    angleY = (12 * mouseY) /100;
+
+    fmouseX += (angleX - fmouseX) * 1/5;
+    fmouseY += (angleY - fmouseY) * 1/5;
+
+    animation();
+}); 
+function animation(){
+    $(".move-image").css({"transform": "translate(-50%, -50%) perspective(600px) rotateX("+fmouseX+"deg) rotateY("+fmouseY+"deg)"});
+};
 </code></pre>    
             </div>
             <a class="close">닫기</a>
@@ -271,7 +299,15 @@
 
         function animation(){
             $(".move-image").css({"transform": "translate(-50%, -50%) perspective(600px) rotateX("+fmouseX+"deg) rotateY("+fmouseY+"deg)"});
-        }
+        };
+
+        //modal
+        $(".info4 a").click(function(){
+            $(".info4 .modal").addClass("show");
+        });
+        $(".info4 .close").click(function(){
+            $(".info4 .modal").removeClass("show");
+        });
     </script>
 </body>
 </html>

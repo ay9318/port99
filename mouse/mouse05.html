@@ -58,7 +58,6 @@
          /*  info4 */
         .info4 {position: absolute; left: 0; bottom: 0; z-index: 1000; padding: 20px;}
         .info4 a {color: #fff; border: 1px solid #fff; border-radius: 30px; padding: 5px 30px}
-        .info4 .view2 {margin-left: 2vw;}
         .info4 .modal {
             background: rgba(0,0,0,0.8);
             width: 100%;
@@ -170,7 +169,6 @@
     </div>
     <div class="info4">
         <a href="#" class="view">소스보기</a>
-        <a href="#" class="view2">좌표보기</a>
         <!-- modal -->
         <div class="modal">
             <div class="code-editor">   
@@ -178,53 +176,34 @@
                 <span class="control"></span>
                 <span class="control"></span>
 <pre class="line-numbers"><code class="language-js">let x = 0;
-    let y = 0;
-    //출력용
-    $(window).mousemove(function(e){ 
-        $(".clientX").text(e.clientX);  //이벤트 clientX값을 화면에 출력
-        $(".clientY").text(e.clientY); //이벤트 clientY값을 화면에 출력
-    });
+let y = 0;
 
-    // $(".move-image").mousemove(function(e){
-    //     gsap.to(".cursor",{duration: .2, left: e.pageX-7, top: e.pageY-7});
+//좌표보기
+$(".info4 .view2").click(function(){
+    $(".cursor p").fadeToggle()
+});      
 
-        //좌표값 중앙을 0으로 초기화
-        //  x = e.clientX - ($(".move-image").width()/2 + $(".move-image").position().left);
-        //  y = e.clientY - ($(".move-image").height()/2 + $(".move-image").position().top);
+const moveImg = document.querySelector(".move-image");
 
-        //  $(".mouseX").text(x);
-        //  $(".mouseY").text(y);
+moveImg.addEventListener("mousemove", function(e){
+    const rect = this.getBoundingClientRect();
+    console.log(rect)
+    this.style.setProperty("--x", e.clientX - ((rect.width/2) + rect.left));
+    this.style.setProperty("--y", e.clientY - ((rect.height/2) + rect.top));
 
-        //이미지 움직이기
-        /* $(".img").attr({"style":"transform: translate("+x/30+"px,"+y/30+"px)"}); */
-    // });
+    gsap.to(".cursor",{duration: .2, left: e.pageX-7, top: e.pageY-7});
 
-    //좌표보기
-    $(".info4 .view2").click(function(){
-        $(".cursor p").fadeToggle()
-    });      
+    x = e.clientX - ($(".move-image").width()/2 + $(".move-image").position().left);
+    y = e.clientY - ($(".move-image").height()/2 + $(".move-image").position().top);
 
-    const moveImg = document.querySelector(".move-image");
+    $(".mouseX").text(x);
+    $(".mouseY").text(y);
+});
 
-    moveImg.addEventListener("mousemove", function(e){
-        const rect = this.getBoundingClientRect();
-        console.log(rect)
-        this.style.setProperty("--x", e.clientX - ((rect.width/2) + rect.left));
-        this.style.setProperty("--y", e.clientY - ((rect.height/2) + rect.top));
-
-        gsap.to(".cursor",{duration: .2, left: e.pageX-7, top: e.pageY-7});
-
-        x = e.clientX - ($(".move-image").width()/2 + $(".move-image").position().left);
-        y = e.clientY - ($(".move-image").height()/2 + $(".move-image").position().top);
-
-        $(".mouseX").text(x);
-        $(".mouseY").text(y);
-    });
-
-    moveImg.addEventListener("mouseleave", function(e){
-        this.style.setProperty("--x", 0);
-        this.style.setProperty("--y", 0);
-    });
+moveImg.addEventListener("mouseleave", function(e){
+    this.style.setProperty("--x", 0);
+    this.style.setProperty("--y", 0);
+});
 </code></pre>    
             </div>
             <a class="close">닫기</a>
@@ -271,18 +250,13 @@
 
             //이미지 움직이기
             $(".img").attr({"style":"transform: translate("+x/30+"px,"+y/30+"px)"});
-        }); */
-
-        //좌표보기
-        $(".info4 .view2").click(function(){
-            $(".cursor p").fadeToggle()
-        });      
+        }); */        
 
         const moveImg = document.querySelector(".move-image");
 
         moveImg.addEventListener("mousemove", function(e){
             const rect = this.getBoundingClientRect();
-            console.log(rect)
+
             this.style.setProperty("--x", e.clientX - ( (rect.width/2) + rect.left));
             this.style.setProperty("--y", e.clientY - ( (rect.height/2) + rect.top));
 
@@ -293,6 +267,14 @@
             this.style.setProperty("--x", 0)
             this.style.setProperty("--y", 0)
         });
+
+        //modal
+        $(".info4 .view").click(function(){
+            $(".info4 .modal").addClass("show");
+        });
+        $(".info4 .close").click(function(){
+            $(".info4 .modal").removeClass("show");
+        }); 
     </script>
 </body>
 </html>

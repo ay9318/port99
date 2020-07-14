@@ -125,7 +125,17 @@
                 <span class="control"></span>
                 <span class="control"></span>
                 <span class="control"></span>
-<pre class="line-numbers"><code class="language-js">
+<pre class="line-numbers"><code class="language-js">let spanSlow = $(".spanSlow");
+let spanFast = $(".spanFast");
+
+$(window).on("mousemove",mouseMove);
+
+function mouseMove(e) {
+    let position = (e.pageX - ($(window).width()/2))*0.1;     
+
+    spanSlow.css({"transform":"translate("+position+"px)"});
+    spanFast.css({"transform":"translate("+-position+"px)"});            
+}
 </code></pre>    
             </div>
             <a class="close">닫기</a>
@@ -207,6 +217,14 @@
             spanSlow.css({"transform":"translate("+position+"px)"});
             spanFast.css({"transform":"translate("+-position+"px)"});            
         }
+
+        //modal
+        $(".info3 a").click(function(){
+            $(".info3 .modal").addClass("show");
+        });
+        $(".info3 .close").click(function(){
+            $(".info3 .modal").removeClass("show");
+        });
     </script>
 </body>
 </html>
