@@ -559,7 +559,7 @@
 .toggle {position: relative; display: inline-block;}  
 label.toggle-item {
     width: 7em;
-    background: #F1EFE6;
+    background: #10B4AE;
     height: 3em;
     display: inline-block;
     border-radius: 50px;
@@ -947,14 +947,13 @@ label.toggle-item {
     z-index: 1000;
 }
 .gift .gift-left {
-    width: 72%;
+    width: 100%;
 }
 .gift .gift-left p {
     display: none; font-family: 'S-CoreDream-5Medium', serif; 
     font-size: 1.2rem; margin-bottom: 0.5rem;
 }
 .gift .gift-left p:last-of-type {
-    font-size: 1.4rem;
     color: rgb(235, 50, 17);
     animation: flash 1s;
     animation-iteration-count: 4;
@@ -996,16 +995,6 @@ label.toggle-item {
     font-weight: bold;
 }
 .gift .gift-right .lottoBox p img {width: 1.5rem;}
-.giftcontainer {
-    position: relative;
-    width: 310px;
-    height: 68px;
-    margin: 0 auto;
-    z-index: -20;
-}
-.giftcontainer .canvas {position: absolute; left: 0; top: 0;}
-.giftcontainer .giftImg {visibility: hidden;}
-.giftcontainer .giftImg img {width: 100%;}
 
 /* 미디어 쿼리 */
 @media (max-width: 1220px) {
@@ -1015,6 +1004,7 @@ label.toggle-item {
     #content01 .cont1 .cont1-text br {display: none;}
     .cont6 input {width: 900px;}
     .cont6 .message {width: 900px;}
+    .gift {display: none;}
 }
 @media (max-width: 1110px) {
     :root {font-size: 15px;}
@@ -1077,7 +1067,7 @@ label.toggle-item {
     .gift .gift-left .bar {padding: .8rem 28vw;}
     .gift .gift-right .box {padding: 1vw 2vw; margin-top: 2rem;}
     .gift .gift-right .box p {font-size: 1rem;}
-    .gift .gift-right .box p img{width: 1rem;}
+    .gift .gift-right .box p img {width: 1rem;}
 }
 @media (max-width: 720px) {
     .main .img-wrap .heart {width: 8rem; left: 30%; top: 5%;}
@@ -1088,8 +1078,7 @@ label.toggle-item {
     .main .img-wrap .duck svg {left: 45%; top: 15%;}
     #content01 {height: 750px; padding-bottom:10rem;}
     #content01 .cont1 .cont1-text::after {right: -2rem; bottom: 0rem;}
-    #content01 .cont1 .cont1-text {font-size: 2rem;}
-    .gift {display: none;}
+    #content01 .cont1 .cont1-text {font-size: 2rem;}  
 }
 @media (max-width: 640px) and (min-width: 320px) {
     * {cursor: unset;}
