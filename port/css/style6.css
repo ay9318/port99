@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
 /* layout */
 #main {height: 800px;}
 #content01 {
@@ -879,7 +881,7 @@ label.toggle-item {
 }
 
 /* content06 */
-.cont6 {padding: 5rem 0 10rem;}
+.cont6 {position: relative; padding: 5rem 0 10rem;}
 .cont6 h3 {margin-bottom: 5rem; color: #241E60;}
 .cont6 h3 img {width: 70px; margin-left: 1rem; animation: pulse2 1s infinite;}
 @keyframes pulse2 {
@@ -918,14 +920,61 @@ label.toggle-item {
     transition: all 1s .5s cubic-bezier(1,-0.01, 0.22, 0.68);
 }
 .cont6 button img {width: 5rem; position: absolute; right: 0; top: -1.2rem; z-index: 1; opacity: 0;}
+/* call */
+#content06 .clickMe {
+    opacity: 0;
+    font-family: 'yg-jalnan';
+    position: absolute; right: 5.5rem; top: 6rem;
+    transition: opacity 1s 1.2s;
+}
+#content06 .clickMe span {
+    text-align: center;
+    display: block;
+    text-transform: uppercase;
+    font-size: 2rem;
+    color: #fff;
+    animation: text-shadow .75s linear infinite;
+}  
+
+/* modal */
+.modal {
+    position: fixed;
+    right: 5%; top: 27%; 
+    transform: translateX(-25%);
+    width: 15rem; height: 10rem;
+    background: #fff;
+    border: 4px solid #000;
+    border-radius: 8px;   
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-weight: 700;
+}
+.modalHead {
+    width: 14.5rem; height: 2rem;
+    background: #e2525c;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+.modalHead .close {
+    position: absolute; right: .5rem; top: -.2rem;
+    font-size: 2rem;
+    color: #fff;
+}
+.modalContant {width: 14.5rem; height: 8rem; display: flex;}
+.modalContant img {width: 4rem; margin-left: 0.5rem;}
+.modalText {margin: 1rem 0 0 1rem;}
+.modalText span {font-size: 1.5rem; color: #241E60; line-height: 1.2; text-transform: uppercase;}
+.modalText span:last-child {display: inline-block; font-family: 'Recipekorea'; font-size: 1.2rem;}
+
 /* 애니메이션 */
 .cont6 h3 {opacity: 0; transition: all .7s cubic-bezier(1,-0.01, 0.22, 0.68);}
 .cont6 input {opacity: 0; transition: all .7s .5s cubic-bezier(1,-0.01, 0.22, 0.68);}
+.modal {display: none; transform: translateX(-50px); transition: all 1s;}
 
 #content06.show .cont6 h3 {opacity: 1;}
 #content06.show .cont6 input {opacity: 1;}
 #content06.show .cont6 button {opacity: 1; animation: shake .8s 1s;}
 #content06.show .cont6 button img {opacity: 1; animation: shake .8s 1s;}
+.modal.on {display: block; transform: translateX(0px);}
 @keyframes shake {
     0% {transform: translate(5px) rotate(15deg);}
     20% {transform: translate(-5px) rotate(-15deg);}
@@ -933,6 +982,23 @@ label.toggle-item {
     60% {transform: translate(0px) rotate(-15deg);}
     80% {transform: translate(-5px) rotate(15deg);}
     100% {transform: translate(0) rotate(0deg);}
+}
+@keyframes text-shadow {
+    from, 19.9% {
+      text-shadow: 0px 0px #15007F, 1px 1px #15007F, 2px 2px #15007F, 3px 3px #15007F, 4px 4px #15007F, 5px 5px #15007F, 5px 5px #FD138A, 6px 6px #FD138A, 7px 7px #FD138A, 8px 8px #FD138A, 9px 9px #FD138A, 10px 10px #FD138A, 10px 10px #FFBA00, 11px 11px #FFBA00, 12px 12px #FFBA00, 13px 13px #FFBA00, 14px 14px #FFBA00, 15px 15px #FFBA00, 15px 15px #F40000, 16px 16px #F40000;
+    }
+    20%, 39.9% {
+      text-shadow: 0px 0px #28D58F, 1px 1px #28D58F, 2px 2px #28D58F, 3px 3px #28D58F, 4px 4px #28D58F, 5px 5px #28D58F, 5px 5px #15007F, 6px 6px #15007F, 7px 7px #15007F, 8px 8px #15007F, 9px 9px #15007F, 10px 10px #15007F, 10px 10px #FD138A, 11px 11px #FD138A, 12px 12px #FD138A, 13px 13px #FD138A, 14px 14px #FD138A, 15px 15px #FD138A, 15px 15px #FFBA00, 16px 16px #FFBA00;
+    }
+    40%, 59.9% {
+      text-shadow: 0px 0px #F40000, 1px 1px #F40000, 2px 2px #F40000, 3px 3px #F40000, 4px 4px #F40000, 5px 5px #F40000, 5px 5px #28D58F, 6px 6px #28D58F, 7px 7px #28D58F, 8px 8px #28D58F, 9px 9px #28D58F, 10px 10px #28D58F, 10px 10px #15007F, 11px 11px #15007F, 12px 12px #15007F, 13px 13px #15007F, 14px 14px #15007F, 15px 15px #15007F, 15px 15px #FD138A, 16px 16px #FD138A;
+    }
+    60%, 79.9% {
+      text-shadow: 0px 0px #FFBA00, 1px 1px #FFBA00, 2px 2px #FFBA00, 3px 3px #FFBA00, 4px 4px #FFBA00, 5px 5px #FFBA00, 5px 5px #F40000, 6px 6px #F40000, 7px 7px #F40000, 8px 8px #F40000, 9px 9px #F40000, 10px 10px #F40000, 10px 10px #28D58F, 11px 11px #28D58F, 12px 12px #28D58F, 13px 13px #28D58F, 14px 14px #28D58F, 15px 15px #28D58F, 15px 15px #15007F, 16px 16px #15007F;
+    }
+    80%, to {
+      text-shadow: 0px 0px #FD138A, 1px 1px #FD138A, 2px 2px #FD138A, 3px 3px #FD138A, 4px 4px #FD138A, 5px 5px #FD138A, 5px 5px #FFBA00, 6px 6px #FFBA00, 7px 7px #FFBA00, 8px 8px #FFBA00, 9px 9px #FFBA00, 10px 10px #FFBA00, 10px 10px #F40000, 11px 11px #F40000, 12px 12px #F40000, 13px 13px #F40000, 14px 14px #F40000, 15px 15px #F40000, 15px 15px #28D58F, 16px 16px #28D58F;
+    }
 }
 
 /* gift */
@@ -1005,6 +1071,8 @@ label.toggle-item {
     .cont6 input {width: 900px;}
     .cont6 .message {width: 900px;}
     .gift {display: none;}
+    .clickMe {display: none;}
+    .modal {display: none;}
 }
 @media (max-width: 1110px) {
     :root {font-size: 15px;}

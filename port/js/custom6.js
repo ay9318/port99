@@ -78,9 +78,12 @@ $(document).ready(function() {
             console.log(scrollTop);
             $(".gift-left p:nth-child(3)").removeClass("on");
             $(".gift-left p:nth-child(4)").addClass("on");
-            $(".gift").css("background","#F1EFE6");         
+            $(".gift").css("background","#F1EFE6");
+            $(".clickMe").css("opacity","1");
         } else {
             $(".gift-left p:nth-child(4)").removeClass("on");
+            $(".clickMe").css("opacity","0");
+            $(".modal").removeClass("on")
         };
     });
 });
@@ -145,4 +148,13 @@ $(".aniBox .iframe .frame-box").hide();
 $(".aniBox .iframe img").click(function() {
     $(this).toggleClass("on")
     $(this).next(".frame-box").slideToggle(400);
+});
+
+//다이렉트 콜
+$(".clickMe").click(function(){
+    $(".modal").addClass("on");
+});
+
+$(".modalHead .close").click(function(){
+    $(".modal").removeClass("on");
 });
