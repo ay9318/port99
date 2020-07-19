@@ -938,8 +938,9 @@ label.toggle-item {
 
 /* modal */
 .modal {
+    display: none;
     position: fixed;
-    right: 5%; top: 27%; 
+    right: 1%; top: 27%; 
     transform: translateX(-25%);
     width: 15rem; height: 10rem;
     background: #fff;
@@ -948,6 +949,7 @@ label.toggle-item {
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-weight: 700;
 }
+.modal.on {display: block;}
 .modalHead {
     width: 14.5rem; height: 2rem;
     background: #e2525c;
@@ -963,18 +965,17 @@ label.toggle-item {
 .modalContant img {width: 4rem; margin-left: 0.5rem;}
 .modalText {margin: 1rem 0 0 1rem;}
 .modalText span {font-size: 1.5rem; color: #241E60; line-height: 1.2; text-transform: uppercase;}
-.modalText span:last-child {display: inline-block; font-family: 'Recipekorea'; font-size: 1.2rem;}
+.modalText span:last-child {display: inline-block; font-family: 'Recipekorea'; font-size: 1.2rem; margin-top: 0.5rem;}
 
 /* 애니메이션 */
 .cont6 h3 {opacity: 0; transition: all .7s cubic-bezier(1,-0.01, 0.22, 0.68);}
 .cont6 input {opacity: 0; transition: all .7s .5s cubic-bezier(1,-0.01, 0.22, 0.68);}
-.modal {display: none; transform: translateX(-50px); transition: all 1s;}
+
 
 #content06.show .cont6 h3 {opacity: 1;}
 #content06.show .cont6 input {opacity: 1;}
 #content06.show .cont6 button {opacity: 1; animation: shake .8s 1s;}
 #content06.show .cont6 button img {opacity: 1; animation: shake .8s 1s;}
-.modal.on {display: block; transform: translateX(0px);}
 @keyframes shake {
     0% {transform: translate(5px) rotate(15deg);}
     20% {transform: translate(-5px) rotate(-15deg);}
