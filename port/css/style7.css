@@ -2,16 +2,7 @@
 
 /* layout */
 #main {height: 800px;}
-#content01 {
-    position: relative;
-    font-family: 'yg-jalnan';
-    background: #F2C1BF;
-    color: #E16162;
-    height: calc(100vh + 100px);
-    text-align: left;
-    width: 100vw;
-    overflow: hidden;
-}
+#content01 {position: relative; background: #F2C1BF; width: 100vw; overflow: hidden;}
 #content02 {position: relative; background: #fff; width: 100vw; overflow: hidden;}
 #content03 {position: relative; background: #ADD8D6; width: 100vw; overflow: hidden;}
 #content04 {position: relative; width: 100vw; overflow: hidden;}
@@ -95,7 +86,14 @@
 }
 
 /* wave */
-.ocean {position: relative; width: 100vw; background: #F1EFE6;}
+.ocean {position: relative; width: 100vw;}
+#content01 .ocean {background: #F1EFE6;}
+#content02 .ocean {background: #F2C1BF;}
+#content03 .ocean {background: #fff;}
+#content04 .ocean {background: #ADD8D6;}
+#content05 .ocean {background: #F1EFE6;}
+#content06 .ocean {background: #F9BC60;}
+
 .wave {
     background: url(../img/wave01.svg) repeat-x; 
     width: 6400px;
@@ -108,35 +106,35 @@
     width: 6400px;
     height: 198px;
     animation: wave 8s linear 0s infinite;
-    transform: translate3d(0, 0, 0);display: none;
+    transform: translate3d(0, 0, 0);
 }
 .wave3 {
     background: url(../img/wave03.svg) repeat-x; 
     width: 6400px;
     height: 198px;
     animation: wave 7s linear 0s infinite;
-    transform: translate3d(0, 0, 0);display: none;
+    transform: translate3d(0, 0, 0);
 }
 .wave4 {
     background: url(../img/wave05.svg) repeat-x; 
     width: 6400px;
     height: 198px;
     animation: wave 6s linear 0s infinite;
-    transform: translate3d(0, 0, 0);display: none;
+    transform: translate3d(0, 0, 0);
 }
 .wave5 {
     background: url(../img/wave06.svg) repeat-x; 
     width: 6400px;
     height: 198px;
     animation: wave 8s linear 0s infinite;
-    transform: translate3d(0, 0, 0);display: none;
+    transform: translate3d(0, 0, 0);
 }
 .wave6 {
     background: url(../img/wave07.svg) repeat-x; 
     width: 6400px;
     height: 198px;
     animation: wave 7s linear 0s infinite;
-    transform: translate3d(0, 0, 0);display: none;
+    transform: translate3d(0, 0, 0);
 }
 @keyframes wave {
 0% {margin-left: 0;}
@@ -287,72 +285,37 @@
 
 /* content01 */ 
 .cont1 {
-    white-space: nowrap;
-    padding: 4vw;
+    padding: 5vw;
+    font-family: 'yg-jalnan';
+    color: #E16162;
 }
-.cont1 .cont1-text strong {
-    position: relative; color: #fff; 
-    font-size: 2.7rem;
-    line-height: 3rem;
+.cont1 .cont1-text {
+    position: relative;
+    font-size: 2.7rem; 
+    line-height: 5rem;
 }
-.cont1 .cont1-text strong:first-child::after {
-    content: '';
-    width: 0%; height: 0.4rem;
-    background: #E16162;
-    position: absolute;
-    left: 0; bottom: -1rem;
-    border-radius: 8px;
-    animation: width 1.5s 1.9s forwards;
-}
-.cont1 .cont1-text strong:nth-child(8)::after {
-    content: '';
-    width: 0%; height: 0.4rem;
-    background: #E16162;
-    position: absolute;
-    left: 0; bottom: -1%;
-    border-radius: 8px;
-    animation: width 2.3s 3s forwards;
-}
-@keyframes width {
-    0% {width: 0%;}
-    100% {width: 100%;}
-}
+.cont1 .cont1-text em {display: block; position: relative;}
+.cont1 .cont1-text em:first-of-type {}
+.cont1 .cont1-text em:nth-of-type(2) {}
+.cont1 .cont1-text em:nth-of-type(3) {}
+.cont1 .cont1-text em:nth-of-type(4) {}
+.cont1 .cont1-text em:nth-of-type(5) {}
+.cont1 .cont1-text em:nth-of-type(6) {}
 .cont1 .cont1-text::before {
     content: '"';
     color: #fff;
     position: absolute; left: -5rem; top: -2rem;
     font-size: 5rem;
-    transition: scale 1s;
 }
 .cont1 .cont1-text::after {
     content: '"';
     color: #fff;
-    position: absolute; right: -3rem; bottom: -1.8rem;
+    position: absolute; right: -2rem; bottom: 1rem;
     font-size: 5rem;
 }
-.cont1 .cont1-text:hover::before {animation: heartBeat 1s; transition: transform 1s;}
-.cont1 .cont1-text:hover::after {animation: heartBeat 1s; transition: transform 1s;}
+.cont1 .cont1-text:hover::before {animation: heartBeat 1s;}
+.cont1 .cont1-text:hover::after {animation: heartBeat 1s;}
 /* 애니메이션 */
-#content01 .cont1 .cont1-text {
-    position: relative; 
-    font-size: 2.7rem; 
-    line-height: 5rem; 
-    opacity: 0;
-    transition: all .8s;
-    transform: translateY(50px);
-}
-.cont1-text strong:first-child {opacity: 0; transition: opacity 1s .2s;}
-.cont1-text strong:nth-child(3) {opacity: 0; transition: opacity 1s .5s;}
-.cont1-text strong:nth-child(5) {opacity: 0; transition: opacity 1s .8s;}
-.cont1-text strong:nth-child(8) {opacity: 0; transition: opacity 1s 1.1s;}
-.cont1-text strong:nth-child(10) {opacity: 0; transition: opacity 1s 1.3s;}
-
-#content01.show .cont1 .cont1-text {opacity: 1; transform: translateY(0);}
-#content01.show .cont1-text strong:first-child {opacity: 1;}
-#content01.show .cont1-text strong:nth-child(3) {opacity: 1;}
-#content01.show .cont1-text strong:nth-child(5) {opacity: 1;}
-#content01.show .cont1-text strong:nth-child(8) {opacity: 1;}
-#content01.show .cont1-text strong:nth-child(10) {opacity: 1;}
 @keyframes heartBeat {
     0% {transform: scale(1);}  
     14% {transform: scale(1.3);}  
@@ -1001,12 +964,11 @@ label.toggle-item {
     transition: all 1s .5s cubic-bezier(1,-0.01, 0.22, 0.68);
 }
 .cont6 button img {width: 5rem; position: absolute; right: 0; top: -1.2rem; z-index: 1; opacity: 0;}
-/* call */
+/* clickMe */
 #content06 .clickMe {
     opacity: 0;
     font-family: 'yg-jalnan';
-    position: absolute; right: 5.5rem; top: 6rem;
-    transition: opacity 1s 1.2s;
+    position: fixed; right: 5.5rem; top: 10rem;
 }
 #content06 .clickMe span {
     text-align: center;
@@ -1016,42 +978,9 @@ label.toggle-item {
     color: #fff;
     animation: text-shadow .75s linear infinite;
 }  
-
-/* modal */
-.modal {
-    display: none;
-    position: fixed;
-    right: 1%; top: 27%; 
-    transform: translateX(-25%);
-    width: 15rem; height: 10rem;
-    background: #fff;
-    border: 4px solid #000;
-    border-radius: 8px;   
-    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-    font-weight: 700;
-}
-.modal.on {display: block;}
-.modalHead {
-    width: 14.5rem; height: 2rem;
-    background: #e2525c;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-}
-.modalHead .close {
-    position: absolute; right: .5rem; top: -.2rem;
-    font-size: 2rem;
-    color: #fff;
-}
-.modalContant {width: 14.5rem; height: 8rem; display: flex;}
-.modalContant img {width: 4rem; margin-left: 0.5rem;}
-.modalText {margin: 1rem 0 0 1rem;}
-.modalText span {font-size: 1.5rem; color: #241E60; line-height: 1.2; text-transform: uppercase;}
-.modalText span:last-child {display: inline-block; font-family: 'Recipekorea'; font-size: 1.2rem; margin-top: 0.5rem;}
-
 /* 애니메이션 */
 .cont6 h3 {opacity: 0; transition: all .7s cubic-bezier(1,-0.01, 0.22, 0.68);}
 .cont6 input {opacity: 0; transition: all .7s .5s cubic-bezier(1,-0.01, 0.22, 0.68);}
-
 
 #content06.show .cont6 h3 {opacity: 1;}
 #content06.show .cont6 input {opacity: 1;}
@@ -1083,9 +1012,42 @@ label.toggle-item {
     }
 }
 
+
+/* modal */
+.modal {
+    display: none;
+    position: fixed;
+    right: 1%; top: 32%; 
+    transform: translateX(-25%);
+    width: 15rem; height: 10rem;
+    background: #fff;
+    border: 4px solid #000;
+    border-radius: 8px;   
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-weight: 700;
+}
+.modal.on {display: block;}
+.modalHead {
+    width: 14.5rem; height: 2rem;
+    background: #e2525c;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+.modalHead .close {
+    position: absolute; right: .5rem; top: -.2rem;
+    font-size: 2rem;
+    color: #fff;
+}
+.modalContant {width: 14.5rem; height: 8rem; display: flex;}
+.modalContant img {width: 4rem; margin-left: 0.5rem;}
+.modalText {margin: 1rem 0 0 1rem;}
+.modalText span {font-size: 1.5rem; color: #241E60; line-height: 1.2; text-transform: uppercase;}
+.modalText span:last-child {display: inline-block; font-family: 'Recipekorea'; font-size: 1.2rem; margin-top: 0.5rem;}
+
+
 /* gift */
 .gift {
-    position: fixed; left: 100%; bottom: 0; 
+    position: fixed; left: 0; bottom: -20%; 
     width: 100%;  height: 105px;
     border-top: 4px solid #241E60;
     display: flex;
