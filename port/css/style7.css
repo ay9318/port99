@@ -1148,8 +1148,9 @@ label.toggle-item {
 @media (max-width: 1220px) {
     .container {width: 100%;}
     .main .main-left, .img-wrap {width: 50%;}
-    #content01 .cont1 {width: 70%; white-space: normal;}
+    #content01 .cont1 {white-space: normal;}
     #content01 .cont1 .cont1-text br {display: none;}
+    #content01 .container {width: 75%;}
     .cont6 input {width: 900px;}
     .cont6 .message {width: 900px;}
     .gift {display: none;}
@@ -1202,10 +1203,9 @@ label.toggle-item {
     .header h1 {text-align: left;}
     .header .icon, #nav {display: none;}
     .header .sub-icon {display: block;}
-    #content01 .cont1 .cont1-text {font-size: 2.1rem;}
+    #content01 .cont1 .cont1-text, .cont1 .cont1-text strong {font-size: 2.1rem; line-height: 4rem;}
     #content01 .cont1 .cont1-text::before {font-size: 2.5rem; left: -2rem;}
-    #content01 .cont1 .cont1-text::after {font-size: 2.5rem; right: 0; bottom: 0;}
-    #content01 .cont1 .cont1-text strong:first-child::after, #content01 .cont1 .cont1-text strong:nth-child(8)::after {display: none;}
+    #content01 .cont1 .cont1-text::after {font-size: 2.5rem; right: -2rem;}
     #content02 .cont2 {flex-wrap: wrap-reverse;}
     #content02 .cont2 .cont2-left p {text-align: center;}
     #content02 .cont2 .cont2-left p.indent {text-indent: 0;}
@@ -1226,9 +1226,7 @@ label.toggle-item {
     .main .img-wrap .monkey svg {left: 40%; top: 1%;}
     .main .img-wrap .duck {width: 10rem; left: 53%; top: 2%;}
     .main .img-wrap .duck svg {left: 45%; top: 15%;}
-    #content01 {height: 750px; padding-bottom:10rem;}
-    #content01 .cont1 .cont1-text::after {right: -2rem; bottom: 0rem;}
-    #content01 .cont1 .cont1-text {font-size: 2rem;}  
+    #content01 .cont1 .cont1-text, .cont1 .cont1-text strong {font-size: 1.5rem; line-height: 3rem;}
 }
 @media (max-width: 640px) and (min-width: 320px) {
     * {cursor: unset;}
@@ -1254,8 +1252,8 @@ label.toggle-item {
     .main .img-wrap .monkey svg {left: 15%; top: 90px; height: 200px;}
     .main .img-wrap .duck {width: 6.5rem; left: 45%; top: 0%;}
     .main .img-wrap .duck svg {left: 30%; top: 13%; height: 200px;}
-    #content01 {height: 400px;}
-    #content01 .cont1 .cont1-text {font-size: 1.1rem; line-height: 1.8;}
+    #content01 {height: 400px; padding-top: 5.5rem;}
+    #content01 .cont1 .cont1-text, .cont1 .cont1-text strong {font-size: 1rem; line-height: 2rem;}
     #content01 .cont1 .cont1-text::before {font-size: 2em; left: -1.8rem; top: -1.5rem;}
     #content01 .cont1 .cont1-text::after {font-size: 2rem; right: -0.8rem; bottom: -.5rem;}
     #content02 .container {width: 100%;}
