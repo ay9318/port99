@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+/* common */
+
+/* header */
+.header {border-bottom: 1px solid #eaeaea; line-height: 70px; padding: 45px 80px 0;}
+.header > * {float: left;}
+.header .logo {width: 20%;}
+.header .logo img {width: 182px;}
+.header ul li {display: inline-block; padding: 0 45px;}
+.header ul li a {font-weight: 900; font-size: 18px; padding-bottom: 36px;}
+.header ul.gnb {width: 50%;}
+.header ul.gnb li:hover a {color: #D70C19; border-bottom: 4px solid #D70C19;}
+.header ul.sub_nav {width: 30%; text-align: right;}
+.header ul.sub_nav li {padding: 0 15px;}
+.header ul.sub_nav li select {border: none; font-weight: 900;}
+.header ul.sub_nav li a {font-size: 15px;}
+.header ul.sub_nav li.search {width: 32px;}
+
+/* intro */
