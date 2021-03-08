@@ -1,2 +1,2 @@
 <h1>포트폴리오 사이트</h1>
-<a href="https://ay9318.github.io/port/index07.html" target="_blank">메인</a>
+<a href="https://ay9318.github.io/port/index7.html" target="_blank">메인</a>
