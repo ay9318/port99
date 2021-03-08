@@ -6,14 +6,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>신세계아이앤씨</title>
 	
-	<link rel="stylesheet" href="/assets/css/reset.css">
-	<link rel="stylesheet" href="/assets/css/style.css">
+	<link rel="stylesheet" href="/shinsegaeinc/assets/css/reset.css">
+	<link rel="stylesheet" href="/shinsegaeinc/assets/css/style.css">
 </head>
 <body>
 	<div id="wrap">
 		<header class="header clearfix">
 			<h1 class="logo">
-				<a href="index.html"><img src="/assets/images/common/logo_sinc.png" alt=""></a>
+				<a href="index.html"><img src="/shinsegaeinc/assets/images/common/logo_sinc.png" alt=""></a>
 			</h1>
 			<ul class="gnb">
 				<li><a href="#none">COMPANY</a></li>
@@ -29,7 +29,7 @@
 					</select>
 				</li>
 				<li><a href="#none">CONTACT US</a></li>
-				<li class="search"><a href="#none"><img src="assets/images/common/ico_search.png" alt="검색"></a></li>
+				<li class="search"><a href="#none"><img src="/shinsegaeinc/assets/images/common/ico_search.png" alt="검색"></a></li>
 			</ul>
 		</header>
 		<div id="intro">
@@ -41,14 +41,28 @@
 			<div class="btn_wrap">
 				<button type="button" class="plus"></button>
 			</div>
+			<div class="bar_wrap">
+				<div class="bar"></div>
+			</div>
 		</div>
 	</div>
-	<script src="/assets/js/jquery-1.8.3.min.js"></script>
+	<script src="/shinsegaeinc/assets/js/jquery-1.8.3.min.js"></script>
 	<script>
 		$(function(){
-			$("#intro .text_wrap p").split();
-		});
-	
+			//글자 쪼개기
+			$("#intro .text_wrap p").each(function(){
+				let txt = $(this).text();
+				let split = txt.split("").join("</span><span aria-hidden='true'>");
+
+				split = "<span aria-hidden='true'>" + split + "</span>"
+				$(this).html(split).attr("aria-lable", txt);
+			});
+
+			//인트로 애니메이션
+			$("#intro .text_wrap p span").each(function(){
+				gsap.to("#intro .text_wrap p span", .5, {opacity: 1,duration: 2.5, delay: 2, stagger: 0.1, transform: translate3d(0, 0, 0)})
+			});
+		});	
 	</script>
 </body>
 </html>
