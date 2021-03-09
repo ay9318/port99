@@ -3,42 +3,111 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
-/* common */
+/* layout */
+#wrap {padding: 102px 0 0;}
+section {padding: 70px 22%; margin: 0 auto;}
 
-#wrap {height: 300vh;}
+/* (공통) text */
+.title_text {font-size: 64px; font-weight: 900; line-height: 1.2; text-transform: capitalize; margin-bottom: 50px;}
+.title_text span {color: #D70C19;}
+a.underline {display: inline-block; font-size: 24px; font-weight: bold; line-height: 2.33; border-bottom: 4px solid #000; transition: all .4s; margin: 50px 0 0 235px;}
+a.underline:hover {color: #D70C19; border-color: #D70C19}
+
+/* (공통) list */
+.list_ty01 {padding-left: 235px; width: 100%;}
+.list_ty01 li {border-bottom: 1px solid #eaeaea; padding: 20px 0;}
+.list_ty01 li:last-child {border: none;}
+.list_ty01 li:hover a {color: #D70C19;}
+.list_ty01 li a::after {content: ''; background: url(/shinsegaeinc/assets/images/common/arr_link.png); width: 36px; height: 29px; position: absolute; right: 0; top: 50%; transform: translate(-100%, -50%); opacity: 0; transition: all .4s;}
+.list_ty01 li:hover a::after {opacity: 1; transform: translate(0%, -50%);}
 
 /* header */
-.header {border-bottom: 1px solid #eaeaea; line-height: 70px; padding: 30px 80px 0;}
+#header {transition: all .5s}
+.header {position: fixed; left: 0; top: 0; width: calc(100% - 160px); border-bottom: 1px solid #eaeaea; line-height: 70px; padding: 30px 80px 0; background: #fff; z-index: 10;}
 .header > * {float: left;}
 .header .logo {width: 18%;}
 .header .logo img {width: 182px;}
-.header ul li {display: inline-block; padding: 0 45px;}
-.header ul li a {font-weight: 900; font-size: 18px; padding-bottom: 22px;}
+.header > ul > li {position: relative; display: inline-block; padding: 0 45px;}
+.header > ul > li > a {font-weight: 900; font-size: 18px; padding-bottom: 22px;}
 .header ul.gnb {width: calc(100% - 43%);}
-.header ul.gnb li:hover a {color: #D70C19; border-bottom: 4px solid #D70C19;}
-.header ul.sub_nav {width: 25%; text-align: right;}
-.header ul.sub_nav li {padding: 0 15px;}
-.header ul.sub_nav li select {border: none; font-weight: 900;}
-.header ul.sub_nav li a {font-size: 15px;}
-.header ul.sub_nav li.search {width: 32px;}
+.header ul.gnb > li.active > a {color: #D70C19; border-bottom: 4px solid #D70C19;}
+.header ul.sub_menu {width: 25%; text-align: right;}
+.header ul.sub_menu li {padding: 0 15px;}
+.header ul.sub_menu li select {border: none; font-weight: 900;}
+.header ul.sub_menu li a {font-size: 15px;}
+.header ul.sub_menu li.search {width: 32px;}
+/* sub_nav */
+.sub_nav {position: fixed; left: 0; top: 102px; background: #fff; width: 100%; z-index: 5;}
+.sub_nav_menu {display: flex;}
+.header ul.gnb .dim {display: none; width: 100%; height: calc(100% - 102px); background: rgba(0,0,0,0.25); position: fixed; left: 0; bottom: 0;}
+/* .sub_nav {display: none; position: fixed; left: 0; top: 102px; width: 100%; background: #fff; padding: 50px 355px; z-index: 5;}
+.header ul.gnb > li.active .sub_nav {display: block;}
+.sub_nav_menu {display: flex;}
+.sub_nav_menu li {margin-right: 54px; line-height: 2;}
+.sub_nav_menu li a {font-weight: 300;}
+.sub_nav_menu li .nav_tit {font-weight: 600; line-height: 3; font-size: 18px;}
+.sub_nav_menu li:hover > a:not(.nav_tit) {color:#D70C19}
+.dim {width: 100%; height: calc(100% - 102px); background: rgba(0,0,0,0.25); position: fixed; left: 0; bottom: 0;} */
+/* .sub_nav_wrap::before {content: ''; display: block; width: 100%; height: 100%; background: rgba(0,0,0,0.25); position: absolute; left: 0; top: 0;} */
+/* .sub_nav {width: 100%; padding: 20px 310px; background: #fff;}
+.sub_nav_menu > li {display: inline-block; margin: 0 45px}
+ */
 
 /* intro */
-#intro {position: absolute; width: 100%; height: calc(100vh - 102px);}
+#intro {position: relative; width: 100%; height: calc(100vh - 102px);}
 #intro .text_wrap {position: absolute; left: 23%; bottom: 150px;}
 #intro .text_wrap p {font-size: 125px; font-weight: 900; line-height: 0.99;}
 #intro .text_wrap p span {opacity: 0;}
 #intro .text_wrap .btn_wrap {opacity: 0; width: 90px; height: 90px; position: absolute; right: 190px; bottom: 30px;}
-#intro .text_wrap .btn_wrap .plus {width: 100%; height: 24px; background: #D70C19; border: none; position: relative; animation: rotate 2s 1.8s infinite;}
+#intro .text_wrap .btn_wrap .plus {width: 100%; height: 24px; background: #D70C19; border: none; position: relative; animation: rotate 4s 1.8s infinite;}
 #intro .text_wrap .btn_wrap .plus::before {content: ''; width: 100%; height: 24px; background: #D70C19; position: absolute; left: 0; top: 0; transform: rotate(90deg);}
 #intro .bar_wrap {width: 100%; position: absolute; left: 0; bottom: 0; text-align: center;}
-#intro .bar_wrap .bar {display: inline-block; width: 0; height: 28px; opacity: 0; background: #D70C19; animation: width 1.5s 1.2s forwards;}
-
+#intro .bar_wrap .bar {display: inline-block; height: 28px; background: #D70C19; animation: width 1.5s 1.2s forwards; vertical-align: top;}
+#wrap.scrollDown #intro .bar_wrap .bar {animation: nowidth 1s forwards;}
 @keyframes rotate {
-	20% {opacity: 1; transform: rotate(0deg);}
-	50% {opacity: 1; transform: rotate(315deg);}
-	100% {transform: rotate(720deg);}
+	0% {transform: rotate(0deg);}
+	20%, 50% {transform: rotate(315deg);}
+	80%, 100% {transform: rotate(810deg);}
 }
 @keyframes width {
 	0% {opacity: 1; width: 0;}
 	80%, 100% {opacity: 1; width: 100%;}
 }
+@keyframes nowidth {
+	0% {opacity: 1; width: 100%;}
+	100% {opacity: 1; width: 0%;}
+}
+
+/* about */
+#about .title_text {line-height: 0.85;}
+#about .desc {font-size: 32px; font-weight: 600; line-height: 1.71; letter-spacing: -2px; margin-bottom: 56px; color: rgba(0,0,0,0.5);}
+#about .desc span {color: #D41217;}
+#about .desc.active {color: #000;}
+
+/* business */
+#business {background: #f7f7f7;}
+#business .business_list {display: flex; flex-wrap: wrap;}
+#business .business_list li {width: 45%;}
+#business .business_list li:nth-child(odd) {margin-right: 5%;}
+#business .business_list li a {font-size: 44px; font-weight: 700; letter-spacing: -2.5px;}
+#business .business_list li a span {font-size: 24px; margin-right: 20px; vertical-align: middle;}
+
+/* news */
+#news .news_list li {padding: 40px 0;}
+#news .news_list li a {font-size: 32px; font-weight: 500; transition: all .4s; display: flex; align-items: center; margin: 0 auto;}
+#news .news_list li a span {width: 55%; word-break: keep-all;}
+#news .news_list li img {width: 30%; max-width: 240px; margin-right: 30px;}
+
+/* contact */
+#contact p {padding-left: 235px; font-size: 32px; font-weight: 500; line-height: 1.75; letter-spacing: -2px;}
+
+/* footer */
+#footer {position: relative; background: #454545; padding: 125px 80px;}
+#footer .btn_top {width: 105px; height: 102px; background: url(/shinsegaeinc/assets/images/common/arr_top.png) no-repeat; background-size: 100%; transform: translateY(0); position: absolute; right: 80px; top: -100px; transition: all .2s; border: none;}
+#footer .btn_top:hover {height: 200px; transform: translateY(-20px);}
+#footer .foot_left {color: #fff;}
+#footer .foot_left .foot_logo {font-size: 36px; margin-right: 100px; font-weight: bold;}
+#footer .foot_left ul, #footer .foot_left ul li{display: inline-block;}
+#footer .foot_left ul li a {color: #fff; padding: 0 10px; font-weight: 700; font-size: 20px;}
+#footer .foot_left .info {color: #ccc; margin: 64px 0 0; font-size: 18px; font-weight: 300;}
+#footer .foot_left .info p.copy {margin-top: 14px;}
