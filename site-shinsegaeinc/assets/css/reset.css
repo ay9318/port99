@@ -1,0 +1,6 @@
+* {margin: 0; padding: 0;}
+body {box-sizing: border-box; font-family: 'Roboto', 'Noto Sans KR', sans-serif; overflow-x: hidden;}
+li {list-style: none;}
+a {text-decoration: none; color: #222;}
+.clearfix::before, .clearfix::after {content: ''; display: block; clear: both;}
+img {width: 100%;}
