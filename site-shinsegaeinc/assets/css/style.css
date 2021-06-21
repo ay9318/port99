@@ -21,7 +21,7 @@ a.underline:hover {color: #D70C19; border-color: #D70C19}
 .list_ty01 li {border-bottom: 1px solid #eaeaea; padding: 20px 0;}
 .list_ty01 li:last-child {border: none;}
 .list_ty01 li:hover a {color: #D70C19;}
-.list_ty01 li a::after {content: ''; background: url(/shinsegaeinc/assets/images/common/arr_link.png); width: 36px; height: 29px; position: absolute; right: 0; top: 50%; transform: translate(-100%, -50%); opacity: 0; transition: all .4s;}
+.list_ty01 li a::after {content: ''; background: url(../images/common/arr_link.png); width: 36px; height: 29px; position: absolute; right: 0; top: 50%; transform: translate(-100%, -50%); opacity: 0; transition: all .4s;}
 .list_ty01 li:hover a::after {opacity: 1; transform: translate(0%, -50%);}
 
 /* header */
@@ -121,7 +121,7 @@ a.underline:hover {color: #D70C19; border-color: #D70C19}
 
 /* footer */
 #footer {position: relative; background: #454545; padding: 125px 80px;}
-#footer .btn_top {width: 105px; height: 102px; background: url(/shinsegaeinc/assets/images/common/arr_top.png) no-repeat; background-size: 100%; transform: translateY(0); position: absolute; right: 80px; top: -100px; transition: all .2s; border: none;}
+#footer .btn_top {width: 105px; height: 102px; background: url(../images/common/arr_top.png) no-repeat; background-size: 100%; transform: translateY(0); position: absolute; right: 80px; top: -100px; transition: all .2s; border: none;}
 #footer .btn_top:hover {height: 200px; transform: translateY(-20px);}
 #footer .foot_left {color: #fff;}
 #footer .foot_left .foot_logo {font-size: 36px; margin-right: 100px; font-weight: bold;}
