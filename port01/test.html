@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>마키</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+	<style>
+		* {padding: 0; margin: 0;}
+		.box {background: #000; white-space: nowrap; overflow: hidden; font-size: 0;}
+		.txt {display: inline-block; font-weight: bold; font-size: 5rem; color: #fff; animation: rtl 5s linear infinite both; transform: translateX(0);}
+		@keyframes rtl {
+			from {transform: translateX(0);}
+			to {transform: translateX(-100%);}
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<span class="txt">hello&nbsp;-&nbsp;</span>
+	</div>
+	<!--
+		트랜스폼은 인라인블럭, 블럭요소만 가능
+		인라인블럭이면 부모박스에서 font-size: 0으로 하기
+		무조건 애니메이션은 linear여야 하고
+		무조건 자식요소에 애니메이션을 적용해야한다.
+	 -->
+	<script>
+		function appendElem() {
+			var count = Math.round($('body').width() / $('.txt').width());
+			console.log(count)
+			$('.txt').remove();
+			for(var i = 0; i <= count; i++)	 {
+				$('.box').append('<span class="txt">hello&nbsp;-&nbsp;</span>')
+			}
+		}
+		
+		$(document).ready(function(){
+			appendElem();
+		});
+		$(window).resize(appendElem);
+	</script>	
+</body>
+</html>

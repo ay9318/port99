@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Effect02</title>
+
+    <link rel="stylesheet" href="css/prism.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+        @font-face { 
+            font-family: 'GmarketSansMedium'; 
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff'); 
+            font-weight: normal; 
+            font-style: normal; 
+        }
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        a {text-decoration: none; color: #666;}
+        img {width: 100%; vertical-align: top;}        
+        ul {padding: 10px 20px;}
+        body {
+            background: url(img/img08.jpg) no-repeat center center;
+            background-size: cover;
+            font-family: 'Abel', 'GmarketSansMedium';
+            color: #fff;
+            height: 100vh;
+            cursor: none;
+            overflow: hidden;
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0;
+            width: 100%; height: 100vh;
+            background: rgba(45, 71, 100, 0.8);
+            z-index: -1;
+        }
+        .info {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            position: absolute; left: 0; top: 0; z-index: 1000;
+            padding: 20px;
+            font-size: 20px;
+        }
+        /* info2 */
+        .info2 {
+            position: absolute; right: 0; top: 0; z-index: 1000;
+            padding: 30px; font-weight: bold;
+        }
+        .info2 li {list-style: none; margin-bottom: 5px;}
+        .info2 li a {color: #fff;}
+        .info2 li.active a {border-bottom: 1px dashed #fff;}
+
+        /* info3 */
+        .info3 {position: absolute; right: 0; bottom: 0; z-index: 1000; padding: 20px;}
+        .info3 li {list-style: none; margin-bottom: 5px;}
+        .info3 li span {color: #fff;}
+
+        /*  info4 */
+        .info4 {position: absolute; left: 0; bottom: 0; z-index: 1000; padding: 20px;}
+        .info4 a {color: #fff; border: 1px solid #fff; border-radius: 30px; padding: 5px 30px}
+        .info4 .modal {
+            background: rgba(0,0,0,0.8);
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            position: fixed;
+            top: 100%;
+            left: 0;
+            text-align: left;
+            transition: all 600ms cubic-bezier(0.86, 0, 0.07, 1);
+        }
+        .info4 .modal.show {
+            top: 0;
+        }
+        .info4 .modal .close {
+            position: absolute; right: 10px; top: 20px;
+        }
+
+        /* contents */
+        .contents {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%; height: 100%;
+            text-align: center;
+            flex-direction: column;
+        }
+        .contents p {
+            max-width: 80vw;
+            font-size: 3vw;
+        }
+        .contents p a {color: mediumturquoise;}
+        .cursor {
+            position: absolute; left: 0; top: 0;
+            width: 10px; height: 10px;
+            border-radius: 50%;
+            background-color: #fff;
+            z-index: 1000;
+            transform: scaleX(1);
+            user-select: none;
+            pointer-events: none;
+            transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out;
+        }
+        .cursor.active {
+            opacity: .5;
+            transform: scale(0);
+        }
+        .cursor-follower {
+            position: absolute;
+            width: 30px; height: 30px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            user-select: none;
+            pointer-events: none;
+            transition: transform 0.6s ease-in-out, opacity 0.2s ease-in-out;
+        }       
+        .cursor-follower.active {
+            opacity: .7;
+            transform: scale(4);
+        }
+    </style>
+</head>
+<body>
+    <div class="info">
+        <h1>Mouse Effect02</h1>
+        <p>마우스 따라다니기</p>
+        <ul>
+            <li>pageX, pageY</li>
+        </ul>
+    </div>
+    <div class="info2">
+        <ul>
+            <li><a href="mouse01.html">Mouse01</a></li>
+            <li class="active"><a href="mouse02.html">Mouse02</a></li>
+            <li><a href="mouse03.html">Mouse03</a></li>
+            <li><a href="mouse04.html">Mouse04</a></li>
+            <li><a href="mouse05.html">Mouse05</a></li>
+            <li><a href="mouse06.html">Mouse06</a></li>
+            <li><a href="mouse07.html">Mouse07</a></li>
+            <li><a href="mouse08.html">Mouse08</a></li>
+        </ul>
+    </div>
+    <div class="info3">
+        <ul>
+            <li>pageX :<span class="pageX">0</span></li>
+            <li>pageY :<span class="pageY">0</span></li>
+        </ul>
+    </div>
+    <div class="info4">
+        <a href="#" class="view">소스보기</a>
+        <!-- modal -->
+        <div class="modal">
+            <div class="code-editor">   
+                <span class="control"></span>
+                <span class="control"></span>
+                <span class="control"></span>
+<pre class="line-numbers"><code class="language-js">const cursor = $(".cursor");
+    const follower = $(".cursor-follower");
+
+     //출력용
+    $(document).mousemove(function(e){ //마우스가 움직였을 때 이벤트 함수
+        $(".pageX").text(e.pageX);  //이벤트 pageX 값을 화면에 출력
+        $(".pageY").text(e.pageY); //이벤트 pageY 값을 화면에 출력
+    });
+
+    //커서 이동
+    // $(document).mousemove(function(e){
+    //     gsap.to(cursor, 0.3, {left: e.pageX-5, top: e.pageY-5})
+    //     gsap.to(follower, 0.8, {left: e.pageX-15, top: e.pageY-15})
+    // });
+
+    //마우스 오버효과
+    // $("a").hover(function(){
+    //     cursor.addClass("active");
+    //     follower.addClass("active");
+    // },function() {
+    //     cursor.removeClass("active");
+    //     follower.removeClass("active");
+    // });
+
+    //커서 이동 - 자바
+    addEventListener("mousemove", function(e){
+        gsap.to(cursor, 0.3, {left: e.pageX-5, top: e.pageY-5})
+        gsap.to(follower, 0.8, {left: e.pageX-15, top: e.pageY-15})
+    });
+
+    //마우스 오버효과 -자바
+    document.querySelectorAll("a").forEach(elem => {
+        elem.addEventListener("mouseenter",() => {
+            document.querySelector(".cursor").classList.add("active")
+            document.querySelector(".cursor-follower").classList.add("active")
+        });
+        elem.addEventListener("mouseleave",() => {
+            document.querySelector(".cursor").classList.remove("active")
+            document.querySelector(".cursor-follower").classList.remove("active")
+        });            
+    });
+</code></pre>    
+            </div>
+            <a class="close">닫기</a>
+        </div>
+    </div>
+
+    <div class="contents">
+    <div class="cursor"></div> 
+    <div class="cursor-follower"></div> 
+        <p>네 자신의 무지를 <a>절대</a> 과소평가하지 마라.</p>
+        <p><a>Never</a> underestimate your own ignorance.</p>        
+    </div>   
+    
+    <!-- 마우스 포인터 좌표
+        1. 	x,y
+        - 문서의 좌측상단을 기준점으로함.
+        - 비표준			
+
+        2. clientX, clientY
+        - 문서 좌측 상단을 기준점으로 함
+        - 표준
+        - 많이 사용(absolute)			
+
+        3. screenX, screenY
+        - 모니터 화면의 좌측 상단을 기준점으로 함
+        - 잘 안씀			
+
+        4. offsetX, offsetY
+        - 이벤트 발생한 객체(태그)의 좌측상단을 기준점
+        - 많이 사용(relative) -->       
+        <!-- script -->
+
+    <script src="js/jquery.min_1.12.4.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="../Parallax/js/gsap.min.js"></script>
+    <script src="js/prism.js"></script>
+    <script>
+        const cursor = $(".cursor");
+        const follower = $(".cursor-follower");
+
+            //출력용
+        $(document).mousemove(function(e){ //마우스가 움직였을 때 이벤트 함수
+            $(".pageX").text(e.pageX);  //이벤트 pageX 값을 화면에 출력
+            $(".pageY").text(e.pageY); //이벤트 pageY 값을 화면에 출력
+        });
+
+        //커서 이동
+        // $(document).mousemove(function(e){
+        //     gsap.to(cursor, 0.3, {left: e.pageX-5, top: e.pageY-5})
+        //     gsap.to(follower, 0.8, {left: e.pageX-15, top: e.pageY-15})
+        // });
+
+        //마우스 오버효과
+        // $("a").hover(function(){
+        //     cursor.addClass("active");
+        //     follower.addClass("active");
+        // },function() {
+        //     cursor.removeClass("active");
+        //     follower.removeClass("active");
+        // });
+
+        //커서 이동 - 자바
+        addEventListener("mousemove", function(e){
+            gsap.to(cursor, 0.3, {left: e.pageX-5, top: e.pageY-5})
+            gsap.to(follower, 0.8, {left: e.pageX-15, top: e.pageY-15})
+        });
+
+        //마우스 오버효과 -자바
+        document.querySelectorAll("a").forEach(elem => {
+            elem.addEventListener("mouseenter",() => {
+                document.querySelector(".cursor").classList.add("active")
+                document.querySelector(".cursor-follower").classList.add("active")
+            });
+            elem.addEventListener("mouseleave",() => {
+                document.querySelector(".cursor").classList.remove("active")
+                document.querySelector(".cursor-follower").classList.remove("active")
+            });            
+        });
+        //modal
+            $(".info4 a").click(function(){
+            $(".info4 .modal").addClass("show");
+        });
+        $(".info4 .close").click(function(){
+            $(".info4 .modal").removeClass("show");
+        });
+    </script>
+</body>
+</html>

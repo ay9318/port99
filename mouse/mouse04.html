@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Effect04</title>
+
+    <link rel="stylesheet" href="css/prism.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+        @font-face { 
+            font-family: 'GmarketSansMedium'; 
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff'); 
+            font-weight: normal; 
+            font-style: normal; 
+        }
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        a {text-decoration: none; color: #666;}
+        img {width: 100%; vertical-align: top;}        
+        ul {padding: 10px 20px;}
+        body {
+            background: url(img/photo01.jpg) no-repeat center center;
+            background-size: cover;
+            font-family: 'Abel', 'GmarketSansMedium';
+            color: #fff;
+            height: 100vh;
+            cursor: none;
+            overflow: hidden;
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0;
+            width: 100%; height: 100vh;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: -1;
+        }
+        .info {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            position: absolute; left: 0; top: 0; z-index: 1000;
+            padding: 20px;
+            font-size: 18px;
+        }
+
+        /* info2 */
+        .info2 {
+            position: absolute; right: 0; top: 0; z-index: 1000;
+            padding: 30px; font-weight: bold;
+        }
+        .info2 li {list-style: none; margin-bottom: 5px;}
+        .info2 li a {color: #fff;}
+        .info2 li.active a {border-bottom: 1px dashed #fff;}
+
+        /* info3 */
+        .info3 {position: absolute; right: 0; bottom: 0; z-index: 1000; padding: 20px;}
+        .info3 li {list-style: none; margin-bottom: 5px;}
+        .info3 li span {color: #fff;}
+
+         /*  info4 */
+        .info4 {position: absolute; left: 0; bottom: 0; z-index: 1000; padding: 20px;}
+        .info4 a {color: #fff; border: 1px solid #fff; border-radius: 30px; padding: 5px 30px}
+        .info4 .modal {
+            background: rgba(0,0,0,0.8);
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            position: fixed;
+            top: 100%;
+            left: 0;
+            text-align: left;
+            transition: all 600ms cubic-bezier(0.86, 0, 0.07, 1);
+        }
+        .info4 .modal.show {
+            top: 0;
+        }
+        .info4 .modal .close {
+            position: absolute; right: 10px; top: 20px;
+        }
+
+        /* contents */
+        .contents {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%; height: 100%;
+            text-align: center;
+            flex-direction: column;
+        }
+        .contents .move-image {
+            position: absolute; left: 50%; top: 50%;
+            transform: translate(-50%, -50%) perspective(600px) rotateX(-10deg) rotateY(-10deg) scale(0.8);
+            transform-style: preserve-3d;
+            will-change: transform;
+        }
+        .contents .move-image .mimg img {border-radius: 5px;}
+        .contents .move-image .mimg {position: relative;}
+        .contents .move-image .mimg::before {
+            content: '';
+            position: absolute; left: 5%; bottom: -40px;
+            z-index: -1;
+            width: 90%; height: 30px;
+            background: url(img/photo.jpg) no-repeat;
+            background-size: 100% 30px;
+            filter: blur(15px);
+            opacity: .7;
+        }
+        .contents .move-image .mtext {
+            color: #fff;
+            font-size: 1vw;
+            position: absolute;
+            left: 50%; bottom: 50%;
+            transform: translate3d(-50%, -50%, 150px);
+            background: rgba(255, 50, 0, 0.5);
+            padding: 1vw;
+            text-align: center;
+            border-radius: 2px;
+        }
+        .cursor {
+            position: relative;
+            position: absolute;
+            width: 10px; height: 10px;
+            border-radius: 50%;
+            background-color: #fff;
+            z-index: 1000;
+            transform: scale(1);
+            user-select: none;
+            pointer-events: none;
+            transition: transform 0.3s ease-in-out;
+        }
+        .cursor strong {
+            background: rgba(0, 0, 0, 0.1);
+            white-space: nowrap;
+            position: absolute;
+            display: block;
+            padding: 0 5px;
+        }
+        .cursor strong:first-child {left: 50%; top: -60px;}
+        .cursor strong:last-child {left: 50%; top: -40px;}
+    </style>
+</head>
+<body>
+    <div class="info">
+        <h1>Mouse Effect04</h1>
+        <p>마우스 따라다니기</p>
+    </div>
+    <div class="info2">
+        <ul>
+            <li><a href="mouse01.html">Mouse01</a></li>
+            <li><a href="mouse02.html">Mouse02</a></li>
+            <li><a href="mouse03.html">Mouse03</a></li>
+            <li class="active"><a href="mouse04.html">Mouse04</a></li>
+            <li><a href="mouse05.html">Mouse05</a></li>
+            <li><a href="mouse06.html">Mouse06</a></li>
+            <li><a href="mouse07.html">Mouse07</a></li>
+            <li><a href="mouse08.html">Mouse08</a></li>
+        </ul>
+    </div>
+    <div class="info3">
+        <ul>
+            <li>pageX :<span class="pageX">0</span></li>
+            <li>pageY :<span class="pageY">0</span></li>
+            <li>mouseX :<span class="mouseX">0</span></li>
+            <li>mouseY :<span class="mouseY">0</span></li>
+            <li>angleX :<span class="angleX">0</span></li>
+            <li>angleY :<span class="angleY">0</span></li>
+        </ul>
+    </div>
+    <div class="info4">
+        <a href="#" class="view">소스보기</a>
+        <!-- modal -->
+        <div class="modal">
+            <div class="code-editor">   
+                <span class="control"></span>
+                <span class="control"></span>
+                <span class="control"></span>
+<pre class="line-numbers"><code class="language-js">let x = 0,
+    y = 0,
+    mouseX = 0,
+    mouseY = 0,
+    angleX = 0,
+    angleY = 0,
+    fmouseX = 0,
+    fmouseY = 0;
+    
+$(window).mousemove(function(e){ 
+
+    x = e.pageX;  //마우스 X축 좌표값
+    y = e.pageY;  //마우스 Y축 좌표값
+
+    //마우스의 x축, y축 최소값 -100 최대값 100으로 설정
+    mouseX = Math.max(-100, Math.min(100, $(window).width()/2 - x));
+    mouseY = Math.max(-100, Math.min(100, $(window).height()/2 - y));
+
+    angleX = (12 * mouseX) / 100;
+    angleY = (12 * mouseY) /100;
+
+    fmouseX += (angleX - fmouseX) * 1/5;
+    fmouseY += (angleY - fmouseY) * 1/5;
+
+    animation();
+}); 
+function animation(){
+    $(".move-image").css({"transform": "translate(-50%, -50%) perspective(600px) rotateX("+fmouseX+"deg) rotateY("+fmouseY+"deg)"});
+};
+</code></pre>    
+            </div>
+            <a class="close">닫기</a>
+        </div>
+    </div>
+    <!-- contents -->
+    <div class="cursor">
+            <strong>mouseX :<span class="mouseX">0</span></strong>
+            <strong>mouseY :<span class="mouseY">0</span></strong>
+    </div> 
+
+    <div class="contents">
+        <div class="move-image">
+            <div class="mimg"><img src="img/photo.jpg" alt="이미지1"></div>
+            <div class="mtext">가시뿐이라고 믿었던<br> 선인장도 오래고 더딜지는 모르지만 꽃이 핀다.</div>
+        </div>
+    </div>   
+
+    <script src="js/jquery.min_1.12.4.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="../Parallax/js/gsap.min.js"></script>
+    <script src="js/prism.js"></script>
+    <script>
+        let x = 0,
+            y = 0,
+            mouseX = 0,
+            mouseY = 0,
+            angleX = 0,
+            angleY = 0,
+            fmouseX = 0,
+            fmouseY = 0;
+            
+        $(window).mousemove(function(e){ 
+
+            x = e.pageX;  //마우스 X축 좌표값
+            y = e.pageY;  //마우스 Y축 좌표값
+
+
+
+           // let mouseX = $(window).width()/2 - x;   //마우스의  x축 좌표값을 가운데로 설정
+           // let mouseY = $(window).height()/2 - y; //마우스의  y축 좌표값을 가운데로 설정
+
+            //마우스의 x축, y축 최소값 -100 최대값 100으로 설정
+            mouseX = Math.max(-100, Math.min(100, $(window).width()/2 - x));
+            mouseY = Math.max(-100, Math.min(100, $(window).height()/2 - y));
+
+            angleX = (12 * mouseX) / 100;
+            angleY = (12 * mouseY) /100;
+
+            fmouseX += (angleX - fmouseX) * 1/5;
+            fmouseY += (angleY - fmouseY) * 1/5;
+
+            animation();
+            
+            /* let max = Math.max(100, 200);
+            let min = Math.min(100, 200); */
+            /* let xx = 100; let yy = -200;
+            let zz = Math.min(xx, yy); */
+            /* let arr = [100, 200, 300];
+            let max = Math.max(...arr); */
+
+            //주어진 숫자보다 크거나 같은 숫자 중 작은 숫자
+            //let ceil = Math.ceil(0.95)  //결과값 1
+            //let ceil = Math.ceil(4)  //결과값 4
+            //let ceil = Math.ceil(6.000005)  //결과값 7
+            //let ceil = Math.ceil(-0.95)  //결과값 -0
+            //let ceil = Math.ceil(-4)  //결과값 -4
+
+            //주어진 수 이하의 가장 큰 정수
+            //let floor = Math.floor(39.35)  //결과값 39
+            //let floor = Math.floor(39.85)  //결과값 39
+            //let floor = Math.floor(4)  //결과값 4
+
+            //입력값을 반올림한 값과 가장 가까운 정수를 출력
+            //let round = Math.round(20.49) //20
+            //let round = Math.round(20.5) //21
+            //let round = Math.round(20) //20
+
+            //랜덤 0~1사이 값
+            //let random = Math.round(Math.random()*10)  //0~9까지 값을 표출
+            //console.log(random);        
+                        
+            //커서 이동
+            gsap.to(".cursor", 0.3, {left: x, top: y});
+
+            //출력용
+            $(".pageX").text(x);  //이벤트 pageX 값을 화면에 출력
+            $(".pageY").text(y); //이벤트 pageY 값을 화면에 출력
+            $(".mouseX").text(mouseX); //이벤트 pageY 값을 화면에 출력
+            $(".mouseY").text(mouseY); //이벤트 pageY 값을 화면에 출력
+            $(".angleY").text(angleY); //이벤트 pageY 값을 화면에 출력
+            $(".angleX").text(angleX); //이벤트 pageY 값을 화면에 출력
+        });       
+
+        function animation(){
+            $(".move-image").css({"transform": "translate(-50%, -50%) perspective(600px) rotateX("+fmouseX+"deg) rotateY("+fmouseY+"deg)"});
+        };
+
+        //modal
+        $(".info4 a").click(function(){
+            $(".info4 .modal").addClass("show");
+        });
+        $(".info4 .close").click(function(){
+            $(".info4 .modal").removeClass("show");
+        });
+    </script>
+</body>
+</html>

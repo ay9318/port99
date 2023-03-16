@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <style>
+        @font-face { 
+            font-family: 'GmarketSansMedium'; 
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff'); 
+            font-weight: normal; 
+            font-style: normal; 
+        }
+        * {margin: 0; padding: 0;}
+        body {background: rgba(233, 197, 35, 0.623); font-family: 'GmarketSansMedium';}
+        .title {
+            width: 100%; text-align: center; 
+            margin-top: 30px; font-size: 50px; 
+            color: #333;
+            font-weight: bold;
+        }
+        main {            
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 900px;
+            margin: 5% auto;
+        }
+        .card {
+            position: relative;
+            width: 120px; height: 150px;
+            margin: 1%; perspective: 1000px;
+        }
+        .card > div {
+            transform-style: preserve-3d;
+        }
+        .card .front {
+            position: relative;
+            z-index: 100;
+            width: 100%; height: 100%;
+            background: url(img/front.jpg);
+            background-size: cover;            
+            transform: rotateY(0deg);
+            transition: transform 1s;
+            backface-visibility: hidden;
+        }
+        .card .back {
+            width: 100%; height: 100%;
+            position: absolute; left: 0; top: 0;
+            transform: rotateY(-180deg);
+            transition: transform 1s;
+            backface-visibility: hidden;
+        }
+
+        /* 카드를 클릭했을 때 */
+        .card.is-selected .front {
+            transform: rotateY(180deg);
+            transition: transform 0.6s;
+        }
+        .card.is-selected .back {
+            transform: rotateY(0deg);
+            transition: transform 0.6s;
+        }
+        [data-matched="true"] .front {
+            transform: rotateY(180deg);
+            transition: transform 0.6s;
+        }
+        [data-matched="true"] .back {
+            transform: rotateY(0deg);
+            transition: transform 0.6s;
+        }
+        [data-type="img1"] .back {
+            background: url(img/img01.jpg);
+            background-size: cover;
+        }
+        [data-type="img2"] .back {
+            background: url(img/img02.jpg);
+            background-size: cover;
+        }
+        [data-type="img3"] .back {
+            background: url(img/img03.jpg);
+            background-size: cover;
+        }
+        [data-type="img4"] .back {
+            background: url(img/img04.jpg);
+            background-size: cover;
+        }
+        [data-type="img5"] .back {
+            background: url(img/img05.jpg);
+            background-size: cover;
+        }
+        [data-type="img6"] .back {
+            background: url(img/img06.jpg);
+            background-size: cover;
+        }
+        [data-type="img7"] .back {
+            background: url(img/img07.jpg);
+            background-size: cover;
+        }
+        [data-type="img8"] .back {
+            background: url(img/img08.jpg);
+            background-size: cover;
+        }           
+        [data-type="img9"] .back {
+            background: url(img/img09.jpg);
+            background-size: cover;
+        }      
+
+        /* info */ 
+        .info {
+            width: 100%;
+            min-width: 950px;            
+        }
+        .btn-sound {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            width: 40px;
+            height: 40px;
+            background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/225363/icon-sound-on.svg);
+            background-color: transparent;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            border: none;
+            outline: none;
+        }
+        .btn-sound:active {transform: translateY(1px);}
+        .btn-sound::before {
+            content: '';
+            position: absolute;
+            top: 13px;
+            left: -5px;
+            width: 120%;
+            height: 2px;
+            background-color: #ff0000;
+            transform: rotate(-35deg);
+        }
+        .btn-sound.is-playing::before {display: none;}
+        .score {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .score .turns span.last-turn {color: #ff0000;}
+        .score > div {
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            font-weight: bold;
+        }
+        .success {
+            position: fixed; left: 0%; top: 0%;
+            width: 100%; height: 100vh;
+            text-align: center;
+            z-index: 10000;            
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            display: none;
+        }        
+        .success.is-visible {display: flex;}
+        .success.bg {background: rgba(247, 220, 146, 0.6);}
+        .btn-continue {
+            padding: 15px 20px;
+            margin: 1%;
+            background: #333;
+            color: #fff;
+            font-weight: bold;
+            font-size: 18px;
+            border: none;
+        }
+        .btn-continue.active {
+            transform: translatey(2px);
+            background: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">카드 맞추기 게임</div>
+    <div class="info">
+        <button class="btn-sound"></button>
+        <audio id="theme-song" src="music/BGM.mp3" loop="loop"></audio>
+        <div class="score">
+            <div class="turns">기회 : <span>2</span></div>
+            <div class="attempts">시도 : <span>0</span></div>
+            <div class="wins">우승 : <span>0</span></div>
+        </div>
+    </div>
+    <main>
+        <div class="card" data-type="img1" data-matched="false">
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+        <div class="card" data-type="img2" data-matched="false">
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+        <div class="card" data-type="img3" data-matched="false">
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+        <div class="card" data-type="img4" data-matched="false">
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+        <div class="card" data-type="img5" data-matched="false">
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+        <div class="card" data-type="img6" data-matched="false">
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+        <div class="card" data-type="img7" data-matched="false">
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+        <div class="card" data-type="img8" data-matched="false">
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+        <div class="card" data-type="img9" data-matched="false">
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>        
+        <div class="card" data-type="img1" data-matched="false">
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+        <div class="card" data-type="img2" data-matched="false">
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+        <div class="card" data-type="img3" data-matched="false">
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+        <div class="card" data-type="img4" data-matched="false">
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+        <div class="card" data-type="img5" data-matched="false">
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+        <div class="card" data-type="img6" data-matched="false">
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+        <div class="card" data-type="img7" data-matched="false">
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+        <div class="card" data-type="img8" data-matched="false">
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+        <div class="card" data-type="img9" data-matched="false">
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>        
+    </main>
+
+    <div class="success bg">
+        <h2 class="success-message">참 잘했어요 :)</h2>
+        <div class="score">
+            <div class="turns">기회 : <span>2</span></div>
+            <div class="attempts">시도 : <span>0</span></div>
+            <div class="wins">우승 : <span>0</span></div>
+        </div>
+        <button class="btn-continue">한판 더??</button>
+    </div>
+
+    <script src="js/jquery.min_1.12.4.js"></script>
+    <script>
+        const $board = $('main'),
+                $card = $('.card'),
+                $btnSound = $('.btn-sound'),
+                $themeSongEl = $("#theme-song")[0],
+                $turns = $('.turns span');
+                $attempts = $(".attempts span"),
+                $wins = $(".wins span"),
+                $success = $(".success"),
+                $btnContinue = $(".btn-continue"),
+                $successMsg = $(".success-message"),
+
+                selectedClass = 'is-selected',     //카드를 선택했을때
+                dataMatch = 'data-matched',
+                dataType = 'data-type',
+                playSoundClass = 'is-playing',
+                lastTurnClass = 'last-turn',
+                visibleClass = 'is-visible',
+                timeoutLength = 900;
+
+
+        let sound = ['music/match.mp3','music/no-match.mp3','music/success.mp3'],
+            soundMatch = new Audio(sound[0]),
+            soundNoMatch = new Audio(sound[1]),
+            soundSuccess = new Audio(sound[2]),
+            turnsCount = 2,  //기회 횟수 2
+            attemptsCount = 0,    //시도횟수
+            winsCount = 0,        //완성횟수
+            card1, card2, msg;
+
+        //카드 셔플
+        shuffleCards()
+        
+        //음악 아이콘을 클릭했을 때 음악이 나오고 또 클릭했을때 정지
+        $btnSound.on('click',function() {
+            $(this).toggleClass(playSoundClass);
+            if ($(this).hasClass(playSoundClass)) {
+                $themeSongEl.play();
+            } else {
+                $themeSongEl.pause();
+            }
+        });
+
+
+        //카드를 클릭하면 클릭한 카드한테 is-selected를 추가
+        $card.click(function() {
+            if ($(this).attr(dataMatch) == 'false') {
+                $(this).addClass(selectedClass);
+            };
+
+            let selectedCards = $('.'+selectedClass); //선택된 카드를 클래스로 변경
+
+            //만약에 두개의 카드가 똑같다면
+            if (selectedCards.length == 2) {
+                card1 = selectedCards.eq(0).attr(dataType);
+                card2 = selectedCards.eq(1).attr(dataType);
+
+                //카드1과 카드2가 같다면
+                if (card1 == card2) {
+                    if ($btnSound.hasClass(playSoundClass)) {
+                        soundMatch.play()
+                    }
+                    selectedCards.attr(dataMatch, true).removeClass(selectedClass);
+                } else {       //맞지 않다면
+                    if ($btnSound.hasClass(playSoundClass)) {
+                        soundNoMatch.play()
+                    }                
+                    setTimeout(function() { 
+                        selectedCards.removeClass(selectedClass);
+                        turnsCount--;  //실패할때마다 카운트 수를 줄임
+                        $turns.html(turnsCount);
+                    }, timeoutLength);
+
+                    //기회 카운트가 없을때(주의)
+                    if(turnsCount === 1) {
+                        setTimeout(function() {
+                            $turns.addClass(lastTurnClass);
+                        }, timeoutLength);                   
+                    }
+                    //기회가 아예 없을때(시도+1, 카운트 ->2)
+                    if(turnsCount <= 0) {
+                        setTimeout(function() {
+                            turnsCount = 2;  //기회를 2번 복구
+                            $turns.removeClass(lastTurnClass).html(turnsCount);   //주의 표시 삭제, 카운트 표시
+                            $card.attr(dataMatch, false);
+                            attemptsCount+= 1;
+                            $attempts.html(attemptsCount);
+                        }, timeoutLength);                       
+                    }
+                }
+            }
+
+            //완성했을 때
+            //dataMatch가 true이면서 갯수가 전체 카드 갯수랑 같을때
+            if($('['+dataMatch+'="true"]').length == $card.length) {
+                setTimeout(() => {
+                    $success.addClass(visibleClass);
+                    winsCount+= 1;
+                    $wins.html(winsCount);
+                }, timeoutLength);
+
+                //시도 횟수에 따른 메세지 -swich
+                switch (true) {
+                    case (attemptsCount <= 2):
+                        msg = "대한민국 상위 2%이시네요!";
+                        break;
+                    case (attemptsCount > 2 && attemptsCount <= 5):
+                        msg = "기억력이 수준급이시네요!";
+                        break;
+                    case (attemptsCount > 5 && attemptsCount <= 8):
+                        msg = "고생했습니당!";
+                        break;
+                    case (attemptsCount > 8):
+                        msg = "매일매일 하면 늘거에요~";
+                        break;
+                }
+                $successMsg.text(msg);     
+
+                //카드 초기화
+                setTimeout(() => {
+                    $card.attr(dataMatch, false);
+                }, 1200);
+            };
+        });
+
+        //다시 게임할 때
+        $btnContinue.on("click", function(){
+            /* $(this).toggleClass("active") */
+            $success.removeClass(visibleClass);
+            shuffleCards()   //카드 셔플, 점수 초기화
+            turnsCount = 2;
+            $turns.removeClass(lastTurnClass).html(turnsCount);
+            attemptsCount = 0;
+            $attempts.html(attemptsCount);
+        });
+            
+            
+        //카드 셔플
+        function shuffleCards(){
+            let cards = $board.children();
+
+            while(cards.length) {
+                $board.append(cards.splice(Math.floor(Math.random()*cards.length), 1)[0])
+            }
+            $card.each(function(index) {
+                setTimeout(() => {
+                    $(this).addClass(selectedClass);
+                }, timeoutLength + 50 * index);
+            });
+
+            setTimeout(() => {
+                $card.removeClass(selectedClass);
+            }, 5000);
+
+            /* for(let i=0; i<cards.length; i++) {
+                let arr = [];
+                let random = cards.splice(Math.floor(Math.random()*cards.length), 1)[0]  //0부터 17
+                arr.push(random);
+
+                console.log(arr);
+            } */
+        };
+
+        //splice
+        //var number = [1, 2, 3, 4, 5, 6, 7]
+        /*var removed = number.splice(2, 0, '10', '11');*/    //출력값 1,2,10,11,3,4,5,6,7
+        /*var removed = number.splice(3, 1);*/   //1,2,3,5,6,7
+        /*var removed = number.splice(2, 1, '20');*/   //1,2,20,4,5,6,7
+        /*var removed = number.splice(0, 2, '20', '30', '40');*/  //20,30,40,3,4,5,6,7
+        /*var removed = number.splice(number.length-3, 2);*/  //1,2,3,4,7
+        /*var removed = number.splice(-2, 1);*/ //1,2,3,4,5,7
+        //var removed = number.splice(2);  //1,2
+
+        //alert(number)
+    </script>
+</body>
+</html>

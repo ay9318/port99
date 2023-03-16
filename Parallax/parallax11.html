@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax11</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/prism.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+        @font-face { 
+            font-family: 'RIDIBatang'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff') format('woff'); font-weight: normal; font-style: normal; 
+        }
+
+        /* reset */
+        *, *::after, *::before {box-sizing: border-box;}
+        * {margin: 0; padding: 0;}
+        li {list-style: none;}
+        a {text-decoration: none; color: #fff; font-family: 'Lato', sans-serif;}
+        :root {font-size: 16px;}
+        body {
+            --color-h1 : #dc6e25;
+            --color-title : #fff;
+            --color-link : #000;
+            --color-bg : #111;
+            --image-widthMax: 500px;
+            --aspect-ratio: 32/17;
+            color: var(--color-link);
+            background-color: var(--color-bg);
+            font-family: 'RIDIBatang', sans-serif;
+        }
+        .title {
+            position: fixed; 
+            right: 0;
+            top: 0;
+            z-index: 1000;
+            padding: 20px;
+            font-family: 'GmarketSansMedium';
+            text-align: right;
+        }
+        .title h1 {
+            padding-bottom: 10px;
+            color: #fff;
+        }
+        .title p {
+            font-size: 18px;
+            color: #fff;
+        }
+        .title ul {
+            padding-top: 20px;
+        }
+        .title li {
+            padding-bottom: 5px;
+        }
+        .title li a {
+            font-size: 16px;
+            font-family: "Abel";
+            color: #fff;
+        }
+        .title li.active a {
+            border-bottom: 1px dashed #fff;
+        }
+        .wrap h1 {
+            font-size: 8vw;
+            padding: 5vw;
+            color: var(--color-h1);
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        .wrap h1 em {
+            display: block; 
+            padding-left: 20vw;
+            color: antiquewhite;
+        }
+        .content-item { 
+            --imgwidth: calc(var(--imgwidthmax) * var(--aspect-ratio));
+            width: var(--imgwidth);
+            position: relative;
+            will-change: transform;
+        }
+        .content-item:nth-child(even){
+            margin-left: auto;
+        }
+        .content-item-num {
+            position: absolute; top: 30%; right: 20vw; transform: translateY(-50%);
+            font-size: 25vw; opacity: 0.03; line-height: 1;
+            font-weight: 100; 
+            color: #fff;
+        }
+        .content-item-title {
+            text-align: left; font-weight: 300; text-transform: capitalize;
+            color: #999; padding-left: 100px; padding-top: 10vh;
+        }
+        .content-item-imgWrap {
+            position: absolute;
+            top: 50%; transform: translateY(-50%);
+            --imgwidth: 50%;
+            overflow: hidden;
+            margin: 0 10vw 0 10vw;
+            width: var(--imgwidth); 
+            padding-top: calc(var(--imgwidth) / (var(--aspect-ratio)));
+            will-change: transform;
+        }
+        .content-item-img {
+            --overflow: 40px;
+            height: calc(100% + (2 * var(--overflow)));
+            position: absolute;
+            top: calc( -1 * var(--overflow));
+            width: 100%;
+            background-size: cover; 
+            background-position: 50% 0;
+            will-change: transform;
+        }
+        .content-item-desc { 
+            margin: 50vh 10vw 0 30vw;
+            font-size: 3vw; line-height: 1.2;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #fff;
+            text-align: right;
+            word-break: keep-all;
+            position: relative; z-index: 20;
+            width: 50%;
+        }
+        #section1 .content-item-img {background-image: url(img/img01.jpg);}
+        #section2 .content-item-img {background-image: url(img/img02.jpg);}
+        #section3 .content-item-img {background-image: url(img/img03.jpg);}
+        #section4 .content-item-img {background-image: url(img/img04.jpg);}
+        #section5 .content-item-img {background-image: url(img/img05.jpg);}
+        #section6 .content-item-img {background-image: url(img/img06.jpg);}
+        #section7 .content-item-img {background-image: url(img/img07.jpg);}
+        #section8 .content-item-img {background-image: url(img/img08.jpg);}
+        #section9 .content-item-img {background-image: url(img/img09.jpg);}
+        
+        .contents {position: fixed; width: 1000vw; margin: 0; height: 100vh;}
+        .contents > section {width: 100vw; float: left; height: 100vh; }
+/*
+        .contents > section:nth-child(1) {background: #999;}
+        .contents > section:nth-child(2) {background: #888;}
+        .contents > section:nth-child(3) {background: #777;}
+        .contents > section:nth-child(4) {background: #666;}
+        .contents > section:nth-child(5) {background: #555;}
+        .contents > section:nth-child(6) {background: #444;}
+        .contents > section:nth-child(7) {background: #333;}
+        .contents > section:nth-child(8) {background: #222;}
+        .contents > section:nth-child(9) {background: #111;}
+*/
+
+         /* info */
+        .info {
+            position: fixed; bottom: 20px; right: 20px;
+            background: rgba(255, 255, 255, 0.4);
+            color: #000; padding: 10px;
+            font-size: 14px; font-weight: 300;
+            z-index: 10000; font-style: normal;
+        }
+    </style>
+</head>
+<body>
+    <div class="info">
+        <div>pageYOffset() : <span class="pageYOffset">0</span>px</div>
+    </div>
+
+    <div class="title">
+        <h1>Parallax11</h1>
+        <p>가로 모드</p>
+        <ul>
+            <li><a href="parallax01.html">Parallax01</a></li>
+            <li><a href="parallax02.html">Parallax02</a></li>
+            <li><a href="parallax03.html">Parallax03</a></li>
+            <li><a href="parallax04.html">Parallax04</a></li>
+            <li><a href="parallax05.html">Parallax05</a></li>
+            <li><a href="parallax06.html">Parallax06</a></li>
+            <li><a href="parallax07.html">Parallax07</a></li>
+            <li><a href="parallax08.html">Parallax08</a></li>
+            <li><a href="parallax09.html">Parallax09</a></li>
+            <li><a href="parallax10.html">Parallax10</a></li>
+            <li class="active"><a href="parallax11.html">Parallax11</a></li>
+        </ul>
+    </div>
+
+    <!-- parallax -->
+    <div id="wrap">
+        <h1>Parallax<em>Scrolling</em></h1>
+        <div class="contents">
+            <section id="section1" class="content-item">
+                <span class="content-item-num">01</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">많은 사람이 재능의 부족보다 결심의 부족으로 실패한다.</p>
+            </section>
+            <section id="section2" class="content-item">
+                <span class="content-item-num">02</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">오랫동안 꿈을 그리는 사람은 마침내 그 꿈을 닮아 간다.</p>
+            </section>
+            <section id="section3" class="content-item">
+                <span class="content-item-num">03</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">눈물과 더불어 빵을 먹어 보지 않은 자는 인생의 참다운 맛을 모른다.</p>
+            </section>
+            <section id="section4" class="content-item">
+                <span class="content-item-num">04</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">바보는 방황을 하고 현명한 사람은 여행을 한다.</p>
+            </section>
+            <section id="section5" class="content-item">
+                <span class="content-item-num">05</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">길을 걷다 돌이 나타나면 약자는 그것을 걸림돌이라고 말하고, 강자는 그것을 디딤돌이라고 말한다.</p>
+            </section>
+            <section id="section6" class="content-item">
+                <span class="content-item-num">06</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">가난은 가난하다고 느끼는 곳에 존재한다.</p>
+            </section>
+            <section id="section7" class="content-item">
+                <span class="content-item-num">07</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">사진을 찍을 때 한쪽눈을 감는 것은 마음의 눈을 뜨기 위해서다.</p>
+            </section>
+            <section id="section8" class="content-item">
+                <span class="content-item-num">08</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">당신은 딱 한번만 산다. 하지만 똑바로 산다면, 한번이면 충분하다.</p>
+            </section>
+            <section id="section9" class="content-item">
+                <span class="content-item-num">09</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">언제나 당신의 열정이 곧 당신의 결정</p>
+            </section>
+        </div>
+    </div>
+    
+    <!-- script -->
+    <script src="js/jquery.min_1.12.4.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/gsap 3.3.0.min.js"></script>
+    <script>
+        let roadLength = $(".contents").width();   //전체 가로 값
+        $("body").css("height",roadLength);   //전체 세로 값에 전체 가로값(roadLength)을 할당
+
+        $(window).scroll(function(){
+            let wScroll = $(window).scrollTop();
+
+            $(".contents").css({"transform":"translateX(-"+wScroll+"px)"});
+        });
+    </script>
+</body>
+</html>

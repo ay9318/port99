@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax01</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/prism.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+        @font-face { 
+            font-family: 'RIDIBatang'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff') format('woff'); font-weight: normal; font-style: normal; 
+        }
+
+        /* reset */
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        li {list-style: none;}
+        a {text-decoration: none; color: #fff; font-family: 'Lato', sans-serif;}
+
+        body {
+            background-color: #111;
+            color: #fff;
+            font-family: 'RIDIBatang', sans-serif;
+        }
+        .title {
+            font-family: 'RIDIBatang';
+            position: fixed; 
+            right: 0; top: 0; z-index: 1000;
+            padding: 30px;
+            text-align: right;
+        }
+        .title h1 {
+            padding-bottom: 10px;
+        }
+        .title ul {
+            padding-top: 10px;
+        }
+        .title li {
+            list-style: none;
+            margin-bottom: 5px;
+        }
+        .title li.active a {
+            padding-bottom: 3px;
+            border-bottom: 1px dashed #fff;
+        }
+
+        #wrap h1 {
+            font-size: 135px;
+            padding: 60px;
+            color: #dc6e25;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        #wrap h1 em {
+            display: block;
+            color: antiquewhite;
+            padding-left: 330px;
+        }
+        .contents {
+            /*width: 1920px;*/
+            margin: 300px auto 400px;
+        }
+        .content-item {
+            position: relative;
+            width: 1000px;
+            margin: 200px 0 300px;
+        }
+        .content-item:nth-child(even) {
+            margin-left: auto;
+        }
+        .content-item-num {
+            font-size: 350px;
+            font-weight: 100;
+            position: absolute;
+            right: -180px; top: -250px;
+            opacity: 0.04;
+        }
+        .content-item:nth-child(even) .content-item-num {
+            right: auto; left: 0;
+        }
+        .content-item-title {
+            text-align: right;
+            font-size: 24px;
+            font-weight: 300;
+            color: #999;
+            padding-bottom: 10px;
+            text-transform: capitalize;
+        }
+        .content-item:nth-child(even) .content-item-title {
+            text-align: left;
+        }
+        .content-item-imgWrap {
+            position: relative;
+            padding-bottom: 57%;
+            overflow: hidden;
+        }
+        .content-item-img {
+            height: 550px;
+            position: absolute; top: 0;
+            width: 100%;
+            background-size: cover;
+            background-position: 50% 0;
+        }
+        .content-item-desc {
+            font-family: 'RIDIBatang';
+            font-size: 60px;
+            line-height: 1.3;
+            font-weight: 600;
+            text-align: right;
+            word-break: keep-all;
+            margin-top: -60px;
+            position: relative;
+            z-index: 100;
+        }
+        .content-item:nth-child(even) .content-item-desc {
+            text-align: left;
+        }
+        #section1 .content-item-img {background-image: url(img/img01.jpg);}
+        #section2 .content-item-img {background-image: url(img/img02.jpg);}
+        #section3 .content-item-img {background-image: url(img/img03.jpg);}
+        #section4 .content-item-img {background-image: url(img/img04.jpg);}
+        #section5 .content-item-img {background-image: url(img/img05.jpg);}
+        #section6 .content-item-img {background-image: url(img/img06.jpg);}
+        #section7 .content-item-img {background-image: url(img/img07.jpg);}
+        #section8 .content-item-img {background-image: url(img/img08.jpg);}
+        #section9 .content-item-img {background-image: url(img/img09.jpg);}
+    </style>
+</head>
+<body>
+    <div class="title">
+        <h1>Parallax01</h1>
+        <p>레이아웃 01</p>
+        <ul>
+            <li class="active"><a href="parallax01.html">Parallax01</a></li>
+            <li><a href="parallax02.html">Parallax02</a></li>
+            <li><a href="parallax03.html">Parallax03</a></li>
+            <li><a href="parallax04.html">Parallax04</a></li>
+            <li><a href="parallax05.html">Parallax05</a></li>
+            <li><a href="parallax06.html">Parallax06</a></li>
+            <li><a href="parallax07.html">Parallax07</a></li>
+            <li><a href="parallax08.html">Parallax08</a></li>
+            <li><a href="parallax09.html">Parallax09</a></li>
+            <li><a href="parallax10.html">Parallax10</a></li>
+            <li><a href="parallax11.html">Parallax11</a></li>
+        </ul>
+    </div>
+
+    <!-- parallax -->
+    <div id="wrap">
+        <h1>Parallax<em>Scrolling</em></h1>
+        <div class="contents">
+            <section id="section1" class="content-item">
+                <span class="content-item-num">01</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">많은 사람이 재능의 부족보다 결심의 부족으로 실패한다.</p>
+            </section>
+            <section id="section2" class="content-item">
+                <span class="content-item-num">02</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">오랫동안 꿈을 그리는 사람은 마침내 그 꿈을 닮아 간다.</p>
+            </section>
+            <section id="section3" class="content-item">
+                <span class="content-item-num">03</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">눈물과 더불어 빵을 먹어 보지 않은 자는 인생의 참다운 맛을 모른다.</p>
+            </section>
+            <section id="section4" class="content-item">
+                <span class="content-item-num">04</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">바보는 방황을 하고 현명한 사람은 여행을 한다.</p>
+            </section>
+            <section id="section5" class="content-item">
+                <span class="content-item-num">05</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">길을 걷다 돌이 나타나면 약자는 그것을 걸림돌이라고 말하고, 강자는 그것을 디딤돌이라고 말한다.</p>
+            </section>
+            <section id="section6" class="content-item">
+                <span class="content-item-num">06</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">가난은 가난하다고 느끼는 곳에 존재한다.</p>
+            </section>
+            <section id="section7" class="content-item">
+                <span class="content-item-num">07</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">사진을 찍을 때 한쪽눈을 감는 것은 마음의 눈을 뜨기 위해서다.</p>
+            </section>
+            <section id="section8" class="content-item">
+                <span class="content-item-num">08</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">당신은 딱 한번만 산다. 하지만 똑바로 산다면, 한번이면 충분하다.</p>
+            </section>
+            <section id="section9" class="content-item">
+                <span class="content-item-num">09</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">언제나 당신의 열정이 곧 당신의 결정</p>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

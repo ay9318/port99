@@ -1,0 +1,176 @@
+/* font */
+@font-face {
+    font-family: 'SBAggroB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Y_Spotlight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/Y_Spotlight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* reset */
+* {padding: 0; margin: 0;}
+body {background: #f48fb1; font-family: 'SBAggroB'; overflow: hidden; cursor: url("../img/ducky60x60.cur"), auto;}
+a {text-decoration: none; color: #000;}
+a:hover {cursor: url("../img/ducky60x60.cur"), auto;}
+img {vertical-align: top; width: 100%;}
+.ml {margin-left: 57px;}
+
+/* loading */
+#loading {position: fixed; left: 0; top: 0; width: 100%; height: 100%; background: #202020; z-index: 9999999; color: #fff; text-align: center; font-size: 14px;}
+#loading .circle {height: 100px; width: 100px; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); border-radius: 100%; border: 2px solid transparent; border-color: transparent #fff transparent #FFF; animation: rotate-loading 1.5s linear infinite; transform-origin: center; transition: all 0.5s ease-in-out;}
+#loading .circle:hover {border-color: transparent #E45635 transparent #E45635;}
+#loading .loading_text {animation: loading-text-opacity 2s linear 0s infinite normal; opacity: 0; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); text-transform: uppercase;}
+@keyframes rotate-loading {
+    0%  {transform: translate(-50%, -50%) rotate(0deg);}
+    100% {transform: translate(-50%, -50%) rotate(360deg);}
+}
+@keyframes loading-text-opacity {
+    0%  {opacity: 0}
+    20% {opacity: 0}
+    50% {opacity: 1}
+    100%{opacity: 0}
+}
+
+/* layout */
+.container {max-width: 1200px; margin: 0 auto; padding: 0 30px;}
+
+/* title */
+h1 {font-size: 50px; font-weight: bold; text-align: center; margin: 100px 0; color: #fff;}
+/* (공통) */
+.only_mo {display: none;}
+.port_wrap {position: relative;}
+.port_wrap .tab {position: absolute; left: 50px; top: -53px; display: block; width: 120px; height: 60px; line-height: 60px; text-align: center; border: 4px solid #000; background: #ffe082; border-radius: 15px; font-size: 18px;}
+.port_wrap.no_hover a {cursor: default;}
+.port_wrap:not(.no_hover) .tab:hover {top: -55px;}
+.port_wrap.no_hover {z-index: -1;}
+.port_wrap .portfolio {position: absolute; left: 50%; top: 50%; transform: translate(-50%, 0); background: #ffebee; width: 100%; height: 385px; border-radius: 30px; border: 4px solid #000;}
+.port_wrap .portfolio .inner {padding: 20px 50px 40px;}
+.port_wrap .portfolio .swiper-container {padding: 55px 40px;}
+.port_wrap .portfolio .box {height: 270px; border: 3px solid #000; border-radius: 15px; overflow: hidden; background: #fff;}
+.port_wrap .portfolio .box .img100 {width: 100%; height: 100%; object-fit: cover;}
+.port_wrap .portfolio .box .hover {display: none; width: 100%; height: 100%; background: #000; color: #fff; position: absolute; left: 0; top: 0; z-index: 1; transition: all .7s;}
+.port_wrap .portfolio .box .hover .hover_inner {padding: 25px;}
+.port_wrap .portfolio .box .hover p {font-size: 18px; line-height: 1.5; word-break: keep-all; margin-bottom: 10px;}
+.port_wrap .portfolio .box .hover .graph {display: inline-block; height: 20px; border-radius: 3px; background: #ff7043;}
+.port_wrap .portfolio .box:hover .hover {display: block;}
+.port_wrap .portfolio .box:hover .hover .graph {animation: width100 .8s forwards;}
+/* 자기소개 */
+.port_wrap.port01 {z-index: 1; transform: rotate(0deg);}
+.port_wrap.port01 .portfolio .profile {display: inline-block; width: 200px; vertical-align: top; border: 3px solid #000; border-radius: 15px; overflow: hidden; transform: rotate(-5deg); margin-top: 30px;}
+.port_wrap.port01 .portfolio .text {margin: 20px 0 20px 60px; display: inline-block;}
+.port_wrap.port01 .portfolio .text > div {overflow: hidden;}
+.port_wrap.port01 .portfolio .text p {line-height: 1.7; font-size: 20px; opacity: 0; animation: transformLR .6s .2s forwards; font-weight: bold;}
+.port_wrap.port01 .portfolio .text div:nth-of-type(2) p {animation-delay: .4s;}
+.port_wrap.port01 .portfolio .text div:nth-of-type(3) p {animation-delay: .6s;}
+.port_wrap.port01 .portfolio .text div:nth-of-type(4) p {animation-delay: .8s;}
+.port_wrap.port01 .portfolio .text div:nth-of-type(5) p {animation-delay: .9s;}
+.port_wrap.port01 .portfolio .text div:nth-of-type(6) p {animation-delay: 1s;}
+/* 프로젝트 */
+.port_wrap .portfolio .box.jnf .hover .graph {animation: width90 .8s forwards;}
+.port_wrap .portfolio .box.hutom .hover .graph,
+.port_wrap .portfolio .box.somssy .hover .graph {animation: width50 .8s forwards;}
+.port_wrap .portfolio .box.meeting .hover .graph {animation: width30 .8s forwards;}
+.port_wrap.port02.on .portfolio .box:nth-child(2) img {animation: scroll 35s .2s linear forwards;}
+/* 유지보수 */
+.port_wrap.port03.on .portfolio .box:first-child img {animation: scroll 35s .2s linear forwards;}
+.port_wrap.port03 .portfolio .box .hover {height: 55px; top: auto; bottom: -100px; transition: all .5s; background: rgba(0,0,0,0.6); opacity: 0; display: block;}
+.port_wrap.port03 .portfolio .box:hover .hover {bottom: 0; opacity: 1;}
+.port_wrap.port03 .portfolio .box .hover p {text-align: center; font-size: 22px; line-height: 60px;}
+/* 기타 */
+.port_wrap.port02 {left: -5px; transform: rotate(0.5deg);}
+.port_wrap.port03 {left: -8px; top: -8px;}
+.port_wrap.port04 {left: 15px; top: 10px; transform: rotate(2deg);}
+.port_wrap.port05 {left: -10px; top: 14px;}
+.port_wrap.port02 .tab {background: #b39ddb; left: 200px;}
+.port_wrap.port03 .tab {background: #90caf9; left: 320px;}
+.port_wrap.port04 .tab {background: #ccff90; left: auto; right: 50px;}
+.port_wrap.port05 .tab {background: #ef9a9a; left: auto; right: 180px;}
+/* bottom */
+.bottom {position: absolute; left: 0; bottom: 50px; overflow: hidden; width: 100%; white-space: nowrap; font-size: 0;}
+.bottom span {display: inline-block; font-size: 20px; animation: transformRL 2s linear infinite both; color: #fff; padding: 0 4px; transform: translateX(0);} 
+
+/* animation */
+@keyframes transformRL {
+    0% {transform: translateX(0);}
+    100% {transform: translateX(-100%);}
+}
+@keyframes transformLR {
+    0% {opacity: 0; transform: translateX(-80px);}
+    50% {opacity: 1;}
+    100% {opacity: 1; transform: translateX(0);}
+}
+@keyframes scroll {
+    0% {transform: translateY(0);}
+    100% {transform: translateY(-70%);}
+}
+@keyframes width30 {
+    0% {width: 0%;}
+    100% {width: 30%;}
+}
+@keyframes width50 {
+    0% {width: 0%;}
+    100% {width: 50%;}
+}
+@keyframes width90 {
+    0% {width: 0%;}
+    100% {width: 90%;}
+}
+@keyframes width100 {
+    0% {width: 0%;}
+    100% {width: 100%;}
+}
+/* 반응형 */
+@media screen and (max-width: 1200px) {
+    .ml {margin-left: 52px;}
+    .port_wrap .portfolio .box .hover p {font-size: 14px; line-height: 1.2;}
+    .port_wrap.port01 .portfolio .profile {width: 150px; vertical-align: super;}
+    .port_wrap.port01 .portfolio .text p {font-size: 18px;}
+}
+@media screen and (max-width: 991px) {
+    /* (공통) */
+    .ml {margin-left: 40px;}
+    .port_wrap .portfolio {height: 285px;}
+    .port_wrap .portfolio .box {height: 200px; border-width: 2px;}
+    .port_wrap .portfolio .swiper-container {padding: 40px 20px;}
+    .port_wrap .portfolio .inner {padding: 20px;}
+    .port_wrap .tab {width: 100px; font-size: 16px;}
+    /* 자기소개 */
+    .port_wrap.port01 .portfolio .profile {margin: 10px; vertical-align: top; border-width: 2px;}
+    .port_wrap.port01 .portfolio .text {margin: 20px 0 0 14px;}
+    .port_wrap.port01 .portfolio .text p {font-size: 14px;}
+    /* 기타 */
+    .port_wrap.port02 .tab {left: 175px;}
+    .port_wrap.port03 .tab {left: 280px;}
+}
+@media screen and (max-width: 768px) {
+    /* (공통) */
+    .ml {margin-left: 32px;}
+    .only_mo {display: block !important;}
+    .port_wrap .portfolio {border-width: 3px;}
+    .port_wrap .portfolio .inner {padding: 30px 20px;}
+    .port_wrap .portfolio .box .hover,
+    .port_wrap .portfolio .box:hover .hover {display: none;}
+    .port_wrap .tab {width: 78px; font-size: 12px; left: 20px; top: -45px; height: 50px; line-height: 50px; border-width: 3px;}
+    .port_wrap:not(.no_hover) .tab:hover {top: -40px;}
+    /* 자기소개 */
+    .port_wrap.port01 .portfolio .profile {width: 100px; vertical-align: top; position: absolute; right: 20px; bottom: 15px; transform: rotate(5deg); margin: 0;}
+    .port_wrap.port01 .portfolio .text {margin: 0;}
+    .port_wrap.port01 .portfolio .text p {font-size: 12px; word-break: keep-all; font-family: 'Y_Spotlight';}
+    .port_wrap.port01 .portfolio .text br:first-of-type {display: none;}
+    /* 유지보수 */
+    .port_wrap.port03 {top: -4px; left: 5px;}
+    /* 기타 */
+    .port_wrap.port02 .tab {left: 98px;}
+    .port_wrap.port03 .tab {left: 180px; top: -40px;}
+    .port_wrap.port04 .tab {right: 115px; top: -34px;}
+    .port_wrap.port05 .tab {right: 0;}
+}
+@media screen and (max-width: 480px) {
+    h1 {font-size: 30px; margin: 50px 0 80px;}
+    .bottom {bottom: 30px;}
+}

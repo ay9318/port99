@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YES24 티켓</title>
+
+    <!-- style -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/swiper.css">
+
+    <!-- favicon -->
+    <link rel="icon" href="assets/icon/favicon.ico">
+
+</head>
+<body>
+    <div id="side-menu">
+        <div class="top">
+            <div class="hi-ham">
+                <div class="circle"><img src="assets/img/close.png" alt="close"></div>
+                <a href="#">                
+                    <span class="line1"></span>
+                    <span class="line2"></span>
+                    <span class="line3"></span>
+                </a>
+            </div>
+            <a href="#" class="exit">
+            </a>
+        </div> 
+        <!--//top -->
+        <div class="side-box">
+            <ul>
+                <li><a href="#">콘서트</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">- 전체보기</a></li>
+                        <li><a href="#">- 국내뮤지션</a></li>
+                        <li><a href="#">- 해외뮤지션</a></li>
+                        <li><a href="#">- 페스티벌</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">뮤지컬</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">- 전체보기</a></li>
+                        <li><a href="#">- 라이선스</a></li>
+                        <li><a href="#">- 오리지널</a></li>
+                        <li><a href="#">- 창작</a></li>
+                        <li><a href="#">- 넌버벌 퍼포먼스</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">연극</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">- 전체보기</a></li>
+                        <li><a href="#">- 대학로</a></li>
+                        <li><a href="#">- 기타지역</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">클래식/국악/무용</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">- 전체보기</a></li>
+                        <li><a href="#">- 클래식</a></li>
+                        <li><a href="#">- 발레/무용</a></li>
+                        <li><a href="#">- 국악</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">전시/행사</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">- 전체보기</a></li>
+                        <li><a href="#">- 전시</a></li>
+                        <li><a href="#">- 체험/행사</a></li>
+                        <li><a href="#">- 워터파크/스파</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">아동/가족</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">- 전체보기</a></li>
+                        <li><a href="#">- 뮤지컬</a></li>
+                        <li><a href="#">- 연극</a></li>
+                        <li><a href="#">- 기타</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div>
+                <ul class="kategorie">
+                    <li><a href="#">랭킹</a></li>
+                    <li><a href="#" class="border">지역별</a></li>
+                    <li><a href="#">공연장</a></li>
+                </ul>
+            </div>
+            <div>
+                <ul class="service">
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">이벤트</a></li>
+                    <li><a href="#">읽을거리</a></li>
+                    <li><a href="#">이용안내</a></li>
+                </ul>
+                <ul class="my">
+                    <li><a href="#">MY티켓</a>
+                        <ul>
+                            <li><a href="#">- 예매확인/취소</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <p>최근 본 상품</p>
+            <p class="box">
+                최근 본 공연<br>
+                정보가<br>
+                없습니다.
+            </p>
+            <div class="button">
+                <a href="#">MD#</a>
+                <a href="#">GLOBAL</a>
+            </div>        
+        </div>
+        <!--//side-box -->
+    </div>
+    <!--//side-menu -->
+
+    <div id="wrap">
+        <div id="main">
+            <header id="header">
+                <div class="header">
+                    <a href="#" class="ham">
+                        <span class="line1"></span>
+                        <span class="line2"></span>
+                        <span class="line3"></span>
+                    </a>             
+                    <div class="logo">
+                        <h1><a href="index.html"><img src="assets/img/logo.png" alt="YES24"></a></h1>
+                    </div>
+                </div>         
+                <nav class="nav">
+                    <div class="center-nav">
+                        <ul>
+                            <li><a href="#">콘서트</a></li>
+                            <li><a href="#">뮤지컬</a></li>
+                            <li><a href="#">연극</a></li>
+                            <li><a href="#">클래식</a></li>
+                            <li><a href="#">전시</a></li>
+                            <li><a href="#">아동</a></li>
+                        </ul>
+                    </div>
+                    <!-- //center-nav -->     
+                    <div class="right-nav">
+                        <div class="left">
+                            <ul>
+                                <li><a href="#">랭킹</a></li>
+                                <li><a href="#">이벤트</a></li>
+                            </ul>
+                        </div>
+                        <div class="right">
+                            <div class="search">
+                                <input type="text" class="text"/>
+                                <input type="hidden" class="hidden"/>
+                                <a href="#"><img src="assets/img/pf-srch.png" alt="검색"></a>          
+                            </div>
+                            <div class="img">
+                                <a href="#"><img src="assets/img/pf-ticket-w.png" alt="MY티켓"></a>
+                                <a href="#"><img src="assets/img/pf-global-w.png" alt="GLOBAL"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //right-nav-->     
+                </nav>
+                <!-- //nav -->                     
+            </header>
+            <!-- //header -->              
+    
+            <section id="banner">
+                <div class="banner">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <img src="assets/img/mbanner01.jpg" alt="미스터트롯">
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <img src="assets/img/mbanner02.jpg" alt="펀홈">
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <img src="assets/img/mbanner03.jpg" alt="미드나잇">
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <div class="text">
+                                        <p>1차 라인업 공개</p>
+                                        <p class="big">KB RAPBEAT<br>FESTIVAL</p>
+                                        <span>2020.09.19 ~ 2020.09.20 서울랜드</span>
+                                    </div>                                    
+                                    <img src="assets/img/mbanner04.jpg" alt="KB RAPBEAT FESTIVAL">
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <div class="text">
+                                        <p>최대 1만원 + 예매수수료 면제 쿠폰 증정</p>
+                                        <p class="big">오페라의 유령<br>월드투어</p>
+                                        <span>2020.03.14 ~ 2020.08.08 블루스퀘어 인터파크홀</span>
+                                    </div>
+                                    <img src="assets/img/mbanner05.jpg" alt="오페라의 유령">
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <img src="assets/img/mbanner06.jpg" alt="라흐마니노프">
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <div class="text">
+                                        <p>아름다운 가을의 서울숲에서 즐기는</p>
+                                        <p class="big">서울숲<br>재즈페스티벌</p>
+                                        <span>2020.10.09 ~ 2020.10.11 서울숲공원 일대</span>
+                                    </div>
+                                    <img src="assets/img/mbanner07.jpg" alt="서울숲 재즈페스티벌">
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Add Arrows -->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <!-- Add scrollbar -->
+                        <div class="swiper-scrollbar">
+                        </div>
+                    </div>
+                </div>            
+            </section>
+            <!-- //banner -->
+        </div>       
+
+         <section id="contents">
+            <div class="container">
+                <div class="title">
+                    <img src="assets/img/title/tit1.png" alt="what's hot">
+                </div>
+                <!-- //title-->    
+                <article id="con1">
+                     <ul class="hot clearfix">
+                         <li>
+                            <div class="bigOne">
+                                <a href="#"><img src="assets/img/hot-img1.jpg" alt="뮤지컬 6시퇴근"> 
+                                    <div class="hot1-text">
+                                        <h4>뮤지컬 &lt;6시퇴근&gt;</h4>
+                                        <p>2020.05.22 ~ 2020.07.26 대학로 고스트씨어터 / <span>타임세일 50%</span></p>
+                                    </div>
+                                <p class="big-circle">50%</p>
+                                </a>
+                            </div>
+                         </li>
+                         <!-- //hot1 -->
+                         <li>
+                            <div class="hotList">
+                                <a href="#">
+                                    <img src="assets/img/hot-img2.jpg" alt="SM타운">                      
+                                    <div class="hotList-text">
+                                        <div>
+                                            <p class="tit">SMTOWN MUSEUM</p>
+                                            <p class="detail">OPEN RUN <br> 코엑스아티움 SMTOWN MUSEUM</p>
+                                            <P class="event">온라인 예매 10%</P>
+                                        </div>
+                                    </div>
+                                <p class="circle"><span>10%</span></p>            
+                                </a> 
+                            </div>
+                         </li>
+                         <!-- //hot2 -->
+                         <li>
+                            <div class="hotList">
+                                <a href="#">
+                                    <img src="assets/img/hot-img3.jpg" alt="크리스토퍼 내한공연">                      
+                                    <div class="hotList-text">
+                                        <div>
+                                            <p class="tit">크리스토퍼 내한공연</p>
+                                            <p class="detail">2020.08.29 ~ 2020.08.30<br>YES24 LIVE HALL</p>
+                                            <P class="event">스탠딩석 77,000원</P>
+                                        </div>
+                                    </div>        
+                                </a> 
+                            </div>
+                         </li>
+                         <!-- //hot3 -->
+                         <li>
+                            <div class="hotList">
+                                <a href="#">
+                                    <img src="assets/img/hot-img4.jpg" alt="김사월 쇼">                      
+                                    <div class="hotList-text">
+                                        <div>
+                                            <p class="tit">김사월 쇼 : 반짝 반짝</p>
+                                            <p class="detail">2020.05.23 ~ 2020.05.24<br>노들섬 라이브하우스</p>
+                                            <P class="event">전석 55,000원</P>
+                                        </div>
+                                    </div>
+                                <p class="circle"><span>단독</span></p>            
+                                </a> 
+                            </div>
+                         </li>
+                         <!-- //hot4 -->
+                         <li>
+                            <div class="hotList">
+                                <a href="#">
+                                    <img src="assets/img/hot-img5.jpg" alt="오페라의 유령"">                      
+                                    <div class="hotList-text">
+                                        <div>
+                                            <p class="tit">뮤지컬 &lt;오페라의 유령&gt;</p>
+                                            <p class="detail">2020.03.14 ~ 2020.08.08<br>블루스퀘어 인터파크홀</p>
+                                            <P class="event">3,4인패키지 ~15%</P>
+                                        </div>
+                                    </div>
+                                <p class="circle"><span>15%</span></p>            
+                                </a> 
+                            </div>
+                         </li>
+                         <!-- //hot5 -->
+                         <li>
+                            <div class="hotList">
+                                <a href="#">
+                                    <img src="assets/img/hot-img6.jpg" alt="2호선 세입자"">                      
+                                    <div class="hotList-text">
+                                        <div>
+                                            <p class="tit">연극 &lt;2호선세입자&gt;</p>
+                                            <p class="detail">2019.03.15 ~ 2020.05.31<br>대학로 바탕골 소극장</p>
+                                            <P class="event">미소자유석 10,000원</P>
+                                        </div>
+                                    </div>     
+                                </a> 
+                            </div>
+                         </li>
+                         <!-- //hot6 -->
+                         <li>
+                            <div class="hotList">
+                                <a href="#">
+                                    <img src="assets/img/hot-img7.jpg" alt="지젤"">                      
+                                    <div class="hotList-text">
+                                        <div>
+                                            <p class="tit">국립발레단 &lt;지젤&gt;</p>
+                                            <p class="detail">2020.06.10 ~ 2020.06.14<br>예술의전당 오페라극장</p>
+                                            <P class="event">3층석 5,000원</P>
+                                        </div>
+                                    </div>           
+                                </a> 
+                            </div>
+                         </li>
+                         <!-- //hot7 -->
+                    </ul>       
+                </article>
+                <!-- //con1 -->
+            </div>
+            <!-- //container -->
+                <article id="con2">
+                    <div class="container">
+                        <div class="title">
+                            <img src="assets/img/title/tit2-1.png" alt="ticket open">
+                        </div>
+                        <!-- //title-->                
+                        <div class="ticket clearfix">
+                            <div class="box">
+                                <a href="#">
+                                    <img src="assets/img/ticket01.jpg" alt="어쩌면 해피엔딩">
+                                    <span class="day">D-5</span>                          
+                                <div class="text">
+                                    <time>2020.05.29(금) 14:00</time>
+                                    <p>뮤지컬 [어쩌면 해피엔딩]</p> 
+                                </div>
+                                </a>
+                            </div>                        
+                            <div class="box">
+                                <a href="#">
+                                    <img src="assets/img/ticket02.jpg" alt="창작가무극 잃어버린 얼굴">
+                                    <span class="day">D-19</span>                          
+                                <div class="text">
+                                    <time>2020.06.12(금) 11:00</time>
+                                    <p>창작가무극 &lt;잃어버린 얼굴 1895&gt;</p> 
+                                </div>
+                                </a>
+                            </div>                        
+                            <div class="box">
+                                <a href="#">
+                                    <img src="assets/img/ticket03.jpg" alt="포레스텔라 콘서트">
+                                    <span class="day">D-3</span>                          
+                                <div class="text">
+                                    <time>2020.05.27(수) 14:00</time>
+                                    <p>포레스텔라 콘서트 &lt;넬라 판타지아&gt;</p> 
+                                </div>
+                                </a>
+                            </div>                        
+                            <div class="box">
+                                <a href="#">
+                                    <img src="assets/img/ticket04.jpg" alt="오페라의 유령">
+                                    <span class="day">D-2</span>                          
+                                <div class="text">
+                                    <time>2020.05.26(화) 14:00</time>
+                                    <p>뮤지컬 [오페라의 유령] 월드투어</p> 
+                                </div>
+                                </a>
+                            </div>
+                            <a href="#" class="more">티켓오픈 더보기 +</a>       
+                        </div>                      
+                    </div>
+                    <!-- //container -->
+                </article>
+                <!-- //con2 -->
+
+                <div class="sbanner01">
+                    <a href="">
+                        <img src="assets/img/sbanner01.png" alt="미아 파밀리아">
+                    </a>                    
+                </div>
+                <!-- //sbanner01 -->
+
+                <article id="con3">
+                    <div class="container">
+                        <div class="title">
+                            <img src="assets/img/title/tit3.png" alt="ranking">
+                        </div>
+                        <div class="ranking">
+                            <div class="tab">
+                                <div class="tab-btn">
+                                    <ul>
+                                        <li class="on"><a href="#">#뮤지컬</a></li>
+                                        <li><a href="#">#콘서트</a></li>
+                                        <li><a href="#">#연극</a></li>
+                                        <li><a href="#">#클래식</a></li>
+                                        <li><a href="#">#전시</a></li>
+                                    </ul>  
+                                </div>
+                                <!-- //tab-btn -->
+                                <div class="tab-cont">
+                                    <div class="cont-box">
+                                        <div class="bigbox">
+                                            <div class="box">
+                                                <svg class="bg-img">
+                                                    <filter id="svgFilter">
+                                                        <feGaussianBlur id="svgGaussBlur" in="SourceGraphic" stdDeviation="7"></feGaussianBlur>
+                                                        <feComponentTransfer>
+                                                            <feFuncA type="discrete" tableValues="1 1"></feFuncA>
+                                                        </feComponentTransfer>
+                                                    </filter>
+                                                    <image xlink:href="http://tkfile.yes24.com/upload2/perfblog/202006/20200601/20200601-angel_new_36375.jpg/dims/quality/70/" filter="url(#svgFilter)" width="100%" height="100%" x="0" y="0"></image>
+                                                </svg>
+                                                <img src="assets/img/ranking_M01.jpg" alt="라흐마니노프">
+                                            </div>
+                                            <div class="text">
+                                                <p>뮤지컬 &lt;라흐마니노프&gt;</p>
+                                                <span>2020.03.14 ~ 2020.06.21 예스24스테이지 1관</span>
+                                            </div>
+                                            <div class="rank-num">
+                                                <p>1위</p>
+                                            </div>
+                                        </div>    
+                                        <div class="bigbox">
+                                            <div class="box">
+                                                <svg class="bg-img">
+                                                    <filter id="svgFilter">
+                                                        <feGaussianBlur id="svgGaussBlur" in="SourceGraphic" stdDeviation="7"></feGaussianBlur>
+                                                        <feComponentTransfer>
+                                                            <feFuncA type="discrete" tableValues="1 1"></feFuncA>
+                                                        </feComponentTransfer>
+                                                    </filter>
+                                                    <image xlink:href="http://tkfile.yes24.com/upload2/perfblog/202006/20200601/20200601-36651_1.jpg/dims/quality/70/" filter="url(#svgFilter)" width="100%" height="100%" x="0" y="0"></image>
+                                                </svg>
+                                                <img src="assets/img/ranking_M02.jpg" alt="미드나잇:액터뮤지션">
+                                            </div>
+                                            <div class="text">
+                                                <p>뮤지컬 &lt;미드나잇 : 액터뮤지션&gt;</p>
+                                                <span>2020.04.11 ~ 2020.07.05 예스24스테이지 3관</span>
+                                            </div>
+                                            <div class="rank-num">
+                                                <p>2위</p>
+                                            </div>
+                                        </div>    
+                                        <div class="bigbox">
+                                            <div class="box">
+                                                <svg class="bg-img">
+                                                    <filter id="svgFilter">
+                                                        <feGaussianBlur id="svgGaussBlur" in="SourceGraphic" stdDeviation="7"></feGaussianBlur>
+                                                        <feComponentTransfer>
+                                                            <feFuncA type="discrete" tableValues="1 1"></feFuncA>
+                                                        </feComponentTransfer>
+                                                    </filter>
+                                                    <image xlink:href="http://tkfile.yes24.com/upload2/perfblog/202005/20200518/20200518-35152_1.jpg/dims/quality/70/" filter="url(#svgFilter)" width="100%" height="100%" x="0" y="0"></image>
+                                                </svg>
+                                                <img src="assets/img/ranking_M03.jpg" alt="오페라의 유령">
+                                            </div>
+                                            <div class="text">
+                                                <p>뮤지컬 &lt;오페라의 유령&gt; 월드투어 - 서울</p>
+                                                <span>2020.03.14 ~ 2020.08.07 블루스퀘어 인터파크홀</span>
+                                            </div>
+                                            <div class="rank-num">
+                                                <p>3위</p>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                    <!-- //뮤지컬-->
+
+                                    <div class="cont-box">
+                                        <div class="bigbox">
+                                            <div class="box">
+                                                <svg class="bg-img">
+                                                    <filter id="svgFilter">
+                                                        <feGaussianBlur id="svgGaussBlur" in="SourceGraphic" stdDeviation="7"></feGaussianBlur>
+                                                        <feComponentTransfer>
+                                                            <feFuncA type="discrete" tableValues="1 1"></feFuncA>
+                                                        </feComponentTransfer>
+                                                    </filter>
+                                                    <image xlink:href="http://tkfile.yes24.com/upload2/perfblog/202005/20200525/20200525-36897_1.jpg/dims/quality/70/" filter="url(#svgFilter)" width="100%" height="100%" x="0" y="0"></image>
+                                                </svg>
+                                                <img src="assets/img/ranking_C01.jpg" alt="서울숲재즈페스티벌">
+                                            </div>
+                                            <div class="text">
+                                                <p>서울숲재즈페스티벌 2020</p>
+                                                <span>2020.10.09 ~ 2020.10.11 서울숲공원 일대</span>
+                                            </div>
+                                            <div class="rank-num">
+                                                <p>1위</p>
+                                            </div>
+                                        </div>    
+                                        <div class="bigbox">
+                                            <div class="box">
+                                                <svg class="bg-img">
+                                                    <filter id="svgFilter">
+                                                        <feGaussianBlur id="svgGaussBlur" in="SourceGraphic" stdDeviation="7"></feGaussianBlur>
+                                                        <feComponentTransfer>
+                                                            <feFuncA type="discrete" tableValues="1 1"></feFuncA>
+                                                        </feComponentTransfer>
+                                                    </filter>
+                                                    <image xlink:href="http://tkfile.yes24.com/upload2/perfblog/202006/20200605/20200605-36930_1.jpg/dims/quality/70/" filter="url(#svgFilter)" width="100%" height="100%" x="0" y="0"></image>
+                                                </svg>
+                                                <img src="assets/img/ranking_C02.jpg" alt="브로콜리너마저 여름 장기공연 '이른 열대야'">
+                                            </div>
+                                            <div class="text">
+                                                <p>브로콜리너마저 여름 장기공연 '이른 열대야'</p>
+                                                <span>2020.07.03 ~ 2020.07.19 노들섬 라이브하우스</span>
+                                            </div>
+                                            <div class="rank-num">
+                                                <p>2위</p>
+                                            </div>
+                                        </div>    
+                                        <div class="bigbox">
+                                            <div class="box">
+                                                <svg class="bg-img">
+                                                    <filter id="svgFilter">
+                                                        <feGaussianBlur id="svgGaussBlur" in="SourceGraphic" stdDeviation="7"></feGaussianBlur>
+                                                        <feComponentTransfer>
+                                                            <feFuncA type="discrete" tableValues="1 1"></feFuncA>
+                                                        </feComponentTransfer>
+                                                    </filter>
+                                                    <image xlink:href="http://tkfile.yes24.com/upload2/perfblog/202005/20200521/20200521-36888_1.jpg/dims/quality/70/" filter="url(#svgFilter)" width="100%" height="100%" x="0" y="0"></image>
+                                                </svg>
+                                                <img src="assets/img/ranking_C03.jpg" alt="포레스텔라 콘서트">
+                                            </div>
+                                            <div class="text">
+                                                <p>[부산] 포레스텔라 콘서트 &lt;넬라 판타지아&gt;</p>
+                                                <span>2020.07.18 ~ 2020.07.18 벡스코 오디토리움</span>
+                                            </div>
+                                            <div class="rank-num">
+                                                <p>3위</p>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                    <!-- //콘서트-->
+
+                                    <div class="cont-box">
+                                        <div class="bigbox">
+                                            <div class="box">
+                                                <svg class="bg-img">
+                                                    <filter id="svgFilter">
+                                                        <feGaussianBlur id="svgGaussBlur" in="SourceGraphic" stdDeviation="7"></feGaussianBlur>
+                                                        <feComponentTransfer>
+                                                            <feFuncA type="discrete" tableValues="1 1"></feFuncA>
+                                                        </feComponentTransfer>
+                                                    </filter>
+                                                    <image xlink:href="http://tkfile.yes24.com/upload2/perfblog/202005/20200525/20200525-36833_01.jpg/dims/quality/70/" filter="url(#svgFilter)" width="100%" height="100%" x="0" y="0"></image>
+                                                </svg>
+                                                <img src="assets/img/ranking_P01.jpg" alt="연극 '웃픈3일'">
+                                            </div>
+                                            <div class="text">
+                                                <p>연극 '웃픈3일'</p>
+                                                <span>2020.06.02 ~ 2020.08.30 대학로 스타시티 7층</span>
+                                            </div>
+                                            <div class="rank-num">
+                                                <p>1위</p>
+                                            </div>
+                                        </div>    
+                                        <div class="bigbox">
+                                            <div class="box">
+                                                <svg class="bg-img"">
+                                                    <filter id="svgFilter">
+                                                        <feGaussianBlur id="svgGaussBlur" in="SourceGraphic" stdDeviation="7"></feGaussianBlur>
+                                                        <feComponentTransfer>
+                                                            <feFuncA type="discrete" tableValues="1 1"></feFuncA>
+                                                        </feComponentTransfer>
+                                                    </filter>
+                                                    <image xlink:href="http://tkfile.yes24.com/upload2/perfblog/202001/20200102/20200102-35994_01.jpg/dims/quality/70/" filter="url(#svgFilter)" width="100%" height="100%" x="0" y="0"></image>
+                                                </svg>
+                                                <img src="assets/img/ranking_P02.jpg" alt="[미소티켓] 연극 옥탑방고양이">
+                                            </div>
+                                            <div class="text">
+                                                <p>[미소티켓] 연극 [ 옥탑방고양이 ]</p>
+                                                <span>2018.03.01 ~ 2020.06.30 대학로 틴틴홀</span>
+                                            </div>
+                                            <div class="rank-num">
+                                                <p>2위</p>
+                                            </div>
+                                        </div>    
+                                        <div class="bigbox">
+                                            <div class="box">
+                                                <svg class="bg-img">
+                                                    <filter id="svgFilter">
+                                                        <feGaussianBlur id="svgGaussBlur" in="SourceGraphic" stdDeviation="7"></feGaussianBlur>
+                                                        <feComponentTransfer>
+                                                            <feFuncA type="discrete" tableValues="1 1"></feFuncA>
+                                                        </feComponentTransfer>
+                                                    </filter>
+                                                    <image xlink:href="http://tkfile.yes24.com/upload2/perfblog/202006/20200604/20200604-36962_1.jpg/dims/quality/70/" filter="url(#svgFilter)" width="100%" height="100%" x="0" y="0"></image>
+                                                </svg>
+                                                <img src="assets/img/ranking_P03.jpg" alt="미드나잇:액터뮤지션">
+                                            </div>
+                                            <div class="text">
+                                                <p>2020 예술의전당 어린이 가족 페스티벌</p>
+                                                <span>2020.08.19 ~ 2020.08.23 예술의전당 자유소극장</span>
+                                            </div>
+                                            <div class="rank-num">
+                                                <p>3위</p>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                    <!-- //연극-->
+                                    
+                                    <div class="cont-box">
+                                        <div class="bigbox">
+                                            <div class="box">
+                                                <svg class="bg-img">
+                                                    <filter id="svgFilter">
+                                                        <feGaussianBlur id="svgGaussBlur" in="SourceGraphic" stdDeviation="7"></feGaussianBlur>
+                                                        <feComponentTransfer>
+                                                            <feFuncA type="discrete" tableValues="1 1"></feFuncA>
+                                                        </feComponentTransfer>
+                                                    </filter>
+                                                    <image xlink:href="http://tkfile.yes24.com/upload2/perfblog/202006/20200602/20200602-36952_1.jpg/dims/quality/70/" filter="url(#svgFilter)" width="100%" height="100%" x="0" y="0"></image>
+                                                </svg>
+                                                <img src="assets/img/ranking_Cl01.jpg" alt="2020 발레 축제, 해외무용스타스페셜갈라">
+                                            </div>
+                                            <div class="text">
+                                                <p>[2020 발레축제] &lt;해외무용스타스페셜갈라&gt;</p>
+                                                <span>2020.06.27 ~ 2020.06.28 예술의전당 CJ 토월극장</span>
+                                            </div>
+                                            <div class="rank-num">
+                                                <p>1위</p>
+                                            </div>
+                                        </div>    
+                                        <div class="bigbox">
+                                            <div class="box">
+                                                <svg class="bg-img">
+                                                    <filter id="svgFilter">
+                                                        <feGaussianBlur id="svgGaussBlur" in="SourceGraphic" stdDeviation="7"></feGaussianBlur>
+                                                        <feComponentTransfer>
+                                                            <feFuncA type="discrete" tableValues="1 1"></feFuncA>
+                                                        </feComponentTransfer>
+                                                    </filter>
+                                                    <image xlink:href="http://tkfile.yes24.com/upload2/perfblog/202002/20200207/20200207-36275_1.jpg/dims/quality/70/" filter="url(#svgFilter)" width="100%" height="100%" x="0" y="0"></image>
+                                                </svg>
+                                                <img src="assets/img/ranking_Cl02.jpg" alt="마르크-앙드레 아믈랭 피아노 리사이틀">
+                                            </div>
+                                            <div class="text">
+                                                <p>마르크-앙드레 아믈랭 피아노 리사이틀</p>
+                                                <span>2020.09.12 ~ 2020.09.12 예술의전당 콘서트홀</span>
+                                            </div>
+                                            <div class="rank-num">
+                                                <p>2위</p>
+                                            </div>
+                                        </div>    
+                                    </div>
+                                    <!-- //클래식 -->
+
+                                    <div class="cont-box">
+                                        <div class="bigbox">
+                                            <div class="box">
+                                                <svg class="bg-img">
+                                                    <filter id="svgFilter">
+                                                        <feGaussianBlur id="svgGaussBlur" in="SourceGraphic" stdDeviation="7"></feGaussianBlur>
+                                                        <feComponentTransfer>
+                                                            <feFuncA type="discrete" tableValues="1 1"></feFuncA>
+                                                        </feComponentTransfer>
+                                                    </filter>
+                                                    <image xlink:href="http://tkfile.yes24.com/upload2/perfblog/201907/20190709/20190709-pos_32318.jpg/dims/quality/70/" filter="url(#svgFilter)" width="100%" height="100%" x="0" y="0"></image>
+                                                </svg>
+                                                <img src="assets/img/ranking_MU01.jpg" alt="창경궁 궁궐야행">
+                                            </div>
+                                            <div class="text">
+                                                <p>창경궁 궁궐야행</p>
+                                                <span>2019.01.25 ~ 2020.07.31 창경궁</span>
+                                            </div>
+                                            <div class="rank-num">
+                                                <p>1위</p>
+                                            </div>
+                                        </div>    
+                                        <div class="bigbox">
+                                            <div class="box">
+                                                <svg class="bg-img">
+                                                    <filter id="svgFilter">
+                                                        <feGaussianBlur id="svgGaussBlur" in="SourceGraphic" stdDeviation="7"></feGaussianBlur>
+                                                        <feComponentTransfer>
+                                                            <feFuncA type="discrete" tableValues="1 1"></feFuncA>
+                                                        </feComponentTransfer>
+                                                    </filter>
+                                                    <image xlink:href="http://tkfile.yes24.com/upload2/perfblog/202003/20200316/20200316-36674_1.jpg/dims/quality/70/" filter="url(#svgFilter)" width="100%" height="100%" x="0" y="0"></image>
+                                                </svg>
+                                                <img src="assets/img/ranking_MU02.jpg" alt="2020 서울국제주류박람회">
+                                            </div>
+                                            <div class="text">
+                                                <p>2020 서울국제주류박람회</p>
+                                                <span>2020.06.12 ~ 2020.06.14 서울 코엑스 C홀</span>
+                                            </div>
+                                            <div class="rank-num">
+                                                <p>2위</p>
+                                            </div>
+                                        </div>    
+                                        <div class="bigbox">
+                                            <div class="box">
+                                                <svg class="bg-img">
+                                                    <filter id="svgFilter">
+                                                        <feGaussianBlur id="svgGaussBlur" in="SourceGraphic" stdDeviation="7"></feGaussianBlur>
+                                                        <feComponentTransfer>
+                                                            <feFuncA type="discrete" tableValues="1 1"></feFuncA>
+                                                        </feComponentTransfer>
+                                                    </filter>
+                                                    <image xlink:href="http://tkfile.yes24.com/upload2/perfblog/202003/20200302/20200302-01.jpg/dims/quality/70/" filter="url(#svgFilter)" width="100%" height="100%" x="0" y="0"></image>
+                                                </svg>
+                                                <img src="assets/img/ranking_MU03.jpg" alt="코리아비건페어">
+                                            </div>
+                                            <div class="text">
+                                                <p>코리아비건페어</p>
+                                                <span>2020.09.12 ~ 2020.09.14 서울 코엑스 C홀</span>
+                                            </div>
+                                            <div class="rank-num">
+                                                <p>3위</p>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                    <!-- //전시-->                                    
+                                </div>
+                                <!-- //tab-cont -->
+                            </div>
+                            <!--//tab -->                          
+                            <a  href="#" class="more">랭킹 더보기 +</a>    
+                        </div>
+                        <!-- //ranking -->
+                    </div>
+                    <!-- //container -->
+                </article>
+                <!-- //con3 -->
+                
+                <article id="con4">
+                    <div class="container">
+                        <div class="event">
+                             <!-- Swiper -->
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide"><img src="assets/img/scont01.jpg" alt="연극 가족사진"><em>엔젤티켓</em><p>연극<br>가족사진</p></div>
+                                    <div class="swiper-slide"><img src="assets/img/scont02.jpg" alt="뮤지컬 미아 파밀리아"><em>엔젤티켓</em><p>뮤지컬<br>미아 파밀리아</p></div>
+                                    <div class="swiper-slide"><img src="assets/img/scont03.jpg" alt="뮤지컬 유앤잇"><em>엔젤티켓</em><p>뮤지컬<br>유앤잇</p></div>
+                                    <div class="swiper-pagination swiper-pagination-white"></div>                                
+                                </div>                                
+                            </div>
+                            <div class="box">
+                                <div class="angel">
+                                    <img src="assets/img/angel.png" alt="엔젤 티켓">
+                                </div>
+                                <div class="project">
+                                    <img src="assets/img/project.png" alt="담당자 살리기 프로젝트">
+                                </div>
+                            </div>                            
+                            <div class="stage">
+                                <img src="assets/img/stage.jpg" alt=홍대광의 따뜻한 어쿠스틱 라이브">
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <!-- //con4 -->
+
+                <div class="sbanner02">
+                    <div class="sban-text">
+                        <h4>focus on</h4>
+                        <a href="#">
+                            <p>뮤지컬<br>최후진술</p>
+                            <span>쇼와 함께 현생탈출! <br>쇼生탈출</span>
+                        </a>
+                    </div>                    
+                    <a href="#" class="img">
+                        <img src="assets/img/sbanner02.png" alt="쇼생탈출">
+                        <img src="assets/img/kv-movie.png" class="movie" alt="재생">
+                    </a>
+                </div>
+                <!-- //sbanner02 -->
+
+                <article id="con5">
+                    <div class="container">
+                        <div class="title">
+                            <img src="assets/img/title/tit4.png" alt="musical & play">                              
+                        </div>
+                        <div class="musical">
+                            <a href="#">
+                                <div class="list-img">
+                                    <img src="assets/img/musical01.jpg" alt="작은 아씨들">
+                                </div>
+                                <div class="list-text">
+                                    <p>뮤지컬 &lt;작은 아씨들&gt;</p>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="list-img">
+                                    <img src="assets/img/musical02.jpg" alt="레베카">
+                                </div>
+                                <div class="list-text">
+                                    <p>뮤지컬 &lt;레베카&gt;</p>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="list-img">
+                                    <img src="assets/img/musical03.jpg" alt="꽃보다 슈퍼스타">
+                                </div>
+                                <div class="list-text">
+                                    <p>뮤지컬 &lt;꽃보다 슈퍼스타&gt;</p>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="list-img">
+                                    <img src="assets/img/musical04.jpg" alt="리미트">
+                                </div>
+                                <div class="list-text">
+                                    <p>연극 &lt;리미트&gt;</p>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="list-img">
+                                    <img src="assets/img/musical05.jpg" alt="괜찮냐">
+                                </div>
+                                <div class="list-text">
+                                    <p>연극 &lt;괜찮냐&gt;</p>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="list-img">
+                                    <img src="assets/img/musical06.jpg" alt="친정엄마와 2박3일">
+                                </div>
+                                <div class="list-text">
+                                    <p>연극 &lt;친정엄마와 2박3일&gt;</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <!-- //con5 -->
+
+                <article id="con6">
+                    <div class="container">
+                        <div class="title">
+                            <img src="assets/img/title/tit5.png" alt="concert & classic">                              
+                        </div>
+                        <div class="concert">
+                            <a href="#">
+                                <div class="list-img">
+                                    <img src="assets/img/concert01.jpg" alt="그린플러그드 서울 2020">
+                                </div>
+                                <div class="list-text">
+                                    <p>그린플러그드 서울 2020</p>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="list-img">
+                                    <img src="assets/img/concert02.jpg" alt="워터밤 인천 2020">
+                                </div>
+                                <div class="list-text">
+                                    <p>워터밤 인천 2020</p>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="list-img">
+                                    <img src="assets/img/concert03.jpg" alt="SF9 공식팬클럽 팬미팅">
+                                </div>
+                                <div class="list-text">
+                                    <p>SF9 공식팬클럽 팬미팅</p>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="list-img">
+                                    <img src="assets/img/concert04.jpg" alt="아디오스 피아졸라">
+                                </div>
+                                <div class="list-text">
+                                    <p>아디오스 피아졸라</p>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="list-img">
+                                    <img src="assets/img/concert05.jpg" alt="베토벤 탄생 250주년 기념연주회">
+                                </div>
+                                <div class="list-text">
+                                    <p>베토벤 탄생 250주년 기념연주회</p>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="list-img">
+                                    <img src="assets/img/concert06.jpg" alt="바르샤바 필하모닉 챔버">
+                                </div>
+                                <div class="list-text">
+                                    <p>바르샤바 필하모닉 챔버</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <!-- //con6 -->
+
+                <article id="con7">
+                    <div class="container">
+                        <div class="title">
+                            <img src="assets/img/title/tit6.png" alt="exhibition & kids">                              
+                        </div>
+                        <div class="kids">
+                            <a href="#">
+                                <div class="list-img">
+                                    <img src="assets/img/kids01.jpg" alt="뮤지컬 &lt;헬로카봇&gt; 시즌5">
+                                </div>
+                                <div class="list-text">
+                                    <p>뮤지컬 &lt;헬로카봇&gt; 시즌5</p>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="list-img">
+                                    <img src="assets/img/kids02.jpg" alt="뮤지컬 &lt;엄마는 안가르쳐 줘&gt;">
+                                </div>
+                                <div class="list-text">
+                                    <p>뮤지컬 &lt;엄마는 안가르쳐 줘&gt;</p>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="list-img">
+                                    <img src="assets/img/kids03.jpg" alt="키즈콘서트 &lt;플라잉 심포니&gt;">
+                                </div>
+                                <div class="list-text">
+                                    <p>키즈콘서트 &lt;플라잉 심포니&gt;</p>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="list-img">
+                                    <img src="assets/img/kids04.jpg" alt="코리아비건페어">
+                                </div>
+                                <div class="list-text">
+                                    <p>코리아비건페어</p>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="list-img">
+                                    <img src="assets/img/kids05.jpg" alt="K-핸드메이드페어 2020">
+                                </div>
+                                <div class="list-text">
+                                    <p>K-핸드메이드페어 2020</p>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="list-img">
+                                    <img src="assets/img/kids06.jpg" alt="완전한 세상 - 부산">
+                                </div>
+                                <div class="list-text">
+                                    <p>완전한 세상 - 부산</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <!-- //con7 -->
+
+                <article id="con8">
+                    <div class="container">
+                        <div class="title">
+                            <img src="assets/img/title/tit7.png" alt="review & interview">
+                        </div>       
+                        <!-- Swiper -->
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="assets/img/review01.jpg" alt="미드나잇 액터뮤지션"></div>
+                            <div class="swiper-slide"><img src="assets/img/review02.jpg" alt="라흐마니노프"></div>
+                            <div class="swiper-slide"><img src="assets/img/review03.jpg" alt="오페라의 유령"></div>
+                            </div>
+                            <!-- Add Arrows -->
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div> 
+                    </div>
+                </article>
+                <!-- //con8 -->
+
+                <article id="con9">
+                    <div class="container">
+                        <div class="con-left">
+                            <img src="assets/img/tell.png" alt="고객센터">
+                            <dl>
+                                <dt>평일</dt>
+                                <dd>09:00~18:00</dd>
+                                <dt>토요일</dt>
+                                <dd>09:00~17:00 <span>(일요일 및 공휴일 휴무)</span></dd>
+                            </dl>
+                        </div>
+                        <div class="con-center">
+                            <a href="#"><img src="assets/img/foot01.png" alt="공지사항"> 공지사항</a>
+                            <a href="#"><img src="assets/img/foot02.png" alt="이용안내">이용안내</a>
+                            <a href="#"><img src="assets/img/foot03.png" alt="FAQ">FAQ</a>
+                            <a href="#"><img src="assets/img/foot04.png" alt="티켓판매안내">티켓판매안내</a>
+                        </div>
+                        <div class="con-right">
+                            <div class="con-right-left">
+                                <div class="social">
+                                    <a href="#"><img src="assets/img/facebook.png" alt="페이스북"></a>
+                                    <a href="#"><img src="assets/img/instar.png" alt="인스타그램"></a>
+                                    <a href="#"><img src="assets/img/kakao.png" alt="카카오톡"></a>
+                                </div>
+                                <div class="app">
+                                    <a href="#"><img src="assets/img/appdown1.png" alt="구글플레이"></a>
+                                    <a href="#"><img src="assets/img/appdown2.png" alt="애플 스토어"></a>
+                                </div>
+                            </div>
+                            <div class="con-right-right">
+                                <a href="#" class="money"><img src="assets/img/deduction.png" alt="문화비 소득공제"></a>
+                            </div>  
+                        </div>
+                    </div>
+                </article>
+                <!-- //con9 -->
+         </section>
+         <!-- //contents -->        
+
+        <footer id="footer">
+            <div class="container">
+                <div class="footer-menu">
+                    <div class="footer-menu-text">
+                        <ul>
+                            <li><a href="#">회사소개</a></li>
+                            <li><a href="#">이용약관</a></li>
+                            <li><a href="#">개인정보처리방침</a></li>
+                            <li><a href="#">청소년보호정책</a></li>
+                            <li><a href="#">이용안내</a></li>
+                            <li><a href="#">티켓판매안내</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-menu-btn">
+                        <ul>
+                            <li class="family-btn"><a href="#">Family Site<img src="assets/img/family-sdown.png" alt=""></a></li>
+                            <li class="family"><a href="#">iSTYLE24</a></li>
+                            <li class="family"><a href="#">한세예스24홀딩스</a></li>
+                            <li class="family"><a href="#">한세실업</a></li>
+                            <li class="family"><a href="#">한세드림</a></li>
+                            <li class="family"><a href="#">한세MK</a></li>
+                            <li class="family"><a href="#">컬리수</a></li>
+                            <li class="family"><a href="#">YES24 Vietnam</a></li>
+                            <li class="family"><a href="#">동아출판</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-text">
+                    <div class="footer-text-left">
+                        <img src="assets/img/flogo.png" alt="YES24 티켓">
+                    </div>
+                    <div class="footer-text-center">
+                        <p>예스이십사(주)</p>
+                        <p class="tc2">
+                            서울시 영등포구 은행로 11, 5층~6층(여의도동,일신빌딩)<br>
+                            대표  김석환&nbsp; |&nbsp; 개인정보보호책임자 : 권민석 yes24help@yes24.com<br>
+                            사업자등록번호  229-81-37000&nbsp; |  통신판매업신고  제 2005-02682호 
+                            <a href="#">사업자 정보확인</a>
+                        <br>호스팅 서비스사업자 : 예스이십사㈜</p>
+                        <address>Copyright © YES24 Corp. All Rights Reserved.</address>
+                    </div>
+                    <div class="footer-text-right">
+                        <div class="mark">
+                            <img src="assets/img/fmark.png" alt="SGI서울보증">
+                            <a href="#">서비스가입사실확인</a>
+                        </div>
+                        <p class="fservice">
+                            고객님은 안전거래를 위한 현금 등으로 결제 시<br> 
+                            저희 쇼핑몰에서 가입한 구매안전서비스를<br>
+                            이용하실 수 있습니다.    
+                        </p>
+                    </div>
+                </div>
+            </div>            
+        </footer>
+        <!-- //footer -->
+
+    </div>
+    <!-- //wrap -->
+    <script src="assets/js/jquery.min_1.12.4.js"></script>
+    <script src="assets/js/swiper.min.js"></script>
+    <script>
+    //히든 사이드 메뉴
+    $(".header .ham").click(function(){
+        $("#side-menu").animate({"left":"0"}, 600);
+    });
+    $("#side-menu .hi-ham").click(function(){        
+        $("#side-menu").animate({"left":"-300"}, 600);
+    });
+
+    //배너 스와이프 
+    var swiper = new Swiper('.banner .swiper-container', {
+        scrollbar: {
+            el: '.swiper-scrollbar',
+        },
+      cssMode: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination'
+      },
+      mousewheel: true,
+      keyboard: true,
+    });
+
+    //hot hover
+    $(".hotList-text").mouseover(function(){
+        $(this).css("opacity","1")
+    });
+    $(".hotList-text").mouseleave(function(){
+        $(this).css("opacity","0")
+    });
+
+    //탭 메뉴 
+    let tabBtn =  $(".tab-btn > ul > li");
+    let tabCont = $(".tab-cont > .cont-box")
+
+    tabCont.hide().eq(0).show();
+
+    tabBtn.click(function(e){
+        e.preventDefault();
+        let index = $(this).index();
+
+        tabBtn.removeClass("on");
+        $(this).addClass("on");
+
+        tabCont.css("display","none");
+        tabCont.eq(index).css({"display":"flex"});
+    });
+
+    //event swiper
+    var swiper = new Swiper('.event .swiper-container', {
+      spaceBetween: 30,
+      effect: 'fade',
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+
+    //리뷰 스와이프
+    var swiper = new Swiper('#con8 .swiper-container', {
+        loop: true,
+        slidesPerView: 3,
+        centeredSlides: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+
+    //패밀리 버튼
+    $(".footer-menu-btn .family").hide();
+    $(".footer-menu-btn .family-btn a").click(function(e){
+        e.preventDefault();
+        $(".footer-menu-btn .family-btn").toggleClass("on")
+        $(".footer-menu-btn .family").slideToggle();
+    });
+  </script>
+</body>
+</html>

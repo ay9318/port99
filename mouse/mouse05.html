@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Effect05</title>
+
+    <link rel="stylesheet" href="css/prism.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+        @font-face { 
+            font-family: 'GmarketSansMedium'; 
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff'); 
+            font-weight: normal; 
+            font-style: normal; 
+        }
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        a {text-decoration: none; color: #666;}
+        img {width: 100%; vertical-align: top;}        
+        ul {padding: 10px 20px;}
+        body {
+            background: url(img/photo02.jpg) no-repeat center center;
+            background-size: cover;
+            font-family: 'Abel', 'GmarketSansMedium';
+            color: #fff;
+            height: 100vh;
+            overflow: hidden;
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0;
+            width: 100%; height: 100vh;
+            background: rgba(25, 0, 41, 0.5);
+            z-index: -1;
+        }
+        .info {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            position: absolute; left: 0; top: 0; z-index: 1000;
+            padding: 20px;
+            font-size: 18px;
+        }
+
+        /* info2 */
+        .info2 {
+            position: absolute; right: 0; top: 0; z-index: 1000;
+            padding: 30px; font-weight: bold;
+        }
+        .info2 li {list-style: none; margin-bottom: 5px;}
+        .info2 li a {color: #fff;}
+        .info2 li.active a {border-bottom: 1px dashed #fff;}
+
+        /* info3 */
+        .info3 {position: absolute; right: 0; bottom: 0; z-index: 1000; padding: 20px;}
+        .info3 li {list-style: none; margin-bottom: 5px;}
+        .info3 li span {color: #fff;}
+
+         /*  info4 */
+        .info4 {position: absolute; left: 0; bottom: 0; z-index: 1000; padding: 20px;}
+        .info4 a {color: #fff; border: 1px solid #fff; border-radius: 30px; padding: 5px 30px}
+        .info4 .modal {
+            background: rgba(0,0,0,0.8);
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            position: fixed;
+            top: 100%;
+            left: 0;
+            text-align: left;
+            transition: all 600ms cubic-bezier(0.86, 0, 0.07, 1);
+        }
+        .info4 .modal.show {
+            top: 0;
+        }
+        .info4 .modal .close {
+            position: absolute; right: 10px; top: 20px;
+        }
+
+        /* contents */
+        .contents {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%; height: 100%;
+            text-align: center;
+            flex-direction: column;
+        }     
+        .cursor {
+            position: relative;
+            position: absolute;
+            width: 14px; height: 14px;
+            border-radius: 50%;
+            background-color: #fff;
+            z-index: 1000;
+            transform: scale(1);
+            user-select: none;
+            pointer-events: none;
+            transition: transform 0.3s ease-in-out;
+        }
+        .cursor p {
+            padding-left: 2vw;
+            display: none;
+        }
+
+        /* move-image */
+        .move-image {
+            --x: 0;
+            --y: 0;
+            --d: 50;
+            cursor: none;           
+        }
+        .move-image .mimg {
+            width: 45vw;
+            height: 60vh;
+            background: #ccc;
+            position: relative;
+            overflow: hidden;
+            transition: transform 500ms ease;
+            border-radius: 10px;
+        }
+        .move-image:hover .mimg {
+            transform: scale(1.025);
+        }
+        .move-image .mimg .img {
+            --d: 20;
+            position: absolute;
+            left: -5%; top: -5%;
+            width: 110%;
+            height: 110%;
+            object-fit: cover;
+            transition: transform 500ms cubic-bezier(0.25, 0.46, 0.45, 0.84);
+            transform: translate(calc(var(--x) / var(--d)*1px),calc(var(--y) / var(--d)*1px));
+            /* transform: translate("x/d"px,"y/d"px); */
+        }
+        .move-image .mtext p {
+            font-size: 1.7vw;
+            position: absolute;
+            left: 50%; top: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.4);
+            padding: .5vw 1vw;
+        }
+        .move-image .mtext p span {color:rgb(145, 10, 230);}
+    </style>
+</head>
+<body>
+    <div class="info">
+        <h1>Mouse Effect05</h1>
+        <p>마우스 따라다니기</p>
+    </div>
+    <div class="info2">
+        <ul>
+            <li><a href="mouse01.html">Mouse01</a></li>
+            <li><a href="mouse02.html">Mouse02</a></li>
+            <li><a href="mouse03.html">Mouse03</a></li>
+            <li><a href="mouse04.html">Mouse04</a></li>
+            <li class="active"><a href="mouse05.html">Mouse05</a></li>
+            <li><a href="mouse06.html">Mouse06</a></li>
+            <li><a href="mouse07.html">Mouse07</a></li>
+            <li><a href="mouse08.html">Mouse08</a></li>
+        </ul>
+    </div>
+    <div class="info3">
+        <ul>
+            <li>clientX :<span class="clientX">0</span></li>
+            <li>clientY :<span class="clientY">0</span></li>
+        </ul>
+    </div>
+    <div class="info4">
+        <a href="#" class="view">소스보기</a>
+        <!-- modal -->
+        <div class="modal">
+            <div class="code-editor">   
+                <span class="control"></span>
+                <span class="control"></span>
+                <span class="control"></span>
+<pre class="line-numbers"><code class="language-js">let x = 0;
+let y = 0;
+
+//좌표보기
+$(".info4 .view2").click(function(){
+    $(".cursor p").fadeToggle()
+});      
+
+const moveImg = document.querySelector(".move-image");
+
+moveImg.addEventListener("mousemove", function(e){
+    const rect = this.getBoundingClientRect();
+    console.log(rect)
+    this.style.setProperty("--x", e.clientX - ((rect.width/2) + rect.left));
+    this.style.setProperty("--y", e.clientY - ((rect.height/2) + rect.top));
+
+    gsap.to(".cursor",{duration: .2, left: e.pageX-7, top: e.pageY-7});
+
+    x = e.clientX - ($(".move-image").width()/2 + $(".move-image").position().left);
+    y = e.clientY - ($(".move-image").height()/2 + $(".move-image").position().top);
+
+    $(".mouseX").text(x);
+    $(".mouseY").text(y);
+});
+
+moveImg.addEventListener("mouseleave", function(e){
+    this.style.setProperty("--x", 0);
+    this.style.setProperty("--y", 0);
+});
+</code></pre>    
+            </div>
+            <a class="close">닫기</a>
+        </div>
+    </div>    
+    <!-- contents -->
+    <div class="contents">
+        <div class="cursor">            
+            <p>X :<span class="mouseX">0</span></p>
+            <p>Y :<span class="mouseY">0</span></p>
+        </div> 
+        <div class="move-image">
+            <div class="mimg">
+                <img class="img" src="img/photo02.jpg" alt="이미지">
+            </div>
+            <div class="mtext">
+                <p>길을 <span>아는 것과</span> 그 길을 <span>걷는 것은</span> 다르다.</p>
+            </div>
+        </div>
+    </div>   
+
+    <script src="js/jquery.min_1.12.4.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="../Parallax/js/gsap.min.js"></script>
+    <script src="js/prism.js"></script>
+    <script>
+        let x = 0;
+        let y = 0;
+        //출력용
+        $(window).mousemove(function(e){ 
+            $(".clientX").text(e.clientX);  //이벤트 clientX값을 화면에 출력
+            $(".clientY").text(e.clientY); //이벤트 clientY값을 화면에 출력
+        });
+
+        /* $(".move-image").mousemove(function(e){
+            gsap.to(".cursor",{duration: .2, left: e.pageX-7, top: e.pageY-7});
+
+            //좌표값 중앙을 0으로 초기화
+             x = e.clientX - ($(".move-image").width()/2 + $(".move-image").position().left);
+             y = e.clientY - ($(".move-image").height()/2 + $(".move-image").position().top);
+
+             $(".mouseX").text(x);
+             $(".mouseY").text(y);
+
+            //이미지 움직이기
+            $(".img").attr({"style":"transform: translate("+x/30+"px,"+y/30+"px)"});
+        }); */        
+
+        const moveImg = document.querySelector(".move-image");
+
+        moveImg.addEventListener("mousemove", function(e){
+            const rect = this.getBoundingClientRect();
+
+            this.style.setProperty("--x", e.clientX - ( (rect.width/2) + rect.left));
+            this.style.setProperty("--y", e.clientY - ( (rect.height/2) + rect.top));
+
+            gsap.to(".cursor", {duration: .2, left: e.pageX - 10, top: e.pageY - 10});
+        });
+        
+        moveImg.addEventListener("mouseleave", function(){
+            this.style.setProperty("--x", 0)
+            this.style.setProperty("--y", 0)
+        });
+
+        //modal
+        $(".info4 .view").click(function(){
+            $(".info4 .modal").addClass("show");
+        });
+        $(".info4 .close").click(function(){
+            $(".info4 .modal").removeClass("show");
+        }); 
+    </script>
+</body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax06</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/prism.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+        @font-face { 
+            font-family: 'RIDIBatang'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff') format('woff'); font-weight: normal; font-style: normal; 
+        }
+
+        /* reset */
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        li {list-style: none;}
+        a {text-decoration: none; color: #fff; font-family: 'Lato', sans-serif;}
+        :root {
+            font-size: 16px;
+        }
+
+        body {
+            --color-h1: #dc6e25;
+            --color-title: #fff;
+            --color-sub: #999;
+            --color--link: #000;
+            --color-bg: #111;
+            --fong-family: 'RIDIBatang', sans-serif;
+            --aspect-ratio: 32/19;
+            --image-width-max: 600px;
+
+            background-color: var(--color-bg);
+            font-family: var(--fong-family);
+            color: var(--color-title);
+        }
+        .title {
+            font-family: 'GmarketSansMedium';
+            position: fixed; 
+            right: 0; top: 0; z-index: 1000;
+            padding: 30px;
+            text-align: right;
+        }
+        .title h1 {
+            padding-bottom: 10px;
+        }
+        .title ul {
+            padding-top: 10px;
+        }
+        .title li {
+            list-style: none;
+            margin-bottom: 5px;
+        }
+        .title li.active a {
+            padding-bottom: 3px;
+            border-bottom: 1px dashed #fff;
+        }        
+        
+        #wrap h1 {
+            font-size: 7vw;
+            color: var(--color-h1);
+            padding: 3vw;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        #wrap h1 em {
+            display: block;
+            color: antiquewhite;
+            padding-left: 17vw;
+        }
+        .contents {
+            margin: 35vh auto 35vh;
+        }
+         .content-item {
+            position: relative;
+            --image-width: calc(var(--image-width-max) * var(--aspect-ratio));
+            width: var( --image-width);
+            max-width: 90vw;
+            margin: 20vh 0 40vh;
+        }
+        .content-item:nth-child(even) {
+            margin-left: auto;
+        }  
+        .content-item-num {
+            font-size: 18vw;
+            font-weight: 100;
+            position: absolute;
+            right: -6vw; top: -13vw;
+            opacity: 0.04;
+            will-change: transform;
+        }
+        .content-item:nth-child(even) .content-item-num {
+            right: auto; left: -8vw;
+        }
+        .content-item-title {
+            text-align: right;
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: var( --color-sub);
+            padding-bottom: 0.8vw;
+            text-transform: capitalize;
+            will-change: transform;
+        }
+        .content-item:nth-child(even) .content-item-title {
+            text-align: left;
+        }
+        .content-item-imgWrap {
+            position: relative;
+            --width: 100%;
+            width: var(--width);
+            padding-bottom: calc(var(--width) / (var(--aspect-ratio)));
+            overflow: hidden;
+            background: #000;
+        }
+        .content-item-img {
+            position: absolute; top: 0;
+            width: var(--width);
+            --overflow: 60px;
+            height: calc(100% + (2 * var(--overflow)));
+            background-size: cover;
+            background-position: 50% 0;
+            will-change: transform;
+        }
+        .content-item-desc {
+            font-size: 3vw;
+            line-height: 1.2;
+            font-weight: 600;
+            text-align: right;
+            color: var(--color-title);
+            word-break: keep-all;
+            margin-top: -6vw;
+            margin-right: -3vw;
+            position: relative;
+            z-index: 20;
+            transition: transform 0.3s cubic-bezier(0.13, 0.69, 0.38, 0.93);
+            will-change: transform;
+        }
+        .content-item:nth-child(even) .content-item-desc {
+            text-align: left;
+            margin-right: 0;
+            margin-left: -3vw;
+        } 
+
+        #section1 .content-item-img {background-image: url(img/img01.jpg);}
+        #section2 .content-item-img {background-image: url(img/img02.jpg);}
+        #section3 .content-item-img {background-image: url(img/img03.jpg);}
+        #section4 .content-item-img {background-image: url(img/img04.jpg);}
+        #section5 .content-item-img {background-image: url(img/img05.jpg);}
+        #section6 .content-item-img {background-image: url(img/img06.jpg);}
+        #section7 .content-item-img {background-image: url(img/img07.jpg);}
+        #section8 .content-item-img {background-image: url(img/img08.jpg);}
+        #section9 .content-item-img {background-image: url(img/img09.jpg);}      
+
+         /* info */
+         .info {
+            position: fixed; bottom: 20px; right: 20px;
+            background: rgba(255, 255, 255, 0.4);
+            color: #000; padding: 10px;
+            font-size: 14px; font-weight: 300;
+            z-index: 10000; font-style: normal;
+        }
+        /*  modal */
+        .info1 {position: fixed; left: 0; bottom: 0; z-index: 1000; padding: 20px;}
+        .info1 a {color: #fff; border: 1px solid #fff; border-radius: 30px; padding: 5px 30px;}
+        .info1 .modal {
+            background: rgba(0,0,0,0.8);
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            position: fixed;
+            top: 100%;
+            left: 0;
+            text-align: left;
+            transition: all 600ms cubic-bezier(0.86, 0, 0.07, 1);
+        }
+        .info1 .modal.show {top: 0;}
+        .info1 .modal .close {position: absolute; right: 10px; top: 20px; cursor: pointer;}
+        .code-editor {height: auto;}
+    </style>
+</head>
+<body>
+    <div class="info">
+        <div>pageYOffset() : <span class="pageYOffset">0</span>px</div>
+    </div>
+
+    <div class="title">
+        <h1>Parallax06</h1>
+        <p>이질감 효과</p>
+        <ul>
+            <li><a href="parallax01.html">Parallax01</a></li>
+            <li><a href="parallax02.html">Parallax02</a></li>
+            <li><a href="parallax03.html">Parallax03</a></li>
+            <li><a href="parallax04.html">Parallax04</a></li>
+            <li><a href="parallax05.html">Parallax05</a></li>
+            <li class="active"><a href="parallax06.html">Parallax06</a></li>
+            <li><a href="parallax07.html">Parallax07</a></li>
+            <li><a href="parallax08.html">Parallax08</a></li>
+            <li><a href="parallax09.html">Parallax09</a></li>
+            <li><a href="parallax10.html">Parallax10</a></li>
+            <li><a href="parallax11.html">Parallax11</a></li>
+        </ul>
+    </div>
+
+    <!-- parallax -->
+    <div id="wrap">
+        <h1>Parallax<em>Scrolling</em></h1>
+        <div class="contents">
+            <section id="section1" class="content-item">
+                <span class="content-item-num">01</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">많은 사람이 재능의 부족보다 결심의 부족으로 실패한다.</p>
+            </section>
+            <section id="section2" class="content-item">
+                <span class="content-item-num">02</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">오랫동안 꿈을 그리는 사람은 마침내 그 꿈을 닮아 간다.</p>
+            </section>
+            <section id="section3" class="content-item">
+                <span class="content-item-num">03</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">눈물과 더불어 빵을 먹어 보지 않은 자는 인생의 참다운 맛을 모른다.</p>
+            </section>
+            <section id="section4" class="content-item">
+                <span class="content-item-num">04</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">바보는 방황을 하고 현명한 사람은 여행을 한다.</p>
+            </section>
+            <section id="section5" class="content-item">
+                <span class="content-item-num">05</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">길을 걷다 돌이 나타나면 약자는 그것을 걸림돌이라고 말하고, 강자는 그것을 디딤돌이라고 말한다.</p>
+            </section>
+            <section id="section6" class="content-item">
+                <span class="content-item-num">06</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">가난은 가난하다고 느끼는 곳에 존재한다.</p>
+            </section>
+            <section id="section7" class="content-item">
+                <span class="content-item-num">07</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">사진을 찍을 때 한쪽눈을 감는 것은 마음의 눈을 뜨기 위해서다.</p>
+            </section>
+            <section id="section8" class="content-item">
+                <span class="content-item-num">08</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">당신은 딱 한번만 산다. 하지만 똑바로 산다면, 한번이면 충분하다.</p>
+            </section>
+            <section id="section9" class="content-item">
+                <span class="content-item-num">09</span>
+                <h2 class="content-item-title">Basic Coding</h2>
+                <figure class="content-item-imgWrap">
+                    <div class="content-item-img"></div>
+                </figure>
+                <p class="content-item-desc">언제나 당신의 열정이 곧 당신의 결정</p>
+            </section>
+        </div>
+    </div>
+    <div class="info1">
+        <a href="#" class="view">소스보기</a>
+        <!-- modal -->
+        <div class="modal">
+        <div class="code-editor">   
+            <span class="control"></span>
+            <span class="control"></span>
+            <span class="control"></span>
+<pre class="line-numbers"><code class="language-js">window.addEventListener("scroll",() => {
+    let pageYOffset = (window.pageYOffset || document.documentElement.scrollTop) + screen.height/2;
+    document.querySelector(".pageYOffset").textContent = pageYOffset;
+
+    document.querySelectorAll(".content-item").forEach(elem =>{
+        console.log(elem.childNodes)
+        let target = elem.childNodes[7]
+        let offset = (pageYOffset - elem.offsetTop) * 0.2;
+        target.style.transform = "translateY("+ offset + "px)";
+    });
+});    
+</code></pre>    
+        </div>
+        <a class="close">닫기</a>
+        </div>
+    </div>
+
+    <!-- script -->
+    <script src="js/jquery.min_1.12.4.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/prism.js"></script>
+    <script>       
+       window.addEventListener("scroll",() => {
+            let pageYOffset = (window.pageYOffset || document.documentElement.scrollTop) + screen.height/2;
+            document.querySelector(".pageYOffset").textContent = pageYOffset;
+
+            document.querySelectorAll(".content-item").forEach(elem =>{
+                console.log(elem.childNodes)
+                let target = elem.childNodes[7]
+                let offset = (pageYOffset - elem.offsetTop) * 0.2;
+                target.style.transform = "translateY("+ offset + "px)";
+            });
+        });
+        //modal
+        $(".info1 a").click(function(e){
+            e.preventDefault();
+            $(".info1 .modal").addClass("show");
+        });
+        $(".info1 .close").click(function(e){
+            e.preventDefault();
+            $(".info1 .modal").removeClass("show");
+        });
+    </script>
+</body>
+</html>

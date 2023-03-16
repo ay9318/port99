@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Hwang Ayoung">
+    <meta name="description" content="웹 퍼블리셔를 위한 정보 공유 사이트입니다.">
+    <meta name="keywords"
+        content="웹 퍼블리셔, 웹 표준, 웹 접근성, css, publisher, css3, html, markup, design, HwangAyoung">
+    <title>Hwang Ayoung</title>
+
+    <!-- css -->
+    <link href="assets/css/bootstrapTheme.css" rel="stylesheet">
+    <link href="assets/css/custom.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/isotope.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.css" rel="stylesheet">
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/favicon-152.png">
+    <link rel="icon" href="assets/ico/kong.png">
+    <link rel="icon" href="assets/ico/favicon-16.png" sizes="16x16">
+    <link rel="icon" href="assets/ico/favicon-32.png" sizes="32x32">
+    <link rel="icon" href="assets/ico/favicon-48.png" sizes="48x48">
+    <link rel="icon" href="assets/ico/favicon-64.png" sizes="64x64">
+    <link rel="icon" href="assets/ico/favicon_128.png" sizes="128x128">
+
+    <!-- Facebook meta tags -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="HwangAyoung" />
+    <meta property="og:url" content="http://richclub8.dothome.co.kr/responsive/html5/index.html" />
+    <meta property="og:image" content="http://richclub8.dothome.co.kr/assets/ico/icon.png" />
+    <meta property="og:site_name" content="HwangAyoung" />
+    <meta property="og:description" content="웹과 관련된 정보를 제공합니다." />
+
+    <!-- twitter meta tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@webstoryboy" />
+    <meta name="twitter:title" content="HwangAyoung" />
+    <meta name="twitter:description" content="웹과 관련된 정보를 제공합니다." />
+    <meta property="twitter:image" content="http://richclub8.dothome.co.kr/assets/ico/icon.png" />
+
+    <!-- 웹 폰트 -->
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gaegu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- nav -->
+    <div id="top-nav" class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="brand" href="https://ay9318.github.io/port99/">Hwang's</a>
+                <div class="nav-collapse collapse pull-right">
+                    <ul class="nav">
+                        <li><a href="https://ay9318.tistory.com/">Tistory</a></li>
+                        <li><a href="https://codepen.io/ay9318">Codepen</a></li>
+                        <li><a href="https://github.com/ay9318/port99">Github</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //nav -->
+
+    <!-- header -->
+    <div id="header">
+        <div class="container">
+            <div class="row">
+                <div class="span12" style="text-align:center;">
+                    <div class="header_tit">
+                        <a href="https://ay9318.github.io/port99/"><img src="assets/img/main-icon.svg" alt="main"></a>
+                        <h1>Professional web publishers</h1>
+                    </div>
+                    <div class="header_icon">
+                        <ul>
+                            <li><a href="https://twitter.com/webstoryboy" target="_blank"><i class="fa fa-twitter"
+                                        aria-hidden="true"></i><span>twitter</span></a></li>
+                            <li><a href="https://codepen.io/ay9318" target="_blank"><i class="fa fa-codepen"
+                                        aria-hidden="true"></i><span>codepen</span></a></li>
+                            <li><a href="https://github.com/ay9318" target="_blank"><i class="fa fa-github"
+                                        aria-hidden="true"></i><span>github</span></a></li>
+                            <li><a href="https://www.youtube.com/channel/UCsvQSv7EeCMHyYb9ENKAJZw" target="_blank"><i
+                                        class="fa fa-youtube-play" aria-hidden="true"></i><span>youtube</span></a></li>
+                            <li><a href="https://dribbble.com/webstoryboy" target="_blank"><i class="fa fa-dribbble"
+                                        aria-hidden="true"></i><span>dribbble</span></a></li>
+                            <li><a href="https://www.instagram.com/webs_code/" target="_blank"><i
+                                        class="fa fa-instagram" aria-hidden="true"></i><span>instagram</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //header -->
+
+
+    <!-- contents_tit -->
+    <div id="contents_tit">
+        <div class="titt">
+            <p><a href="#" class="tit_btn">&quot;I'm Web Publisher&quot;</a></p>
+        </div>
+    </div>
+    <!-- //contents_tit -->
+
+
+    <!-- contents -->
+    <div id="customizing">
+        <div class="container">
+
+            <div class="row">
+                <div id="options" class="gridly">
+                    <ul class="filter option-set" data-filter-group="color">
+                        <li><a href="#filter-color-any" data-filter-value="" class="selected">전체보기</a></li>
+                        <li class="webstandard"><a href="#filter-color-webstandard" data-filter-value=".design">디자인</a>
+                        <li class="webstandard"><a href="#filter-color-webstandard" data-filter-value=".site">사이트 제작</a>
+                        <li class="webstandard"><a href="#filter-color-webstandard" data-filter-value=".refer">레퍼런스</a>
+                        <li class="webstandard"><a href="#filter-color-webstandard" data-filter-value=".script">스크립트</a>
+                        <li class="webstandard"><a href="#filter-color-webstandard" data-filter-value=".css3">CSS3</a>
+                        <li class="webstandard"><a href="#filter-color-webstandard" data-filter-value=".ani">애니메이션</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="row" id="middle" style="margin-left:16px;">
+                <div id="container" class="clearfix">
+
+                    <!-- box -->
+                    <section class="color-shape class">
+                        <a href="class/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img-donut">CLASS</span>
+                                    <span class="overlay-text-thumb-donut">클래스</span>
+                                    <span class="overlay-text-thumb1-donut">CLASS</span>
+                                    <span class="overlay-text-thumb2-donut">클래스</span>
+                                </div>
+                                <img src="assets/img/001-flower.svg" alt="CLASS">
+                                <div class="img-text donutImg">
+                                    <h5>CLASS</h5>
+                                    <p>CLASS</p>
+                                    <span>클래스</span>
+                                </div>
+                            </div>
+                        </a>
+                    </section>
+                    <!-- //box -->
+
+                    <!-- box -->
+                    <section class="color-shape refer">
+                        <a href="study/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img-donut">CLASS</span>
+                                    <span class="overlay-text-thumb-donut">스터디</span>
+                                    <span class="overlay-text-thumb1-donut">STUDY</span>
+                                    <span class="overlay-text-thumb2-donut">스터디</span>
+                                </div>
+                                <img src="assets/img/002-flower.svg" alt="study">
+                                <div class="img-text donutImg">
+                                    <h5>STUDY</h5>
+                                    <p>STUDY</p>
+                                    <span>스터디</span>
+                                </div>
+                            </div>
+                        </a>
+                    </section>
+                    <!-- //box -->
+
+                    <!-- box -->
+                    <section class="color-shape refer">
+                        <a href="mysql/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img-donut">CLASS</span>
+                                    <span class="overlay-text-thumb-donut">MYSQL</span>
+                                    <span class="overlay-text-thumb1-donut">PHP</span>
+                                    <span class="overlay-text-thumb2-donut">CLASS</span>
+                                </div>
+                                <img src="assets/img/003-flower.svg" alt="PHP">
+                                <div class="img-text donutImg">
+                                    <h5>MYSQL</h5>
+                                    <p>PHP</p>
+                                    <span>CLASS</span>
+                                </div>
+                            </div>
+                        </a>
+                    </section>
+                    <!-- //box -->
+
+                    <!-- box -->
+                    <section class="color-shape refer">
+                        <a href="php/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img-donut">CLASS</span>
+                                    <span class="overlay-text-thumb-donut">PHP</span>
+                                    <span class="overlay-text-thumb1-donut">PHP</span>
+                                    <span class="overlay-text-thumb2-donut">CLASS</span>
+                                </div>
+                                <img src="assets/img/004-flower.svg" alt="PHP">
+                                <div class="img-text donutImg">
+                                    <h5>PHP</h5>
+                                    <p>PHP</p>
+                                    <span>CLASS</span>
+                                </div>
+                            </div>
+                        </a>
+                    </section>
+                    <!-- //box -->
+
+                    <!-- box -->
+                    <section class="color-shape design">
+                        <a href="port/index7.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img-donut">CLASS</span>
+                                    <span class="overlay-text-thumb-donut">PORTFOLIO</span>
+                                    <span class="overlay-text-thumb1-donut">PORTFOLIO</span>
+                                    <span class="overlay-text-thumb2-donut">포트폴리오</span>
+                                </div>
+                                <img src="assets/img/005-flower.svg" alt="PORTFOLIO">
+                                <div class="img-text donutImg">
+                                    <h5>PORTFOLIO</h5>
+                                    <p>PORTFOLIO</p>
+                                    <span>포트폴리오</span>
+                                </div>
+                            </div>
+                        </a>
+                    </section>
+                    <!-- //box -->
+
+                    <!-- box -->
+                    <section class="color-shape design">
+                        <a href="port01/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img-donut">CLASS</span>
+                                    <span class="overlay-text-thumb-donut">PORTFOLIO</span>
+                                    <span class="overlay-text-thumb1-donut">PORTFOLIO</span>
+                                    <span class="overlay-text-thumb2-donut">포트폴리오</span>
+                                </div>
+                                <img src="assets/img/011-flower.svg" alt="PORTFOLIO">
+                                <div class="img-text donutImg">
+                                    <h5>PORTFOLIO(1년)</h5>
+                                    <p>PORTFOLIO(1년)</p>
+                                    <span>포트폴리오</span>
+                                </div>
+                            </div>
+                        </a>
+                    </section>
+                    <!-- //box -->
+
+                    <!-- box -->
+                    <section class="color-shape refer">
+                        <a href="html/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img-donut">CLASS</span>
+                                    <span class="overlay-text-thumb-donut">HTML</span>
+                                    <span class="overlay-text-thumb1-donut">CODING</span>
+                                    <span class="overlay-text-thumb2-donut">CLASS</span>
+                                </div>
+                                <img src="assets/img/006-flower.svg" alt="html">
+                                <div class="img-text donutImg">
+                                    <h5>HTML</h5>
+                                    <p>CODING</p>
+                                    <span>CLASS</span>
+                                </div>
+                            </div>
+                        </a>
+                    </section>
+                    <!-- //box -->
+
+                    <!-- box -->
+                    <section class="color-shape refer">
+                        <a href="css/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img-donut">CLASS</span>
+                                    <span class="overlay-text-thumb-donut">CSS</span>
+                                    <span class="overlay-text-thumb1-donut">CODING</span>
+                                    <span class="overlay-text-thumb2-donut">CLASS</span>
+                                </div>
+                                <img src="assets/img/007-flower.svg" alt="css">
+                                <div class="img-text donutImg">
+                                    <h5>CSS</h5>
+                                    <p>CODING</p>
+                                    <span>CLASS</span>
+                                </div>
+                            </div>
+                        </a>
+                    </section>
+                    <!-- //box -->
+
+                    <!-- box -->
+                    <section class="color-shape design">
+                        <a href="photoshop/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img-donut">CLASS</span>
+                                    <span class="overlay-text-thumb-donut">PHOTOSHOP</span>
+                                    <span class="overlay-text-thumb1-donut">DESIGN</span>
+                                    <span class="overlay-text-thumb2-donut">포토샵</span>
+                                </div>
+                                <img src="assets/img/008-flower.svg" alt="photoshop">
+                                <div class="img-text donutImg">
+                                    <h5>PHOTOSHOP</h5>
+                                    <p>DESIGN</p>
+                                    <span>포토샵</span>
+                                </div>
+                            </div>
+                        </a>
+                    </section>
+                    <!-- //box -->
+
+                    <!-- box -->
+                    <section class="color-shape design">
+                        <a href="illustrator/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img-donut">CLASS</span>
+                                    <span class="overlay-text-thumb-donut">ILLUSTRATOR</span>
+                                    <span class="overlay-text-thumb1-donut">DESIGN</span>
+                                    <span class="overlay-text-thumb2-donut">일러스트</span>
+                                </div>
+                                <img src="assets/img/009-flower.svg" alt="illustrator">
+                                <div class="img-text donutImg">
+                                    <h5>ILLUSTRATOR</h5>
+                                    <p>DESIGN</p>
+                                    <span>일러스트</span>
+                                </div>
+                            </div>
+                        </a>
+                    </section>
+                    <!-- //box -->
+
+                    <!-- box -->
+                    <section class="color-shape refer">
+                        <a href="layout/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img-donut">CLASS</span>
+                                    <span class="overlay-text-thumb-donut">LAYOUT</span>
+                                    <span class="overlay-text-thumb1-donut">CODING</span>
+                                    <span class="overlay-text-thumb2-donut">레이아웃</span>
+                                </div>
+                                <img src="assets/img/010-flower.svg" alt="layout">
+                                <div class="img-text donutImg">
+                                    <h5>LAYOUT</h5>
+                                    <p>CODING</p>
+                                    <span>레이아웃</span>
+                                </div>
+                            </div>
+                        </a>
+                    </section>
+                    <!-- //box -->
+
+                    <!-- box -->
+                    <section class="color-shape refer">
+                        <a href="flexgrid/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img-donut">CLASS</span>
+                                    <span class="overlay-text-thumb-donut">FLEXGRID</span>
+                                    <span class="overlay-text-thumb1-donut">CODING</span>
+                                    <span class="overlay-text-thumb2-donut">플렉스/그리드</span>
+                                </div>
+                                <img src="assets/img/011-flower.svg" alt="FLEXGRID">
+                                <div class="img-text donutImg">
+                                    <h5>FLEXGRID</h5>
+                                    <p>CODING</p>
+                                    <span>플렉스/그리드</span>
+                                </div>
+                            </div>
+                        </a>
+                    </section>
+                    <!-- //box -->
+
+                    <!-- box -->
+                    <section class="color-shape site">
+                        <a href="site-webstandard/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img-donut">CLASS</span>
+                                    <span class="overlay-text-thumb-donut">WEBSTANDARD</span>
+                                    <span class="overlay-text-thumb1-donut">SITE</span>
+                                    <span class="overlay-text-thumb2-donut">웹표준형</span>
+                                </div>
+                                <img src="assets/img/012-flower.svg" alt="WEBSTANDARD">
+                                <div class="img-text donutImg">
+                                    <h5>WEBSTANDARD</h5>
+                                    <p>SITE</p>
+                                    <span>웹표준형</span>
+                                </div>
+                            </div>
+                        </a>
+                    </section>
+                    <!-- //box -->
+
+                    <!-- box -->
+                    <section class="color-shape site">
+                        <a href="site-responsive/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img-donut">CLASS</span>
+                                    <span class="overlay-text-thumb-donut">RESPONSIVE</span>
+                                    <span class="overlay-text-thumb1-donut">SITE</span>
+                                    <span class="overlay-text-thumb2-donut">웹반응형</span>
+                                </div>
+                                <img src="assets/img/013-flower.svg" alt="RESPONSIVE">
+                                <div class="img-text donutImg">
+                                    <h5>RESPONSIVE</h5>
+                                    <p>SITE</p>
+                                    <span>웹반응형</span>
+                                </div>
+                            </div>
+                        </a>
+                    </section>
+                    <!-- //box -->
+
+                    <!-- box -->
+                    <section class="color-shape site">
+                        <a href="site-nongshim/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img-donut">CLASS</span>
+                                    <span class="overlay-text-thumb-donut">SITE-NONGSHIM</span>
+                                    <span class="overlay-text-thumb1-donut">SITE</span>
+                                    <span class="overlay-text-thumb2-donut">농심</span>
+                                </div>
+                                <img src="assets/img/014-flower.svg" alt="NONGSHIM">
+                                <div class="img-text donutImg">
+                                    <h5>SITE-NONGSHIM</h5>
+                                    <p>SITE</p>
+                                    <span>농심</span>
+                                </div>
+                            </div>
+                        </a>
+                    </section>
+                    <!-- //box -->
+
+                    <!-- box -->
+                    <section class="color-shape site">
+                        <a href="site-yes24/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img-donut">CLASS</span>
+                                    <span class="overlay-text-thumb-donut">SITE-YES24</span>
+                                    <span class="overlay-text-thumb1-donut">SITE</span>
+                                    <span class="overlay-text-thumb2-donut">예스24</span>
+                                </div>
+                                <img src="assets/img/015-flower.svg" alt="YES24">
+                                <div class="img-text donutImg">
+                                    <h5>SITE-YES24</h5>
+                                    <p>SITE</p>
+                                    <span>예스24</span>
+                                </div>
+                            </div>
+                        </a>
+                    </section>
+                    <!-- //box -->
+
+                    <!-- box -->
+                    <section class="color-shape site">
+                        <a href="site-apple/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img-donut">CLASS</span>
+                                    <span class="overlay-text-thumb-donut">SITE-APPLE</span>
+                                    <span class="overlay-text-thumb1-donut">MOBILESITE</span>
+                                    <span class="overlay-text-thumb2-donut">CLASS</span>
+                                </div>
+                                <img src="assets/img/016-flower.svg" alt="APPLE">
+                                <div class="img-text donutImg">
+                                    <h5>SITE-APPLE</h5>
+                                    <p>MOBILESITE</p>
+                                    <span>CLASS</span>
+                                </div>
+                            </div>
+                        </a>
+                    </section>
+                    <!-- //box -->
+
+                    <!-- box -->
+                    <section class="color-shape site">
+                        <a href="site-nike/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img-donut">CLASS</span>
+                                    <span class="overlay-text-thumb-donut">SITE-NIKE</span>
+                                    <span class="overlay-text-thumb1-donut">MOBILESITE</span>
+                                    <span class="overlay-text-thumb2-donut">CLASS</span>
+                                </div>
+                                <img src="assets/img/017-flower.svg" alt="NIKE">
+                                <div class="img-text donutImg">
+                                    <h5>SITE-NIKE</h5>
+                                    <p>MOBILESITE</p>
+                                    <span>CLASS</span>
+                                </div>
+                            </div>
+                        </a>
+                    </section>
+                    <!-- //box -->
+
+                    <!-- box -->
+                    <section class="color-shape site">
+                        <a href="site-shinsegaeinc/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img-donut">CLASS</span>
+                                    <span class="overlay-text-thumb-donut">SITE-SHINSEGAEINC</span>
+                                    <span class="overlay-text-thumb1-donut">SITE</span>
+                                    <span class="overlay-text-thumb2-donut">CLASS</span>
+                                </div>
+                                <img src="assets/img/010-flower.svg" alt="SHINSEGAEINC">
+                                <div class="img-text donutImg">
+                                    <h5>SITE-SHINSEGAEINC</h5>
+                                    <p>SITE</p>
+                                    <span>CLASS</span>
+                                </div>
+                            </div>
+                        </a>
+                    </section>
+                    <!-- //box -->
+
+                    <!-- box -->
+                    <section class="color-shape script">
+                        <a href="script/javascript/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img-donut">CLASS</span>
+                                    <span class="overlay-text-thumb-donut">JAVASCRIPT</span>
+                                    <span class="overlay-text-thumb1-donut">SCRIPT</span>
+                                    <span class="overlay-text-thumb2-donut">자바스크립트</span>
+                                </div>
+                                <img src="assets/img/018-flower.svg" alt="javascript">
+                                <div class="img-text donutImg">
+                                    <h5>JAVASCRIPT</h5>
+                                    <p>SCRIPT</p>
+                                    <span>자바스크립트</span>
+                                </div>
+                            </div>
+                        </a>
+                    </section>
+                    <!-- //box -->
+
+                    <!-- box -->
+                    <section class="color-shape script">
+                        <a href="script/jquery/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img-donut">CLASS</span>
+                                    <span class="overlay-text-thumb-donut">JQuery</span>
+                                    <span class="overlay-text-thumb1-donut">SCRIPT</span>
+                                    <span class="overlay-text-thumb2-donut">제이쿼리</span>
+                                </div>
+                                <img src="assets/img/019-flower.svg" alt="JQuery">
+                                <div class="img-text donutImg">
+                                    <h5>JQuery</h5>
+                                    <p>SCRIPT</p>
+                                    <span>제이쿼리</span>
+                                </div>
+                            </div>
+                        </a>
+                    </section>
+                    <!-- //box -->
+
+                    <!-- box -->
+                    <section class="color-shape script">
+                        <a href="slider/slider01.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img-donut">CLASS</span>
+                                    <span class="overlay-text-thumb-donut">SLIDE</span>
+                                    <span class="overlay-text-thumb1-donut">SCRIPT</span>
+                                    <span class="overlay-text-thumb2-donut">슬라이드</span>
+                                </div>
+                                <img src="assets/img/020-flower.svg" alt="SLIDE">
+                                <div class="img-text donutImg">
+                                    <h5>SLIDE</h5>
+                                    <p>SCRIPT</p>
+                                    <span>슬라이드</span>
+                                </div>
+                            </div>
+                        </a>
+                    </section>
+                    <!-- //box -->
+
+                    <!-- box -->
+                    <section class="color-shape script">
+                        <a href="Parallax/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img-donut">CLASS</span>
+                                    <span class="overlay-text-thumb-donut">PARALLAX</span>
+                                    <span class="overlay-text-thumb1-donut">SCRIPT</span>
+                                    <span class="overlay-text-thumb2-donut">패럴럭스</span>
+                                </div>
+                                <img src="assets/img/021-flower.svg" alt="Parallax">
+                                <div class="img-text donutImg">
+                                    <h5>PARALLAX</h5>
+                                    <p>SCRIPT</p>
+                                    <span>패럴럭스</span>
+                                </div>
+                            </div>
+                        </a>
+                    </section>
+                    <!-- //box -->
+
+                    <!-- box -->
+                    <section class="color-shape script">
+                        <a href="mouse/mouse01.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img-donut">CLASS</span>
+                                    <span class="overlay-text-thumb-donut">MOUSE</span>
+                                    <span class="overlay-text-thumb1-donut">SCRIPT</span>
+                                    <span class="overlay-text-thumb2-donut">마우스</span>
+                                </div>
+                                <img src="assets/img/022-flower.svg" alt="Mouse">
+                                <div class="img-text donutImg">
+                                    <h5>MOUSE</h5>
+                                    <p>SCRIPT</p>
+                                    <span>마우스</span>
+                                </div>
+                            </div>
+                        </a>
+                    </section>
+                    <!-- //box -->
+
+                    <!-- box -->
+                    <section class="color-shape script">
+                        <a href="game/index.html"" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img-donut">CLASS</span>
+                                    <span class="overlay-text-thumb-donut">GAME</span>
+                                    <span class="overlay-text-thumb1-donut">SCRIPT</span>
+                                    <span class="overlay-text-thumb2-donut">게임</span>
+                                </div>
+                                <img src="assets/img/023-flower.svg" alt="GAME">
+                                <div class="img-text donutImg">
+                                    <h5>GAME</h5>
+                                    <p>SCRIPT</p>
+                                    <span>게임</span>
+                                </div>
+                            </div>
+                        </a>
+                    </section>
+                    <!-- //box -->
+
+                    <!-- box -->
+                    <section class="color-shape css3">
+                        <a href="css3/box-shadow/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img-donut">CLASS</span>
+                                    <span class="overlay-text-thumb-donut">BOX-SHADOW</span>
+                                    <span class="overlay-text-thumb1-donut">CSS3</span>
+                                    <span class="overlay-text-thumb2-donut">CLASS</span>
+                                </div>
+                                <img src="assets/img/024-flower.svg" alt="BOX-SHADOW">
+                                <div class="img-text donutImg">
+                                    <h5>BOX-SHADOW</h5>
+                                    <p>CSS3</p>
+                                    <span>CLASS</span>
+                                </div>
+                            </div>
+                        </a>
+                    </section>
+                    <!-- //box -->
+
+                    <!-- box -->
+                    <section class="color-shape css3">
+                        <a href="css3/border-radius/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img-donut">CLASS</span>
+                                    <span class="overlay-text-thumb-donut">BORDER-RADIUS</span>
+                                    <span class="overlay-text-thumb1-donut">CSS3</span>
+                                    <span class="overlay-text-thumb2-donut">CLASS</span>
+                                </div>
+                                <img src="assets/img/025-flower.svg" alt="BORDER-RADIUS">
+                                <div class="img-text donutImg">
+                                    <h5>BORDER-RADIUS</h5>
+                                    <p>CSS3</p>
+                                    <span>CLASS</span>
+                                </div>
+                            </div>
+                        </a>
+                    </section>
+                    <!-- //box -->
+
+                    <!-- box -->
+                    <section class="color-shape css3">
+                        <a href="css3/transform/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img-donut">CLASS</span>
+                                    <span class="overlay-text-thumb-donut">TRANSFORM</span>
+                                    <span class="overlay-text-thumb1-donut">CSS3</span>
+                                    <span class="overlay-text-thumb2-donut">CLASS</span>
+                                </div>
+                                <img src="assets/img/026-flower.svg" alt="TRANSFORM">
+                                <div class="img-text donutImg">
+                                    <h5>TRANSFORM</h5>
+                                    <p>CSS3</p>
+                                    <span>CLASS</span>
+                                </div>
+                            </div>
+                        </a>
+                    </section>
+                    <!-- //box -->
+
+                    <!-- box -->
+                    <section class="color-shape css3">
+                        <a href="css3/sample/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img-donut">CLASS</span>
+                                    <span class="overlay-text-thumb-donut">CSS SAMPLE</span>
+                                    <span class="overlay-text-thumb1-donut">CSS3</span>
+                                    <span class="overlay-text-thumb2-donut">CLASS</span>
+                                </div>
+                                <img src="assets/img/027-flower.svg" alt="CSS SAMPLE">
+                                <div class="img-text donutImg">
+                                    <h5>CSS SAMPLE</h5>
+                                    <p>CSS3</p>
+                                    <span>CLASS</span>
+                                </div>
+                            </div>
+                        </a>
+                    </section>
+                    <!-- //box -->
+
+                    <!-- box -->
+                    <section class="color-shape css3">
+                        <a href="css3/hover-effect/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img-donut">CLASS</span>
+                                    <span class="overlay-text-thumb-donut">MOUSE HOVER EFFECT</span>
+                                    <span class="overlay-text-thumb1-donut">CSS3</span>
+                                    <span class="overlay-text-thumb2-donut">CLASS</span>
+                                </div>
+                                <img src="assets/img/028-flower.svg" alt="Mouse Hover Effect">
+                                <div class="img-text donutImg">
+                                    <h5>MOUSE HOVER EFFECT</h5>
+                                    <p>CSS3</p>
+                                    <span>CLASS</span>
+                                </div>
+                            </div>
+                        </a>
+                    </section>
+                    <!-- //box -->
+
+                    <!-- box -->
+                    <section class="color-shape css3">
+                        <a href="css3/background/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img-donut">CLASS</span>
+                                    <span class="overlay-text-thumb-donut">BACKGROUND</span>
+                                    <span class="overlay-text-thumb1-donut">CSS3</span>
+                                    <span class="overlay-text-thumb2-donut">CLASS</span>
+                                </div>
+                                <img src="assets/img/029-flower.svg" alt="Background">
+                                <div class="img-text donutImg">
+                                    <h5>BACKGROUND</h5>
+                                    <p>CSS3</p>
+                                    <span>CLASS</span>
+                                </div>
+                            </div>
+                        </a>
+                    </section>
+                    <!-- //box -->
+
+                    <!-- box -->
+                    <section class="color-shape ani">
+                        <a href="animation/cssA/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img-donut">CLASS</span>
+                                    <span class="overlay-text-thumb-donut">CSS ANIMATION</span>
+                                    <span class="overlay-text-thumb1-donut">ANIMATION</span>
+                                    <span class="overlay-text-thumb2-donut">CLASS</span>
+                                </div>
+                                <img src="assets/img/030-flower.svg" alt="ANIMATION">
+                                <div class="img-text donutImg">
+                                    <h5>CSS ANIMATION</h5>
+                                    <p>ANIMATION</p>
+                                    <span>CLASS</span>
+                                </div>
+                            </div>
+                        </a>
+                    </section>
+                    <!-- //box -->
+
+                    <!-- box -->
+                    <section class="color-shape ani">
+                        <a href="animation/gsapA/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img-donut">CLASS</span>
+                                    <span class="overlay-text-thumb-donut">GSAP ANIMATION</span>
+                                    <span class="overlay-text-thumb1-donut">ANIMATION</span>
+                                    <span class="overlay-text-thumb2-donut">CLASS</span>
+                                </div>
+                                <img src="assets/img/031-flower.svg" alt="ANIMATION">
+                                <div class="img-text donutImg">
+                                    <h5>GSAP ANIMATION</h5>
+                                    <p>ANIMATION</p>
+                                    <span>CLASS</span>
+                                </div>
+                            </div>
+                        </a>
+                    </section>
+                    <!-- //box -->
+
+                    <!-- box -->
+                    <section class="color-shape ani">
+                        <a href="animation/jqueryA/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img-donut">CLASS</span>
+                                    <span class="overlay-text-thumb-donut">JQUERY ANIMATION</span>
+                                    <span class="overlay-text-thumb1-donut">ANIMATION</span>
+                                    <span class="overlay-text-thumb2-donut">CLASS</span>
+                                </div>
+                                <img src="assets/img/032-flower.svg" alt="ANIMATION">
+                                <div class="img-text donutImg">
+                                    <h5>JQUERY ANIMATION</h5>
+                                    <p>ANIMATION</p>
+                                    <span>CLASS</span>
+                                </div>
+                            </div>
+                        </a>
+                    </section>
+                    <!-- //box -->
+
+                    <!-- box -->
+                    <section class="color-shape ani">
+                        <a href="animation/svgA/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img-donut">CLASS</span>
+                                    <span class="overlay-text-thumb-donut">SVG ANIMATION</span>
+                                    <span class="overlay-text-thumb1-donut">ANIMATION</span>
+                                    <span class="overlay-text-thumb2-donut">CLASS</span>
+                                </div>
+                                <img src="assets/img/033-flower.svg" alt="ANIMATION">
+                                <div class="img-text donutImg">
+                                    <h5>SVG ANIMATION</h5>
+                                    <p>ANIMATION</p>
+                                    <span>CLASS</span>
+                                </div>
+                            </div>
+                        </a>
+                    </section>
+                    <!-- //box -->                   
+                    
+                </div>
+                <!-- //container-->
+            </div>
+            <!-- //row -->
+        </div>
+        <!-- //container-->
+        <div class="comments">
+            <div class="container">
+                <div class="row" style="margin-left: 16px;">
+                    <h3>흔적 남기기</h3>
+                        <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://ay9318.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            
+                </div>
+            </div>            
+        </div>
+    </div>
+    <!-- //contents -->
+
+
+    <!-- footer -->
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <h5>
+                        <a href="http://webstoryboy.co.kr" target="_blank">Webstoryboy</a>
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //footer -->
+
+
+    <!-- script -->
+    <script src="assets/js/jquery-1.9.1.min.js"></script>
+    <script src="assets/js/bootstrap-collapse.js"></script>
+    <script src="assets/js/bootstrap-transition.js"></script>
+    <script src="assets/js/jquery.isotope.min.js"></script>
+    <script>
+        $(function () {
+            var $container = $('#container'),
+                filters = {};
+
+            $container.isotope({
+                itemSelector: '.color-shape',
+                masonry: {
+                    columnWidth: 57
+                }
+            });
+
+            // filter buttons
+            $('.filter a').click(function () {
+                var $this = $(this);
+                // don't proceed if already selected
+                if ($this.hasClass('selected')) {
+                    return;
+                }
+
+                var $optionSet = $this.parents('.option-set');
+                // change selected class
+                $optionSet.find('.selected').removeClass('selected');
+                $this.addClass('selected');
+
+                // store filter value in object
+                // i.e. filters.color = 'red'
+                var group = $optionSet.attr('data-filter-group');
+                filters[group] = $this.attr('data-filter-value');
+                // convert object into array
+                var isoFilters = [];
+                for (var prop in filters) {
+                    isoFilters.push(filters[prop])
+                }
+                var selector = isoFilters.join('');
+                $container.isotope({
+                    filter: selector
+                });
+
+                return false;
+            });
+
+            $('.tit_btn').on('click', function (e) {
+                e.preventDefault();
+                $('.nav_container').toggleClass('on');
+            });
+
+            $(".click").click(function () {
+                $(".view").fadeToggle();
+            });
+
+        });
+    </script>
+</body>
+</html>
+<!-- webstoryboy.co.kr -->

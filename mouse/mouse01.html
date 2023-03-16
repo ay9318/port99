@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Effect01</title>
+
+    <link rel="stylesheet" href="css/prism.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+        @font-face { 
+            font-family: 'GmarketSansMedium'; 
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff'); 
+            font-weight: normal; 
+            font-style: normal; 
+        }
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        a {text-decoration: none; color: #666;}
+        img {width: 100%; vertical-align: top;}        
+        ul {padding: 10px 20px;}
+        body {
+            background: url(img/img08.jpg) no-repeat center center;
+            background-size: cover;
+            font-family: 'Abel', 'GmarketSansMedium';
+            color: #fff;
+            height: 100vh;
+            cursor: none;
+            overflow: hidden;
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0;
+            width: 100%; height: 100vh;
+            background: rgba(45, 71, 100, 0.8);
+            z-index: -1;
+        }
+        .info {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            position: absolute; left: 0; top: 0; z-index: 1000;
+            padding: 20px;
+            font-size: 20px;
+        }
+        /* info2 */
+        .info2 {
+            position: absolute; right: 0; top: 0; z-index: 1000;
+            padding: 30px; font-weight: bold;
+        }
+        .info2 li {list-style: none; margin-bottom: 5px;}
+        .info2 li a {color: #fff;}
+        .info2 li.active a {border-bottom: 1px dashed #fff;}
+
+        /* info3 */
+        .info3 {position: absolute; right: 0; bottom: 0; z-index: 1000; padding: 20px;}
+        .info3 li {list-style: none; margin-bottom: 5px;}
+        .info3 li span {color: #fff;}
+
+        /* contents */
+        .contents {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%; height: 100%;
+            text-align: center;
+            flex-direction: column;
+        }
+        .contents p {
+            max-width: 80vw;
+            font-size: 3vw;
+        }
+        .contents p a {color: orange;}
+        .cursor {
+            position: absolute; left: 0; top: 0;
+            width: 50px; height: 50px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            z-index: 10000;
+            background-color: rgba(255, 255, 255, 0.1);
+            user-select: none;
+            pointer-events: none;
+            transition: background-color 0.2s ease;
+        }
+        .cursor.active {
+            background-color: rgba(255, 165, 0, 0.4);
+            border-color: orange;
+        }
+
+        /*  modal */
+        .infor4 {position: absolute; left: 0; bottom: 0; z-index: 1000; padding: 20px;}
+        .infor4 a {color: #fff; border: 1px solid #fff; border-radius: 30px; padding: 5px 30px}
+        .infor4 .modal {
+            background: rgba(0,0,0,0.8);
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            position: fixed;
+            top: 100%;
+            left: 0;
+            text-align: left;
+            transition: all 600ms cubic-bezier(0.86, 0, 0.07, 1);
+        }
+        .infor4 .modal.show {
+            top: 0;
+        }
+        .infor4 .modal .close {
+            position: absolute; right: 10px; top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="info">
+        <h1>Mouse Effect01</h1>
+        <p>마우스 따라다니기</p>
+        <ul>
+            <li>clientX, clientY</li>
+        </ul>
+    </div>
+    <div class="info2">
+        <ul>
+            <li class="active"><a href="mouse01.html">Mouse01</a></li>
+            <li><a href="mouse02.html">Mouse02</a></li>
+            <li><a href="mouse03.html">Mouse03</a></li>
+            <li><a href="mouse04.html">Mouse04</a></li>
+            <li><a href="mouse05.html">Mouse05</a></li>
+            <li><a href="mouse06.html">Mouse06</a></li>
+            <li><a href="mouse07.html">Mouse07</a></li>
+            <li><a href="mouse08.html">Mouse08</a></li>
+        </ul>
+    </div>
+    <div class="info3">
+        <ul>
+            <li>clientX : <span class="clientX">0</span></li>
+            <li>clientY :<span class="clientY">0</span></li>
+            <li>offsetX :<span class="offsetX">0</span></li>
+            <li>offsetY :<span class="offsetY">0</span></li>
+            <li>pageX :<span class="pageX">0</span></li>
+            <li>pageY :<span class="pageY">0</span></li>
+            <li>screenX :<span class="screenX">0</span></li>
+            <li>screenY :<span class="screenY">0</span></li>
+        </ul>
+    </div>
+    <div class="contents">
+        <p>To climb steep hills requires <a>slow</a> pace at first.</p>
+        <p>험준한 산을 오르기 위해선 먼저 <a>천천히</a> 걸어야 한다.</p>        
+    </div>
+    <div class="cursor"></div> 
+    <div class="infor4">
+        <a href="#" class="view">소스보기</a>
+        <!-- modal -->
+        <div class="modal">
+            <div class="code-editor">   
+                <span class="control"></span>
+                <span class="control"></span>
+                <span class="control"></span>
+<pre class="line-numbers"><code class="language-js">$(window).mousemove(function(event){
+    $(".clientX").text(event.clientX);
+    $(".clientY").text(event.clientY);
+    $(".offsetX").text(event.offsetX);
+    $(".offsetY").text(event.offsetY);
+    $(".pageX").text(event.pageX);
+    $(".pageY").text(event.pageY);
+    $(".screenX").text(event.screenX);
+    $(".screenY").text(event.screenY);
+
+    $(".cursor").css({ left: event.clientX -25, top: event.clientY-25 });
+
+    $(".contents a").hover(function(){
+        $(".cursor").addClass("active");
+    }, function(){
+        $(".cursor").removeClass("active");
+    });
+
+    //javascript
+    window.addEventListener("mousemove", function(event){
+        document.querySelector(".clientX").innerHTML = event.clientX;
+        document.querySelector(".clientY").innerHTML = event.clientY;
+        document.querySelector(".offsetX").innerHTML = event.offsetX;
+        document.querySelector(".offsetY").innerHTML = event.offsetY;
+        document.querySelector(".pageX").innerHTML = event.pageX;
+        document.querySelector(".pageY").innerHTML = event.pageY;
+        document.querySelector(".screenX").innerHTML = event.screenX;
+        document.querySelector(".screenY").innerHTML = event.screenY;
+
+        document.querySelector(".cursor").style.left = event.clientX - 25 + "px";
+        document.querySelector(".cursor").style.top = event.clientY - 25 + "px";
+
+        let x = event.clientX - 25 + "px";
+        let y = event.clientY - 25 + "px";
+
+        document.querySelector(".cursor").style.cssText = "left:"+ x +"; top:" + y;
+
+        // document.querySelector(".contents a").addEventListener("mouseenter", function(){});
+        // document.querySelector(".contents a").addEventListener("mouseleave", function(){});
+
+        // document.querySelector(".contents a").addEventListener("mouseenter", () => {
+        //     document.querySelector(".cursor").classList.add("active");
+        // });
+        // document.querySelector(".contents a").addEventListener("mouseleave", () => {
+        //     document.querySelector(".cursor").classList.remove("active");
+        // });
+
+        document.querySelectorAll("a").forEach(elem => {
+            elem.addEventListener("mouseenter", () => {
+                document.querySelector(".cursor").classList.add("active");
+            });
+            elem.addEventListener("mouseleave", () => {
+                document.querySelector(".cursor").classList.remove("active");
+            });
+        });
+    });
+});
+</code></pre>    
+            </div>
+            <a class="close">닫기</a>
+        </div>
+    </div>
+    
+    <!-- 마우스 포인터 좌표
+        1. 	x,y
+        - 문서의 좌측상단을 기준점으로함.
+        - 비표준			
+
+        2. clientX, clientY
+        - 문서 좌측 상단을 기준점으로 함
+        - 표준
+        - 많이 사용(absolute)			
+
+        3. screenX, screenY
+        - 모니터 화면의 좌측 상단을 기준점으로 함
+        - 잘 안씀			
+
+        4. offsetX, offsetY
+        - 이벤트 발생한 객체(태그)의 좌측상단을 기준점
+        - 많이 사용(relative) -->
+
+        <!-- script -->
+        <script src="js/jquery.min_1.12.4.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
+        <script src="js/prism.js"></script>
+        <script>
+            //제이쿼리
+            /* $("body", "html").mousemove(function(event){
+                $(".clientX").text(event.clientX);
+                $(".clientY").text(event.clientY);
+                $(".offsetX").text(event.offsetX);
+                $(".offsetY").text(event.offsetY);
+                $(".pageX").text(event.pageX);
+                $(".pageY").text(event.pageY);
+                $(".screenX").text(event.screenX);
+                $(".screenY").text(event.screenY);
+                
+                $(".cursor").css({left: event.clientX-25, top: event.clientY-25}); //커서 가운데로 이동
+
+                //마우스 오버했을때 커서 컬러 변경
+                $(".contents a").hover(function(){
+                $(".cursor").css("background","rgba(255, 165, 0, 0.8)")
+                }, function() {
+                    $(".cursor").css("background","rgba(255, 255, 255, 0.1)")
+                });
+
+                //클래스 추가
+                $(".contents a").hover(function(){
+                $(".cursor").addClass("active")
+                }, function() {
+                    $(".cursor").removeClass("active")
+                });
+               
+            }); */
+
+            //자바스크립트
+            window.addEventListener("mousemove", function(event) {
+                document.querySelector(".clientX").innerHTML = event.clientX;
+                document.querySelector(".clientY").innerHTML = event.clientY;
+                document.querySelector(".offsetX").innerHTML = event.offsetX;
+                document.querySelector(".offsetY").innerHTML = event.offsetY;
+                document.querySelector(".pageX").innerHTML = event.pageX;
+                document.querySelector(".pageY").innerHTML = event.pageY;
+                document.querySelector(".screenX").innerHTML = event.screenX;
+                document.querySelector(".screenY").innerHTML = event.screenY;
+
+                // document.querySelector(".cursor").style.left = event.clientX-25+"px", //커서 가운데로 이동
+                // document.querySelector(".cursor").style.top = event.clientY-25+"px"; //커서 가운데로 이동
+
+                let x =  event.clientX-25+"px";
+                let y =  event.clientY-25+"px";
+
+                document.querySelector(".cursor").style.cssText = "left:"+x+"; top:"+y;
+
+                // document.querySelector(".contents a").addEventListener("mouseenter",() => {
+                //     document.querySelector(".cursor").classList.add("active");
+                // });
+                // document.querySelector(".contents a").addEventListener("mouseleave",() => {
+                //     document.querySelector(".cursor").classList.remove("active");
+                // });
+
+                //a 각각에게 효과를 주기 위해 forEach문을 쓴다.
+                document.querySelectorAll("a").forEach(elem => {
+                    elem.addEventListener("mouseenter",() => {
+                        document.querySelector(".cursor").classList.add("active");
+                    });
+                    elem.addEventListener("mouseleave",() => {
+                        document.querySelector(".cursor").classList.remove("active");
+                    });
+                });
+            });            
+
+            //modal
+            $(".infor4 a").click(function(){
+                $(".infor4 .modal").addClass("show");
+            });
+            $(".infor4 .close").click(function(){
+                $(".infor4 .modal").removeClass("show");
+            });
+        </script>
+</body>
+</html>
